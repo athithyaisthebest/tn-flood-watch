@@ -1,6 +1,7 @@
 ===== imd =====
 Downloading: rain for year 2015
 Download Successful !!!
+Chennai: using nearest land squares [(21, 17), (20, 16)]
 Downloading: rain for year 2016
 Download Successful !!!
 Downloading: rain for year 2017
