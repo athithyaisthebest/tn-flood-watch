@@ -75,6 +75,9 @@
   .list button { all: unset; cursor: pointer; display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 8px 4px; border-bottom: 1px solid var(--line); }
   .list button:hover { background: #f3f6f8; }
   .muted { color: var(--ink-2); font-size: .9rem; }
+  .sigs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+  .sig { display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; color: var(--ink-2); }
+  .sig .lvl { font-size: .78rem; padding: 2px 7px; }
   .back { all: unset; cursor: pointer; color: var(--accent); font-size: .9rem; margin-bottom: 8px; display: inline-block; }
 
   section.block { padding: 34px 0; border-top: 1px solid var(--line); }
@@ -127,7 +130,7 @@
 <main class="wrap" id="map-section">
   <div class="hero">
     <h1>Flood risk for every district in Tamil Nadu, for the next three days</h1>
-    <p>Built only from open data: rainfall forecasts and river-flow forecasts, checked against each district's own history. Updated every three hours.</p>
+    <p>Built only from open data: rainfall forecasts, NASA satellite rainfall, the state's rain gauges, river-flow forecasts and reservoir levels, each checked against the district's own history. Updated every three hours.</p>
     <div class="status" id="status"></div>
   </div>
 
@@ -151,10 +154,10 @@
     <h2>How it works</h2>
     <p class="lead">Floods in Tamil Nadu usually follow very heavy rain over one to three days, often from a cyclone or depression during the north-east monsoon (October to December). The site looks for exactly that, district by district.</p>
     <div class="grid4">
-      <div class="card step"><div class="n">Step 1</div><h3>Rain forecast</h3><p>Every three hours, the site fetches the past three days and next three days of rainfall for a point in each of the 38 districts.</p></div>
-      <div class="card step"><div class="n">Step 2</div><h3>River forecast</h3><p>It also fetches seven-day river-flow forecasts for 16 points on major rivers, including the Cauvery, Tamirabarani, Vaigai, Ponnaiyar and Adyar.</p></div>
-      <div class="card step"><div class="n">Step 3</div><h3>Compare with history</h3><p>Each district's 1-day and 3-day rain totals, and each river's flow, are compared with thresholds set from past floods in that place.</p></div>
-      <div class="card step"><div class="n">Step 4</div><h3>Show the highest level</h3><p>A district takes the highest level reached by any signal over the next three days, and the panel says which signal caused it.</p></div>
+      <div class="card step"><div class="n">Step 1</div><h3>Rain: forecast and observed</h3><p>Every three hours: the rainfall forecast for the next three days, NASA satellite rainfall for the wettest spot in each district, and the heaviest reading from Tamil Nadu's ~590 rain gauges.</p></div>
+      <div class="card step"><div class="n">Step 2</div><h3>Rivers and reservoirs</h3><p>Seven-day river-flow forecasts on major rivers (Cauvery, Tamirabarani, Vaigai, Vellar, Adyar and more), and daily storage in the state's reservoirs: a nearly full, rising reservoir raises the level downstream.</p></div>
+      <div class="card step"><div class="n">Step 3</div><h3>Compare with history</h3><p>Each signal is compared with thresholds set from that district's own history since 2015 and tested on real floods. Single rain gauges use IMD's heavy-rain categories.</p></div>
+      <div class="card step"><div class="n">Step 4</div><h3>Show the highest level</h3><p>A district takes the highest level reached by any signal, and its panel shows which signals triggered it, so you can judge for yourself.</p></div>
     </div>
     <h3 style="margin:26px 0 8px">What the levels mean</h3>
     <div class="tablewrap card" style="padding:4px 10px">
@@ -181,7 +184,7 @@
     <div class="grid3">
       <div class="card step"><h3>Why this exists</h3><p>Tamil Nadu's official flood systems are excellent but cover parts of the state, such as Chennai or specific river gauges. This is a simple, open, state-wide view that publishes its own accuracy.</p></div>
       <div class="card step"><h3>What it can't see</h3><p>Street flooding from blocked drains, dam and lake releases, tank breaches, storm surge and very local cloudbursts. Rain is checked at one point per district, so a downpour can be missed.</p></div>
-      <div class="card step"><h3>Data</h3><p>Rain and river forecasts from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (ECMWF and other models; river flow from Copernicus GloFAS). District boundaries from <a href="https://github.com/datta07/INDIAN-SHAPEFILES" target="_blank" rel="noopener">INDIAN-SHAPEFILES</a>.</p></div>
+      <div class="card step"><h3>Data</h3><p>Forecasts from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (river flow: Copernicus GloFAS). Satellite rain: <a href="https://gpm.nasa.gov/data/imerg" target="_blank" rel="noopener">NASA GPM IMERG</a>. Gauge-based history: IMD gridded rainfall. Rain gauges and reservoirs: <a href="https://beta-tnsmart.rimes.int/" target="_blank" rel="noopener">TN-SMART</a>, Government of Tamil Nadu. Boundaries: <a href="https://github.com/datta07/INDIAN-SHAPEFILES" target="_blank" rel="noopener">INDIAN-SHAPEFILES</a>.</p></div>
     </div>
     <p class="muted" style="margin-top:18px">A student project by Athithya, built with help from AI tools. Code and data are open. Found a problem or a flood we missed? Please get in touch.</p>
   </div>
@@ -204,6 +207,8 @@ const MEANING = [
   "Very heavy rain or high river flow likely. Flooding possible; prepare and follow official advice.",
   "Extreme rain or river flow likely. Serious flooding possible; act on official warnings immediately."
 ];
+const SIGNAME = {forecast: "Forecast", satellite: "Satellite", gauge: "Rain gauges", reservoir: "Reservoirs"};
+const SIGLONG = {forecast: "Rain forecast", imd: "IMD gauge grid", satellite: "NASA satellite", gauge: "Rain gauge", river: "River flow", reservoir: "Reservoir"};
 const SHORT = {"Kancheepuram":"Kanchi","Ramanathapuram":"Ramnad","Tiruchirappalli":"Trichy","Tiruvannamalai":"T'malai","Mayiladuthurai":"M'thurai","Chengalpattu":"Chengal.","Pudukkottai":"Pudukkottai","Virudhunagar":"Virudhunagar","Kallakurichi":"K'kurichi","Thiruvallur":"Tiruvallur","Krishnagiri":"Krishnagiri"};
 
 let state = { risk: null, geo: null, thr: null, rec: null, events: [], sel: null };
@@ -259,7 +264,7 @@ function renderStatus() {
   h += `<span class="chip">Updated ${t.toLocaleString("en-IN", {day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"})} IST</span>`;
   [3, 2, 1].forEach(l => { if (counts[l]) h += `<span class="chip"><i class="sw" style="background:${COLORS[l]}"></i>${counts[l]} ${LEVELS[l]}</span>`; });
   if (!counts[1] && !counts[2] && !counts[3]) h += '<span class="chip"><i class="sw" style="background:var(--low)"></i>No district above Low</span>';
-  if (r.sources_ok && (!r.sources_ok.rain || !r.sources_ok.river)) h += '<span class="chip demo">Some data delayed</span>';
+  if (r.sources_ok) { const down = Object.entries(r.sources_ok).filter(([, v]) => !v).map(([k]) => k); if (down.length) h += `<span class="chip">Delayed: ${down.map(esc).join(", ")}</span>`; }
   el.innerHTML = h;
 }
 
@@ -285,7 +290,11 @@ function select(name) {
     const past = state.events.filter(e => e.districts.includes(name));
     p.innerHTML = `<button class="back">&larr; All districts</button>
       <h2>${esc(name)} ${lvlBadge(d.level)}</h2>
-      <p class="reason">${d.reasons && d.reasons.length ? d.reasons.map(esc).join("<br>") : "No rainfall or river signal above its threshold in the next three days."}</p>
+      <p class="reason">${d.reasons && d.reasons.length ? d.reasons.map(esc).join("<br>") : "No signal above its threshold."}</p>
+      ${d.signals ? `<div class="sigs">${Object.entries(SIGNAME).map(([k, lab]) => `<span class="sig">${lab} ${k in d.signals ? lvlBadge(d.signals[k]) : '<span class="lvl ln">n/a</span>'}</span>`).join("")}</div>` : ""}
+      ${d.gauge ? `<p class="muted">Rain gauges (24 h to 8:30 am ${fmtDay(d.gauge.report_date)}): district average ${d.gauge.avg_mm ?? "–"} mm${d.gauge.max_mm ? ", heaviest gauge " + d.gauge.max_mm + " mm" : ""}.</p>` : ""}
+      ${d.satellite ? `<p class="muted">Satellite rain, wettest spot: ${d.satellite.last_day_mm} mm yesterday, ${d.satellite.three_day_mm} mm over 3 days.</p>` : ""}
+      ${d.reservoirs && d.reservoirs.length ? `<p class="muted">Reservoirs upstream: ${d.reservoirs.map(r => esc(r.name) + " " + r.storage_pct + "%" + (r.rising ? " (rising)" : "")).join(", ")}.</p>` : ""}
       ${days.length ? `<table><thead><tr><th>Day</th><th class="num">Rain that day</th><th class="num">3-day total</th><th>Level</th></tr></thead>
       <tbody>${days.map(([day, v]) => `<tr><td>${fmtDay(day)}</td><td class="num">${v.r1} mm</td><td class="num">${v.r3} mm</td><td>${lvlBadge(v.level)}</td></tr>`).join("")}</tbody></table>` : ""}
       ${d.rivers && d.rivers.length ? `<h3 style="font-size:1rem;margin:16px 0 4px">Rivers</h3><table><tbody>${d.rivers.map(rv => `<tr><td>${esc(rv.name)}</td><td class="num">${rv.peak_7d_m3s ?? "–"} m³/s peak (7 days)</td><td>${lvlBadge(rv.level)}</td></tr>`).join("")}</tbody></table>` : ""}
@@ -316,10 +325,12 @@ function renderRecord() {
       <div class="card stat"><div class="big">${s.baseline.test.hits}/${s.baseline.test.pairs}</div><div class="lab">flagged by a simple baseline (IMD's fixed "very heavy rain" level, 115.6 mm/day), which gave ${s.baseline.test.alert_days_per_district_season} no-flood alert days per district per season</div></div>
     </div>
     <div class="card tablewrap" style="padding:4px 10px"><table>
-      <thead><tr><th>Flood</th><th>Dates</th><th>Set</th><th>Districts flagged</th><th>Districts missed</th></tr></thead>
+      <thead><tr><th>Flood</th><th>Dates</th><th>Set</th><th>Districts flagged</th><th>Districts missed</th><th>Caught by</th></tr></thead>
       <tbody>${rec.events.map(e => `<tr><td><a href="${esc(e.source)}" target="_blank" rel="noopener">${esc(e.name)}</a></td><td>${fmtDay(e.start)} – ${fmtDay(e.end)} ${e.start.slice(0, 4)}</td><td>${e.set === "test" ? "Test" : "Training"}</td>
-        <td class="hit">${e.hit.map(esc).join(", ") || "–"}</td><td class="miss">${e.missed.map(esc).join(", ") || "–"}</td></tr>`).join("")}</tbody>
+        <td class="hit">${e.hit.map(esc).join(", ") || "–"}</td><td class="miss">${e.missed.map(esc).join(", ") || "–"}</td><td>${(e.caught_by || []).map(k => esc(SIGLONG[k] || k)).join(", ") || "–"}</td></tr>`).join("")}</tbody>
     </table></div>
+    ${s.high_sensitivity ? `<p style="margin-top:14px">With the <strong>high-sensitivity</strong> setting, it would have caught ${s.high_sensitivity.test.hits}/${s.high_sensitivity.test.pairs} district floods in the test years, but with ${s.high_sensitivity.test.alert_days_per_district_season} no-flood alert days per district per season.</p>` : ""}
+    ${s.by_signal_test ? `<p class="muted">Each signal on its own, test years: ${Object.entries(s.by_signal_test).map(([k, v]) => esc(SIGLONG[k] || k) + " " + v.hits + "/" + v.pairs).join(" · ")}.</p>` : ""}
     <p class="muted" style="margin-top:10px">${esc(rec.note || "")}</p>`;
 }
 

@@ -55,6 +55,97 @@ def level_for(value, thr):
     return lvl
 
 
+def _raise(d, signal, lvl, reason):
+    if lvl <= 0:
+        return
+    d.setdefault("signals", {})
+    d["signals"][signal] = max(d["signals"].get(signal, 0), lvl)
+    d["reasons"].append(f"{LEVELS[lvl]}: {reason}")
+
+
+def add_observed(out, today, thr):
+    """Add what has actually been observed: TN-SMART gauges and reservoirs, NASA satellite rain.
+    Each source is optional: if it fails, the site still works on the others."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    ok = {}
+    try:
+        import sources
+    except Exception as e:
+        print("observed sources unavailable:", e)
+        return {"gauges": False, "reservoirs": False, "satellite": False}
+    setting = thr.get("settings", {}).get(thr.get("default_setting", ""), {})
+    gauge_t = setting.get("gauge", {"watch": 64.5, "warning": 115.6, "danger": 204.5})
+
+    # rain gauges: today's report (8:30 am yesterday -> 8:30 am today), else yesterday's
+    try:
+        rep, used = None, None
+        for back in (0, 1):
+            rep = sources.tnsmart_rain(today - timedelta(days=back))
+            if rep:
+                used = today - timedelta(days=back)
+                break
+        ok["gauges"] = bool(rep)
+        for n, v in (rep or {}).items():
+            if n in out and v.get("max"):
+                _raise(out[n], "gauge", level_for(v["max"], gauge_t),
+                       f"a rain gauge recorded {v['max']:.0f} mm in the 24 hours to 8:30 am {used:%d %b}")
+            if n in out:
+                out[n]["gauge"] = {"report_date": used.isoformat(), "avg_mm": v.get("avg"), "max_mm": v.get("max")}
+    except Exception as e:
+        print("gauges failed:", e)
+        ok["gauges"] = False
+
+    # reservoirs: compare today's (or yesterday's) report with the day before
+    try:
+        cur, prev = None, None
+        for back in (0, 1, 2):
+            r = sources.tnsmart_reservoirs(today - timedelta(days=back))
+            if r and cur is None:
+                cur = r
+            elif r and prev is None:
+                prev = r
+                break
+        ok["reservoirs"] = bool(cur)
+        before = {x["name"]: x["storage_pct"] for x in (prev or [])}
+        for x in cur or []:
+            p, b = x["storage_pct"], before.get(x["name"])
+            rising = b is not None and p > b
+            lvl = 2 if (p >= 95 and rising) else (1 if (p >= 90 and rising) else 0)
+            for n in x["downstream"]:
+                if n in out:
+                    out[n].setdefault("reservoirs", []).append({"name": x["name"], "storage_pct": p, "rising": rising})
+                    _raise(out[n], "reservoir", lvl, f"{x['name']} reservoir is {p:.0f}% full and rising")
+    except Exception as e:
+        print("reservoirs failed:", e)
+        ok["reservoirs"] = False
+
+    # satellite: NASA IMERG Early daily rain, wettest spot in each district, last 3 days
+    user, pw = os.environ.get("EARTHDATA_USERNAME"), os.environ.get("EARTHDATA_PASSWORD")
+    sat_t = setting.get("satellite", {})
+    if user and pw and sat_t:
+        try:
+            days = {}
+            for day, res in sources.imerg_days(today - timedelta(days=3), today - timedelta(days=1),
+                                               "early", user, pw, "/tmp"):
+                days[day] = res
+            ok["satellite"] = bool(days)
+            for n in out:
+                t = sat_t.get(n)
+                series = [days[k][n][1] for k in sorted(days) if n in days[k] and days[k][n][1] is not None]
+                if not t or not series:
+                    continue
+                r1, r3 = series[-1], sum(series[-3:])
+                lvl = max(level_for(r1, t["r1"]), level_for(r3, t["r3"]))
+                out[n]["satellite"] = {"last_day_mm": round(r1, 1), "three_day_mm": round(r3, 1)}
+                _raise(out[n], "satellite", lvl, f"satellites measured {r3:.0f} mm over the last 3 days")
+        except Exception as e:
+            print("satellite failed:", e)
+            ok["satellite"] = False
+    else:
+        ok["satellite"] = False
+    return ok
+
+
 def main():
     points = load("points.json")
     rep = {}
@@ -141,13 +232,19 @@ def main():
                 d["reasons"].append(f"{LEVELS[rl]}: {rn} forecast to reach {peak:.0f} m³/s")
             if d["level"] is not None:
                 d["level"] = max(d["level"], rl)
-        if d["level"] is not None:
-            d["level_name"] = LEVELS[d["level"]]
+        d["signals"] = {"forecast": d["level"] or 0}
         out[n] = d
+
+    # ---------------- observed signals: rain gauges, reservoirs, satellite
+    ok_obs = add_observed(out, today, thr)
+    for d in out.values():
+        if d["level"] is not None:
+            d["level"] = max([d["level"]] + list(d["signals"].values()))
+            d["level_name"] = LEVELS[d["level"]]
 
     risk = {
         "updated": now.isoformat(timespec="minutes"),
-        "sources_ok": {"rain": ok_rain, "river": ok_river},
+        "sources_ok": {"rain": ok_rain, "river": ok_river, **ok_obs},
         "thresholds_version": thr.get("version"),
         "districts": out,
     }
