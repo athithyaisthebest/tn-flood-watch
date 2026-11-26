@@ -1,42 +1,39 @@
 {
- "updated": "2026-11-26T23:16+05:30",
+ "updated": "2026-11-27T02:34+05:30",
  "sources_ok": {
   "rain": true,
   "river": true,
   "gauges": true,
   "reservoirs": true,
-  "imd": true,
+  "imd": false,
   "satellite": true
  },
- "thresholds_version": "v2 2026-11-26",
+ "thresholds_version": "v2 2026-11-27",
  "districts": {
   "Ariyalur": {
-   "level": 1,
-   "level_name": "Watch",
-   "reasons": [
-    "Watch: IMD's rain-gauge analysis shows 73 mm over 3 days to 26 Nov"
-   ],
+   "level": 0,
+   "level_name": "Low",
+   "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 5.8,
-     "r3": 38.7,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 6.5,
-     "r3": 28.3,
+     "r1": 3.4,
+     "r3": 25.2,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 10.7,
-     "r3": 23.0,
+     "r1": 8.1,
+     "r3": 17.3,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 11.5,
      "level": 0
     }
    },
    "rivers": [],
    "signals": {
-    "forecast": 0,
-    "imd": 1
+    "forecast": 0
    },
    "gauge": {
     "report_date": "2026-11-26",
@@ -50,14 +47,9 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 53.1,
-    "three_day_mm": 72.9,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 9.9,
-    "three_day_mm": 19.0
+    "three_day_mm": 15.4
    }
   },
   "Chengalpattu": {
@@ -65,19 +57,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 1.5,
-     "r3": 32.1,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 4.5,
-     "r3": 19.2,
+     "r1": 12.3,
+     "r3": 26.8,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 5.1,
-     "r3": 11.1,
+     "r1": 2.3,
+     "r3": 15.9,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 14.6,
      "level": 0
     }
    },
@@ -90,14 +82,9 @@
     "avg_mm": 0.0,
     "max_mm": null
    },
-   "imd": {
-    "last_day_mm": 0.3,
-    "three_day_mm": 43.4,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 3.8,
-    "three_day_mm": 35.1
+    "three_day_mm": 14.3
    }
   },
   "Chennai": {
@@ -105,26 +92,26 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 0.9,
-     "r3": 39.4,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 2.1,
-     "r3": 12.2,
+     "r1": 4.4,
+     "r3": 14.4,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 2.5,
-     "r3": 5.5,
+     "r1": 3.3,
+     "r3": 8.5,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 7.7,
      "level": 0
     }
    },
    "rivers": [
     {
      "name": "Adyar at Chennai",
-     "peak_7d_m3s": 25,
+     "peak_7d_m3s": 20,
      "level": 0
     }
    ],
@@ -153,14 +140,9 @@
      "rising": true
     }
    ],
-   "imd": {
-    "last_day_mm": 3.4,
-    "three_day_mm": 44.1,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 2.7,
-    "three_day_mm": 32.0
+    "three_day_mm": 3.5
    }
   },
   "Coimbatore": {
@@ -168,19 +150,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 3.2,
-     "r3": 13.4,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 4.5,
-     "r3": 12.8,
+     "r1": 13.4,
+     "r3": 21.7,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 8.8,
-     "r3": 16.5,
+     "r1": 9.2,
+     "r3": 25.8,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 1.2,
+     "r3": 23.8,
      "level": 0
     }
    },
@@ -215,11 +197,6 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 16.7,
-    "three_day_mm": 19.5,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 20.2,
     "three_day_mm": 22.2
@@ -230,19 +207,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 3.2,
-     "r3": 38.9,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 4.0,
-     "r3": 17.9,
+     "r1": 7.1,
+     "r3": 20.9,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 13.1,
-     "r3": 20.3,
+     "r1": 10.0,
+     "r3": 20.2,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 17.1,
      "level": 0
     }
    },
@@ -278,14 +255,9 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 36.9,
-    "three_day_mm": 66.0,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 8.9,
-    "three_day_mm": 29.4
+    "three_day_mm": 20.1
    }
   },
   "Dharmapuri": {
@@ -293,19 +265,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 0.9,
-     "r3": 13.7,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 5.9,
-     "r3": 15.1,
+     "r1": 4.8,
+     "r3": 13.9,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 2.0,
-     "r3": 8.8,
+     "r1": 2.6,
+     "r3": 8.2,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.3,
+     "r3": 7.7,
      "level": 0
     }
    },
@@ -365,43 +337,35 @@
      "rising": true
     }
    ],
-   "imd": {
-    "last_day_mm": 31.6,
-    "three_day_mm": 62.9,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 10.4,
-    "three_day_mm": 18.6
+    "three_day_mm": 16.7
    }
   },
   "Dindigul": {
-   "level": 1,
-   "level_name": "Watch",
-   "reasons": [
-    "Watch: IMD's rain-gauge analysis shows 47 mm over 3 days to 26 Nov"
-   ],
+   "level": 0,
+   "level_name": "Low",
+   "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 13.8,
-     "r3": 55.9,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 2.8,
-     "r3": 41.2,
+     "r1": 8.5,
+     "r3": 43.1,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 15.5,
-     "r3": 32.1,
+     "r1": 9.8,
+     "r3": 28.3,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 8.7,
+     "r3": 27.0,
      "level": 0
     }
    },
    "rivers": [],
    "signals": {
-    "forecast": 0,
-    "imd": 1
+    "forecast": 0
    },
    "gauge": {
     "report_date": "2026-11-26",
@@ -450,11 +414,6 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 40.6,
-    "three_day_mm": 47.4,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 18.4,
     "three_day_mm": 26.0
@@ -465,19 +424,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 7.6,
-     "r3": 29.3,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 5.9,
-     "r3": 26.0,
+     "r1": 15.8,
+     "r3": 40.5,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 14.8,
-     "r3": 28.3,
+     "r1": 10.6,
+     "r3": 38.6,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 2.5,
+     "r3": 28.9,
      "level": 0
     }
    },
@@ -533,11 +492,6 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 24.2,
-    "three_day_mm": 33.2,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 14.0,
     "three_day_mm": 21.6
@@ -548,19 +502,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 5.1,
-     "r3": 67.2,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 4.6,
-     "r3": 44.2,
+     "r1": 6.4,
+     "r3": 46.1,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 9.1,
-     "r3": 18.8,
+     "r1": 4.9,
+     "r3": 16.5,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 11.3,
      "level": 0
     }
    },
@@ -590,14 +544,9 @@
      "rising": true
     }
    ],
-   "imd": {
-    "last_day_mm": 27.5,
-    "three_day_mm": 49.5,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 9.6,
-    "three_day_mm": 24.2
+    "three_day_mm": 19.1
    }
   },
   "Kancheepuram": {
@@ -605,19 +554,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 1.9,
-     "r3": 49.5,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 6.6,
-     "r3": 33.6,
+     "r1": 9.1,
+     "r3": 36.1,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 2.8,
-     "r3": 11.3,
+     "r1": 2.0,
+     "r3": 13.0,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 11.1,
      "level": 0
     }
    },
@@ -637,43 +586,35 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 1.6,
-    "three_day_mm": 44.4,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 3.5,
-    "three_day_mm": 35.0
+    "three_day_mm": 7.4
    }
   },
   "Kanyakumari": {
-   "level": 1,
-   "level_name": "Watch",
-   "reasons": [
-    "Watch: IMD's rain-gauge analysis shows 48 mm over 3 days to 26 Nov"
-   ],
+   "level": 0,
+   "level_name": "Low",
+   "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 31.6,
-     "r3": 63.8,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 15.8,
-     "r3": 73.0,
+     "r1": 8.4,
+     "r3": 65.7,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 11.3,
-     "r3": 58.7,
+     "r1": 8.7,
+     "r3": 48.8,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.2,
+     "r3": 17.3,
      "level": 0
     }
    },
    "rivers": [],
    "signals": {
-    "forecast": 0,
-    "imd": 1
+    "forecast": 0
    },
    "gauge": {
     "report_date": "2026-11-26",
@@ -687,11 +628,6 @@
      "rising": true
     }
    ],
-   "imd": {
-    "last_day_mm": 43.6,
-    "three_day_mm": 47.6,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 18.6,
     "three_day_mm": 25.6
@@ -702,19 +638,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 7.5,
-     "r3": 29.9,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 3.8,
-     "r3": 23.0,
+     "r1": 3.0,
+     "r3": 21.2,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 7.2,
-     "r3": 18.5,
+     "r1": 12.5,
+     "r3": 22.0,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.1,
+     "r3": 15.6,
      "level": 0
     }
    },
@@ -755,11 +691,6 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 24.2,
-    "three_day_mm": 24.5,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 21.6,
     "three_day_mm": 23.8
@@ -770,19 +701,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 2.3,
-     "r3": 43.6,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 6.5,
-     "r3": 25.8,
+     "r1": 3.0,
+     "r3": 21.7,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 8.3,
-     "r3": 17.1,
+     "r1": 5.2,
+     "r3": 9.9,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 8.2,
      "level": 0
     }
    },
@@ -817,36 +748,31 @@
      "rising": true
     }
    ],
-   "imd": {
-    "last_day_mm": 35.1,
-    "three_day_mm": 56.8,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 10.5,
-    "three_day_mm": 19.2
+    "three_day_mm": 17.8
    }
   },
   "Madurai": {
    "level": 1,
    "level_name": "Watch",
    "reasons": [
-    "Watch: 1-day rainfall of 32 mm expected today"
+    "Watch: 3-day rainfall of 72 mm expected today"
    ],
    "rain": {
-    "2026-11-26": {
-     "r1": 31.6,
-     "r3": 75.1,
+    "2026-11-27": {
+     "r1": 5.2,
+     "r3": 71.7,
      "level": 1
     },
-    "2026-11-27": {
-     "r1": 4.0,
-     "r3": 69.3,
+    "2026-11-28": {
+     "r1": 9.9,
+     "r3": 47.9,
      "level": 0
     },
-    "2026-11-28": {
-     "r1": 17.6,
-     "r3": 53.2,
+    "2026-11-29": {
+     "r1": 1.2,
+     "r3": 16.3,
      "level": 0
     }
    },
@@ -855,6 +781,15 @@
      "name": "Vaigai at Madurai",
      "peak_7d_m3s": 18,
      "level": 0
+    }
+   ],
+   "why": [
+    {
+     "lvl": 1,
+     "k": "fc_r3",
+     "s": "forecast",
+     "mm": 72,
+     "lead": 0
     }
    ],
    "signals": {
@@ -877,11 +812,6 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 18.8,
-    "three_day_mm": 18.8,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 11.4,
     "three_day_mm": 19.4
@@ -892,19 +822,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 9.7,
-     "r3": 52.9,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 2.7,
-     "r3": 28.9,
+     "r1": 1.6,
+     "r3": 27.8,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 7.4,
-     "r3": 19.8,
+     "r1": 6.8,
+     "r3": 18.1,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 8.4,
      "level": 0
     }
    },
@@ -917,14 +847,9 @@
     "avg_mm": 22.43,
     "max_mm": null
    },
-   "imd": {
-    "last_day_mm": 13.9,
-    "three_day_mm": 43.9,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 7.1,
-    "three_day_mm": 30.1
+    "three_day_mm": 27.5
    }
   },
   "Nagapattinam": {
@@ -932,19 +857,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 2.5,
-     "r3": 43.8,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 1.2,
-     "r3": 25.6,
+     "r1": 0.7,
+     "r3": 25.1,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 7.3,
-     "r3": 11.0,
+     "r1": 9.1,
+     "r3": 12.3,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 9.8,
      "level": 0
     }
    },
@@ -957,44 +882,46 @@
     "avg_mm": 37.2,
     "max_mm": 91.8
    },
-   "imd": {
-    "last_day_mm": 36.4,
-    "three_day_mm": 67.3,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 8.8,
-    "three_day_mm": 24.5
+    "three_day_mm": 20.4
    }
   },
   "Namakkal": {
    "level": 1,
    "level_name": "Watch",
    "reasons": [
-    "Watch: 3-day rainfall of 58 mm expected today",
-    "Watch: IMD's rain-gauge analysis shows 109 mm over 3 days to 26 Nov"
+    "Watch: 1-day rainfall of 23 mm expected tomorrow"
    ],
    "rain": {
-    "2026-11-26": {
-     "r1": 6.7,
-     "r3": 57.5,
-     "level": 1
-    },
     "2026-11-27": {
-     "r1": 4.7,
-     "r3": 38.7,
+     "r1": 6.6,
+     "r3": 40.6,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 19.4,
-     "r3": 30.8,
+     "r1": 22.7,
+     "r3": 36.0,
+     "level": 1
+    },
+    "2026-11-29": {
+     "r1": 4.1,
+     "r3": 33.4,
      "level": 0
     }
    },
    "rivers": [],
+   "why": [
+    {
+     "lvl": 1,
+     "k": "fc_r1",
+     "s": "forecast",
+     "mm": 23,
+     "lead": 1
+    }
+   ],
    "signals": {
-    "forecast": 1,
-    "imd": 1
+    "forecast": 1
    },
    "gauge": {
     "report_date": "2026-11-26",
@@ -1008,53 +935,40 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 52.1,
-    "three_day_mm": 109.1,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 9.8,
-    "three_day_mm": 31.2
+    "three_day_mm": 13.7
    }
   },
   "Nilgiris": {
-   "level": 1,
-   "level_name": "Watch",
-   "reasons": [
-    "Watch: IMD's rain-gauge analysis shows 71 mm over 3 days to 26 Nov"
-   ],
+   "level": 0,
+   "level_name": "Low",
+   "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 3.5,
-     "r3": 27.9,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 3.8,
-     "r3": 24.5,
+     "r1": 4.1,
+     "r3": 24.8,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 4.0,
-     "r3": 11.3,
+     "r1": 4.7,
+     "r3": 12.3,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 23.2,
+     "r3": 32.0,
      "level": 0
     }
    },
    "rivers": [],
    "signals": {
-    "forecast": 0,
-    "imd": 1
+    "forecast": 0
    },
    "gauge": {
     "report_date": "2026-11-26",
     "avg_mm": 23.5,
     "max_mm": 83.0
-   },
-   "imd": {
-    "last_day_mm": 53.7,
-    "three_day_mm": 70.6,
-    "date": "2026-11-26"
    },
    "satellite": {
     "last_day_mm": 38.3,
@@ -1066,19 +980,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 2.8,
-     "r3": 37.2,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 5.7,
-     "r3": 22.7,
+     "r1": 3.9,
+     "r3": 20.1,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 13.4,
-     "r3": 21.9,
+     "r1": 7.7,
+     "r3": 13.6,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.1,
+     "r3": 11.7,
      "level": 0
     }
    },
@@ -1091,14 +1005,9 @@
     "avg_mm": 25.82,
     "max_mm": 68.0
    },
-   "imd": {
-    "last_day_mm": 24.0,
-    "three_day_mm": 28.5,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 10.9,
-    "three_day_mm": 17.5
+    "three_day_mm": 13.5
    }
   },
   "Pudukkottai": {
@@ -1106,19 +1015,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 15.6,
-     "r3": 55.6,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 0.4,
-     "r3": 43.4,
+     "r1": 2.1,
+     "r3": 44.7,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 10.0,
-     "r3": 26.0,
+     "r1": 10.5,
+     "r3": 27.8,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.1,
+     "r3": 12.7,
      "level": 0
     }
    },
@@ -1131,43 +1040,35 @@
     "avg_mm": 13.17,
     "max_mm": null
    },
-   "imd": {
-    "last_day_mm": 27.3,
-    "three_day_mm": 35.2,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 24.3,
     "three_day_mm": 32.9
    }
   },
   "Ramanathapuram": {
-   "level": 1,
-   "level_name": "Watch",
-   "reasons": [
-    "Watch: IMD's rain-gauge analysis shows 48 mm over 3 days to 26 Nov"
-   ],
+   "level": 0,
+   "level_name": "Low",
+   "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 13.2,
-     "r3": 45.0,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 0.8,
-     "r3": 38.3,
+     "r1": 1.3,
+     "r3": 36.9,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 14.0,
-     "r3": 28.0,
+     "r1": 9.2,
+     "r3": 21.8,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 6.1,
+     "r3": 16.6,
      "level": 0
     }
    },
    "rivers": [],
    "signals": {
-    "forecast": 0,
-    "imd": 1
+    "forecast": 0
    },
    "gauge": {
     "report_date": "2026-11-26",
@@ -1181,11 +1082,6 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 42.5,
-    "three_day_mm": 48.2,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 29.5,
     "three_day_mm": 30.8
@@ -1196,19 +1092,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 0.7,
-     "r3": 31.7,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 6.6,
-     "r3": 19.0,
+     "r1": 8.9,
+     "r3": 21.3,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 2.0,
-     "r3": 9.3,
+     "r1": 1.6,
+     "r3": 11.2,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 10.5,
      "level": 0
     }
    },
@@ -1221,14 +1117,9 @@
     "avg_mm": 1.8,
     "max_mm": null
    },
-   "imd": {
-    "last_day_mm": 0.4,
-    "three_day_mm": 3.8,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 2.2,
-    "three_day_mm": 15.4
+    "three_day_mm": 8.1
    }
   },
   "Salem": {
@@ -1236,19 +1127,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 6.2,
-     "r3": 21.7,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 4.5,
-     "r3": 22.0,
+     "r1": 2.7,
+     "r3": 16.2,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 2.6,
-     "r3": 13.3,
+     "r1": 2.9,
+     "r3": 7.8,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 5.6,
      "level": 0
     }
    },
@@ -1278,14 +1169,9 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 24.8,
-    "three_day_mm": 73.7,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 11.9,
-    "three_day_mm": 30.8
+    "three_day_mm": 19.2
    }
   },
   "Sivaganga": {
@@ -1293,19 +1179,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 7.0,
-     "r3": 56.5,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 0.4,
-     "r3": 45.2,
+     "r1": 1.5,
+     "r3": 48.2,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 10.7,
-     "r3": 18.1,
+     "r1": 15.0,
+     "r3": 25.4,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 3.1,
+     "r3": 19.6,
      "level": 0
     }
    },
@@ -1325,11 +1211,6 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 21.3,
-    "three_day_mm": 22.9,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 12.3,
     "three_day_mm": 20.7
@@ -1339,26 +1220,35 @@
    "level": 1,
    "level_name": "Watch",
    "reasons": [
-    "Watch: 1-day rainfall of 32 mm expected today"
+    "Watch: 3-day rainfall of 76 mm expected today"
    ],
    "rain": {
-    "2026-11-26": {
-     "r1": 32.4,
-     "r3": 74.0,
+    "2026-11-27": {
+     "r1": 11.1,
+     "r3": 76.3,
      "level": 1
     },
-    "2026-11-27": {
-     "r1": 4.6,
-     "r3": 64.1,
+    "2026-11-28": {
+     "r1": 12.5,
+     "r3": 61.7,
      "level": 0
     },
-    "2026-11-28": {
-     "r1": 20.3,
-     "r3": 57.3,
+    "2026-11-29": {
+     "r1": 8.8,
+     "r3": 32.4,
      "level": 0
     }
    },
    "rivers": [],
+   "why": [
+    {
+     "lvl": 1,
+     "k": "fc_r3",
+     "s": "forecast",
+     "mm": 76,
+     "lead": 0
+    }
+   ],
    "signals": {
     "forecast": 1
    },
@@ -1394,11 +1284,6 @@
      "rising": true
     }
    ],
-   "imd": {
-    "last_day_mm": 18.6,
-    "three_day_mm": 41.5,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 14.0,
     "three_day_mm": 26.0
@@ -1409,19 +1294,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 24.9,
-     "r3": 67.3,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 1.1,
-     "r3": 46.3,
+     "r1": 2.3,
+     "r3": 47.3,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 18.7,
-     "r3": 44.7,
+     "r1": 10.8,
+     "r3": 37.8,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 13.1,
      "level": 0
     }
    },
@@ -1441,42 +1326,35 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 27.4,
-    "three_day_mm": 45.3,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 12.9,
-    "three_day_mm": 21.3
+    "three_day_mm": 20.2
    }
   },
   "Theni": {
-   "level": 1,
-   "level_name": "Watch",
-   "reasons": [
-    "Watch: 3-day rainfall of 58 mm expected today"
-   ],
+   "level": 0,
+   "level_name": "Low",
+   "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 20.3,
-     "r3": 57.9,
-     "level": 1
-    },
     "2026-11-27": {
-     "r1": 2.6,
-     "r3": 49.9,
+     "r1": 4.9,
+     "r3": 49.2,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 15.7,
-     "r3": 38.6,
+     "r1": 7.4,
+     "r3": 29.6,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 3.2,
+     "r3": 15.5,
      "level": 0
     }
    },
    "rivers": [],
    "signals": {
-    "forecast": 1
+    "forecast": 0
    },
    "gauge": {
     "report_date": "2026-11-26",
@@ -1510,11 +1388,6 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 12.8,
-    "three_day_mm": 13.0,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 11.4,
     "three_day_mm": 16.9
@@ -1525,19 +1398,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 1.9,
-     "r3": 40.2,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 10.8,
-     "r3": 19.1,
+     "r1": 7.7,
+     "r3": 16.6,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 3.6,
-     "r3": 16.3,
+     "r1": 3.8,
+     "r3": 14.0,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 11.5,
      "level": 0
     }
    },
@@ -1578,14 +1451,9 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 5.7,
-    "three_day_mm": 61.0,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 3.3,
-    "three_day_mm": 30.2
+    "three_day_mm": 10.7
    }
   },
   "Thiruvarur": {
@@ -1593,19 +1461,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 2.1,
-     "r3": 48.2,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 1.5,
-     "r3": 20.7,
+     "r1": 0.8,
+     "r3": 20.0,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 16.7,
-     "r3": 20.3,
+     "r1": 8.6,
+     "r3": 11.5,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 9.4,
      "level": 0
     }
    },
@@ -1618,38 +1486,32 @@
     "avg_mm": 11.57,
     "max_mm": null
    },
-   "imd": {
-    "last_day_mm": 21.1,
-    "three_day_mm": 35.6,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 6.9,
-    "three_day_mm": 16.6
+    "three_day_mm": 14.6
    }
   },
   "Thoothukudi": {
-   "level": 2,
-   "level_name": "Warning",
+   "level": 1,
+   "level_name": "Watch",
    "reasons": [
     "Watch: a rain gauge recorded 184 mm in the 24 hours to 8:30 am 26 Nov",
-    "Warning: IMD's rain-gauge analysis shows 146 mm over 3 days to 26 Nov",
     "Watch: satellites measured 52 mm over the last 3 days"
    ],
    "rain": {
-    "2026-11-26": {
-     "r1": 30.6,
-     "r3": 62.6,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 7.7,
-     "r3": 61.6,
+     "r1": 4.1,
+     "r3": 54.7,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 14.9,
-     "r3": 53.2,
+     "r1": 24.8,
+     "r3": 56.2,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 3.9,
+     "r3": 32.8,
      "level": 0
     }
    },
@@ -1663,9 +1525,24 @@
    "signals": {
     "forecast": 0,
     "gauge": 1,
-    "imd": 2,
     "satellite": 1
    },
+   "why": [
+    {
+     "lvl": 1,
+     "k": "gauge",
+     "s": "gauge",
+     "mm": 184,
+     "date": "2026-11-26"
+    },
+    {
+     "lvl": 1,
+     "k": "sat",
+     "s": "satellite",
+     "mm": 52,
+     "up": false
+    }
+   ],
    "gauge": {
     "report_date": "2026-11-26",
     "avg_mm": 30.63,
@@ -1678,36 +1555,29 @@
      "rising": true
     }
    ],
-   "imd": {
-    "last_day_mm": 126.7,
-    "three_day_mm": 145.9,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 44.8,
-    "three_day_mm": 51.8
+    "three_day_mm": 51.6
    }
   },
   "Tiruchirappalli": {
-   "level": 1,
-   "level_name": "Watch",
-   "reasons": [
-    "Watch: IMD's rain-gauge analysis shows 77 mm over 3 days to 26 Nov"
-   ],
+   "level": 0,
+   "level_name": "Low",
+   "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 12.4,
-     "r3": 38.9,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 2.9,
-     "r3": 28.4,
+     "r1": 3.1,
+     "r3": 27.5,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 6.1,
-     "r3": 21.4,
+     "r1": 4.9,
+     "r3": 19.3,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 8.0,
      "level": 0
     }
    },
@@ -1719,8 +1589,7 @@
     }
    ],
    "signals": {
-    "forecast": 0,
-    "imd": 1
+    "forecast": 0
    },
    "gauge": {
     "report_date": "2026-11-26",
@@ -1734,38 +1603,32 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 45.6,
-    "three_day_mm": 77.2,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 24.7,
-    "three_day_mm": 39.9
+    "three_day_mm": 32.0
    }
   },
   "Tirunelveli": {
    "level": 1,
    "level_name": "Watch",
    "reasons": [
-    "Watch: 1-day rainfall of 54 mm expected today",
-    "Watch: IMD's rain-gauge analysis shows 69 mm over 3 days to 26 Nov"
+    "Watch: 3-day rainfall of 90 mm expected today"
    ],
    "rain": {
-    "2026-11-26": {
-     "r1": 53.9,
-     "r3": 102.3,
-     "level": 1
-    },
     "2026-11-27": {
-     "r1": 11.4,
-     "r3": 101.5,
+     "r1": 3.3,
+     "r3": 89.5,
      "level": 1
     },
     "2026-11-28": {
-     "r1": 20.4,
-     "r3": 85.7,
+     "r1": 22.7,
+     "r3": 76.0,
      "level": 1
+    },
+    "2026-11-29": {
+     "r1": 7.9,
+     "r3": 33.9,
+     "level": 0
     }
    },
    "rivers": [
@@ -1775,9 +1638,17 @@
      "level": 0
     }
    ],
+   "why": [
+    {
+     "lvl": 1,
+     "k": "fc_r3",
+     "s": "forecast",
+     "mm": 90,
+     "lead": 0
+    }
+   ],
    "signals": {
-    "forecast": 1,
-    "imd": 1
+    "forecast": 1
    },
    "gauge": {
     "report_date": "2026-11-26",
@@ -1811,11 +1682,6 @@
      "rising": true
     }
    ],
-   "imd": {
-    "last_day_mm": 60.5,
-    "three_day_mm": 68.7,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 35.2,
     "three_day_mm": 47.7
@@ -1826,19 +1692,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 0.6,
-     "r3": 21.9,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 2.2,
-     "r3": 8.2,
+     "r1": 1.4,
+     "r3": 7.4,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 3.6,
-     "r3": 6.4,
+     "r1": 2.6,
+     "r3": 4.6,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 4.0,
      "level": 0
     }
    },
@@ -1858,14 +1724,9 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 26.2,
-    "three_day_mm": 51.7,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 8.6,
-    "three_day_mm": 19.6
+    "three_day_mm": 14.0
    }
   },
   "Tiruppur": {
@@ -1873,19 +1734,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 3.1,
-     "r3": 17.9,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 4.7,
-     "r3": 20.9,
+     "r1": 4.8,
+     "r3": 19.4,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 4.4,
-     "r3": 12.2,
+     "r1": 4.3,
+     "r3": 10.6,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 1.9,
+     "r3": 11.0,
      "level": 0
     }
    },
@@ -1920,14 +1781,9 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 12.3,
-    "three_day_mm": 22.8,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 17.1,
-    "three_day_mm": 19.3
+    "three_day_mm": 19.2
    }
   },
   "Tiruvannamalai": {
@@ -1935,19 +1791,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 2.9,
-     "r3": 34.0,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 5.2,
-     "r3": 23.5,
+     "r1": 7.5,
+     "r3": 26.1,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 4.9,
-     "r3": 13.0,
+     "r1": 2.9,
+     "r3": 13.6,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 10.4,
      "level": 0
     }
    },
@@ -1982,14 +1838,9 @@
      "rising": true
     }
    ],
-   "imd": {
-    "last_day_mm": 29.1,
-    "three_day_mm": 62.9,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 7.0,
-    "three_day_mm": 23.2
+    "three_day_mm": 11.1
    }
   },
   "Vellore": {
@@ -1997,19 +1848,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 1.0,
-     "r3": 37.8,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 2.7,
-     "r3": 16.2,
+     "r1": 4.7,
+     "r3": 18.4,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 2.8,
-     "r3": 6.5,
+     "r1": 2.2,
+     "r3": 8.1,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 6.9,
      "level": 0
     }
    },
@@ -2034,14 +1885,9 @@
      "rising": true
     }
    ],
-   "imd": {
-    "last_day_mm": 27.8,
-    "three_day_mm": 88.0,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 8.1,
-    "three_day_mm": 27.8
+    "three_day_mm": 20.9
    }
   },
   "Viluppuram": {
@@ -2049,19 +1895,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 0.7,
-     "r3": 48.2,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 8.0,
-     "r3": 29.8,
+     "r1": 7.7,
+     "r3": 29.5,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 10.7,
-     "r3": 19.4,
+     "r1": 3.5,
+     "r3": 11.9,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 0.0,
+     "r3": 11.2,
      "level": 0
     }
    },
@@ -2086,14 +1932,9 @@
      "rising": true
     }
    ],
-   "imd": {
-    "last_day_mm": 30.7,
-    "three_day_mm": 86.7,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 5.0,
-    "three_day_mm": 33.5
+    "three_day_mm": 16.0
    }
   },
   "Virudhunagar": {
@@ -2101,19 +1942,19 @@
    "level_name": "Low",
    "reasons": [],
    "rain": {
-    "2026-11-26": {
-     "r1": 10.9,
-     "r3": 62.7,
-     "level": 0
-    },
     "2026-11-27": {
-     "r1": 0.2,
-     "r3": 47.2,
+     "r1": 8.3,
+     "r3": 58.9,
      "level": 0
     },
     "2026-11-28": {
-     "r1": 18.8,
-     "r3": 29.9,
+     "r1": 17.2,
+     "r3": 40.0,
+     "level": 0
+    },
+    "2026-11-29": {
+     "r1": 3.0,
+     "r3": 28.5,
      "level": 0
     }
    },
@@ -2163,11 +2004,6 @@
      "rising": false
     }
    ],
-   "imd": {
-    "last_day_mm": 22.5,
-    "three_day_mm": 25.4,
-    "date": "2026-11-26"
-   },
    "satellite": {
     "last_day_mm": 7.3,
     "three_day_mm": 13.7
