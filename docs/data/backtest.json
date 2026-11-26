@@ -1,20 +1,27 @@
 {
  "generated": "2026-11-26",
- "percentile": 0.985,
+ "signals": [
+  "forecast",
+  "imd",
+  "gauge",
+  "river",
+  "reservoir"
+ ],
+ "setting": "balanced",
  "summary": {
   "train": {
-   "hits": 26,
+   "hits": 27,
    "pairs": 27,
-   "false_alert_days": 1054,
-   "alert_days_per_district_season": 3.07,
+   "false_alert_days": 658,
+   "alert_days_per_district_season": 2.16,
    "first_year": 2015,
-   "last_year": 2021
+   "last_year": 2022
   },
   "test": {
-   "hits": 18,
+   "hits": 19,
    "pairs": 20,
-   "false_alert_days": 641,
-   "alert_days_per_district_season": 2.62,
+   "false_alert_days": 480,
+   "alert_days_per_district_season": 2.53,
    "first_year": 2022,
    "last_year": 2026
   },
@@ -23,15 +30,76 @@
     "hits": 9,
     "pairs": 27,
     "false_alert_days": 27,
-    "alert_days_per_district_season": 0.08,
+    "alert_days_per_district_season": 0.09,
     "first_year": 2015,
-    "last_year": 2021
+    "last_year": 2022
    },
    "test": {
     "hits": 11,
     "pairs": 20,
     "false_alert_days": 25,
-    "alert_days_per_district_season": 0.1,
+    "alert_days_per_district_season": 0.13,
+    "first_year": 2022,
+    "last_year": 2026
+   }
+  },
+  "high_sensitivity": {
+   "train": {
+    "hits": 27,
+    "pairs": 27,
+    "false_alert_days": 658,
+    "alert_days_per_district_season": 2.16,
+    "first_year": 2015,
+    "last_year": 2022
+   },
+   "test": {
+    "hits": 19,
+    "pairs": 20,
+    "false_alert_days": 480,
+    "alert_days_per_district_season": 2.53,
+    "first_year": 2022,
+    "last_year": 2026
+   },
+   "percentile": 0.997
+  },
+  "by_signal_test": {
+   "forecast": {
+    "hits": 15,
+    "pairs": 20,
+    "false_alert_days": 136,
+    "alert_days_per_district_season": 0.72,
+    "first_year": 2022,
+    "last_year": 2026
+   },
+   "imd": {
+    "hits": 18,
+    "pairs": 20,
+    "false_alert_days": 355,
+    "alert_days_per_district_season": 1.87,
+    "first_year": 2022,
+    "last_year": 2026
+   },
+   "gauge": {
+    "hits": 0,
+    "pairs": 20,
+    "false_alert_days": 13,
+    "alert_days_per_district_season": 0.07,
+    "first_year": 2022,
+    "last_year": 2026
+   },
+   "river": {
+    "hits": 2,
+    "pairs": 20,
+    "false_alert_days": 12,
+    "alert_days_per_district_season": 0.06,
+    "first_year": 2022,
+    "last_year": 2026
+   },
+   "reservoir": {
+    "hits": 0,
+    "pairs": 20,
+    "false_alert_days": 0,
+    "alert_days_per_district_season": 0.0,
     "first_year": 2022,
     "last_year": 2026
    }
@@ -53,7 +121,20 @@
     "Cuddalore",
     "Viluppuram"
    ],
-   "missed": []
+   "missed": [],
+   "caught_by": [
+    "forecast",
+    "imd",
+    "river"
+   ],
+   "hit_high": [
+    "Chennai",
+    "Kancheepuram",
+    "Chengalpattu",
+    "Thiruvallur",
+    "Cuddalore",
+    "Viluppuram"
+   ]
   },
   {
    "id": "2015-dec",
@@ -69,7 +150,17 @@
     "Thiruvallur",
     "Cuddalore"
    ],
-   "missed": []
+   "missed": [],
+   "caught_by": [
+    "imd"
+   ],
+   "hit_high": [
+    "Chennai",
+    "Kancheepuram",
+    "Chengalpattu",
+    "Thiruvallur",
+    "Cuddalore"
+   ]
   },
   {
    "id": "2019-nilgiris",
@@ -79,10 +170,16 @@
    "set": "train",
    "source": "https://www.deccanherald.com/india/five-killed-in-rains-in-nilgiris-1704-rescued-753267.html",
    "hit": [
+    "Nilgiris",
     "Coimbatore"
    ],
-   "missed": [
-    "Nilgiris"
+   "missed": [],
+   "caught_by": [
+    "imd"
+   ],
+   "hit_high": [
+    "Nilgiris",
+    "Coimbatore"
    ]
   },
   {
@@ -99,7 +196,18 @@
     "Cuddalore",
     "Viluppuram"
    ],
-   "missed": []
+   "missed": [],
+   "caught_by": [
+    "forecast",
+    "imd"
+   ],
+   "hit_high": [
+    "Chennai",
+    "Chengalpattu",
+    "Kancheepuram",
+    "Cuddalore",
+    "Viluppuram"
+   ]
   },
   {
    "id": "2020-burevi",
@@ -115,7 +223,18 @@
     "Thiruvarur",
     "Thanjavur"
    ],
-   "missed": []
+   "missed": [],
+   "caught_by": [
+    "forecast",
+    "imd"
+   ],
+   "hit_high": [
+    "Cuddalore",
+    "Nagapattinam",
+    "Mayiladuthurai",
+    "Thiruvarur",
+    "Thanjavur"
+   ]
   },
   {
    "id": "2021-nov",
@@ -130,7 +249,19 @@
     "Kancheepuram",
     "Thiruvallur"
    ],
-   "missed": []
+   "missed": [],
+   "caught_by": [
+    "forecast",
+    "gauge",
+    "imd",
+    "river"
+   ],
+   "hit_high": [
+    "Chennai",
+    "Chengalpattu",
+    "Kancheepuram",
+    "Thiruvallur"
+   ]
   },
   {
    "id": "2023-michaung",
@@ -145,7 +276,17 @@
     "Kancheepuram",
     "Chengalpattu"
    ],
-   "missed": []
+   "missed": [],
+   "caught_by": [
+    "forecast",
+    "imd"
+   ],
+   "hit_high": [
+    "Chennai",
+    "Thiruvallur",
+    "Kancheepuram",
+    "Chengalpattu"
+   ]
   },
   {
    "id": "2023-south",
@@ -160,7 +301,18 @@
     "Tenkasi",
     "Kanyakumari"
    ],
-   "missed": []
+   "missed": [],
+   "caught_by": [
+    "forecast",
+    "imd",
+    "river"
+   ],
+   "hit_high": [
+    "Tirunelveli",
+    "Thoothukudi",
+    "Tenkasi",
+    "Kanyakumari"
+   ]
   },
   {
    "id": "2024-fengal",
@@ -177,7 +329,19 @@
     "Krishnagiri",
     "Dharmapuri"
    ],
-   "missed": []
+   "missed": [],
+   "caught_by": [
+    "forecast",
+    "imd"
+   ],
+   "hit_high": [
+    "Viluppuram",
+    "Kallakurichi",
+    "Tiruvannamalai",
+    "Cuddalore",
+    "Krishnagiri",
+    "Dharmapuri"
+   ]
   },
   {
    "id": "2024-dec-south",
@@ -188,10 +352,18 @@
    "source": "https://www.deccanherald.com/amp/story/india%2Ftamil-nadu%2Fsouthern-tamil-nadu-pounded-by-heavy-rains-state-registers-32-excess-rainfall-this-monsoon-3317018",
    "hit": [
     "Tirunelveli",
+    "Thoothukudi",
     "Tenkasi"
    ],
-   "missed": [
-    "Thoothukudi"
+   "missed": [],
+   "caught_by": [
+    "forecast",
+    "imd"
+   ],
+   "hit_high": [
+    "Tirunelveli",
+    "Thoothukudi",
+    "Tenkasi"
    ]
   },
   {
@@ -204,7 +376,9 @@
    "hit": [],
    "missed": [
     "Theni"
-   ]
+   ],
+   "caught_by": [],
+   "hit_high": []
   },
   {
    "id": "2025-ditwah",
@@ -217,8 +391,16 @@
     "Nagapattinam",
     "Thiruvallur"
    ],
-   "missed": []
+   "missed": [],
+   "caught_by": [
+    "forecast",
+    "imd"
+   ],
+   "hit_high": [
+    "Nagapattinam",
+    "Thiruvallur"
+   ]
   }
  ],
- "note": "Backtest uses observed rainfall (ERA5 reanalysis via Open-Meteo) and GloFAS river reanalysis, as if the forecast had been perfect, so real-time skill will be lower. A district flood counts as flagged if Warning or above was reached from the day before it began to its last day. 'Days with no recorded flood' may include real floods missing from our events list. Thresholds come from reanalysis rainfall, which smooths out downpours; live forecasts can show sharper peaks, so the live site may give more warnings than the backtest suggests until it is recalibrated on archived forecasts."
+ "note": "Backtest uses what was observed (rain gauges, satellite, reanalysis rainfall and river flow), as if forecasts had been perfect, so live accuracy will be lower. A district flood counts as caught if Warning or above was reached from the day before it began to its last day. No-flood alert days are counted from July to January and may include real floods missing from our list."
 }

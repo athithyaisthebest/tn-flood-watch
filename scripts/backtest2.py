@@ -28,7 +28,7 @@ DATA = os.path.join(ROOT, "docs", "data")
 HIST = os.path.join(ROOT, "data_hist")
 SPLIT = date(2022, 7, 1)
 QS = [0.95, 0.96, 0.97, 0.975, 0.98, 0.985, 0.99, 0.993, 0.995, 0.997, 0.998]
-GAUGE = {"watch": 64.5, "warning": 115.6, "danger": 204.5}   # IMD heavy / very heavy / extremely heavy
+GAUGE = {"watch": 115.6, "warning": 204.5, "danger": 300.0}   # one gauge: very heavy -> Watch, extremely heavy -> Warning
 FA_WEIGHT = 0.05
 D = date.fromisoformat
 
@@ -94,7 +94,7 @@ def main():
             day, p = D(r["date"]), float(r["storage_pct"])
             prev = last.get(r["reservoir"])
             rising = prev is not None and p > prev[1] and (day - prev[0]).days <= 3
-            lvl = 2 if (p >= 95 and rising) else (1 if (p >= 90 and rising) else 0)
+            lvl = 1 if (p >= 90 and rising) else 0   # reservoirs only ever raise Watch
             if lvl:
                 for dn in (r["downstream"] or "").split(";"):
                     if dn:
@@ -251,7 +251,7 @@ def main():
                                   for k in ["r1", "r3"]}, **th.get("forecast", {})},
             "satellite": th.get("satellite", {}), "imd": th.get("imd", {}),
             "gauge": GAUGE, "river": s["river"],
-            "reservoir": {"watch": "90% full and rising", "warning": "95% full and rising"},
+            "reservoir": {"watch": "90% full and rising"},
         }
     default = "balanced"
     thr["default_setting"] = default

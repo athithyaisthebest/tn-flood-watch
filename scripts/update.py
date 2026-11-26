@@ -74,7 +74,7 @@ def add_observed(out, today, thr):
         print("observed sources unavailable:", e)
         return {"gauges": False, "reservoirs": False, "satellite": False}
     setting = thr.get("settings", {}).get(thr.get("default_setting", ""), {})
-    gauge_t = setting.get("gauge", {"watch": 64.5, "warning": 115.6, "danger": 204.5})
+    gauge_t = setting.get("gauge", {"watch": 115.6, "warning": 204.5, "danger": 300.0})
 
     # rain gauges: today's report (8:30 am yesterday -> 8:30 am today), else yesterday's
     try:
@@ -110,7 +110,7 @@ def add_observed(out, today, thr):
         for x in cur or []:
             p, b = x["storage_pct"], before.get(x["name"])
             rising = b is not None and p > b
-            lvl = 2 if (p >= 95 and rising) else (1 if (p >= 90 and rising) else 0)
+            lvl = 1 if (p >= 90 and rising) else 0   # reservoirs only ever raise Watch
             for n in x["downstream"]:
                 if n in out:
                     out[n].setdefault("reservoirs", []).append({"name": x["name"], "storage_pct": p, "rising": rising})
