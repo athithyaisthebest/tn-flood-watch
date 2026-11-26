@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T02:34+05:30",
+ "updated": "2026-11-27T05:11+05:30",
  "sources_ok": {
   "rain": true,
   "river": true,
@@ -225,8 +225,13 @@
    },
    "rivers": [
     {
+     "name": "Ponnaiyar at Cuddalore",
+     "peak_7d_m3s": 91,
+     "level": 0
+    },
+    {
      "name": "Vellar at Sethiathope",
-     "peak_7d_m3s": 44,
+     "peak_7d_m3s": 447,
      "level": 0
     }
    ],
@@ -281,7 +286,13 @@
      "level": 0
     }
    },
-   "rivers": [],
+   "rivers": [
+    {
+     "name": "Cauvery at Hogenakkal (inflow from Karnataka)",
+     "peak_7d_m3s": 113,
+     "level": 0
+    }
+   ],
    "signals": {
     "forecast": 0
    },
@@ -443,7 +454,12 @@
    "rivers": [
     {
      "name": "Cauvery at Kodumudi",
-     "peak_7d_m3s": 299,
+     "peak_7d_m3s": 311,
+     "level": 0
+    },
+    {
+     "name": "Bhavani at Savandapur",
+     "peak_7d_m3s": 247,
      "level": 0
     }
    ],
@@ -518,7 +534,13 @@
      "level": 0
     }
    },
-   "rivers": [],
+   "rivers": [
+    {
+     "name": "Ponnaiyar at Tirukoilur",
+     "peak_7d_m3s": 89,
+     "level": 0
+    }
+   ],
    "signals": {
     "forecast": 0
    },
@@ -657,7 +679,7 @@
    "rivers": [
     {
      "name": "Amaravathi at Karur",
-     "peak_7d_m3s": 77,
+     "peak_7d_m3s": 395,
      "level": 0
     }
    ],
@@ -717,7 +739,13 @@
      "level": 0
     }
    },
-   "rivers": [],
+   "rivers": [
+    {
+     "name": "Thenpennai near Krishnagiri",
+     "peak_7d_m3s": 23,
+     "level": 0
+    }
+   ],
    "signals": {
     "forecast": 0
    },
@@ -779,7 +807,7 @@
    "rivers": [
     {
      "name": "Vaigai at Madurai",
-     "peak_7d_m3s": 18,
+     "peak_7d_m3s": 216,
      "level": 0
     }
    ],
@@ -1066,7 +1094,13 @@
      "level": 0
     }
    },
-   "rivers": [],
+   "rivers": [
+    {
+     "name": "Gundar at Kamuthi",
+     "peak_7d_m3s": 249,
+     "level": 0
+    }
+   ],
    "signals": {
     "forecast": 0
    },
@@ -1143,7 +1177,13 @@
      "level": 0
     }
    },
-   "rivers": [],
+   "rivers": [
+    {
+     "name": "Cauvery at Mettur",
+     "peak_7d_m3s": 164,
+     "level": 0
+    }
+   ],
    "signals": {
     "forecast": 0
    },
@@ -1310,7 +1350,13 @@
      "level": 0
     }
    },
-   "rivers": [],
+   "rivers": [
+    {
+     "name": "Cauvery at Grand Anicut",
+     "peak_7d_m3s": 433,
+     "level": 0
+    }
+   ],
    "signals": {
     "forecast": 0
    },
@@ -1352,7 +1398,13 @@
      "level": 0
     }
    },
-   "rivers": [],
+   "rivers": [
+    {
+     "name": "Vaigai near Theni",
+     "peak_7d_m3s": 87,
+     "level": 0
+    }
+   ],
    "signals": {
     "forecast": 0
    },
@@ -1495,6 +1547,7 @@
    "level": 1,
    "level_name": "Watch",
    "reasons": [
+    "Watch: Tamirabarani at Srivaikuntam forecast to reach 371 m\u00b3/s",
     "Watch: a rain gauge recorded 184 mm in the 24 hours to 8:30 am 26 Nov",
     "Watch: satellites measured 52 mm over the last 3 days"
    ],
@@ -1518,16 +1571,18 @@
    "rivers": [
     {
      "name": "Tamirabarani at Srivaikuntam",
-     "peak_7d_m3s": 362,
-     "level": 0
+     "peak_7d_m3s": 371,
+     "level": 1
     }
    ],
-   "signals": {
-    "forecast": 0,
-    "gauge": 1,
-    "satellite": 1
-   },
    "why": [
+    {
+     "lvl": 1,
+     "k": "river",
+     "s": "forecast",
+     "name": "Tamirabarani at Srivaikuntam",
+     "q": 371
+    },
     {
      "lvl": 1,
      "k": "gauge",
@@ -1543,6 +1598,11 @@
      "up": false
     }
    ],
+   "signals": {
+    "forecast": 1,
+    "gauge": 1,
+    "satellite": 1
+   },
    "gauge": {
     "report_date": "2026-11-26",
     "avg_mm": 30.63,
@@ -1612,7 +1672,8 @@
    "level": 1,
    "level_name": "Watch",
    "reasons": [
-    "Watch: 3-day rainfall of 90 mm expected today"
+    "Watch: 3-day rainfall of 90 mm expected today",
+    "Watch: Tamirabarani at Tirunelveli forecast to reach 353 m\u00b3/s"
    ],
    "rain": {
     "2026-11-27": {
@@ -1623,7 +1684,7 @@
     "2026-11-28": {
      "r1": 22.7,
      "r3": 76.0,
-     "level": 1
+     "level": 0
     },
     "2026-11-29": {
      "r1": 7.9,
@@ -1634,7 +1695,12 @@
    "rivers": [
     {
      "name": "Tamirabarani at Tirunelveli",
-     "peak_7d_m3s": 192,
+     "peak_7d_m3s": 353,
+     "level": 1
+    },
+    {
+     "name": "Tamirabarani near Papanasam",
+     "peak_7d_m3s": 125,
      "level": 0
     }
    ],
@@ -1645,6 +1711,13 @@
      "s": "forecast",
      "mm": 90,
      "lead": 0
+    },
+    {
+     "lvl": 1,
+     "k": "river",
+     "s": "forecast",
+     "name": "Tamirabarani at Tirunelveli",
+     "q": 353
     }
    ],
    "signals": {
@@ -1864,7 +1937,13 @@
      "level": 0
     }
    },
-   "rivers": [],
+   "rivers": [
+    {
+     "name": "Palar at Vellore",
+     "peak_7d_m3s": 31,
+     "level": 0
+    }
+   ],
    "signals": {
     "forecast": 0
    },
