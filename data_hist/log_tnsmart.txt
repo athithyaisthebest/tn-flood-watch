@@ -1,0 +1,5 @@
+===== tnsmart =====
+TN-SMART rain: 854 days found, 0 errors
+wrote 32350 rows to data_hist/tnsmart_rain.csv
+TN-SMART reservoirs: 833 days found
+wrote 73448 rows to data_hist/tnsmart_reservoirs.csv
