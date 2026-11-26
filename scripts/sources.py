@@ -66,11 +66,14 @@ def imd_days(start, end, workdir):
 # ----------------------------------------------------------------------------- NASA IMERG
 def _concept_id(short_name):
     r = requests.get("https://cmr.earthdata.nasa.gov/search/collections.json",
-                     params={"short_name": short_name, "sort_key": "-version"}, timeout=60)
+                     params={"short_name": short_name, "page_size": 50}, timeout=60)
     r.raise_for_status()
     entries = r.json()["feed"]["entry"]
-    v07 = [e for e in entries if e.get("version_id", "").startswith("07")] or entries
-    return v07[0]["id"]
+    if not entries:
+        raise RuntimeError(f"no collection called {short_name}")
+    entries.sort(key=lambda e: e.get("version_id", ""), reverse=True)
+    print("versions found:", [e.get("version_id") for e in entries])
+    return entries[0]["id"]
 
 
 def imerg_days(start, end, run, user, password, workdir):
