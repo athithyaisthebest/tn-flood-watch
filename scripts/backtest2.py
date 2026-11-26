@@ -82,7 +82,9 @@ def main():
     sig = {k: {n: {d: (v, r3) for (d, v), r3 in zip(s.items(), three_day(s).values())} for n, s in ser.items()}
            for k, ser in series.items()}
     gauge = read("tnsmart_rain.csv", "district", "max_gauge_mm")
-    flow = read("glofas_river.csv", "name", "discharge_m3s", "name")
+    # river flow at the corrected channel points if that download exists, else the original points
+    flow = read("glofas_river_v2.csv" if os.path.exists(os.path.join(HIST, "glofas_river_v2.csv")) else "glofas_river.csv",
+                "name", "discharge_m3s", "name")
     flow = {k: v for k, v in flow.items() if k in rivers}
     # reservoirs: day -> district -> level
     res_level = defaultdict(lambda: defaultdict(int))
