@@ -1,0 +1,19 @@
+===== imerg =====
+Traceback (most recent call last):
+  File "/home/runner/work/tn-flood-watch/tn-flood-watch/scripts/fetch_history.py", line 105, in <module>
+    fn()
+  File "/home/runner/work/tn-flood-watch/tn-flood-watch/scripts/fetch_history.py", line 53, in run_imerg
+    rows = grid_rows(sources.imerg_days(date(2015, 1, 1), date(2025, 12, 31), "final", user, pw, "/tmp/imerg"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/tn-flood-watch/tn-flood-watch/scripts/fetch_history.py", line 35, in grid_rows
+    for day, res in gen:
+                    ^^^
+  File "/home/runner/work/tn-flood-watch/tn-flood-watch/scripts/sources.py", line 81, in imerg_days
+    cid = _concept_id(short)
+          ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/tn-flood-watch/tn-flood-watch/scripts/sources.py", line 70, in _concept_id
+    r.raise_for_status()
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://cmr.earthdata.nasa.gov/search/collections.json?short_name=GPM_3IMERGDF&sort_key=-version
+imerg failed: 400 Client Error: Bad Request for url: https://cmr.earthdata.nasa.gov/search/collections.json?short_name=GPM_3IMERGDF&sort_key=-version
