@@ -207,7 +207,7 @@ const MEANING = [
   "Very heavy rain or high river flow likely. Flooding possible; prepare and follow official advice.",
   "Extreme rain or river flow likely. Serious flooding possible; act on official warnings immediately."
 ];
-const SIGNAME = {forecast: "Forecast", satellite: "Satellite", gauge: "Rain gauges", reservoir: "Reservoirs"};
+const SIGNAME = {forecast: "Forecast", satellite: "Satellite", imd: "IMD gauge grid", gauge: "Rain gauges", reservoir: "Reservoirs"};
 const SIGLONG = {forecast: "Rain forecast", imd: "IMD gauge grid", satellite: "NASA satellite", gauge: "Rain gauge", river: "River flow", reservoir: "Reservoir"};
 const SHORT = {"Kancheepuram":"Kanchi","Ramanathapuram":"Ramnad","Tiruchirappalli":"Trichy","Tiruvannamalai":"T'malai","Mayiladuthurai":"M'thurai","Chengalpattu":"Chengal.","Pudukkottai":"Pudukkottai","Virudhunagar":"Virudhunagar","Kallakurichi":"K'kurichi","Thiruvallur":"Tiruvallur","Krishnagiri":"Krishnagiri"};
 
@@ -293,6 +293,7 @@ function select(name) {
       <p class="reason">${d.reasons && d.reasons.length ? d.reasons.map(esc).join("<br>") : "No signal above its threshold."}</p>
       ${d.signals ? `<div class="sigs">${Object.entries(SIGNAME).map(([k, lab]) => `<span class="sig">${lab} ${k in d.signals ? lvlBadge(d.signals[k]) : '<span class="lvl ln">n/a</span>'}</span>`).join("")}</div>` : ""}
       ${d.gauge ? `<p class="muted">Rain gauges (24 h to 8:30 am ${fmtDay(d.gauge.report_date)}): district average ${d.gauge.avg_mm ?? "–"} mm${d.gauge.max_mm ? ", heaviest gauge " + d.gauge.max_mm + " mm" : ""}.</p>` : ""}
+      ${d.imd ? `<p class="muted">IMD gauge-based rain, wettest square: ${d.imd.last_day_mm} mm on ${fmtDay(d.imd.date)}, ${d.imd.three_day_mm} mm over 3 days.</p>` : ""}
       ${d.satellite ? `<p class="muted">Satellite rain, wettest spot: ${d.satellite.last_day_mm} mm yesterday, ${d.satellite.three_day_mm} mm over 3 days.</p>` : ""}
       ${d.reservoirs && d.reservoirs.length ? `<p class="muted">Reservoirs upstream: ${d.reservoirs.map(r => esc(r.name) + " " + r.storage_pct + "%" + (r.rising ? " (rising)" : "")).join(", ")}.</p>` : ""}
       ${days.length ? `<table><thead><tr><th>Day</th><th class="num">Rain that day</th><th class="num">3-day total</th><th>Level</th></tr></thead>

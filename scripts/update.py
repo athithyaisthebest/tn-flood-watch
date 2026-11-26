@@ -119,6 +119,25 @@ def add_observed(out, today, thr):
         print("reservoirs failed:", e)
         ok["reservoirs"] = False
 
+    # IMD gridded rain-gauge analysis (published daily), wettest square in each district, last 3 days
+    imd_t = setting.get("imd", {})
+    if imd_t:
+        try:
+            days = dict(sources.imd_days(today - timedelta(days=3), today, "/tmp/imd"))
+            ok["imd"] = bool(days)
+            for n in out:
+                t = imd_t.get(n)
+                series = [days[k][n][1] for k in sorted(days) if n in days[k] and days[k][n][1] is not None]
+                if not t or not series:
+                    continue
+                r1, r3 = series[-1], sum(series[-3:])
+                lvl = max(level_for(r1, t["r1"]), level_for(r3, t["r3"]))
+                out[n]["imd"] = {"last_day_mm": round(r1, 1), "three_day_mm": round(r3, 1), "date": max(days).isoformat()}
+                _raise(out[n], "imd", lvl, f"IMD's rain-gauge analysis shows {r3:.0f} mm over 3 days to {max(days):%d %b}")
+        except Exception as e:
+            print("IMD failed:", e)
+            ok["imd"] = False
+
     # satellite: NASA IMERG Early daily rain, wettest spot in each district, last 3 days
     user, pw = os.environ.get("EARTHDATA_USERNAME"), os.environ.get("EARTHDATA_PASSWORD")
     sat_t = setting.get("satellite", {})
