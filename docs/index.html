@@ -69,7 +69,7 @@
   th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
   th { color: var(--ink-2); font-weight: 600; font-size: .84rem; }
   td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .list { max-height: 440px; overflow: auto; }
+  .list { max-height: 440px; overflow: auto; padding-right: 6px; }
   .list button { all: unset; cursor: pointer; display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 9px 4px; border-bottom: 1px solid var(--line); min-height: 26px; }
   .list button:hover, .list button:focus-visible { background: #f3f6f8; }
   .muted { color: var(--ink-2); font-size: .9rem; }
@@ -289,7 +289,7 @@ ta: {
   sig: {forecast: "முன்னறிவிப்பு", satellite: "செயற்கைக்கோள்", imd: "IMD மழைமானி தரவு", gauge: "மழைமானிகள்", reservoir: "நீர்த்தேக்கங்கள்", river: "ஆற்று நீரோட்டம்"},
   updated: "புதுப்பிக்கப்பட்டது", ist: "IST", no_above_low: "எந்த மாவட்டமும் 'குறைவு' நிலைக்கு மேல் இல்லை", delayed: "தாமதம்", demo: "முன்னோட்டத்திற்கான மாதிரித் தரவு; உண்மையான முன்னறிவிப்பு அல்ல",
   waiting_h: "தரவுக்காகக் காத்திருக்கிறது", waiting_p: "முதல் நேரடிப் புதுப்பிப்பு இன்னும் இயங்கவில்லை.",
-  flagged: n => n ? `${n} மாவட்டங்களுக்கு எச்சரிக்கை நிலை` : "எந்த மாவட்டத்திற்கும் எச்சரிக்கை இல்லை",
+  flagged: n => n ? `${n} மாவட்டங்கள் 'கவனம்' அல்லது அதற்கு மேல்` : "எல்லா மாவட்டங்களும் 'குறைவு' நிலையில்",
   click_hint: "விவரங்களுக்கு வரைபடத்தில் அல்லது கீழே ஒரு மாவட்டத்தைத் தேர்ந்தெடுங்கள்.", all_districts: "அனைத்து மாவட்டங்கள்",
   nothing: "எந்தக் குறியீடும் தன் வரம்பைத் தாண்டவில்லை.",
   day: "நாள்", rain_day: "அன்றைய மழை", three_day: "3 நாள் மொத்தம்", level: "நிலை", rivers: "ஆறுகள்",
