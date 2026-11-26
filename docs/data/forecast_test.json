@@ -23,7 +23,7 @@
    "2": 0.17,
    "3": 0.07
   },
-  "thresholds": "v2 2026-11-26",
+  "thresholds": "v2 2026-11-27",
   "note": "Uses the forecasts that were actually issued at the time (Open-Meteo Previous Runs archive). Lead 1 = the forecast made the day before. Only rainfall forecasts are tested here; rain gauges, satellite and river signals add warnings as rain starts to fall."
  },
  "events": [

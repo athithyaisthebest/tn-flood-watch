@@ -11,18 +11,18 @@
  "setting": "balanced",
  "summary": {
   "train": {
-   "hits": 26,
+   "hits": 28,
    "pairs": 32,
-   "false_alert_days": 479,
-   "alert_days_per_district_season": 1.58,
+   "false_alert_days": 747,
+   "alert_days_per_district_season": 2.46,
    "first_year": 2015,
    "last_year": 2022
   },
   "test": {
-   "hits": 23,
+   "hits": 24,
    "pairs": 24,
-   "false_alert_days": 528,
-   "alert_days_per_district_season": 2.78,
+   "false_alert_days": 518,
+   "alert_days_per_district_season": 2.73,
    "first_year": 2022,
    "last_year": 2026
   },
@@ -46,47 +46,47 @@
   },
   "high_sensitivity": {
    "train": {
-    "hits": 31,
+    "hits": 32,
     "pairs": 32,
-    "false_alert_days": 7595,
-    "alert_days_per_district_season": 24.98,
+    "false_alert_days": 5534,
+    "alert_days_per_district_season": 18.2,
     "first_year": 2015,
     "last_year": 2022
    },
    "test": {
     "hits": 24,
     "pairs": 24,
-    "false_alert_days": 5283,
-    "alert_days_per_district_season": 27.81,
+    "false_alert_days": 4090,
+    "alert_days_per_district_season": 21.53,
     "first_year": 2022,
     "last_year": 2026
    },
-   "percentile": 0.95,
+   "percentile": 0.97,
    "mode": "max"
   },
-  "mode": "agree",
+  "mode": "max",
   "by_signal_test": {
    "forecast": {
-    "hits": 19,
+    "hits": 16,
     "pairs": 24,
-    "false_alert_days": 268,
-    "alert_days_per_district_season": 1.41,
+    "false_alert_days": 134,
+    "alert_days_per_district_season": 0.71,
     "first_year": 2022,
     "last_year": 2026
    },
    "imd": {
     "hits": 23,
     "pairs": 24,
-    "false_alert_days": 713,
-    "alert_days_per_district_season": 3.75,
+    "false_alert_days": 355,
+    "alert_days_per_district_season": 1.87,
     "first_year": 2022,
     "last_year": 2026
    },
    "satellite": {
-    "hits": 21,
+    "hits": 19,
     "pairs": 24,
-    "false_alert_days": 944,
-    "alert_days_per_district_season": 4.97,
+    "false_alert_days": 514,
+    "alert_days_per_district_season": 2.71,
     "first_year": 2022,
     "last_year": 2026
    },
@@ -99,10 +99,10 @@
     "last_year": 2026
    },
    "river": {
-    "hits": 3,
+    "hits": 6,
     "pairs": 24,
-    "false_alert_days": 29,
-    "alert_days_per_district_season": 0.15,
+    "false_alert_days": 60,
+    "alert_days_per_district_season": 0.32,
     "first_year": 2022,
     "last_year": 2026
    },
@@ -135,8 +135,8 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "river",
-    "satellite"
+    "imd",
+    "river"
    ],
    "hit_high": [
     "Chennai",
@@ -163,9 +163,7 @@
    ],
    "missed": [],
    "caught_by": [
-    "forecast",
-    "river",
-    "satellite"
+    "imd"
    ],
    "hit_high": [
     "Chennai",
@@ -182,16 +180,20 @@
    "end": "2018-08-20",
    "set": "train",
    "source": "https://www.latestly.com/agency-news/cauvery-in-spateinundates-low-lying-areas-swamps-crops-in-tn-328664.html",
-   "hit": [],
+   "hit": [
+    "Dharmapuri"
+   ],
    "missed": [
-    "Dharmapuri",
     "Salem",
     "Erode",
     "Namakkal",
     "Tiruchirappalli"
    ],
-   "caught_by": [],
+   "caught_by": [
+    "river"
+   ],
    "hit_high": [
+    "Dharmapuri",
     "Salem",
     "Erode",
     "Namakkal",
@@ -211,8 +213,7 @@
    ],
    "missed": [],
    "caught_by": [
-    "forecast",
-    "satellite"
+    "imd"
    ],
    "hit_high": [
     "Nilgiris",
@@ -228,16 +229,15 @@
    "source": "https://en.wikipedia.org/wiki/Cyclone_Nivar",
    "hit": [
     "Chennai",
+    "Chengalpattu",
     "Kancheepuram",
     "Cuddalore",
     "Viluppuram"
    ],
-   "missed": [
-    "Chengalpattu"
-   ],
+   "missed": [],
    "caught_by": [
     "forecast",
-    "satellite"
+    "imd"
    ],
    "hit_high": [
     "Chennai",
@@ -264,7 +264,7 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "satellite"
+    "imd"
    ],
    "hit_high": [
     "Cuddalore",
@@ -291,8 +291,8 @@
    "caught_by": [
     "forecast",
     "gauge",
-    "river",
-    "satellite"
+    "imd",
+    "river"
    ],
    "hit_high": [
     "Chennai",
@@ -309,13 +309,13 @@
    "set": "test",
    "source": "https://beta-tnsmart.rimes.int/DATA/Rainfall/daily_reports/rainfall_analysis_2022-11-03.pdf",
    "hit": [
+    "Mayiladuthurai",
     "Cuddalore"
    ],
-   "missed": [
-    "Mayiladuthurai"
-   ],
+   "missed": [],
    "caught_by": [
-    "forecast"
+    "forecast",
+    "imd"
    ],
    "hit_high": [
     "Mayiladuthurai",
@@ -335,7 +335,7 @@
    ],
    "missed": [],
    "caught_by": [
-    "satellite"
+    "imd"
    ],
    "hit_high": [
     "Mayiladuthurai",
@@ -358,7 +358,8 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "satellite"
+    "imd",
+    "river"
    ],
    "hit_high": [
     "Chennai",
@@ -383,8 +384,8 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "river",
-    "satellite"
+    "imd",
+    "river"
    ],
    "hit_high": [
     "Tirunelveli",
@@ -411,8 +412,8 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "river",
-    "satellite"
+    "imd",
+    "river"
    ],
    "hit_high": [
     "Viluppuram",
@@ -438,7 +439,7 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "satellite"
+    "imd"
    ],
    "hit_high": [
     "Tirunelveli",
@@ -458,7 +459,7 @@
    ],
    "missed": [],
    "caught_by": [
-    "satellite"
+    "imd"
    ],
    "hit_high": [
     "Theni"
@@ -478,7 +479,7 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "satellite"
+    "imd"
    ],
    "hit_high": [
     "Nagapattinam",
