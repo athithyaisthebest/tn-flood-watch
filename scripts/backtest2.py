@@ -158,6 +158,8 @@ def main():
         def put(n, d, l, why):
             if l <= 0:
                 return
+            if n.endswith(" upstream"):   # hill catchment rain counts for the district below it
+                n = n[:-len(" upstream")]
             cur = L[n].get(d, (0, set()))
             if l > cur[0]:
                 L[n][d] = (l, {why})

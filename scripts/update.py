@@ -55,12 +55,15 @@ def level_for(value, thr):
     return lvl
 
 
-def _raise(d, signal, lvl, reason):
+def _raise(d, signal, lvl, reason, key=None, **vals):
+    """Record a signal. 'reasons' is English text; 'why' is the same reason as data,
+    so the website can show it in English or Tamil."""
     if lvl <= 0:
         return
     d.setdefault("signals", {})
     d["signals"][signal] = max(d["signals"].get(signal, 0), lvl)
     d["reasons"].append(f"{LEVELS[lvl]}: {reason}")
+    d.setdefault("why", []).append({"lvl": lvl, "k": key or signal, "s": signal, **vals})
 
 
 def add_observed(out, today, thr):
@@ -88,7 +91,8 @@ def add_observed(out, today, thr):
         for n, v in (rep or {}).items():
             if n in out and v.get("max"):
                 _raise(out[n], "gauge", level_for(v["max"], gauge_t),
-                       f"a rain gauge recorded {v['max']:.0f} mm in the 24 hours to 8:30 am {used:%d %b}")
+                       f"a rain gauge recorded {v['max']:.0f} mm in the 24 hours to 8:30 am {used:%d %b}",
+                       "gauge", mm=round(v["max"]), date=used.isoformat())
             if n in out:
                 out[n]["gauge"] = {"report_date": used.isoformat(), "avg_mm": v.get("avg"), "max_mm": v.get("max")}
     except Exception as e:
@@ -114,7 +118,8 @@ def add_observed(out, today, thr):
             for n in x["downstream"]:
                 if n in out:
                     out[n].setdefault("reservoirs", []).append({"name": x["name"], "storage_pct": p, "rising": rising})
-                    _raise(out[n], "reservoir", lvl, f"{x['name']} reservoir is {p:.0f}% full and rising")
+                    _raise(out[n], "reservoir", lvl, f"{x['name']} reservoir is {p:.0f}% full and rising",
+                           "res", name=x["name"], pct=round(p))
     except Exception as e:
         print("reservoirs failed:", e)
         ok["reservoirs"] = False
@@ -125,15 +130,21 @@ def add_observed(out, today, thr):
         try:
             days = dict(sources.imd_days(today - timedelta(days=3), today, "/tmp/imd"))
             ok["imd"] = bool(days)
-            for n in out:
-                t = imd_t.get(n)
-                series = [days[k][n][1] for k in sorted(days) if n in days[k] and days[k][n][1] is not None]
+            for key in list(imd_t):
+                n = key[:-len(" upstream")] if key.endswith(" upstream") else key
+                if n not in out:
+                    continue
+                t = imd_t.get(key)
+                series = [days[k][key][1] for k in sorted(days) if key in days[k] and days[k][key][1] is not None]
                 if not t or not series:
                     continue
                 r1, r3 = series[-1], sum(series[-3:])
                 lvl = max(level_for(r1, t["r1"]), level_for(r3, t["r3"]))
-                out[n]["imd"] = {"last_day_mm": round(r1, 1), "three_day_mm": round(r3, 1), "date": max(days).isoformat()}
-                _raise(out[n], "imd", lvl, f"IMD's rain-gauge analysis shows {r3:.0f} mm over 3 days to {max(days):%d %b}")
+                up = key != n
+                if not up:
+                    out[n]["imd"] = {"last_day_mm": round(r1, 1), "three_day_mm": round(r3, 1), "date": max(days).isoformat()}
+                _raise(out[n], "imd", lvl, f"IMD's rain-gauge analysis shows {r3:.0f} mm over 3 days to {max(days):%d %b}"
+                       + (" in the hills upstream" if up else ""), "imd", mm=round(r3), date=max(days).isoformat(), up=up)
         except Exception as e:
             print("IMD failed:", e)
             ok["imd"] = False
@@ -148,15 +159,21 @@ def add_observed(out, today, thr):
                                                "early", user, pw, "/tmp"):
                 days[day] = res
             ok["satellite"] = bool(days)
-            for n in out:
-                t = sat_t.get(n)
-                series = [days[k][n][1] for k in sorted(days) if n in days[k] and days[k][n][1] is not None]
+            for key in list(sat_t):
+                n = key[:-len(" upstream")] if key.endswith(" upstream") else key
+                if n not in out:
+                    continue
+                t = sat_t.get(key)
+                series = [days[k][key][1] for k in sorted(days) if key in days[k] and days[k][key][1] is not None]
                 if not t or not series:
                     continue
                 r1, r3 = series[-1], sum(series[-3:])
                 lvl = max(level_for(r1, t["r1"]), level_for(r3, t["r3"]))
-                out[n]["satellite"] = {"last_day_mm": round(r1, 1), "three_day_mm": round(r3, 1)}
-                _raise(out[n], "satellite", lvl, f"satellites measured {r3:.0f} mm over the last 3 days")
+                up = key != n
+                if not up:
+                    out[n]["satellite"] = {"last_day_mm": round(r1, 1), "three_day_mm": round(r3, 1)}
+                _raise(out[n], "satellite", lvl, f"satellites measured {r3:.0f} mm over the last 3 days"
+                       + (" in the hills upstream" if up else ""), "sat", mm=round(r3), up=up)
         except Exception as e:
             print("satellite failed:", e)
             ok["satellite"] = False
@@ -237,6 +254,8 @@ def main():
                     lead = (dt - today).days
                     when = "today" if lead == 0 else ("tomorrow" if lead == 1 else f"in {lead} days")
                     d["reasons"] = [f"{LEVELS[lvl]}: {which} rainfall of {amount:.0f} mm expected {when}"]
+                    d["why"] = [{"lvl": lvl, "k": "fc_r1" if l1 >= l3 else "fc_r3", "s": "forecast",
+                                 "mm": round(amount), "lead": lead}]
             d["level"] = best
         # rivers in this district
         for rn, info in rivers.items():
@@ -249,6 +268,7 @@ def main():
                                 "level": rl})
             if rl and (d["level"] is None or rl >= d["level"]):
                 d["reasons"].append(f"{LEVELS[rl]}: {rn} forecast to reach {peak:.0f} m³/s")
+                d.setdefault("why", []).append({"lvl": rl, "k": "river", "s": "forecast", "name": rn, "q": round(peak)})
             if d["level"] is not None:
                 d["level"] = max(d["level"], rl)
         d["signals"] = {"forecast": d["level"] or 0}
@@ -265,6 +285,9 @@ def main():
                 d["reasons"] = [r.replace("Warning:", "Watch:").replace("Danger:", "Watch:") if k_word in r else r
                                 for r in d["reasons"] for k_word in [{"satellite": "satellites", "imd": "IMD", "gauge": "gauge",
                                                                       "reservoir": "reservoir"}.get(k, k)]]
+                for w in d.get("why", []):
+                    if w.get("s") == k:
+                        w["lvl"] = min(w["lvl"], 1)
     for d in out.values():
         if d["level"] is not None:
             d["level"] = max([d["level"]] + list(d["signals"].values()))

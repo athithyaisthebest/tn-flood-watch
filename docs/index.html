@@ -4,100 +4,120 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tamil Nadu Flood Watch</title>
-<meta name="description" content="District-by-district flood risk for Tamil Nadu for the next three days, built from open rainfall and river data. Not an official warning.">
+<meta name="description" content="District-by-district flood risk for Tamil Nadu for the next three days, and a guide to floods, their impact and how to stay safe. In English and Tamil. Not an official warning.">
 <style>
   :root {
-    --ink: #17212b;
-    --ink-2: #4a5866;
-    --line: #dfe4e8;
-    --paper: #f7f8f6;
-    --card: #ffffff;
-    --accent: #0f5c78;
-    --low: #cfe3d4;
-    --watch: #f3d35b;
-    --warning: #ee8a2f;
-    --danger: #c9302c;
-    --nodata: #e6e6e6;
+    --ink: #17212b; --ink-2: #4a5866; --line: #dfe4e8; --paper: #f7f8f6; --card: #ffffff;
+    --accent: #0f5c78; --deep: #0c3a4d;
+    --low: #cfe3d4; --watch: #f3d35b; --warning: #ee8a2f; --danger: #c9302c; --nodata: #e6e6e6;
     --radius: 10px;
   }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Tamil", sans-serif;
-    color: var(--ink); background: var(--paper); line-height: 1.55; font-size: 16px;
-  }
+  * { box-sizing: border-box; min-width: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Tamil", "Latha", sans-serif;
+         color: var(--ink); background: var(--paper); line-height: 1.6; font-size: 16px; overflow-x: clip; }
+  body.ta { line-height: 1.75; }
   a { color: var(--accent); }
   .wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
 
-  header.top { background: var(--ink); color: #fff; }
-  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; letter-spacing: .2px; }
-  .brand .drop { width: 22px; height: 22px; }
-  nav a { color: #cfdbe4; text-decoration: none; margin-left: 18px; font-size: .95rem; }
-  nav a:hover { color: #fff; }
+  header.top { background: var(--ink); color: #fff; position: sticky; top: 0; z-index: 5; }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.1rem; }
+  .brand svg { width: 22px; height: 22px; flex: none; }
+  nav.tabs { display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+  nav.tabs a { color: #cfdbe4; text-decoration: none; padding: 8px 12px; border-radius: 8px; font-size: .95rem; min-height: 40px; display: inline-flex; align-items: center; }
+  nav.tabs a:hover { color: #fff; background: rgba(255,255,255,.08); }
+  nav.tabs a.on { color: #fff; background: rgba(255,255,255,.16); font-weight: 600; }
+  .langbtn { all: unset; cursor: pointer; border: 1px solid rgba(255,255,255,.4); color: #fff; border-radius: 999px; padding: 6px 14px; font-size: .92rem; margin-left: 6px; min-height: 30px; }
+  .langbtn:focus-visible, nav.tabs a:focus-visible { outline: 2px solid #8fd0ea; outline-offset: 2px; }
 
   .notice { background: #fff4d6; border-bottom: 1px solid #f0dea6; font-size: .92rem; }
   .notice .wrap { padding-top: 9px; padding-bottom: 9px; }
   .notice strong { color: #7a5200; }
 
-  .hero { padding: 28px 0 8px; }
-  .hero h1 { font-size: clamp(1.6rem, 3.2vw, 2.3rem); line-height: 1.15; margin: 0 0 8px; max-width: 760px; }
-  .hero p { margin: 0; color: var(--ink-2); max-width: 720px; }
-  .status { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 4px; }
+  .view { display: none; }
+  .view.on { display: block; }
+  .hero { padding: 26px 0 8px; }
+  .hero h1, .view > .wrap > h1 { font-size: clamp(1.55rem, 3.2vw, 2.25rem); line-height: 1.18; margin: 0 0 8px; max-width: 820px; text-wrap: balance; }
+  .hero p, .lead { margin: 0; color: var(--ink-2); max-width: 760px; }
+  .status { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0 4px; }
   .chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); font-size: .9rem; }
   .sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; border: 1px solid rgba(0,0,0,.12); }
   .demo { background: #ffe1df; border-color: #f2b1ab; color: #7d1f19; font-weight: 600; }
 
   .main { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 20px; margin: 16px 0 32px; }
-  @media (max-width: 860px) { .main { grid-template-columns: 1fr; } nav a { margin-left: 12px; } }
+  @media (max-width: 860px) { .main { grid-template-columns: 1fr; } }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); }
-  .mapcard { padding: 10px; position: relative; }
+  .mapcard { padding: 10px; }
   #map { width: 100%; height: auto; display: block; }
-  #map path { stroke: #fff; stroke-width: .9; cursor: pointer; transition: opacity .15s; }
+  #map path { stroke: #fff; stroke-width: .9; cursor: pointer; }
   #map path:hover { opacity: .8; }
   #map path.sel { stroke: var(--ink); stroke-width: 2.2; }
   #map text { font-size: 9px; fill: #253340; pointer-events: none; paint-order: stroke; stroke: rgba(255,255,255,.85); stroke-width: 2.5px; }
+  body.ta #map text { font-size: 7.5px; }
   .legend { display: flex; gap: 14px; flex-wrap: wrap; padding: 6px 8px 2px; font-size: .88rem; color: var(--ink-2); }
   .legend span { display: inline-flex; align-items: center; gap: 6px; }
-
   .panel { padding: 18px 20px; }
   .panel h2 { margin: 0 0 4px; font-size: 1.3rem; }
-  .lvl { display: inline-block; padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: .9rem; }
+  .lvl { display: inline-block; padding: 3px 10px; border-radius: 6px; font-weight: 700; font-size: .88rem; white-space: nowrap; }
   .lvl.l0 { background: var(--low); } .lvl.l1 { background: var(--watch); }
   .lvl.l2 { background: var(--warning); color: #fff; } .lvl.l3 { background: var(--danger); color: #fff; }
   .lvl.ln { background: var(--nodata); }
   .reason { margin: 10px 0 14px; color: var(--ink-2); }
+  .reason li { margin-bottom: 4px; }
   table { border-collapse: collapse; width: 100%; font-size: .93rem; }
   th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { color: var(--ink-2); font-weight: 600; font-size: .84rem; text-transform: uppercase; letter-spacing: .4px; }
-  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
-  .list { max-height: 420px; overflow: auto; }
-  .list button { all: unset; cursor: pointer; display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 8px 4px; border-bottom: 1px solid var(--line); }
-  .list button:hover { background: #f3f6f8; }
+  th { color: var(--ink-2); font-weight: 600; font-size: .84rem; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .list { max-height: 440px; overflow: auto; }
+  .list button { all: unset; cursor: pointer; display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 9px 4px; border-bottom: 1px solid var(--line); min-height: 26px; }
+  .list button:hover, .list button:focus-visible { background: #f3f6f8; }
   .muted { color: var(--ink-2); font-size: .9rem; }
+  .back { all: unset; cursor: pointer; color: var(--accent); font-size: .92rem; margin-bottom: 8px; display: inline-block; }
   .sigs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
-  .sig { display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; color: var(--ink-2); }
-  .sig .lvl { font-size: .78rem; padding: 2px 7px; }
-  .back { all: unset; cursor: pointer; color: var(--accent); font-size: .9rem; margin-bottom: 8px; display: inline-block; }
+  .sig { display: inline-flex; align-items: center; gap: 6px; font-size: .86rem; color: var(--ink-2); }
+  .sig .lvl { font-size: .76rem; padding: 2px 7px; }
 
-  section.block { padding: 34px 0; border-top: 1px solid var(--line); }
-  section.block h2 { font-size: 1.55rem; margin: 0 0 6px; }
-  section.block .lead { color: var(--ink-2); max-width: 760px; margin: 0 0 20px; }
-  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-  @media (max-width: 860px) { .grid4, .grid3 { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 520px) { .grid4, .grid3 { grid-template-columns: 1fr; } }
-  .step { padding: 16px; }
-  .step .n { font-size: .8rem; font-weight: 700; color: var(--accent); letter-spacing: .5px; text-transform: uppercase; }
+  .pagehead { padding: 28px 0 6px; }
+  section.block { padding: 30px 0; border-top: 1px solid var(--line); }
+  section.block:first-of-type { border-top: 0; }
+  section.block h2 { font-size: 1.45rem; margin: 0 0 6px; text-wrap: balance; }
+  section.block .lead { margin: 0 0 18px; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+  @media (max-width: 900px) { .grid4, .grid3 { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  @media (max-width: 560px) { .grid4, .grid3, .grid2 { grid-template-columns: 1fr; } }
+  .step { padding: 16px 18px; }
+  .step .n { font-size: .82rem; font-weight: 700; color: var(--accent); }
   .step h3 { margin: 4px 0 6px; font-size: 1.05rem; }
-  .step p { margin: 0; color: var(--ink-2); font-size: .93rem; }
-  .stat { padding: 16px; }
-  .stat .big { font-size: 2rem; font-weight: 750; line-height: 1.1; }
-  .stat .lab { color: var(--ink-2); font-size: .92rem; }
+  .step p { margin: 0; color: var(--ink-2); font-size: .94rem; }
+  .step ul { margin: 6px 0 0; padding-left: 18px; color: var(--ink-2); font-size: .94rem; }
+  .step li { margin-bottom: 7px; }
+  .stat { padding: 16px 18px; }
+  .stat .big { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 750; line-height: 1.1; color: var(--deep); }
+  .stat .lab { color: var(--ink-2); font-size: .92rem; margin-top: 4px; }
   .hit { color: #1d7a3a; font-weight: 600; } .miss { color: var(--danger); font-weight: 600; }
   .tablewrap { overflow-x: auto; }
-  ul.tight { margin: 0; padding-left: 20px; } ul.tight li { margin-bottom: 6px; }
-  footer { background: #eef1f0; border-top: 1px solid var(--line); padding: 24px 0 40px; font-size: .9rem; color: var(--ink-2); }
+  .band { background: var(--deep); color: #eaf4f8; border-radius: var(--radius); padding: 22px; }
+  .band h3 { margin: 0 0 4px; color: #fff; }
+  .band a { color: #9fd6ee; }
+  @media (max-width: 700px) { header.top { position: static; } nav.tabs { flex-wrap: nowrap; overflow-x: auto; width: 100%; } nav.tabs a { white-space: nowrap; flex: none; } .langbtn { flex: none; } }
+  .band p { margin: 0 0 12px; color: #cfe3ec; }
+  .depth { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; align-items: end; }
+  @media (max-width: 560px) { .depth { grid-template-columns: 1fr; } }
+  .depth figure { margin: 0; text-align: center; }
+  .depth svg { width: 100%; max-width: 210px; height: auto; }
+  .depth figcaption { font-size: .93rem; color: #eaf4f8; }
+  .depth figcaption b { display: block; font-size: 1.35rem; color: #fff; }
+  .timeline { list-style: none; margin: 0; padding: 0; border-left: 3px solid var(--line); }
+  .timeline li { position: relative; padding: 0 0 16px 18px; }
+  .timeline li::before { content: ""; position: absolute; left: -8px; top: 6px; width: 13px; height: 13px; border-radius: 50%; background: var(--accent); }
+  .timeline .yr { font-weight: 700; }
+  .sources { font-size: .86rem; color: var(--ink-2); }
+  .sources li { margin-bottom: 4px; overflow-wrap: anywhere; }
+  footer { background: #eef1f0; border-top: 1px solid var(--line); padding: 24px 0 40px; font-size: .9rem; color: var(--ink-2); margin-top: 20px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
@@ -105,123 +125,525 @@
 <header class="top">
   <div class="wrap">
     <div class="brand">
-      <svg class="drop" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C9 7 5 10.5 5 15a7 7 0 0 0 14 0c0-4.5-4-8-7-13z" fill="#5fb3d4"/></svg>
-      Tamil Nadu Flood Watch
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C9 7 5 10.5 5 15a7 7 0 0 0 14 0c0-4.5-4-8-7-13z" fill="#5fb3d4"/></svg>
+      <span data-i="title">Tamil Nadu Flood Watch</span>
     </div>
-    <nav>
-      <a href="#map-section">Map</a>
-      <a href="#how">How it works</a>
-      <a href="#record">Track record</a>
-      <a href="#about">About</a>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#map" data-tab="map" data-i="nav_map">Live map</a>
+      <a href="#learn" data-tab="learn" data-i="nav_learn">Learn about floods</a>
+      <a href="#how" data-tab="how" data-i="nav_how">How it works</a>
+      <a href="#record" data-tab="record" data-i="nav_record">Track record</a>
+      <a href="#about" data-tab="about" data-i="nav_about">About</a>
+      <button class="langbtn" id="langbtn" type="button" aria-label="Switch language">தமிழ்</button>
     </nav>
   </div>
 </header>
 
-<div class="notice">
-  <div class="wrap">
-    <strong>Not an official warning.</strong> For official alerts follow
-    <a href="https://tnsdma.tn.gov.in/" target="_blank" rel="noopener">TNSDMA</a>,
-    <a href="https://mausam.imd.gov.in/chennai/" target="_blank" rel="noopener">IMD Chennai</a> and
-    <a href="https://ffs.india-water.gov.in/" target="_blank" rel="noopener">CWC flood forecasts</a>,
-    and your District Collector. Disaster helpline: 1070 (state), 1077 (district); emergencies: 112.
-  </div>
-</div>
+<div class="notice"><div class="wrap" data-i="notice" data-html></div></div>
 
-<main class="wrap" id="map-section">
+<!-- ============ LIVE MAP ============ -->
+<main class="view wrap" id="v-map">
   <div class="hero">
-    <h1>Flood risk for every district in Tamil Nadu, for the next three days</h1>
-    <p>Built only from open data: rainfall forecasts, NASA satellite rainfall, the state's rain gauges, river-flow forecasts and reservoir levels, each checked against the district's own history. Updated every three hours.</p>
+    <h1 data-i="hero_h1">Flood risk for every district in Tamil Nadu, for the next three days</h1>
+    <p data-i="hero_p"></p>
     <div class="status" id="status"></div>
   </div>
-
   <div class="main">
     <div class="card mapcard">
       <svg id="map" role="img" aria-label="Map of Tamil Nadu districts coloured by flood risk"></svg>
-      <div class="legend">
-        <span><i class="sw" style="background:var(--low)"></i>Low</span>
-        <span><i class="sw" style="background:var(--watch)"></i>Watch</span>
-        <span><i class="sw" style="background:var(--warning)"></i>Warning</span>
-        <span><i class="sw" style="background:var(--danger)"></i>Danger</span>
-        <span><i class="sw" style="background:var(--nodata)"></i>No data</span>
-      </div>
+      <div class="legend" id="legend"></div>
     </div>
     <div class="card panel" id="panel"></div>
   </div>
 </main>
 
-<section class="block" id="how">
-  <div class="wrap">
-    <h2>How it works</h2>
-    <p class="lead">Floods in Tamil Nadu usually follow very heavy rain over one to three days, often from a cyclone or depression during the north-east monsoon (October to December). The site looks for exactly that, district by district.</p>
-    <div class="grid4">
-      <div class="card step"><div class="n">Step 1</div><h3>Rain: forecast and observed</h3><p>Every three hours: the rainfall forecast for the next three days, NASA satellite rainfall for the wettest spot in each district, and the heaviest reading from Tamil Nadu's ~590 rain gauges.</p></div>
-      <div class="card step"><div class="n">Step 2</div><h3>Rivers and reservoirs</h3><p>Seven-day river-flow forecasts on major rivers (Cauvery, Tamirabarani, Vaigai, Vellar, Adyar and more), and daily storage in the state's reservoirs: a nearly full, rising reservoir raises the level downstream.</p></div>
-      <div class="card step"><div class="n">Step 3</div><h3>Compare with history</h3><p>Each signal is compared with thresholds set from that district's own history since 2015 and tested on real floods. Single rain gauges use IMD's heavy-rain categories.</p></div>
-      <div class="card step"><div class="n">Step 4</div><h3>Show the highest level</h3><p>A district takes the highest level reached by any signal, and its panel shows which signals triggered it, so you can judge for yourself.</p></div>
-    </div>
-    <h3 style="margin:26px 0 8px">What the levels mean</h3>
-    <div class="tablewrap card" style="padding:4px 10px">
-      <table id="levels-table">
-        <thead><tr><th>Level</th><th>Meaning</th><th class="num">1-day rain</th><th class="num">3-day rain</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <p class="muted" id="thr-note" style="margin-top:8px"></p>
-  </div>
-</section>
+<!-- ============ LEARN ============ -->
+<div class="view" id="v-learn"><div class="wrap" id="learn-body"></div></div>
 
-<section class="block" id="record">
+<!-- ============ HOW IT WORKS ============ -->
+<div class="view" id="v-how">
   <div class="wrap">
-    <h2>Track record</h2>
-    <p class="lead" id="record-lead">How well would this system have flagged Tamil Nadu's recent floods? Thresholds were set using floods from 2015 to 2021, then tested on floods from 2022 onwards that the system had never seen.</p>
-    <div id="record-body"></div>
+    <section class="block">
+      <h1 data-i="how_h">How it works</h1>
+      <p class="lead" data-i="how_lead"></p>
+      <div class="grid4" id="how-steps"></div>
+    </section>
+    <section class="block">
+      <h2 data-i="levels_h">What the levels mean</h2>
+      <div class="tablewrap card" style="padding:4px 10px"><table id="levels-table"><thead></thead><tbody></tbody></table></div>
+      <p class="muted" id="thr-note" style="margin-top:8px"></p>
+    </section>
   </div>
-</section>
+</div>
 
-<section class="block" id="about">
+<!-- ============ TRACK RECORD ============ -->
+<div class="view" id="v-record">
   <div class="wrap">
-    <h2>About and limitations</h2>
-    <div class="grid3">
-      <div class="card step"><h3>Why this exists</h3><p>Tamil Nadu's official flood systems are excellent but cover parts of the state, such as Chennai or specific river gauges. This is a simple, open, state-wide view that publishes its own accuracy.</p></div>
-      <div class="card step"><h3>What it can't see</h3><p>Street flooding from blocked drains, dam and lake releases, tank breaches, storm surge and very local cloudbursts. Rain is checked at one point per district, so a downpour can be missed.</p></div>
-      <div class="card step"><h3>Data</h3><p>Forecasts from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (river flow: Copernicus GloFAS). Satellite rain: <a href="https://gpm.nasa.gov/data/imerg" target="_blank" rel="noopener">NASA GPM IMERG</a>. Gauge-based history: IMD gridded rainfall. Rain gauges and reservoirs: <a href="https://beta-tnsmart.rimes.int/" target="_blank" rel="noopener">TN-SMART</a>, Government of Tamil Nadu. Boundaries: <a href="https://github.com/datta07/INDIAN-SHAPEFILES" target="_blank" rel="noopener">INDIAN-SHAPEFILES</a>.</p></div>
-    </div>
-    <p class="muted" style="margin-top:18px">A student project by Athithya, built with help from AI tools. Code and data are open. Found a problem or a flood we missed? Please get in touch.</p>
+    <section class="block">
+      <h1 data-i="rec_h">Track record</h1>
+      <p class="lead" data-i="rec_lead"></p>
+      <div id="record-body"></div>
+    </section>
+    <section class="block">
+      <h2 data-i="fct_h">Test with the forecasts that were really issued</h2>
+      <p class="lead" data-i="fct_lead"></p>
+      <div id="fct-body"></div>
+    </section>
   </div>
-</section>
+</div>
 
-<footer>
+<!-- ============ ABOUT ============ -->
+<div class="view" id="v-about">
   <div class="wrap">
-    Tamil Nadu Flood Watch is an independent project and is not affiliated with the Government of Tamil Nadu, IMD or CWC.
-    Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0).
-    River data: Copernicus Emergency Management Service, GloFAS.
+    <section class="block">
+      <h1 data-i="about_h">About and limitations</h1>
+      <div class="grid3" id="about-cards"></div>
+      <p class="muted" style="margin-top:18px" data-i="about_by"></p>
+    </section>
   </div>
-</footer>
+</div>
+
+<footer><div class="wrap" data-i="footer" data-html></div></footer>
 
 <script>
-const LEVELS = ["Low", "Watch", "Warning", "Danger"];
-const COLORS = ["var(--low)", "var(--watch)", "var(--warning)", "var(--danger)"];
-const MEANING = [
-  "Nothing unusual expected.",
-  "Heavy rain likely. Stay updated and avoid low-lying roads.",
-  "Very heavy rain or high river flow likely. Flooding possible; prepare and follow official advice.",
-  "Extreme rain or river flow likely. Serious flooding possible; act on official warnings immediately."
-];
-const SIGNAME = {forecast: "Forecast", satellite: "Satellite", imd: "IMD gauge grid", gauge: "Rain gauges", reservoir: "Reservoirs"};
-const SIGLONG = {forecast: "Rain forecast", imd: "IMD gauge grid", satellite: "NASA satellite", gauge: "Rain gauge", river: "River flow", reservoir: "Reservoir"};
-const SHORT = {"Kancheepuram":"Kanchi","Ramanathapuram":"Ramnad","Tiruchirappalli":"Trichy","Tiruvannamalai":"T'malai","Mayiladuthurai":"M'thurai","Chengalpattu":"Chengal.","Pudukkottai":"Pudukkottai","Virudhunagar":"Virudhunagar","Kallakurichi":"K'kurichi","Thiruvallur":"Tiruvallur","Krishnagiri":"Krishnagiri"};
+{
+// ---------------------------------------------------------------- text in both languages
+const T = {
+en: {
+  title: "Tamil Nadu Flood Watch", nav_map: "Live map", nav_learn: "Learn about floods", nav_how: "How it works",
+  nav_record: "Track record", nav_about: "About", other_lang: "தமிழ்",
+  notice: `<strong>Not an official warning.</strong> For official alerts follow <a href="https://tnsdma.tn.gov.in/" target="_blank" rel="noopener">TNSDMA</a>, <a href="https://mausam.imd.gov.in/chennai/" target="_blank" rel="noopener">IMD Chennai</a>, <a href="https://ffs.india-water.gov.in/" target="_blank" rel="noopener">CWC</a> and your District Collector. Disaster helpline: 1070 (state), 1077 (district); emergencies: 112.`,
+  hero_h1: "Flood risk for every district in Tamil Nadu, for the next three days",
+  hero_p: "Built only from open data: rainfall forecasts, NASA satellite rainfall, the state's rain gauges, river-flow forecasts and reservoir levels, each checked against the district's own history. Updated every three hours.",
+  levels: ["Low", "Watch", "Warning", "Danger"], nodata: "No data",
+  meaning: ["Nothing unusual expected.", "Heavy rain likely. Stay updated and avoid low-lying roads.",
+            "Very heavy rain or high river flow likely. Flooding possible; prepare and follow official advice.",
+            "Extreme rain or river flow likely. Serious flooding possible; act on official warnings immediately."],
+  sig: {forecast: "Forecast", satellite: "Satellite", imd: "IMD gauge grid", gauge: "Rain gauges", reservoir: "Reservoirs", river: "River flow"},
+  updated: "Updated", ist: "IST", no_above_low: "No district above Low", delayed: "Delayed", demo: "Example data for preview, not a real forecast",
+  waiting_h: "Waiting for data", waiting_p: "The first live update hasn't run yet.",
+  flagged: n => n ? `${n} district${n > 1 ? "s" : ""} flagged` : "No districts flagged",
+  click_hint: "Click a district on the map or below for details.", all_districts: "All districts",
+  nothing: "No signal above its threshold.",
+  day: "Day", rain_day: "Rain that day", three_day: "3-day total", level: "Level", rivers: "Rivers",
+  peak7: "m³/s peak (7 days)",
+  gauge_line: (d, a, m) => `Rain gauges (24 h to 8:30 am ${d}): district average ${a ?? "–"} mm${m ? ", heaviest gauge " + m + " mm" : ""}.`,
+  imd_line: (a, d, b) => `IMD gauge-based rain, wettest square: ${a} mm on ${d}, ${b} mm over 3 days.`,
+  sat_line: (a, b) => `Satellite rain, wettest spot: ${a} mm yesterday, ${b} mm over 3 days.`,
+  res_line: s => `Reservoirs upstream: ${s}.`, rising: "rising",
+  thr_line: (a, b) => `Thresholds here: Warning at ${a} mm in a day or ${b} mm over 3 days.`,
+  past_line: s => `Recorded floods in this district: ${s}.`,
+  when: L => L === 0 ? "today" : L === 1 ? "tomorrow" : `in ${L} days`,
+  why: {
+    fc_r1: w => `${w.mm} mm of rain forecast ${T.en.when(w.lead)}`,
+    fc_r3: w => `${w.mm} mm over 3 days forecast by ${T.en.when(w.lead)}`,
+    river: w => `${w.name} forecast to reach ${w.q} m³/s`,
+    gauge: w => `A rain gauge recorded ${w.mm} mm in the 24 hours to 8:30 am ${fmtDay(w.date)}`,
+    imd: w => `IMD gauge-based rain: ${w.mm} mm over 3 days to ${fmtDay(w.date)}${w.up ? " in the hills upstream" : ""}`,
+    sat: w => `Satellites measured ${w.mm} mm over the last 3 days${w.up ? " in the hills upstream" : ""}`,
+    res: w => `${w.name} reservoir is ${w.pct}% full and rising`,
+  },
+  how_h: "How it works",
+  how_lead: "Floods in Tamil Nadu usually follow very heavy rain over one to three days, often from a cyclone or depression during the north-east monsoon. The site watches for exactly that, district by district.",
+  how: [["Step 1", "Rain: forecast and observed", "Every three hours: the rain forecast for the next three days, NASA satellite rain for the wettest spot in each district, IMD's gauge-based rain, and the heaviest reading from Tamil Nadu's ~590 rain gauges."],
+        ["Step 2", "Rivers, reservoirs and hills", "Seven-day river-flow forecasts on major rivers, including the Cauvery where it enters from Karnataka; reservoir storage; and rain in the hills upstream of Theni, Tirunelveli, Kanyakumari and Coimbatore."],
+        ["Step 3", "Compare with history", "Each signal is compared with thresholds set from that district's own history since 2015 and tested on real floods. A single rain gauge uses IMD's 'extremely heavy rain' level."],
+        ["Step 4", "Show the highest level", "A district takes the highest level from the signals the testing selected; the others can raise Watch. Its panel lists every reason so you can judge for yourself."]],
+  levels_h: "What the levels mean", lv_cols: ["Level", "Meaning", "1-day rain", "3-day rain"], below_watch: "below Watch",
+  thr_note: (n, v) => `Typical values shown; ${n} districts have their own thresholds, tuned to their rainfall history. Version: ${v}.`,
+  rec_h: "Track record",
+  rec_lead: "How well would this system have flagged Tamil Nadu's recent floods? Thresholds and the choice of signals were set using floods up to mid-2022 only, then tested on later floods the system had never seen.",
+  rec_wait: "The backtest results will appear here once the historical analysis has run.",
+  rec_stats: s => [[`${s.test.hits}/${s.test.pairs}`, `district floods flagged at Warning or above in the test period (${s.test.first_year}–${s.test.last_year})`],
+                   [`${s.train.hits}/${s.train.pairs}`, `district floods flagged in the period used to set thresholds (${s.train.first_year}–${s.train.last_year})`],
+                   [`${s.test.alert_days_per_district_season}`, "Warning-or-above days per district per season with no recorded flood (test period)"],
+                   [`${s.baseline.test.hits}/${s.baseline.test.pairs}`, `flagged by a simple baseline (IMD's fixed 115.6 mm/day level), which gave ${s.baseline.test.alert_days_per_district_season} no-flood alert days per district per season`]],
+  rec_cols: ["Flood", "Dates", "Set", "Districts flagged", "Districts missed", "Caught by"], test: "Test", training: "Training",
+  rec_signal: s => `Each signal on its own, test years: ${s}.`,
+  siglong: {forecast: "Rain forecast", imd: "IMD gauge grid", satellite: "NASA satellite", gauge: "Rain gauge", river: "River flow", reservoir: "Reservoir"},
+  fct_h: "Test with the forecasts that were really issued",
+  fct_lead: "The test above uses the rain that actually fell, as if forecasts were perfect. This one uses the forecasts that were really made at the time (archived since January 2024), to show how much warning the live site would have given.",
+  fct_wait: "Results will appear here once the forecast archive has been analysed.",
+  fct_stats: s => [[`${s.caught_by_lead["1"]}/${s.district_floods}`, "district floods with Warning in the forecast made the day before"],
+                   [`${s.caught_by_lead["2"]}/${s.district_floods}`, "with Warning 2 days ahead"],
+                   [`${s.caught_by_lead["3"]}/${s.district_floods}`, "with Warning 3 days ahead"],
+                   [`${s.no_flood_warning_days_per_district_season["1"]}`, "Warning days per district per season with no recorded flood (day-before forecast)"]],
+  fct_cols: ["Flood", "Dates", "Warning given"], lead_txt: L => L === null ? "none from forecast alone" : L === 0 ? "same day" : `${L} day${L > 1 ? "s" : ""} ahead`,
+  about_h: "About and limitations",
+  about: [["Why this exists", "Tamil Nadu's official flood systems are excellent but cover parts of the state, such as Chennai or specific river gauges. This is a simple, open, state-wide view that publishes its own accuracy, and helps people understand floods."],
+          ["What it can't see", "Street flooding from blocked drains, sudden dam and lake releases, tank breaches, storm surge and very local cloudbursts. Treat it as a guide, never as a reason to ignore official warnings."],
+          ["Data", `Forecasts from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (river flow: Copernicus GloFAS). Satellite rain: <a href="https://gpm.nasa.gov/data/imerg" target="_blank" rel="noopener">NASA GPM IMERG</a>. Gauge-based rain: IMD gridded rainfall. Rain gauges and reservoirs: <a href="https://beta-tnsmart.rimes.int/" target="_blank" rel="noopener">TN-SMART</a>, Government of Tamil Nadu. Boundaries: <a href="https://github.com/datta07/INDIAN-SHAPEFILES" target="_blank" rel="noopener">INDIAN-SHAPEFILES</a>.`]],
+  about_by: "A student project by Athithya, built with help from AI tools. Code and data are open on GitHub. Found a problem or a flood we missed? Please get in touch.",
+  footer: `Tamil Nadu Flood Watch is an independent project and is not affiliated with the Government of Tamil Nadu, IMD or CWC. Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0). River data: Copernicus Emergency Management Service, GloFAS.`,
+},
+ta: {
+  title: "தமிழ்நாடு வெள்ள கண்காணிப்பு", nav_map: "நேரடி வரைபடம்", nav_learn: "வெள்ளம் பற்றி அறிக", nav_how: "எப்படி செயல்படுகிறது",
+  nav_record: "துல்லியப் பதிவு", nav_about: "எங்களைப் பற்றி", other_lang: "English",
+  notice: `<strong>இது அதிகாரப்பூர்வ எச்சரிக்கை அல்ல.</strong> அதிகாரப்பூர்வ எச்சரிக்கைகளுக்கு <a href="https://tnsdma.tn.gov.in/" target="_blank" rel="noopener">TNSDMA</a>, <a href="https://mausam.imd.gov.in/chennai/" target="_blank" rel="noopener">இந்திய வானிலை ஆய்வு மையம் (சென்னை)</a>, <a href="https://ffs.india-water.gov.in/" target="_blank" rel="noopener">மத்திய நீர் ஆணையம்</a> மற்றும் உங்கள் மாவட்ட ஆட்சியரைப் பின்பற்றுங்கள். பேரிடர் உதவி எண்: 1070 (மாநிலம்), 1077 (மாவட்டம்); அவசரம்: 112.`,
+  hero_h1: "தமிழ்நாட்டின் ஒவ்வொரு மாவட்டத்திற்கும் அடுத்த மூன்று நாட்களுக்கான வெள்ள அபாயம்",
+  hero_p: "திறந்த தரவுகளை மட்டுமே கொண்டு உருவாக்கப்பட்டது: மழை முன்னறிவிப்பு, நாசா செயற்கைக்கோள் மழை அளவு, மாநில மழைமானிகள், ஆற்று நீரோட்ட முன்னறிவிப்பு மற்றும் நீர்த்தேக்க அளவுகள். ஒவ்வொன்றும் அந்த மாவட்டத்தின் கடந்தகால வரலாற்றுடன் ஒப்பிடப்படுகிறது. மூன்று மணி நேரத்திற்கு ஒருமுறை புதுப்பிக்கப்படுகிறது.",
+  levels: ["குறைவு", "கவனம்", "எச்சரிக்கை", "அபாயம்"], nodata: "தரவு இல்லை",
+  meaning: ["அசாதாரணமாக எதுவும் எதிர்பார்க்கப்படவில்லை.", "கனமழை பெய்யக்கூடும். தகவல்களைத் தொடர்ந்து கவனியுங்கள்; தாழ்வான சாலைகளைத் தவிருங்கள்.",
+            "மிகக் கனமழை அல்லது ஆற்றில் அதிக நீரோட்டம் வாய்ப்பு. வெள்ளம் ஏற்படலாம்; தயாராக இருங்கள், அதிகாரப்பூர்வ அறிவுரைகளைப் பின்பற்றுங்கள்.",
+            "அதீத மழை அல்லது நீரோட்டம் வாய்ப்பு. கடுமையான வெள்ளம் ஏற்படலாம்; அதிகாரப்பூர்வ எச்சரிக்கைகளின்படி உடனே செயல்படுங்கள்."],
+  sig: {forecast: "முன்னறிவிப்பு", satellite: "செயற்கைக்கோள்", imd: "IMD மழைமானி தரவு", gauge: "மழைமானிகள்", reservoir: "நீர்த்தேக்கங்கள்", river: "ஆற்று நீரோட்டம்"},
+  updated: "புதுப்பிக்கப்பட்டது", ist: "IST", no_above_low: "எந்த மாவட்டமும் 'குறைவு' நிலைக்கு மேல் இல்லை", delayed: "தாமதம்", demo: "முன்னோட்டத்திற்கான மாதிரித் தரவு; உண்மையான முன்னறிவிப்பு அல்ல",
+  waiting_h: "தரவுக்காகக் காத்திருக்கிறது", waiting_p: "முதல் நேரடிப் புதுப்பிப்பு இன்னும் இயங்கவில்லை.",
+  flagged: n => n ? `${n} மாவட்டங்களுக்கு எச்சரிக்கை நிலை` : "எந்த மாவட்டத்திற்கும் எச்சரிக்கை இல்லை",
+  click_hint: "விவரங்களுக்கு வரைபடத்தில் அல்லது கீழே ஒரு மாவட்டத்தைத் தேர்ந்தெடுங்கள்.", all_districts: "அனைத்து மாவட்டங்கள்",
+  nothing: "எந்தக் குறியீடும் தன் வரம்பைத் தாண்டவில்லை.",
+  day: "நாள்", rain_day: "அன்றைய மழை", three_day: "3 நாள் மொத்தம்", level: "நிலை", rivers: "ஆறுகள்",
+  peak7: "கன மீ/வி உச்சம் (7 நாட்கள்)",
+  gauge_line: (d, a, m) => `மழைமானிகள் (${d} காலை 8:30 வரை 24 மணி நேரம்): மாவட்ட சராசரி ${a ?? "–"} மி.மீ${m ? ", அதிகபட்சம் " + m + " மி.மீ" : ""}.`,
+  imd_line: (a, d, b) => `IMD மழைமானி அடிப்படையிலான மழை (அதிக மழை பெய்த பகுதி): ${d} அன்று ${a} மி.மீ, மூன்று நாட்களில் ${b} மி.மீ.`,
+  sat_line: (a, b) => `செயற்கைக்கோள் மழை (அதிக மழை பெய்த இடம்): நேற்று ${a} மி.மீ, மூன்று நாட்களில் ${b} மி.மீ.`,
+  res_line: s => `மேல்பகுதி நீர்த்தேக்கங்கள்: ${s}.`, rising: "உயர்கிறது",
+  thr_line: (a, b) => `இந்த மாவட்டத்தின் வரம்பு: ஒரு நாளில் ${a} மி.மீ அல்லது மூன்று நாட்களில் ${b} மி.மீ மழை பெய்தால் 'எச்சரிக்கை'.`,
+  past_line: s => `இந்த மாவட்டத்தில் பதிவான வெள்ளங்கள்: ${s}.`,
+  when: L => L === 0 ? "இன்று" : L === 1 ? "நாளை" : `${L} நாட்களில்`,
+  why: {
+    fc_r1: w => `${T.ta.when(w.lead)} ${w.mm} மி.மீ மழை முன்னறிவிப்பு`,
+    fc_r3: w => `${T.ta.when(w.lead)} வரை மூன்று நாட்களில் ${w.mm} மி.மீ மழை முன்னறிவிப்பு`,
+    river: w => `${w.name}: நீரோட்டம் ${w.q} கன மீ/வி வரை உயரும் என முன்னறிவிப்பு`,
+    gauge: w => `${fmtDay(w.date)} காலை 8:30 வரையிலான 24 மணி நேரத்தில் ஒரு மழைமானியில் ${w.mm} மி.மீ மழை பதிவு`,
+    imd: w => `IMD மழைமானி அடிப்படையிலான தரவு: ${fmtDay(w.date)} வரை மூன்று நாட்களில் ${w.mm} மி.மீ${w.up ? " (மேல்பகுதி மலைகளில்)" : ""}`,
+    sat: w => `கடந்த மூன்று நாட்களில் செயற்கைக்கோள் ${w.mm} மி.மீ மழையை அளவிட்டது${w.up ? " (மேல்பகுதி மலைகளில்)" : ""}`,
+    res: w => `${w.name} நீர்த்தேக்கம் ${w.pct}% நிரம்பியுள்ளது; நீர்மட்டம் உயர்கிறது`,
+  },
+  how_h: "எப்படி செயல்படுகிறது",
+  how_lead: "தமிழ்நாட்டில் வெள்ளம் பொதுவாக ஒன்று முதல் மூன்று நாட்கள் பெய்யும் மிகக் கனமழைக்குப் பிறகு ஏற்படுகிறது; பெரும்பாலும் வடகிழக்குப் பருவமழைக் காலத்தில் புயல் அல்லது காற்றழுத்தத் தாழ்வு நிலையால். இந்தத் தளம் ஒவ்வொரு மாவட்டத்திலும் அதையே கண்காணிக்கிறது.",
+  how: [["படி 1", "மழை: முன்னறிவிப்பும் பதிவும்", "மூன்று மணி நேரத்திற்கு ஒருமுறை: அடுத்த மூன்று நாட்களுக்கான மழை முன்னறிவிப்பு, ஒவ்வொரு மாவட்டத்திலும் அதிக மழை பெய்த இடத்தின் நாசா செயற்கைக்கோள் தரவு, IMD மழைமானி அடிப்படையிலான தரவு, தமிழ்நாட்டின் சுமார் 590 மழைமானிகளில் அதிகபட்ச அளவு."],
+        ["படி 2", "ஆறுகள், நீர்த்தேக்கங்கள், மலைகள்", "முக்கிய ஆறுகளுக்கான ஏழு நாள் நீரோட்ட முன்னறிவிப்பு (கர்நாடகாவிலிருந்து காவிரி நுழையும் இடம் உட்பட); நீர்த்தேக்க இருப்பு; தேனி, திருநெல்வேலி, கன்னியாகுமரி, கோயம்புத்தூர் மாவட்டங்களின் மேல்பகுதி மலைகளில் பெய்யும் மழை."],
+        ["படி 3", "வரலாற்றுடன் ஒப்பீடு", "ஒவ்வொரு குறியீடும் 2015 முதல் அந்த மாவட்டத்தின் சொந்த வரலாற்றிலிருந்து அமைக்கப்பட்டு, உண்மையான வெள்ளங்களில் சோதிக்கப்பட்ட வரம்புகளுடன் ஒப்பிடப்படுகிறது. தனி மழைமானிக்கு IMD-யின் 'அதீத கனமழை' அளவு பயன்படுத்தப்படுகிறது."],
+        ["படி 4", "அதிகபட்ச நிலையைக் காட்டுதல்", "சோதனையில் தேர்ந்தெடுக்கப்பட்ட குறியீடுகளில் அதிகபட்ச நிலையே மாவட்டத்தின் நிலை; மற்றவை 'கவனம்' நிலை வரை மட்டும் உயர்த்தும். ஒவ்வொரு காரணமும் காட்டப்படுவதால் நீங்களே மதிப்பிடலாம்."]],
+  levels_h: "நிலைகளின் பொருள்", lv_cols: ["நிலை", "பொருள்", "1 நாள் மழை", "3 நாள் மழை"], below_watch: "'கவனம்' நிலைக்குக் கீழ்",
+  thr_note: (n, v) => `பொதுவான மதிப்புகள் காட்டப்பட்டுள்ளன; ${n} மாவட்டங்களுக்கு அவற்றின் மழை வரலாற்றின்படி தனி வரம்புகள் உள்ளன. பதிப்பு: ${v}.`,
+  rec_h: "துல்லியப் பதிவு",
+  rec_lead: "தமிழ்நாட்டின் சமீபத்திய வெள்ளங்களை இந்த அமைப்பு எவ்வளவு சரியாகக் கண்டறிந்திருக்கும்? வரம்புகளும் குறியீடுகளும் 2022 நடுப்பகுதி வரையிலான வெள்ளங்களை மட்டும் கொண்டு அமைக்கப்பட்டன; பின்னர் அமைப்பு இதுவரை பார்க்காத வெள்ளங்களில் சோதிக்கப்பட்டன.",
+  rec_wait: "வரலாற்றுப் பகுப்பாய்வு முடிந்ததும் முடிவுகள் இங்கே தோன்றும்.",
+  rec_stats: s => [[`${s.test.hits}/${s.test.pairs}`, `சோதனைக் காலத்தில் (${s.test.first_year}–${s.test.last_year}) 'எச்சரிக்கை' அல்லது அதற்கு மேல் கண்டறியப்பட்ட மாவட்ட வெள்ளங்கள்`],
+                   [`${s.train.hits}/${s.train.pairs}`, `வரம்புகளை அமைக்கப் பயன்பட்ட காலத்தில் (${s.train.first_year}–${s.train.last_year}) கண்டறியப்பட்டவை`],
+                   [`${s.test.alert_days_per_district_season}`, "வெள்ளம் பதிவாகாத நிலையில் ஒரு பருவத்திற்கு ஒரு மாவட்டத்தில் 'எச்சரிக்கை' நாட்கள் (சோதனைக் காலம்)"],
+                   [`${s.baseline.test.hits}/${s.baseline.test.pairs}`, `எளிய அடிப்படை விதியால் (IMD-யின் நிலையான 115.6 மி.மீ/நாள் அளவு) கண்டறியப்பட்டவை; அதன் தேவையற்ற எச்சரிக்கை நாட்கள் ${s.baseline.test.alert_days_per_district_season}`]],
+  rec_cols: ["வெள்ளம்", "தேதிகள்", "பிரிவு", "கண்டறியப்பட்ட மாவட்டங்கள்", "தவறவிட்ட மாவட்டங்கள்", "கண்டறிந்த குறியீடு"], test: "சோதனை", training: "பயிற்சி",
+  rec_signal: s => `ஒவ்வொரு குறியீடும் தனியாக (சோதனை ஆண்டுகள்): ${s}.`,
+  siglong: {forecast: "மழை முன்னறிவிப்பு", imd: "IMD மழைமானி தரவு", satellite: "நாசா செயற்கைக்கோள்", gauge: "மழைமானி", river: "ஆற்று நீரோட்டம்", reservoir: "நீர்த்தேக்கம்"},
+  fct_h: "அப்போது உண்மையில் வெளியிடப்பட்ட முன்னறிவிப்புகளுடன் சோதனை",
+  fct_lead: "மேலே உள்ள சோதனை, முன்னறிவிப்பு முற்றிலும் சரியாக இருந்தது போல, உண்மையில் பெய்த மழையைப் பயன்படுத்துகிறது. இந்தச் சோதனை அப்போது உண்மையில் வெளியிடப்பட்ட முன்னறிவிப்புகளைப் (ஜனவரி 2024 முதல் சேமிக்கப்பட்டவை) பயன்படுத்தி, நேரடித் தளம் எவ்வளவு முன்கூட்டியே எச்சரித்திருக்கும் என்பதைக் காட்டுகிறது.",
+  fct_wait: "முன்னறிவிப்புக் காப்பகம் பகுப்பாய்வு செய்யப்பட்டதும் முடிவுகள் இங்கே தோன்றும்.",
+  fct_stats: s => [[`${s.caught_by_lead["1"]}/${s.district_floods}`, "முந்தைய நாள் முன்னறிவிப்பிலேயே 'எச்சரிக்கை' கிடைத்த மாவட்ட வெள்ளங்கள்"],
+                   [`${s.caught_by_lead["2"]}/${s.district_floods}`, "2 நாட்களுக்கு முன்பே 'எச்சரிக்கை'"],
+                   [`${s.caught_by_lead["3"]}/${s.district_floods}`, "3 நாட்களுக்கு முன்பே 'எச்சரிக்கை'"],
+                   [`${s.no_flood_warning_days_per_district_season["1"]}`, "வெள்ளம் பதிவாகாத நிலையில் ஒரு பருவத்திற்கு ஒரு மாவட்டத்தில் 'எச்சரிக்கை' நாட்கள் (முந்தைய நாள் முன்னறிவிப்பு)"]],
+  fct_cols: ["வெள்ளம்", "தேதிகள்", "முன்கூட்டிய எச்சரிக்கை"], lead_txt: L => L === null ? "முன்னறிவிப்பால் மட்டும் இல்லை" : L === 0 ? "அதே நாள்" : `${L} நாள் முன்பே`,
+  about_h: "எங்களைப் பற்றியும் வரம்புகளும்",
+  about: [["இது ஏன்", "தமிழ்நாட்டின் அதிகாரப்பூர்வ வெள்ள அமைப்புகள் சிறப்பானவை; ஆனால் அவை சென்னை அல்லது குறிப்பிட்ட ஆற்று அளவீட்டு நிலையங்கள் போன்ற பகுதிகளை மட்டுமே உள்ளடக்குகின்றன. இது முழு மாநிலத்திற்குமான எளிய, திறந்த பார்வை; தன் துல்லியத்தையும் வெளியிடுகிறது, வெள்ளத்தைப் புரிந்துகொள்ளவும் உதவுகிறது."],
+          ["இதனால் காண முடியாதவை", "அடைபட்ட வடிகால்களால் தெருக்களில் தேங்கும் நீர், அணைகள் மற்றும் ஏரிகளிலிருந்து திடீர் நீர் திறப்பு, குளக்கரை உடைப்பு, கடல் சீற்றம், மிகக் குறுகிய பகுதியில் பெய்யும் மேகவெடிப்பு. இதை ஒரு வழிகாட்டியாக மட்டும் பயன்படுத்துங்கள்; அதிகாரப்பூர்வ எச்சரிக்கைகளைப் புறக்கணிக்க ஒருபோதும் காரணமாகக் கொள்ளாதீர்கள்."],
+          ["தரவு", `முன்னறிவிப்பு: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (ஆற்று நீரோட்டம்: Copernicus GloFAS). செயற்கைக்கோள் மழை: <a href="https://gpm.nasa.gov/data/imerg" target="_blank" rel="noopener">நாசா GPM IMERG</a>. மழைமானி அடிப்படையிலான தரவு: IMD. மழைமானிகளும் நீர்த்தேக்கங்களும்: <a href="https://beta-tnsmart.rimes.int/" target="_blank" rel="noopener">TN-SMART</a>, தமிழ்நாடு அரசு. எல்லைகள்: <a href="https://github.com/datta07/INDIAN-SHAPEFILES" target="_blank" rel="noopener">INDIAN-SHAPEFILES</a>.`]],
+  about_by: "அதித்யா உருவாக்கிய மாணவர் திட்டம்; AI கருவிகளின் உதவியுடன் உருவாக்கப்பட்டது. நிரலும் தரவும் GitHub-இல் திறந்த நிலையில் உள்ளன. தவறு அல்லது நாங்கள் தவறவிட்ட வெள்ளம் ஏதேனும் இருந்தால் தெரிவியுங்கள்.",
+  footer: `தமிழ்நாடு வெள்ள கண்காணிப்பு ஒரு சுயாதீனத் திட்டம்; தமிழ்நாடு அரசு, IMD அல்லது மத்திய நீர் ஆணையத்துடன் தொடர்புடையது அல்ல. வானிலைத் தரவு: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0). ஆற்றுத் தரவு: Copernicus Emergency Management Service, GloFAS.`,
+}};
 
-let state = { risk: null, geo: null, thr: null, rec: null, events: [], sel: null };
+const TA_DIST = {Ariyalur:"அரியலூர்",Chengalpattu:"செங்கல்பட்டு",Chennai:"சென்னை",Coimbatore:"கோயம்புத்தூர்",Cuddalore:"கடலூர்",Dharmapuri:"தருமபுரி",Dindigul:"திண்டுக்கல்",Erode:"ஈரோடு",Kallakurichi:"கள்ளக்குறிச்சி",Kancheepuram:"காஞ்சிபுரம்",Kanyakumari:"கன்னியாகுமரி",Karur:"கரூர்",Krishnagiri:"கிருஷ்ணகிரி",Madurai:"மதுரை",Mayiladuthurai:"மயிலாடுதுறை",Nagapattinam:"நாகப்பட்டினம்",Namakkal:"நாமக்கல்",Nilgiris:"நீலகிரி",Perambalur:"பெரம்பலூர்",Pudukkottai:"புதுக்கோட்டை",Ramanathapuram:"இராமநாதபுரம்",Ranipet:"இராணிப்பேட்டை",Salem:"சேலம்",Sivaganga:"சிவகங்கை",Tenkasi:"தென்காசி",Thanjavur:"தஞ்சாவூர்",Theni:"தேனி",Thiruvallur:"திருவள்ளூர்",Thiruvarur:"திருவாரூர்",Thoothukudi:"தூத்துக்குடி",Tiruchirappalli:"திருச்சிராப்பள்ளி",Tirunelveli:"திருநெல்வேலி",Tirupathur:"திருப்பத்தூர்",Tiruppur:"திருப்பூர்",Tiruvannamalai:"திருவண்ணாமலை",Vellore:"வேலூர்",Viluppuram:"விழுப்புரம்",Virudhunagar:"விருதுநகர்"};
+const TA_EVENT = {"2015-nov":"நவம்பர் 2015 வட தமிழ்நாடு வெள்ளம்","2015-dec":"டிசம்பர் 2015 சென்னை வெள்ளம்","2018-cauvery":"கர்நாடக அணைகளின் நீர் திறப்பால் காவிரி வெள்ளம்","2019-nilgiris":"நீலகிரி வெள்ளமும் நிலச்சரிவும்","2020-nivar":"நிவர் புயல்","2020-burevi":"புரேவி புயல் மழை","2021-nov":"நவம்பர் 2021 சென்னை வெள்ளம்","2022-sirkazhi-1":"சீர்காழி வெள்ளம் (முதல் கட்டம்)","2022-sirkazhi-2":"சீர்காழி சாதனை மழை","2023-michaung":"மிக்ஜாம் புயல்","2023-south":"தென் தமிழ்நாடு வெள்ளம்","2024-fengal":"ஃபெஞ்சல் புயல்","2024-dec-south":"டிசம்பர் 2024 திருநெல்வேலி மழை","2025-theni":"தேனி திடீர் வெள்ளம் (வைகை)","2025-ditwah":"டித்வா புயல் மழை"};
+const SHORT = {"Kancheepuram":"Kanchi","Ramanathapuram":"Ramnad","Tiruchirappalli":"Trichy","Tiruvannamalai":"T'malai","Mayiladuthurai":"M'thurai","Chengalpattu":"Chengal.","Kallakurichi":"K'kurichi","Thiruvallur":"Tiruvallur"};
+const COLORS = ["var(--low)", "var(--watch)", "var(--warning)", "var(--danger)"];
+
+// ---------------------------------------------------------------- Learn page (both languages)
+const SRC = {
+  imd22: "https://mausam.imd.gov.in/chennai/mcdata/ne_monsoon_2022.pdf",
+  dh23: "https://www.deccanherald.com/amp/story/india%2Ftamil-nadu%2Fsouthern-tamil-nadu-goes-under-water-2815526",
+  print23: "https://theprint.in/opinion/newsmaker-of-the-week/chennai-learned-from-2015-floods-but-encroachments-exposed-it-to-cyclone-fury/1878883",
+  cag: "https://cag.gov.in/uploads/download_audit_report/2016/Executive_summary_of_Report_No_4_of_2017_-_Performance_Audit_of_Flood_Management_and_Response_in_Chennai_.pdf",
+  scroll18: "https://scroll.in/latest/890049/scroll_in",
+  dte15: "https://www.downtoearth.org.in/natural-disasters/chennai-floods-panel-report-highlights-encroachments-faulty-drainage-system-55329",
+  wiki15: "https://en.wikipedia.org/wiki/2015_South_India_floods",
+  niti: "https://www.dtnext.in/amp/story/news/chennai/rs-50000-cr-infra-loss-due-to-2015-chennai-floods-niti-aayog",
+  health: "https://www.dtnext.in/news/chennai/contaminated-water-food-to-spike-related-diseases-govt-doctors-753418",
+  sirkazhi: "https://webjosh.com/article/many-villages-remain-inundated-in-mayiladuthurai-district-1668517806-13011",
+  livestock: "https://watchers.news/2023/12/20/extremely-heavy-monsoon-rains-in-tamil-nadu-lead-to-fatal-flooding-significant-livestock-losses-india/",
+  deaths23: "https://newsable.asianetnews.com/india/tamil-nadu-rain-havoc-31-lives-lost-centre-s-rs-900-crore-aid-to-state-confirms-fm-nirmala-sitharaman-ajr-s62a85",
+  scrollbank: "https://scroll.in/article/890972/scroll_in",
+  nws: "https://www.weather.gov/safety/flood-during",
+  aaa: "https://cluballiance.aaa.com/the-extra-mile/advice/car/hidden-dangers-of-floodwater",
+  imddos: "https://mausam.imd.gov.in/srinagar/img/dos_donts.pdf",
+  ndma: "https://www.freepressjournal.in/india/do-you-know-how-to-ensure-safety-from-urban-floods-ndma-releases-list-of-dos-and-donts-check-here",
+  nidm: "https://nidm.gov.in/PDF/IEC/SZ_NIDM25.pdf",
+  ncdc: "https://ncdc.mohfw.gov.in/wp-content/uploads/2024/07/1_NPCCHH_Public-Health-Advisory_Floods_090822.pdf",
+  fengal: "https://theprint.in/india/rain-battered-tn-districts-battle-with-inundation-woes-roads-remain-cut-off/2384949",
+};
+const L_ = (k, n) => `<sup><a href="${SRC[k]}" target="_blank" rel="noopener" title="Source">[${n}]</a></sup>`;
+
+function depthFig(h, label, caption, car) {
+  // h = water height in px (of 120); draws a person or a car standing in water
+  const y0 = 140 - h;
+  const thing = car
+    ? `<rect x="50" y="${92 - (h > 40 ? 18 : 0)}" width="110" height="34" rx="8" fill="#e9eef2"/><rect x="72" y="${74 - (h > 40 ? 18 : 0)}" width="62" height="24" rx="6" fill="#e9eef2"/><circle cx="78" cy="${128 - (h > 40 ? 18 : 0)}" r="10" fill="#9fb3c0"/><circle cx="134" cy="${128 - (h > 40 ? 18 : 0)}" r="10" fill="#9fb3c0"/>`
+    : `<circle cx="105" cy="30" r="12" fill="#e9eef2"/><rect x="93" y="45" width="24" height="52" rx="8" fill="#e9eef2"/><rect x="95" y="95" width="8" height="45" rx="3" fill="#e9eef2"/><rect x="107" y="95" width="8" height="45" rx="3" fill="#e9eef2"/>`;
+  return `<figure><svg viewBox="0 0 210 150" aria-hidden="true">${thing}
+    <path d="M0 ${y0} q 26 -8 52 0 t 52 0 t 52 0 t 54 0 V150 H0Z" fill="#4fb0d6" fill-opacity=".75"/>
+    <path d="M150 ${y0 + 14} h28 m-6 -5 l6 5 l-6 5" stroke="#fff" stroke-width="2.4" fill="none"/></svg>
+    <figcaption><b>${label}</b>${caption}</figcaption></figure>`;
+}
+
+const LEARN = {
+en: () => `
+<section class="block pagehead">
+  <h1>Floods in Tamil Nadu: why they happen, what they do, and how to stay safe</h1>
+  <p class="lead">Tamil Nadu floods almost every year, from Chennai's streets to the Cauvery delta and the southern districts. Knowing why helps us prepare, and knowing what to do can save lives.</p>
+</section>
+
+<section class="block">
+  <div class="grid4">
+    <div class="card stat"><div class="big">500+</div><div class="lab">people killed in the 2015 floods, with over 1.8 million displaced ${L_("dte15", 1)}</div></div>
+    <div class="card stat"><div class="big">44 cm</div><div class="lab">of rain at Sirkazhi in 24 hours in November 2022 ${L_("imd22", 2)}</div></div>
+    <div class="card stat"><div class="big">93 cm</div><div class="lab">at Kayalpattinam (Thoothukudi) in 24 hours in December 2023, more than its usual rain in a year ${L_("dh23", 3)}</div></div>
+    <div class="card stat"><div class="big">₹50,000 cr+</div><div class="lab">estimated loss and damage from the 2015 Chennai floods ${L_("niti", 4)}</div></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Why Tamil Nadu floods</h2>
+  <div class="grid2">
+    <div class="card step"><h3>The north-east monsoon and cyclones</h3><p>Tamil Nadu gets much of its heaviest rain from October to December, when depressions and cyclones form over the Bay of Bengal and move towards the coast. When a system stalls, it can drop a huge amount of rain in a day or two: Sirkazhi's 44 cm in November 2022 was its highest in 122 years ${L_("imd22", 2)}.</p></div>
+    <div class="card step"><h3>Lost lakes and blocked channels</h3><p>Tanks, lakes and rivers used to store and carry this water away. Many have been built over. The area of 19 major lakes in Chennai shrank from 1,130 to about 645 hectares ${L_("print23", 5)}, and India's national auditor found that encroachment of tanks, lakes and river beds played a major role in the 2015 floods ${L_("cag", 6)}.</p></div>
+    <div class="card step"><h3>Water from far away</h3><p>Some floods start outside the state. In August 2018, heavy rain in Karnataka and Kerala led to large releases from the Kabini and KRS dams; that water takes about two days to reach Mettur ${L_("scroll18", 7)}, and the Cauvery then flooded villages downstream. Rain on the Kerala hills can also raise Theni's rivers.</p></div>
+    <div class="card step"><h3>A warming climate</h3><p>A warmer atmosphere can hold more moisture, so scientists expect the heaviest downpours to become more intense in many places. Combined with more concrete and fewer lakes, short bursts of extreme rain are more likely to cause floods.</p></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>What floods do to people</h2>
+  <div class="grid2">
+    <div class="card step"><h3>Lives and homes</h3><p>The 2015 floods killed more than 500 people and displaced over 1.8 million ${L_("dte15", 1)}; at least 57,000 homes in Chennai were damaged, mostly those of working-class families ${L_("wiki15", 8)}. In December 2023, 31 lives were lost across four southern districts ${L_("deaths23", 9)}.</p></div>
+    <div class="card step"><h3>Health</h3><p>After the water goes, disease often follows: diarrhoea, cholera, typhoid, hepatitis A and leptospirosis from contaminated water, and dengue and malaria from mosquitoes breeding in stagnant water ${L_("health", 10)}.</p></div>
+    <div class="card step"><h3>Farms and jobs</h3><p>The November 2022 rain hit crops on 34,582 hectares in Mayiladuthurai ${L_("sirkazhi", 11)}. The December 2023 floods killed hundreds of goats and cattle and 29,500 chickens ${L_("livestock", 12)}. Daily-wage workers living on river banks are often among the worst affected ${L_("scrollbank", 13)}.</p></div>
+    <div class="card step"><h3>The whole economy</h3><p>NITI Aayog estimated the 2015 Chennai floods caused ₹50,000 crore to ₹1 lakh crore of loss and damage ${L_("niti", 4)}. Cyclone Fengal in 2024 caused devastation in 14 districts, damaging roads and power lines ${L_("fengal", 14)}.</p></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="band">
+    <h3>Never walk or drive through flood water</h3>
+    <p>Moving water is far stronger than it looks, and you can't see open drains, manholes or broken roads underneath.</p>
+    <div class="depth">
+      ${depthFig(22, "15 cm", "of fast-moving water can knock an adult off their feet", false)}
+      ${depthFig(40, "30 cm", "can float a car or small SUV", true)}
+      ${depthFig(60, "45–60 cm", "of rushing water can carry away large vehicles", true)}
+    </div>
+    <p style="margin:12px 0 0;font-size:.85rem">Sources: US National Weather Service ${L_("nws", 15)}; AAA ${L_("aaa", 16)}.</p>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Be ready: before, during and after a flood</h2>
+  <p class="lead">Based on advice from the National Disaster Management Authority, IMD and the National Centre for Disease Control ${L_("imddos", 17)} ${L_("ncdc", 18)}.</p>
+  <div class="grid3">
+    <div class="card step"><div class="n">Before</div><h3>Prepare</h3><ul>
+      <li>Find out whether your street, home or daily route floods.</li>
+      <li>Keep an emergency kit: drinking water, dry food, medicines, a torch, a charged power bank, a whistle, and copies of ID and documents in a waterproof bag.</li>
+      <li>Save the numbers 112, 1070 and 1077.</li>
+      <li>Don't throw plastic or waste into drains ${L_("ndma", 19)}.</li>
+      <li>When a Warning appears, move documents, valuables and electrical items to a high shelf.</li>
+      <li>Decide where you would go: a relative on higher ground or a relief centre.</li></ul></div>
+    <div class="card step"><div class="n">During</div><h3>Stay safe</h3><ul>
+      <li>Follow official alerts; don't believe or forward rumours ${L_("imddos", 17)}.</li>
+      <li>If water enters, switch off electricity at the main and don't touch wires.</li>
+      <li>Never walk, swim or drive through flood water.</li>
+      <li>Stay away from drains, manholes, culverts and fallen power lines ${L_("ndma", 19)}.</li>
+      <li>Move to a higher floor with children, elderly people and pets.</li>
+      <li>Don't let children play in or near flood water ${L_("nidm", 20)}.</li></ul></div>
+    <div class="card step"><div class="n">After</div><h3>Recover carefully</h3><ul>
+      <li>Drink only boiled or chlorinated water ${L_("imddos", 17)}.</li>
+      <li>Throw away any food that touched flood water ${L_("health", 10)}.</li>
+      <li>See a doctor if you get a fever after walking in flood water; it could be leptospirosis.</li>
+      <li>Clean and disinfect everything that got wet.</li>
+      <li>Have electrics checked before switching on.</li>
+      <li>Empty stagnant water around your home to stop mosquitoes.</li></ul></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>What we can do together</h2>
+  <div class="grid3">
+    <div class="card step"><h3>Protect lakes and tanks</h3><p>They are the state's natural flood defences. Report encroachments to your local body and join lake clean-ups.</p></div>
+    <div class="card step"><h3>Keep water moving</h3><p>Keep drains free of plastic and rubbish, and ask your ward to clear storm-water drains before October.</p></div>
+    <div class="card step"><h3>Let rain soak in</h3><p>Rainwater harvesting, trees, and open soil instead of concrete reduce the water that rushes into streets.</p></div>
+    <div class="card step"><h3>Look out for each other</h3><p>Check on elderly neighbours and families in low-lying homes. Share official warnings, not rumours.</p></div>
+    <div class="card step"><h3>Be ready as a street</h3><p>Know who has a first-floor room, a boat, or medical skills. Agree where everyone will meet.</p></div>
+    <div class="card step"><h3>Spread the word</h3><p>Share this page in Tamil or English with family, school and neighbours before the monsoon.</p></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Tamil Nadu's recent floods</h2>
+  <ul class="timeline" id="learn-timeline"></ul>
+</section>
+
+<section class="block">
+  <h2>Sources</h2>
+  <ol class="sources">
+    <li><a href="${SRC.dte15}" target="_blank" rel="noopener">Down To Earth: Chennai floods panel report</a></li>
+    <li><a href="${SRC.imd22}" target="_blank" rel="noopener">IMD Chennai: North-East Monsoon 2022 report</a></li>
+    <li><a href="${SRC.dh23}" target="_blank" rel="noopener">Deccan Herald: Southern Tamil Nadu goes under water (2023)</a></li>
+    <li><a href="${SRC.niti}" target="_blank" rel="noopener">DT Next: Rs 50,000 cr infra loss due to 2015 Chennai floods (NITI Aayog)</a></li>
+    <li><a href="${SRC.print23}" target="_blank" rel="noopener">ThePrint: Chennai learned from 2015 floods but encroachments exposed it</a></li>
+    <li><a href="${SRC.cag}" target="_blank" rel="noopener">CAG: Performance audit of flood management in Chennai (2017)</a></li>
+    <li><a href="${SRC.scroll18}" target="_blank" rel="noopener">Scroll: Flood alert in six Cauvery districts (2018)</a></li>
+    <li><a href="${SRC.wiki15}" target="_blank" rel="noopener">Wikipedia: 2015 South India floods</a></li>
+    <li><a href="${SRC.deaths23}" target="_blank" rel="noopener">Asianet Newsable: 31 lives lost in Tamil Nadu rains (2023)</a></li>
+    <li><a href="${SRC.health}" target="_blank" rel="noopener">DT Next: Contaminated water, food to spike related diseases</a></li>
+    <li><a href="${SRC.sirkazhi}" target="_blank" rel="noopener">Many villages remain inundated in Mayiladuthurai (2022)</a></li>
+    <li><a href="${SRC.livestock}" target="_blank" rel="noopener">Watchers: Fatal flooding and livestock losses in Tamil Nadu (2023)</a></li>
+    <li><a href="${SRC.scrollbank}" target="_blank" rel="noopener">Scroll: Who the Cauvery floods hit hardest (2018)</a></li>
+    <li><a href="${SRC.fengal}" target="_blank" rel="noopener">ThePrint/PTI: Districts battered by Cyclone Fengal (2024)</a></li>
+    <li><a href="${SRC.nws}" target="_blank" rel="noopener">US National Weather Service: Flood safety</a></li>
+    <li><a href="${SRC.aaa}" target="_blank" rel="noopener">AAA: The hidden dangers of floodwater</a></li>
+    <li><a href="${SRC.imddos}" target="_blank" rel="noopener">IMD: Floods do's and don'ts</a></li>
+    <li><a href="${SRC.ncdc}" target="_blank" rel="noopener">NCDC: Public health advisory on floods</a></li>
+    <li><a href="${SRC.ndma}" target="_blank" rel="noopener">NDMA urban flood do's and don'ts (Free Press Journal)</a></li>
+    <li><a href="${SRC.nidm}" target="_blank" rel="noopener">NIDM: Disaster do's and don'ts</a></li>
+  </ol>
+</section>`,
+
+ta: () => `
+<section class="block pagehead">
+  <h1>தமிழ்நாட்டில் வெள்ளம்: ஏன் ஏற்படுகிறது, என்ன பாதிப்பு, எப்படிப் பாதுகாப்பாக இருப்பது</h1>
+  <p class="lead">சென்னையின் தெருக்கள் முதல் காவிரி டெல்டா, தென் மாவட்டங்கள் வரை தமிழ்நாடு ஏறக்குறைய ஒவ்வொரு ஆண்டும் வெள்ளத்தைச் சந்திக்கிறது. காரணங்களை அறிவது தயாராக உதவுகிறது; என்ன செய்ய வேண்டும் என்பதை அறிவது உயிர்களைக் காப்பாற்றும்.</p>
+</section>
+
+<section class="block">
+  <div class="grid4">
+    <div class="card stat"><div class="big">500+</div><div class="lab">2015 வெள்ளத்தில் உயிரிழந்தவர்கள்; 18 லட்சத்திற்கும் மேற்பட்டோர் இடம்பெயர்ந்தனர் ${L_("dte15", 1)}</div></div>
+    <div class="card stat"><div class="big">44 செ.மீ</div><div class="lab">நவம்பர் 2022-இல் சீர்காழியில் 24 மணி நேரத்தில் பெய்த மழை ${L_("imd22", 2)}</div></div>
+    <div class="card stat"><div class="big">93 செ.மீ</div><div class="lab">டிசம்பர் 2023-இல் காயல்பட்டினத்தில் (தூத்துக்குடி) 24 மணி நேரத்தில்; அதன் வழக்கமான ஓராண்டு மழையை விட அதிகம் ${L_("dh23", 3)}</div></div>
+    <div class="card stat"><div class="big">₹50,000 கோடி+</div><div class="lab">2015 சென்னை வெள்ளத்தால் ஏற்பட்ட இழப்பும் சேதமும் (மதிப்பீடு) ${L_("niti", 4)}</div></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>தமிழ்நாட்டில் வெள்ளம் ஏன் ஏற்படுகிறது</h2>
+  <div class="grid2">
+    <div class="card step"><h3>வடகிழக்குப் பருவமழையும் புயல்களும்</h3><p>வங்கக் கடலில் காற்றழுத்தத் தாழ்வுகளும் புயல்களும் உருவாகி கடற்கரையை நோக்கி நகரும் அக்டோபர் முதல் டிசம்பர் வரையிலான காலத்தில்தான் தமிழ்நாட்டின் மிகக் கனமழையின் பெரும்பகுதி பெய்கிறது. ஒரு அமைப்பு ஓரிடத்தில் நின்றுவிட்டால், ஓரிரு நாட்களில் மிகப் பெரிய அளவு மழை கொட்டலாம்: நவம்பர் 2022-இல் சீர்காழியில் பெய்த 44 செ.மீ மழை, 122 ஆண்டுகளில் அதிகபட்சம் ${L_("imd22", 2)}.</p></div>
+    <div class="card step"><h3>காணாமல் போன ஏரிகளும் அடைபட்ட கால்வாய்களும்</h3><p>குளங்கள், ஏரிகள், ஆறுகள் ஒரு காலத்தில் இந்த நீரைச் சேமித்து வெளியேற்றின. அவற்றில் பல ஆக்கிரமிக்கப்பட்டு கட்டடங்களாகிவிட்டன. சென்னையின் 19 முக்கிய ஏரிகளின் பரப்பு 1,130 ஹெக்டேரிலிருந்து சுமார் 645 ஹெக்டேராகச் சுருங்கியது ${L_("print23", 5)}. குளங்கள், ஏரிகள், ஆற்றுப் படுகைகளின் ஆக்கிரமிப்பு 2015 வெள்ளத்தில் பெரும் பங்கு வகித்தது என இந்தியத் தலைமைக் கணக்குத் தணிக்கையாளர் (CAG) கண்டறிந்தார் ${L_("cag", 6)}.</p></div>
+    <div class="card step"><h3>தொலைவிலிருந்து வரும் நீர்</h3><p>சில வெள்ளங்கள் மாநிலத்திற்கு வெளியே தொடங்குகின்றன. ஆகஸ்ட் 2018-இல் கர்நாடகா, கேரளாவில் பெய்த கனமழையால் கபினி, KRS அணைகளிலிருந்து பெருமளவு நீர் திறக்கப்பட்டது; அந்த நீர் மேட்டூரை அடைய சுமார் இரண்டு நாட்கள் ஆகும் ${L_("scroll18", 7)}. பின்னர் காவிரி கீழ்ப்பகுதி கிராமங்களில் வெள்ளம் ஏற்படுத்தியது. கேரள மலைகளில் பெய்யும் மழையும் தேனி மாவட்ட ஆறுகளின் நீர்மட்டத்தை உயர்த்தலாம்.</p></div>
+    <div class="card step"><h3>வெப்பமடையும் காலநிலை</h3><p>வெப்பமான வளிமண்டலம் அதிக ஈரப்பதத்தைத் தாங்கும்; எனவே பல இடங்களில் மிகக் கனமான மழைப்பொழிவுகள் மேலும் தீவிரமடையும் என விஞ்ஞானிகள் எதிர்பார்க்கின்றனர். அதிக கான்கிரீட்டும் குறைந்த ஏரிகளும் சேரும்போது, குறுகிய நேர அதீத மழையே வெள்ளத்தை ஏற்படுத்த வாய்ப்பு அதிகம்.</p></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>வெள்ளம் மக்களுக்கு ஏற்படுத்தும் பாதிப்புகள்</h2>
+  <div class="grid2">
+    <div class="card step"><h3>உயிர்களும் வீடுகளும்</h3><p>2015 வெள்ளத்தில் 500-க்கும் மேற்பட்டோர் உயிரிழந்தனர்; 18 லட்சத்திற்கும் மேற்பட்டோர் இடம்பெயர்ந்தனர் ${L_("dte15", 1)}. சென்னையில் குறைந்தது 57,000 வீடுகள் சேதமடைந்தன; அவற்றில் பெரும்பாலானவை உழைக்கும் குடும்பங்களுடையவை ${L_("wiki15", 8)}. டிசம்பர் 2023-இல் நான்கு தென் மாவட்டங்களில் 31 உயிர்கள் பறிபோயின ${L_("deaths23", 9)}.</p></div>
+    <div class="card step"><h3>உடல்நலம்</h3><p>நீர் வடிந்த பிறகு நோய்கள் பரவுவது வழக்கம்: மாசடைந்த நீரால் வயிற்றுப்போக்கு, காலரா, டைபாய்டு, மஞ்சள் காமாலை (ஹெபடைடிஸ் A), எலிக்காய்ச்சல் (லெப்டோஸ்பைரோசிஸ்); தேங்கிய நீரில் பெருகும் கொசுக்களால் டெங்கு, மலேரியா ${L_("health", 10)}.</p></div>
+    <div class="card step"><h3>விவசாயமும் வாழ்வாதாரமும்</h3><p>நவம்பர் 2022 மழையால் மயிலாடுதுறையில் 34,582 ஹெக்டேர் பயிர்கள் பாதிக்கப்பட்டன ${L_("sirkazhi", 11)}. டிசம்பர் 2023 வெள்ளத்தில் நூற்றுக்கணக்கான ஆடுகளும் மாடுகளும் 29,500 கோழிகளும் இறந்தன ${L_("livestock", 12)}. ஆற்றங்கரைகளில் வசிக்கும் தினக்கூலித் தொழிலாளர்களே பெரும்பாலும் அதிகம் பாதிக்கப்படுகின்றனர் ${L_("scrollbank", 13)}.</p></div>
+    <div class="card step"><h3>முழுப் பொருளாதாரம்</h3><p>2015 சென்னை வெள்ளத்தால் ₹50,000 கோடி முதல் ₹1 லட்சம் கோடி வரை இழப்பும் சேதமும் ஏற்பட்டதாக நிதி ஆயோக் மதிப்பிட்டது ${L_("niti", 4)}. 2024-இல் ஃபெஞ்சல் புயல் 14 மாவட்டங்களில் சாலைகளையும் மின்கம்பிகளையும் சேதப்படுத்திப் பேரழிவை ஏற்படுத்தியது ${L_("fengal", 14)}.</p></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="band">
+    <h3>வெள்ள நீரில் ஒருபோதும் நடக்கவோ வாகனம் ஓட்டவோ வேண்டாம்</h3>
+    <p>ஓடும் நீர் தோன்றுவதை விடப் பல மடங்கு வலிமையானது; அதன் அடியில் உள்ள திறந்த வடிகால்கள், பாதாளச் சாக்கடை மூடிகள், உடைந்த சாலைகள் கண்ணுக்குத் தெரியாது.</p>
+    <div class="depth">
+      ${depthFig(22, "15 செ.மீ", "வேகமாக ஓடும் நீர் ஒரு பெரியவரையே கீழே தள்ளிவிடும்", false)}
+      ${depthFig(40, "30 செ.மீ", "நீரில் ஒரு காரோ சிறிய SUV-யோ மிதக்கத் தொடங்கும்", true)}
+      ${depthFig(60, "45–60 செ.மீ", "பாய்ந்தோடும் நீர் பெரிய வாகனங்களையும் அடித்துச் செல்லும்", true)}
+    </div>
+    <p style="margin:12px 0 0;font-size:.85rem">ஆதாரம்: அமெரிக்க தேசிய வானிலை சேவை ${L_("nws", 15)}; AAA ${L_("aaa", 16)}.</p>
+  </div>
+</section>
+
+<section class="block">
+  <h2>தயாராக இருங்கள்: வெள்ளத்திற்கு முன், வெள்ளத்தின் போது, வெள்ளத்திற்குப் பின்</h2>
+  <p class="lead">தேசியப் பேரிடர் மேலாண்மை ஆணையம், இந்திய வானிலை ஆய்வு மையம், தேசிய நோய்க் கட்டுப்பாட்டு மையம் ஆகியவற்றின் அறிவுரைகளின் அடிப்படையில் ${L_("imddos", 17)} ${L_("ncdc", 18)}.</p>
+  <div class="grid3">
+    <div class="card step"><div class="n">முன்</div><h3>தயார் செய்யுங்கள்</h3><ul>
+      <li>உங்கள் தெரு, வீடு, தினசரி செல்லும் வழி வெள்ளத்தில் மூழ்குமா என்று தெரிந்துகொள்ளுங்கள்.</li>
+      <li>அவசரப் பை தயாராக வையுங்கள்: குடிநீர், உலர் உணவு, மருந்துகள், டார்ச், சார்ஜ் செய்த பவர் பேங்க், விசில், அடையாள அட்டை மற்றும் ஆவணங்களின் நகல்களை நீர்புகா பையில்.</li>
+      <li>112, 1070, 1077 எண்களைச் சேமித்து வையுங்கள்.</li>
+      <li>வடிகால்களில் பிளாஸ்டிக் அல்லது குப்பைகளை வீசாதீர்கள் ${L_("ndma", 19)}.</li>
+      <li>'எச்சரிக்கை' நிலை வந்தால் ஆவணங்கள், மதிப்புமிக்க பொருட்கள், மின்சாதனங்களை உயரமான இடத்திற்கு மாற்றுங்கள்.</li>
+      <li>எங்கு செல்வது என்று முடிவு செய்யுங்கள்: மேடான பகுதியில் உள்ள உறவினர் வீடு அல்லது நிவாரண முகாம்.</li></ul></div>
+    <div class="card step"><div class="n">போது</div><h3>பாதுகாப்பாக இருங்கள்</h3><ul>
+      <li>அதிகாரப்பூர்வ எச்சரிக்கைகளைப் பின்பற்றுங்கள்; வதந்திகளை நம்பவோ பகிரவோ வேண்டாம் ${L_("imddos", 17)}.</li>
+      <li>வீட்டுக்குள் நீர் புகுந்தால் மெயின் சுவிட்சில் மின்சாரத்தை அணையுங்கள்; கம்பிகளைத் தொடாதீர்கள்.</li>
+      <li>வெள்ள நீரில் ஒருபோதும் நடக்கவோ, நீந்தவோ, வாகனம் ஓட்டவோ வேண்டாம்.</li>
+      <li>வடிகால்கள், பாதாளச் சாக்கடைகள், சிறு பாலங்கள், அறுந்த மின்கம்பிகளிலிருந்து விலகி இருங்கள் ${L_("ndma", 19)}.</li>
+      <li>குழந்தைகள், முதியவர்கள், செல்லப் பிராணிகளுடன் மேல் தளத்திற்குச் செல்லுங்கள்.</li>
+      <li>குழந்தைகள் வெள்ள நீரிலோ அதன் அருகிலோ விளையாட அனுமதிக்காதீர்கள் ${L_("nidm", 20)}.</li></ul></div>
+    <div class="card step"><div class="n">பின்</div><h3>கவனமாக மீளுங்கள்</h3><ul>
+      <li>கொதிக்க வைத்த அல்லது குளோரின் கலந்த நீரை மட்டும் குடியுங்கள் ${L_("imddos", 17)}.</li>
+      <li>வெள்ள நீர் பட்ட உணவைத் தூக்கி எறியுங்கள் ${L_("health", 10)}.</li>
+      <li>வெள்ள நீரில் நடந்த பிறகு காய்ச்சல் வந்தால் மருத்துவரைப் பாருங்கள்; அது எலிக்காய்ச்சலாக இருக்கலாம்.</li>
+      <li>நனைந்த அனைத்தையும் சுத்தம் செய்து கிருமிநாசினி கொண்டு துடையுங்கள்.</li>
+      <li>மின்சாரத்தை இயக்கும் முன் மின் இணைப்புகளைச் சரிபார்க்கச் செய்யுங்கள்.</li>
+      <li>கொசுக்கள் பெருகாமல் இருக்க வீட்டைச் சுற்றித் தேங்கிய நீரை அகற்றுங்கள்.</li></ul></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>நாம் சேர்ந்து என்ன செய்யலாம்</h2>
+  <div class="grid3">
+    <div class="card step"><h3>ஏரிகளையும் குளங்களையும் காப்போம்</h3><p>அவையே மாநிலத்தின் இயற்கையான வெள்ளத் தடுப்புகள். ஆக்கிரமிப்புகளை உள்ளாட்சி அமைப்புக்குத் தெரிவியுங்கள்; ஏரி சுத்தப்படுத்தும் பணிகளில் பங்கேற்பீர்.</p></div>
+    <div class="card step"><h3>நீர் ஓட வழி விடுவோம்</h3><p>வடிகால்களில் பிளாஸ்டிக்கும் குப்பையும் சேராமல் பாருங்கள்; அக்டோபருக்கு முன் மழைநீர் வடிகால்களைத் தூர்வார உங்கள் வார்டிடம் கேளுங்கள்.</p></div>
+    <div class="card step"><h3>மழைநீரை மண்ணில் இறங்க விடுவோம்</h3><p>மழைநீர் சேகரிப்பு, மரங்கள், கான்கிரீட்டுக்குப் பதில் திறந்த மண் ஆகியவை தெருக்களில் பாயும் நீரைக் குறைக்கின்றன.</p></div>
+    <div class="card step"><h3>ஒருவருக்கொருவர் துணை நிற்போம்</h3><p>வயதான அண்டை வீட்டாரையும் தாழ்வான வீடுகளில் வசிப்பவர்களையும் விசாரியுங்கள். வதந்திகளை அல்ல, அதிகாரப்பூர்வ எச்சரிக்கைகளைப் பகிருங்கள்.</p></div>
+    <div class="card step"><h3>தெருவாகத் தயாராவோம்</h3><p>யாரிடம் மேல்தள அறை, படகு அல்லது மருத்துவத் திறன் உள்ளது என்று தெரிந்துகொள்ளுங்கள். அனைவரும் எங்கு சந்திப்பது என்று முடிவு செய்யுங்கள்.</p></div>
+    <div class="card step"><h3>விழிப்புணர்வைப் பரப்புவோம்</h3><p>பருவமழைக்கு முன் இந்தப் பக்கத்தைத் தமிழிலோ ஆங்கிலத்திலோ குடும்பம், பள்ளி, அண்டை வீட்டாருடன் பகிருங்கள்.</p></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>தமிழ்நாட்டின் சமீபத்திய வெள்ளங்கள்</h2>
+  <ul class="timeline" id="learn-timeline"></ul>
+</section>
+
+<section class="block">
+  <h2>ஆதாரங்கள்</h2>
+  <p class="muted">ஆதாரங்கள் பெரும்பாலும் ஆங்கிலத்தில் உள்ளன.</p>
+  ${LEARN.en().split('<h2>Sources</h2>')[1].split('</section>')[0]}
+</section>`
+};
+
+// ---------------------------------------------------------------- state and helpers
+let lang = "en";
+try { const saved = localStorage.getItem("tnfw-lang"); lang = saved || ((navigator.language || "").startsWith("ta") ? "ta" : "en"); } catch (e) {}
+const t = () => T[lang];
+let state = { risk: null, geo: null, thr: null, rec: null, events: [], fct: null, sel: null };
 
 async function j(url) {
   try { const r = await fetch(url, {cache: "no-store"}); if (!r.ok) return null; return await r.json(); }
   catch (e) { return null; }
 }
+function esc(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function dname(n) { return lang === "ta" ? (TA_DIST[n] || n) : n; }
+function ename(e) { return lang === "ta" ? (TA_EVENT[e.id] || e.name) : e.name; }
+function fmtDay(iso) { const d = new Date(iso + "T00:00:00"); return d.toLocaleDateString(lang === "ta" ? "ta-IN" : "en-IN", {weekday: "short", day: "numeric", month: "short"}); }
+function fmtDate(iso) { const d = new Date(iso + "T00:00:00"); return d.toLocaleDateString(lang === "ta" ? "ta-IN" : "en-IN", {day: "numeric", month: "short", year: "numeric"}); }
+function lvlBadge(l) { return l === null || l === undefined ? `<span class="lvl ln">${t().nodata}</span>` : `<span class="lvl l${l}">${t().levels[l]}</span>`; }
+function whyText(w) { const f = t().why[w.k]; return f ? esc(f(w)) : ""; }
 
-function esc(s) { return String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
-function lvlBadge(l) { return l === null || l === undefined ? '<span class="lvl ln">No data</span>' : `<span class="lvl l${l}">${LEVELS[l]}</span>`; }
-function fmtDay(iso) { const d = new Date(iso + "T00:00:00"); return d.toLocaleDateString("en-IN", {weekday: "short", day: "numeric", month: "short"}); }
+// ---------------------------------------------------------------- static text
+function applyText() {
+  document.documentElement.lang = lang;
+  document.body.classList.toggle("ta", lang === "ta");
+  document.querySelectorAll("[data-i]").forEach(el => {
+    const v = t()[el.dataset.i];
+    if (typeof v !== "string") return;
+    if (el.hasAttribute("data-html")) el.innerHTML = v; else el.textContent = v;
+  });
+  document.getElementById("langbtn").textContent = t().other_lang;
+  document.title = t().title;
+  document.getElementById("legend").innerHTML = t().levels.map((L, i) => `<span><i class="sw" style="background:${COLORS[i]}"></i>${L}</span>`).join("") + `<span><i class="sw" style="background:var(--nodata)"></i>${t().nodata}</span>`;
+  document.getElementById("how-steps").innerHTML = t().how.map(([n, h, p]) => `<div class="card step"><div class="n">${n}</div><h3>${h}</h3><p>${p}</p></div>`).join("");
+  document.getElementById("about-cards").innerHTML = t().about.map(([h, p]) => `<div class="card step"><h3>${h}</h3><p>${p}</p></div>`).join("");
+  document.getElementById("learn-body").innerHTML = LEARN[lang]();
+  document.getElementById("learn-timeline").innerHTML = [...state.events].reverse().map(e =>
+    `<li><span class="yr">${fmtDate(e.start)}</span>: <a href="${esc(e.source)}" target="_blank" rel="noopener">${esc(ename(e))}</a>, ${e.districts.map(n => esc(dname(n))).join(", ")}</li>`).join("");
+}
 
+// ---------------------------------------------------------------- map
 function drawMap() {
   const svg = document.getElementById("map");
   const feats = state.geo.features;
@@ -245,10 +667,10 @@ function drawMap() {
     }));
     const r = state.risk && state.risk.districts[name];
     const l = r ? r.level : null;
-    html += `<path data-n="${esc(name)}" d="${d}" fill="${l === null || l === undefined ? "var(--nodata)" : COLORS[l]}"><title>${esc(name)}: ${r ? esc(r.level_name) : "No data"}</title></path>`;
+    html += `<path data-n="${esc(name)}" class="${state.sel === name ? "sel" : ""}" d="${d}" fill="${l === null || l === undefined ? "var(--nodata)" : COLORS[l]}"><title>${esc(dname(name))}: ${r && l !== null ? t().levels[l] : t().nodata}</title></path>`;
     f._c = [cx / n, cy / n];
   });
-  feats.forEach(f => { html += `<text x="${f._c[0].toFixed(0)}" y="${f._c[1].toFixed(0)}" text-anchor="middle">${esc(SHORT[f.properties.name] || f.properties.name)}</text>`; });
+  feats.forEach(f => { const nm = lang === "ta" ? dname(f.properties.name) : (SHORT[f.properties.name] || f.properties.name); html += `<text x="${f._c[0].toFixed(0)}" y="${f._c[1].toFixed(0)}" text-anchor="middle">${esc(nm)}</text>`; });
   svg.innerHTML = html;
   svg.querySelectorAll("path").forEach(p => p.addEventListener("click", () => select(p.dataset.n)));
 }
@@ -256,26 +678,25 @@ function drawMap() {
 function renderStatus() {
   const el = document.getElementById("status");
   const r = state.risk;
-  if (!r) { el.innerHTML = '<span class="chip">Live data not available yet</span>'; return; }
-  const counts = [0, 0, 0, 0]; let nd = 0;
-  Object.values(r.districts).forEach(d => { if (d.level === null || d.level === undefined) nd++; else counts[d.level]++; });
-  const t = new Date(r.updated);
-  let h = r.demo ? '<span class="chip demo">Example data for preview, not a real forecast</span>' : "";
-  h += `<span class="chip">Updated ${t.toLocaleString("en-IN", {day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"})} IST</span>`;
-  [3, 2, 1].forEach(l => { if (counts[l]) h += `<span class="chip"><i class="sw" style="background:${COLORS[l]}"></i>${counts[l]} ${LEVELS[l]}</span>`; });
-  if (!counts[1] && !counts[2] && !counts[3]) h += '<span class="chip"><i class="sw" style="background:var(--low)"></i>No district above Low</span>';
-  if (r.sources_ok) { const down = Object.entries(r.sources_ok).filter(([, v]) => !v).map(([k]) => k); if (down.length) h += `<span class="chip">Delayed: ${down.map(esc).join(", ")}</span>`; }
+  if (!r) { el.innerHTML = `<span class="chip">${t().waiting_h}</span>`; return; }
+  const counts = [0, 0, 0, 0];
+  Object.values(r.districts).forEach(d => { if (d.level !== null && d.level !== undefined) counts[d.level]++; });
+  const tm = new Date(r.updated);
+  let h = r.demo ? `<span class="chip demo">${t().demo}</span>` : "";
+  h += `<span class="chip">${t().updated} ${tm.toLocaleString(lang === "ta" ? "ta-IN" : "en-IN", {day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"})} ${t().ist}</span>`;
+  [3, 2, 1].forEach(l => { if (counts[l]) h += `<span class="chip"><i class="sw" style="background:${COLORS[l]}"></i>${counts[l]} ${t().levels[l]}</span>`; });
+  if (!counts[1] && !counts[2] && !counts[3]) h += `<span class="chip"><i class="sw" style="background:var(--low)"></i>${t().no_above_low}</span>`;
+  if (r.sources_ok) { const down = Object.entries(r.sources_ok).filter(([, v]) => !v).map(([k]) => t().sig[{rain: "forecast", gauges: "gauge", reservoirs: "reservoir"}[k] || k] || k); if (down.length) h += `<span class="chip">${t().delayed}: ${down.map(esc).join(", ")}</span>`; }
   el.innerHTML = h;
 }
 
 function renderList() {
   const r = state.risk; const p = document.getElementById("panel");
-  if (!r) { p.innerHTML = "<h2>Waiting for data</h2><p class='muted'>The first live update hasn't run yet.</p>"; return; }
-  const rows = Object.entries(r.districts).sort((a, b) => (b[1].level ?? -1) - (a[1].level ?? -1) || a[0].localeCompare(b[0]));
+  if (!r) { p.innerHTML = `<h2>${t().waiting_h}</h2><p class="muted">${t().waiting_p}</p>`; return; }
+  const rows = Object.entries(r.districts).sort((a, b) => (b[1].level ?? -1) - (a[1].level ?? -1) || dname(a[0]).localeCompare(dname(b[0])));
   const flagged = rows.filter(([, d]) => d.level > 0).length;
-  p.innerHTML = `<h2>${flagged ? flagged + " district" + (flagged > 1 ? "s" : "") + " flagged" : "No districts flagged"}</h2>
-    <p class="muted">Click a district on the map or below for details.</p>
-    <div class="list">${rows.map(([n, d]) => `<button data-n="${esc(n)}"><span>${esc(n)}</span>${lvlBadge(d.level)}</button>`).join("")}</div>`;
+  p.innerHTML = `<h2>${t().flagged(flagged)}</h2><p class="muted">${t().click_hint}</p>
+    <div class="list">${rows.map(([n, d]) => `<button data-n="${esc(n)}"><span>${esc(dname(n))}</span>${lvlBadge(d.level)}</button>`).join("")}</div>`;
   p.querySelectorAll("button[data-n]").forEach(b => b.addEventListener("click", () => select(b.dataset.n)));
 }
 
@@ -283,65 +704,98 @@ function select(name) {
   state.sel = name;
   document.querySelectorAll("#map path").forEach(p => p.classList.toggle("sel", p.dataset.n === name));
   const d = state.risk && state.risk.districts[name]; const p = document.getElementById("panel");
-  if (!d) { p.innerHTML = `<button class="back">&larr; All districts</button><h2>${esc(name)}</h2><p class="muted">No data.</p>`; }
+  if (!d) { p.innerHTML = `<button class="back">&larr; ${t().all_districts}</button><h2>${esc(dname(name))}</h2><p class="muted">${t().nodata}</p>`; }
   else {
     const days = Object.entries(d.rain || {});
-    const t = (state.thr && (state.thr.rain[name] || state.thr.rain._default)) || null;
+    const th = (state.thr && (state.thr.rain[name] || state.thr.rain._default)) || null;
     const past = state.events.filter(e => e.districts.includes(name));
-    p.innerHTML = `<button class="back">&larr; All districts</button>
-      <h2>${esc(name)} ${lvlBadge(d.level)}</h2>
-      <p class="reason">${d.reasons && d.reasons.length ? d.reasons.map(esc).join("<br>") : "No signal above its threshold."}</p>
-      ${d.signals ? `<div class="sigs">${Object.entries(SIGNAME).map(([k, lab]) => `<span class="sig">${lab} ${k in d.signals ? lvlBadge(d.signals[k]) : '<span class="lvl ln">n/a</span>'}</span>`).join("")}</div>` : ""}
-      ${d.gauge ? `<p class="muted">Rain gauges (24 h to 8:30 am ${fmtDay(d.gauge.report_date)}): district average ${d.gauge.avg_mm ?? "–"} mm${d.gauge.max_mm ? ", heaviest gauge " + d.gauge.max_mm + " mm" : ""}.</p>` : ""}
-      ${d.imd ? `<p class="muted">IMD gauge-based rain, wettest square: ${d.imd.last_day_mm} mm on ${fmtDay(d.imd.date)}, ${d.imd.three_day_mm} mm over 3 days.</p>` : ""}
-      ${d.satellite ? `<p class="muted">Satellite rain, wettest spot: ${d.satellite.last_day_mm} mm yesterday, ${d.satellite.three_day_mm} mm over 3 days.</p>` : ""}
-      ${d.reservoirs && d.reservoirs.length ? `<p class="muted">Reservoirs upstream: ${d.reservoirs.map(r => esc(r.name) + " " + r.storage_pct + "%" + (r.rising ? " (rising)" : "")).join(", ")}.</p>` : ""}
-      ${days.length ? `<table><thead><tr><th>Day</th><th class="num">Rain that day</th><th class="num">3-day total</th><th>Level</th></tr></thead>
+    const whys = d.why && d.why.length ? d.why : null;
+    const reasons = whys ? `<ul class="reason">${whys.map(w => `<li>${lvlBadge(w.lvl)} ${whyText(w)}</li>`).join("")}</ul>`
+                         : `<p class="reason">${d.reasons && d.reasons.length && lang === "en" ? d.reasons.map(esc).join("<br>") : t().nothing}</p>`;
+    const S = t().sig;
+    p.innerHTML = `<button class="back">&larr; ${t().all_districts}</button>
+      <h2>${esc(dname(name))} ${lvlBadge(d.level)}</h2>
+      ${reasons}
+      ${d.signals ? `<div class="sigs">${["forecast", "satellite", "imd", "gauge", "reservoir"].map(k => `<span class="sig">${S[k]} ${k in d.signals ? lvlBadge(d.signals[k]) : `<span class="lvl ln">–</span>`}</span>`).join("")}</div>` : ""}
+      ${days.length ? `<table><thead><tr><th>${t().day}</th><th class="num">${t().rain_day}</th><th class="num">${t().three_day}</th><th>${t().level}</th></tr></thead>
       <tbody>${days.map(([day, v]) => `<tr><td>${fmtDay(day)}</td><td class="num">${v.r1} mm</td><td class="num">${v.r3} mm</td><td>${lvlBadge(v.level)}</td></tr>`).join("")}</tbody></table>` : ""}
-      ${d.rivers && d.rivers.length ? `<h3 style="font-size:1rem;margin:16px 0 4px">Rivers</h3><table><tbody>${d.rivers.map(rv => `<tr><td>${esc(rv.name)}</td><td class="num">${rv.peak_7d_m3s ?? "–"} m³/s peak (7 days)</td><td>${lvlBadge(rv.level)}</td></tr>`).join("")}</tbody></table>` : ""}
-      ${t ? `<p class="muted" style="margin-top:14px">Thresholds here: Warning at ${t.r1.warning} mm in a day or ${t.r3.warning} mm over 3 days.</p>` : ""}
-      ${past.length ? `<p class="muted">Recorded floods in this district: ${past.map(e => esc(e.name) + " (" + e.start.slice(0, 4) + ")").join(", ")}.</p>` : ""}`;
+      ${d.rivers && d.rivers.length ? `<h3 style="font-size:1rem;margin:16px 0 4px">${t().rivers}</h3><table><tbody>${d.rivers.map(rv => `<tr><td>${esc(rv.name)}</td><td class="num">${rv.peak_7d_m3s ?? "–"} ${t().peak7}</td><td>${lvlBadge(rv.level)}</td></tr>`).join("")}</tbody></table>` : ""}
+      ${d.gauge ? `<p class="muted">${esc(t().gauge_line(fmtDay(d.gauge.report_date), d.gauge.avg_mm, d.gauge.max_mm))}</p>` : ""}
+      ${d.imd ? `<p class="muted">${esc(t().imd_line(d.imd.last_day_mm, fmtDay(d.imd.date), d.imd.three_day_mm))}</p>` : ""}
+      ${d.satellite ? `<p class="muted">${esc(t().sat_line(d.satellite.last_day_mm, d.satellite.three_day_mm))}</p>` : ""}
+      ${d.reservoirs && d.reservoirs.length ? `<p class="muted">${esc(t().res_line(d.reservoirs.map(r => r.name + " " + Math.round(r.storage_pct) + "%" + (r.rising ? " (" + t().rising + ")" : "")).join(", ")))}</p>` : ""}
+      ${th ? `<p class="muted">${esc(t().thr_line(th.r1.warning, th.r3.warning))}</p>` : ""}
+      ${past.length ? `<p class="muted">${esc(t().past_line(past.map(e => ename(e) + " (" + e.start.slice(0, 4) + ")").join(", ")))}</p>` : ""}`;
   }
   p.querySelector(".back").addEventListener("click", () => { state.sel = null; document.querySelectorAll("#map path").forEach(x => x.classList.remove("sel")); renderList(); });
 }
 
+// ---------------------------------------------------------------- how / record
 function renderLevels() {
-  const t = state.thr && state.thr.rain._default;
-  document.querySelector("#levels-table tbody").innerHTML = LEVELS.map((L, i) => {
+  const th = state.thr && state.thr.rain._default;
+  document.querySelector("#levels-table thead").innerHTML = `<tr><th>${t().lv_cols[0]}</th><th>${t().lv_cols[1]}</th><th class="num">${t().lv_cols[2]}</th><th class="num">${t().lv_cols[3]}</th></tr>`;
+  document.querySelector("#levels-table tbody").innerHTML = t().levels.map((L, i) => {
     const key = ["", "watch", "warning", "danger"][i];
-    return `<tr><td>${lvlBadge(i)}</td><td>${MEANING[i]}</td><td class="num">${i && t ? "≥ " + t.r1[key] + " mm" : "below Watch"}</td><td class="num">${i && t ? "≥ " + t.r3[key] + " mm" : ""}</td></tr>`;
+    return `<tr><td>${lvlBadge(i)}</td><td>${t().meaning[i]}</td><td class="num">${i && th ? "≥ " + th.r1[key] + " mm" : t().below_watch}</td><td class="num">${i && th ? "≥ " + th.r3[key] + " mm" : ""}</td></tr>`;
   }).join("");
   const n = state.thr ? Object.keys(state.thr.rain).filter(k => k !== "_default").length : 0;
-  document.getElementById("thr-note").textContent = state.thr ? (n ? `Typical values shown. ${n} districts have their own thresholds, tuned to their rainfall history. ` : "") + "Threshold version: " + state.thr.version + "." : "";
+  document.getElementById("thr-note").textContent = state.thr ? t().thr_note(n, state.thr.version) : "";
 }
 
 function renderRecord() {
   const el = document.getElementById("record-body"); const rec = state.rec;
-  if (!rec) { el.innerHTML = '<div class="card step"><p>The backtest results will appear here once the historical analysis has run.</p></div>'; return; }
-  const s = rec.summary;
-  el.innerHTML = `<div class="grid4" style="margin-bottom:18px">
-      <div class="card stat"><div class="big">${s.test.hits}/${s.test.pairs}</div><div class="lab">district floods flagged at Warning or above in the test period (${s.test.first_year}–${s.test.last_year})</div></div>
-      <div class="card stat"><div class="big">${s.train.hits}/${s.train.pairs}</div><div class="lab">district floods flagged in the period used to set thresholds (${s.train.first_year}–${s.train.last_year})</div></div>
-      <div class="card stat"><div class="big">${s.test.alert_days_per_district_season}</div><div class="lab">Warning-or-above days per district per season with no recorded flood (test period)</div></div>
-      <div class="card stat"><div class="big">${s.baseline.test.hits}/${s.baseline.test.pairs}</div><div class="lab">flagged by a simple baseline (IMD's fixed "very heavy rain" level, 115.6 mm/day), which gave ${s.baseline.test.alert_days_per_district_season} no-flood alert days per district per season</div></div>
-    </div>
+  if (!rec) { el.innerHTML = `<div class="card step"><p>${t().rec_wait}</p></div>`; }
+  else {
+    const s = rec.summary; const SL = t().siglong;
+    el.innerHTML = `<div class="grid4" style="margin-bottom:18px">${t().rec_stats(s).map(([b, l]) => `<div class="card stat"><div class="big">${esc(b)}</div><div class="lab">${esc(l)}</div></div>`).join("")}</div>
+      <div class="card tablewrap" style="padding:4px 10px"><table>
+        <thead><tr>${t().rec_cols.map(c => `<th>${c}</th>`).join("")}</tr></thead>
+        <tbody>${rec.events.map(e => `<tr><td><a href="${esc(e.source)}" target="_blank" rel="noopener">${esc(ename(e))}</a></td><td>${fmtDate(e.start)}</td><td>${e.set === "test" ? t().test : t().training}</td>
+          <td class="hit">${e.hit.map(n => esc(dname(n))).join(", ") || "–"}</td><td class="miss">${e.missed.map(n => esc(dname(n))).join(", ") || "–"}</td><td>${(e.caught_by || []).map(k => esc(SL[k] || k)).join(", ") || "–"}</td></tr>`).join("")}</tbody>
+      </table></div>
+      ${s.by_signal_test ? `<p class="muted">${esc(t().rec_signal(Object.entries(s.by_signal_test).map(([k, v]) => (SL[k] || k) + " " + v.hits + "/" + v.pairs).join(" · ")))}</p>` : ""}
+      <p class="muted">${esc(rec.note || "")}</p>`;
+  }
+  const fe = document.getElementById("fct-body"); const f = state.fct;
+  if (!f) { fe.innerHTML = `<div class="card step"><p>${t().fct_wait}</p></div>`; return; }
+  fe.innerHTML = `<div class="grid4" style="margin-bottom:18px">${t().fct_stats(f.summary).map(([b, l]) => `<div class="card stat"><div class="big">${esc(b)}</div><div class="lab">${esc(l)}</div></div>`).join("")}</div>
     <div class="card tablewrap" style="padding:4px 10px"><table>
-      <thead><tr><th>Flood</th><th>Dates</th><th>Set</th><th>Districts flagged</th><th>Districts missed</th><th>Caught by</th></tr></thead>
-      <tbody>${rec.events.map(e => `<tr><td><a href="${esc(e.source)}" target="_blank" rel="noopener">${esc(e.name)}</a></td><td>${fmtDay(e.start)} – ${fmtDay(e.end)} ${e.start.slice(0, 4)}</td><td>${e.set === "test" ? "Test" : "Training"}</td>
-        <td class="hit">${e.hit.map(esc).join(", ") || "–"}</td><td class="miss">${e.missed.map(esc).join(", ") || "–"}</td><td>${(e.caught_by || []).map(k => esc(SIGLONG[k] || k)).join(", ") || "–"}</td></tr>`).join("")}</tbody>
+      <thead><tr>${t().fct_cols.map(c => `<th>${c}</th>`).join("")}</tr></thead>
+      <tbody>${f.events.map(e => `<tr><td>${esc(ename(e))}</td><td>${fmtDate(e.start)}</td><td>${e.districts.map(r => esc(dname(r.district)) + ": " + `<span class="${r.max_lead_days === null ? "miss" : "hit"}">${esc(t().lead_txt(r.max_lead_days))}</span>`).join("<br>")}</td></tr>`).join("")}</tbody>
     </table></div>
-    ${s.high_sensitivity ? `<p style="margin-top:14px">With the <strong>high-sensitivity</strong> setting, it would have caught ${s.high_sensitivity.test.hits}/${s.high_sensitivity.test.pairs} district floods in the test years, but with ${s.high_sensitivity.test.alert_days_per_district_season} no-flood alert days per district per season.</p>` : ""}
-    ${s.by_signal_test ? `<p class="muted">Each signal on its own, test years: ${Object.entries(s.by_signal_test).map(([k, v]) => esc(SIGLONG[k] || k) + " " + v.hits + "/" + v.pairs).join(" · ")}.</p>` : ""}
-    <p class="muted" style="margin-top:10px">${esc(rec.note || "")}</p>`;
+    <p class="muted">${esc(f.summary.note || "")}</p>`;
 }
 
+// ---------------------------------------------------------------- tabs and language
+function showTab() {
+  const id = (location.hash || "#map").slice(1);
+  const tab = ["map", "learn", "how", "record", "about"].includes(id) ? id : "map";
+  document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === "v-" + tab));
+  document.querySelectorAll("nav.tabs a").forEach(a => a.classList.toggle("on", a.dataset.tab === tab));
+  window.scrollTo(0, 0);
+}
+function renderAll() {
+  applyText();
+  if (state.geo) drawMap();
+  renderStatus();
+  if (state.sel) select(state.sel); else renderList();
+  renderLevels(); renderRecord();
+}
+document.getElementById("langbtn").addEventListener("click", () => {
+  lang = lang === "en" ? "ta" : "en";
+  try { localStorage.setItem("tnfw-lang", lang); } catch (e) {}
+  renderAll();
+});
+window.addEventListener("hashchange", showTab);
+
 (async function init() {
-  const [geo, risk, thr, rec, events] = await Promise.all([
-    j("data/districts.json"), j("data/risk.json"), j("data/thresholds.json"), j("data/backtest.json"), j("data/flood_events.json")]);
-  Object.assign(state, {geo, risk, thr, rec, events: events || []});
-  if (geo) drawMap();
-  renderStatus(); renderList(); renderLevels(); renderRecord();
+  showTab(); applyText();
+  const [geo, risk, thr, rec, events, fct] = await Promise.all([
+    j("data/districts.json"), j("data/risk.json"), j("data/thresholds.json"), j("data/backtest.json"), j("data/flood_events.json"), j("data/forecast_test.json")]);
+  Object.assign(state, {geo, risk, thr, rec, events: events || [], fct});
+  renderAll();
 })();
+}
 </script>
 </body>
 </html>
