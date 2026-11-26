@@ -1,5 +1,5 @@
 {
- "version": "v2 2026-11-26",
+ "version": "v2 2026-11-27",
  "signals": [
   "forecast",
   "imd",
@@ -10,1398 +10,1494 @@
  ],
  "settings": {
   "balanced": {
-   "percentile": 0.997,
-   "mode": "max",
+   "percentile": 0.993,
+   "mode": "agree",
    "signals": [
     "forecast",
     "gauge",
-    "imd",
     "reservoir",
-    "river"
+    "river",
+    "satellite"
    ],
    "rain": {
     "_default": {
      "r1": {
-      "watch": 28.9,
-      "warning": 83.6,
-      "danger": 109.3
+      "watch": 27.8,
+      "warning": 55.7,
+      "danger": 90.9
      },
      "r3": {
-      "watch": 74.5,
-      "warning": 158.3,
-      "danger": 197.5
+      "watch": 72.4,
+      "warning": 124.8,
+      "danger": 178.8
      }
     },
     "Ariyalur": {
      "r1": {
-      "watch": 30.9,
-      "warning": 74.0,
-      "danger": 109.3
+      "watch": 29.2,
+      "warning": 50.2,
+      "danger": 76.3
      },
      "r3": {
-      "watch": 76.2,
-      "warning": 190.1,
-      "danger": 292.0
+      "watch": 72.7,
+      "warning": 124.8,
+      "danger": 258.8
      }
     },
     "Chengalpattu": {
      "r1": {
-      "watch": 35.0,
-      "warning": 109.2,
-      "danger": 133.5
+      "watch": 31.2,
+      "warning": 61.4,
+      "danger": 114.5
      },
      "r3": {
-      "watch": 99.3,
-      "warning": 198.1,
-      "danger": 210.3
+      "watch": 94.8,
+      "warning": 152.7,
+      "danger": 201.3
      }
     },
     "Chennai": {
      "r1": {
-      "watch": 30.8,
-      "warning": 105.0,
-      "danger": 155.3
+      "watch": 29.8,
+      "warning": 76.7,
+      "danger": 121.6
      },
      "r3": {
-      "watch": 101.2,
-      "warning": 176.6,
-      "danger": 266.8
+      "watch": 90.0,
+      "warning": 161.9,
+      "danger": 203.4
      }
     },
     "Coimbatore": {
      "r1": {
-      "watch": 22.3,
-      "warning": 43.8,
-      "danger": 51.4
+      "watch": 21.0,
+      "warning": 38.4,
+      "danger": 45.8
      },
      "r3": {
-      "watch": 54.1,
-      "warning": 85.1,
-      "danger": 101.9
+      "watch": 52.9,
+      "warning": 75.5,
+      "danger": 87.5
      }
     },
     "Cuddalore": {
      "r1": {
-      "watch": 33.8,
-      "warning": 94.0,
-      "danger": 168.2
+      "watch": 30.7,
+      "warning": 66.6,
+      "danger": 120.6
      },
      "r3": {
-      "watch": 90.9,
-      "warning": 235.4,
-      "danger": 325.3
+      "watch": 85.6,
+      "warning": 169.9,
+      "danger": 304.9
      }
     },
     "Dharmapuri": {
      "r1": {
       "watch": 20.0,
-      "warning": 53.8,
-      "danger": 70.0
+      "warning": 33.5,
+      "danger": 65.0
      },
      "r3": {
-      "watch": 47.7,
-      "warning": 102.7,
-      "danger": 109.2
+      "watch": 46.0,
+      "warning": 83.8,
+      "danger": 103.7
      }
     },
     "Dindigul": {
      "r1": {
-      "watch": 28.8,
-      "warning": 73.8,
-      "danger": 91.0
+      "watch": 28.2,
+      "warning": 66.4,
+      "danger": 78.2
      },
      "r3": {
-      "watch": 78.9,
-      "warning": 158.2,
-      "danger": 205.2
+      "watch": 77.3,
+      "warning": 123.4,
+      "danger": 175.0
      }
     },
     "Erode": {
      "r1": {
       "watch": 20.0,
-      "warning": 42.5,
-      "danger": 47.0
+      "warning": 32.2,
+      "danger": 44.9
      },
      "r3": {
-      "watch": 49.1,
-      "warning": 75.9,
-      "danger": 91.7
+      "watch": 47.9,
+      "warning": 66.8,
+      "danger": 78.8
      }
     },
     "Kallakurichi": {
      "r1": {
-      "watch": 30.4,
-      "warning": 87.0,
-      "danger": 144.5
+      "watch": 28.9,
+      "warning": 69.4,
+      "danger": 97.7
      },
      "r3": {
-      "watch": 81.3,
-      "warning": 204.3,
-      "danger": 327.8
+      "watch": 76.9,
+      "warning": 138.9,
+      "danger": 284.3
      }
     },
     "Kancheepuram": {
      "r1": {
-      "watch": 27.7,
-      "warning": 86.2,
-      "danger": 97.8
+      "watch": 26.6,
+      "warning": 55.7,
+      "danger": 95.0
      },
      "r3": {
-      "watch": 74.5,
-      "warning": 123.5,
-      "danger": 141.6
+      "watch": 72.1,
+      "warning": 117.2,
+      "danger": 126.8
      }
     },
     "Kanyakumari": {
      "r1": {
-      "watch": 32.9,
-      "warning": 75.2,
-      "danger": 92.2
+      "watch": 31.6,
+      "warning": 56.6,
+      "danger": 81.8
      },
      "r3": {
-      "watch": 85.3,
-      "warning": 165.5,
-      "danger": 191.7
+      "watch": 82.6,
+      "warning": 139.4,
+      "danger": 179.2
      }
     },
     "Karur": {
      "r1": {
       "watch": 20.0,
-      "warning": 56.2,
-      "danger": 71.0
+      "warning": 49.2,
+      "danger": 58.0
      },
      "r3": {
-      "watch": 56.8,
-      "warning": 114.9,
-      "danger": 137.6
+      "watch": 54.0,
+      "warning": 100.2,
+      "danger": 117.4
      }
     },
     "Krishnagiri": {
      "r1": {
       "watch": 20.0,
-      "warning": 66.6,
-      "danger": 79.4
+      "warning": 45.9,
+      "danger": 68.7
      },
      "r3": {
-      "watch": 53.1,
-      "warning": 125.9,
-      "danger": 145.2
+      "watch": 51.5,
+      "warning": 99.0,
+      "danger": 138.0
      }
     },
     "Madurai": {
      "r1": {
-      "watch": 26.7,
-      "warning": 66.8,
-      "danger": 73.9
+      "watch": 23.3,
+      "warning": 53.9,
+      "danger": 70.2
      },
      "r3": {
-      "watch": 70.8,
-      "warning": 120.1,
-      "danger": 124.6
+      "watch": 68.0,
+      "warning": 111.2,
+      "danger": 121.2
      }
     },
     "Mayiladuthurai": {
      "r1": {
-      "watch": 40.5,
-      "warning": 107.6,
-      "danger": 160.5
+      "watch": 36.7,
+      "warning": 80.5,
+      "danger": 117.9
      },
      "r3": {
-      "watch": 104.8,
-      "warning": 226.9,
-      "danger": 278.9
+      "watch": 98.5,
+      "warning": 197.0,
+      "danger": 237.1
      }
     },
     "Nagapattinam": {
      "r1": {
-      "watch": 39.8,
-      "warning": 114.9,
-      "danger": 132.5
+      "watch": 36.9,
+      "warning": 75.6,
+      "danger": 118.8
      },
      "r3": {
-      "watch": 111.2,
-      "warning": 203.4,
-      "danger": 287.8
+      "watch": 105.9,
+      "warning": 185.0,
+      "danger": 219.4
      }
     },
     "Namakkal": {
      "r1": {
       "watch": 20.0,
-      "warning": 43.5,
-      "danger": 59.1
+      "warning": 37.9,
+      "danger": 51.3
      },
      "r3": {
-      "watch": 45.4,
-      "warning": 81.4,
-      "danger": 115.9
+      "watch": 44.4,
+      "warning": 72.7,
+      "danger": 104.6
      }
     },
     "Nilgiris": {
      "r1": {
-      "watch": 27.7,
-      "warning": 57.9,
-      "danger": 73.9
+      "watch": 27.2,
+      "warning": 44.3,
+      "danger": 61.6
      },
      "r3": {
-      "watch": 70.3,
-      "warning": 116.9,
-      "danger": 140.3
+      "watch": 69.1,
+      "warning": 101.9,
+      "danger": 121.7
      }
     },
     "Perambalur": {
      "r1": {
-      "watch": 29.5,
-      "warning": 65.8,
-      "danger": 137.6
+      "watch": 28.5,
+      "warning": 56.1,
+      "danger": 77.7
      },
      "r3": {
-      "watch": 74.4,
-      "warning": 200.4,
-      "danger": 269.8
+      "watch": 70.9,
+      "warning": 130.8,
+      "danger": 252.2
      }
     },
     "Pudukkottai": {
      "r1": {
-      "watch": 27.1,
-      "warning": 92.8,
-      "danger": 162.4
+      "watch": 25.3,
+      "warning": 46.0,
+      "danger": 115.9
      },
      "r3": {
-      "watch": 73.8,
-      "warning": 215.2,
-      "danger": 368.4
+      "watch": 71.1,
+      "warning": 110.4,
+      "danger": 278.2
      }
     },
     "Ramanathapuram": {
      "r1": {
-      "watch": 29.6,
-      "warning": 83.6,
-      "danger": 109.4
+      "watch": 28.2,
+      "warning": 49.3,
+      "danger": 93.4
      },
      "r3": {
-      "watch": 78.3,
-      "warning": 161.0,
-      "danger": 238.6
+      "watch": 75.0,
+      "warning": 138.3,
+      "danger": 178.8
      }
     },
     "Ranipet": {
      "r1": {
-      "watch": 26.1,
-      "warning": 97.0,
-      "danger": 123.8
+      "watch": 24.2,
+      "warning": 64.8,
+      "danger": 104.9
      },
      "r3": {
-      "watch": 67.9,
-      "warning": 158.3,
-      "danger": 227.4
+      "watch": 64.1,
+      "warning": 119.7,
+      "danger": 197.1
      }
     },
     "Salem": {
      "r1": {
-      "watch": 21.3,
-      "warning": 57.1,
-      "danger": 78.7
+      "watch": 20.1,
+      "warning": 40.4,
+      "danger": 58.1
      },
      "r3": {
-      "watch": 53.1,
-      "warning": 117.4,
-      "danger": 159.1
+      "watch": 51.1,
+      "warning": 81.1,
+      "danger": 124.6
      }
     },
     "Sivaganga": {
      "r1": {
-      "watch": 29.4,
-      "warning": 90.5,
-      "danger": 126.3
+      "watch": 27.6,
+      "warning": 56.1,
+      "danger": 102.4
      },
      "r3": {
-      "watch": 85.2,
-      "warning": 160.9,
-      "danger": 257.6
+      "watch": 80.5,
+      "warning": 135.0,
+      "danger": 184.6
      }
     },
     "Tenkasi": {
      "r1": {
-      "watch": 30.4,
-      "warning": 54.6,
-      "danger": 63.6
+      "watch": 28.8,
+      "warning": 49.1,
+      "danger": 57.1
      },
      "r3": {
-      "watch": 74.8,
-      "warning": 117.0,
-      "danger": 131.7
+      "watch": 73.9,
+      "warning": 106.0,
+      "danger": 123.1
      }
     },
     "Thanjavur": {
      "r1": {
-      "watch": 33.2,
-      "warning": 85.6,
-      "danger": 110.7
+      "watch": 29.9,
+      "warning": 56.8,
+      "danger": 94.9
      },
      "r3": {
-      "watch": 80.7,
-      "warning": 168.7,
-      "danger": 260.3
+      "watch": 77.3,
+      "warning": 136.0,
+      "danger": 187.1
      }
     },
     "Theni": {
      "r1": {
-      "watch": 22.7,
-      "warning": 47.8,
-      "danger": 79.5
+      "watch": 21.1,
+      "warning": 39.9,
+      "danger": 49.8
      },
      "r3": {
-      "watch": 56.8,
-      "warning": 102.0,
-      "danger": 114.3
+      "watch": 54.7,
+      "warning": 91.0,
+      "danger": 105.3
      }
     },
     "Thiruvallur": {
      "r1": {
-      "watch": 28.9,
-      "warning": 87.9,
-      "danger": 127.5
+      "watch": 26.9,
+      "warning": 73.7,
+      "danger": 97.4
      },
      "r3": {
-      "watch": 88.4,
-      "warning": 144.0,
-      "danger": 189.9
+      "watch": 83.8,
+      "warning": 129.6,
+      "danger": 154.0
      }
     },
     "Thiruvarur": {
      "r1": {
-      "watch": 34.7,
-      "warning": 104.5,
-      "danger": 174.4
+      "watch": 33.7,
+      "warning": 72.3,
+      "danger": 124.9
      },
      "r3": {
-      "watch": 96.0,
-      "warning": 207.7,
-      "danger": 323.2
+      "watch": 94.1,
+      "warning": 173.4,
+      "danger": 245.0
      }
     },
     "Thoothukudi": {
      "r1": {
-      "watch": 31.0,
-      "warning": 69.0,
-      "danger": 77.8
+      "watch": 30.0,
+      "warning": 60.4,
+      "danger": 70.1
      },
      "r3": {
-      "watch": 85.4,
-      "warning": 121.2,
-      "danger": 124.1
+      "watch": 83.3,
+      "warning": 110.8,
+      "danger": 122.5
      }
     },
     "Tiruchirappalli": {
      "r1": {
-      "watch": 22.4,
-      "warning": 52.3,
-      "danger": 72.2
+      "watch": 21.5,
+      "warning": 44.4,
+      "danger": 62.9
      },
      "r3": {
-      "watch": 56.8,
-      "warning": 113.0,
-      "danger": 141.9
+      "watch": 53.6,
+      "warning": 95.0,
+      "danger": 119.2
      }
     },
     "Tirunelveli": {
      "r1": {
-      "watch": 31.1,
-      "warning": 84.1,
-      "danger": 98.2
+      "watch": 29.8,
+      "warning": 67.8,
+      "danger": 90.9
      },
      "r3": {
-      "watch": 79.6,
-      "warning": 174.7,
-      "danger": 197.5
+      "watch": 74.0,
+      "warning": 157.9,
+      "danger": 182.2
      }
     },
     "Tirupathur": {
      "r1": {
-      "watch": 22.8,
-      "warning": 86.4,
-      "danger": 127.3
+      "watch": 21.1,
+      "warning": 48.3,
+      "danger": 92.7
      },
      "r3": {
-      "watch": 57.2,
-      "warning": 171.7,
-      "danger": 218.1
+      "watch": 55.2,
+      "warning": 127.7,
+      "danger": 200.1
      }
     },
     "Tiruppur": {
      "r1": {
-      "watch": 20.2,
-      "warning": 43.6,
-      "danger": 53.0
+      "watch": 20.0,
+      "warning": 36.4,
+      "danger": 49.8
      },
      "r3": {
-      "watch": 49.2,
-      "warning": 96.0,
-      "danger": 99.6
+      "watch": 45.6,
+      "warning": 82.3,
+      "danger": 99.1
      }
     },
     "Tiruvannamalai": {
      "r1": {
-      "watch": 29.8,
-      "warning": 86.5,
-      "danger": 126.2
+      "watch": 28.0,
+      "warning": 55.5,
+      "danger": 95.4
      },
      "r3": {
-      "watch": 67.4,
-      "warning": 155.9,
-      "danger": 183.4
+      "watch": 65.4,
+      "warning": 142.3,
+      "danger": 163.6
      }
     },
     "Vellore": {
      "r1": {
-      "watch": 24.1,
-      "warning": 97.5,
-      "danger": 115.9
+      "watch": 23.6,
+      "warning": 66.6,
+      "danger": 99.0
      },
      "r3": {
-      "watch": 73.6,
-      "warning": 167.7,
-      "danger": 221.1
+      "watch": 67.3,
+      "warning": 131.7,
+      "danger": 186.2
      }
     },
     "Viluppuram": {
      "r1": {
-      "watch": 32.4,
-      "warning": 116.3,
-      "danger": 138.6
+      "watch": 30.6,
+      "warning": 65.7,
+      "danger": 128.1
      },
      "r3": {
-      "watch": 86.6,
-      "warning": 201.9,
-      "danger": 229.5
+      "watch": 85.5,
+      "warning": 178.3,
+      "danger": 220.1
      }
     },
     "Virudhunagar": {
      "r1": {
-      "watch": 28.9,
-      "warning": 55.2,
-      "danger": 60.1
+      "watch": 27.8,
+      "warning": 50.4,
+      "danger": 56.2
      },
      "r3": {
-      "watch": 74.1,
-      "warning": 111.3,
-      "danger": 123.6
+      "watch": 72.4,
+      "warning": 100.1,
+      "danger": 118.7
      }
     }
    },
    "satellite": {
     "Ariyalur": {
      "r1": {
-      "watch": 39.6,
-      "warning": 83.9,
-      "danger": 113.9
+      "watch": 38.3,
+      "warning": 67.6,
+      "danger": 89.0
      },
      "r3": {
-      "watch": 94.9,
-      "warning": 178.6,
-      "danger": 211.2
+      "watch": 91.0,
+      "warning": 154.6,
+      "danger": 191.0
      }
     },
     "Chengalpattu": {
      "r1": {
-      "watch": 46.1,
-      "warning": 104.5,
-      "danger": 140.3
+      "watch": 43.8,
+      "warning": 77.7,
+      "danger": 118.4
      },
      "r3": {
-      "watch": 110.7,
-      "warning": 239.3,
-      "danger": 454.1
+      "watch": 105.6,
+      "warning": 194.8,
+      "danger": 289.9
      }
     },
     "Chennai": {
      "r1": {
-      "watch": 30.7,
-      "warning": 110.8,
-      "danger": 135.9
+      "watch": 28.4,
+      "warning": 75.2,
+      "danger": 120.6
      },
      "r3": {
-      "watch": 83.3,
-      "warning": 224.0,
-      "danger": 327.6
+      "watch": 76.6,
+      "warning": 179.8,
+      "danger": 249.8
      }
     },
     "Coimbatore": {
      "r1": {
-      "watch": 55.7,
-      "warning": 91.0,
-      "danger": 123.8
+      "watch": 53.5,
+      "warning": 77.5,
+      "danger": 101.6
      },
      "r3": {
-      "watch": 123.3,
-      "warning": 194.1,
-      "danger": 262.9
+      "watch": 119.7,
+      "warning": 172.8,
+      "danger": 209.3
+     }
+    },
+    "Coimbatore upstream": {
+     "r1": {
+      "watch": 52.2,
+      "warning": 79.1,
+      "danger": 99.2
+     },
+     "r3": {
+      "watch": 121.0,
+      "warning": 180.1,
+      "danger": 234.2
      }
     },
     "Cuddalore": {
      "r1": {
-      "watch": 46.8,
-      "warning": 115.8,
-      "danger": 137.3
+      "watch": 44.8,
+      "warning": 81.5,
+      "danger": 124.0
      },
      "r3": {
-      "watch": 110.7,
-      "warning": 246.5,
-      "danger": 305.7
+      "watch": 106.0,
+      "warning": 200.9,
+      "danger": 283.1
      }
     },
     "Dharmapuri": {
      "r1": {
-      "watch": 37.5,
-      "warning": 65.8,
-      "danger": 80.7
+      "watch": 36.1,
+      "warning": 57.8,
+      "danger": 72.1
      },
      "r3": {
-      "watch": 87.3,
-      "warning": 131.2,
-      "danger": 181.6
+      "watch": 84.8,
+      "warning": 113.4,
+      "danger": 132.9
      }
     },
     "Dindigul": {
      "r1": {
-      "watch": 44.6,
-      "warning": 74.0,
-      "danger": 86.8
+      "watch": 43.0,
+      "warning": 65.9,
+      "danger": 79.6
      },
      "r3": {
-      "watch": 104.4,
-      "warning": 143.4,
-      "danger": 170.1
+      "watch": 100.9,
+      "warning": 129.8,
+      "danger": 153.6
      }
     },
     "Erode": {
      "r1": {
-      "watch": 41.3,
-      "warning": 71.6,
-      "danger": 79.6
+      "watch": 39.8,
+      "warning": 60.5,
+      "danger": 74.0
      },
      "r3": {
-      "watch": 92.0,
-      "warning": 136.2,
-      "danger": 158.1
+      "watch": 89.7,
+      "warning": 126.2,
+      "danger": 140.1
      }
     },
     "Kallakurichi": {
      "r1": {
-      "watch": 41.8,
-      "warning": 85.4,
-      "danger": 125.6
+      "watch": 39.2,
+      "warning": 69.7,
+      "danger": 94.6
      },
      "r3": {
-      "watch": 95.7,
-      "warning": 190.4,
-      "danger": 234.5
+      "watch": 92.7,
+      "warning": 147.5,
+      "danger": 207.6
      }
     },
     "Kancheepuram": {
      "r1": {
-      "watch": 42.6,
-      "warning": 105.2,
-      "danger": 145.8
+      "watch": 40.6,
+      "warning": 80.3,
+      "danger": 125.4
      },
      "r3": {
-      "watch": 100.1,
-      "warning": 241.2,
-      "danger": 365.5
+      "watch": 92.9,
+      "warning": 200.9,
+      "danger": 280.2
      }
     },
     "Kanyakumari": {
      "r1": {
-      "watch": 37.9,
-      "warning": 78.7,
-      "danger": 93.8
+      "watch": 36.3,
+      "warning": 62.7,
+      "danger": 84.1
      },
      "r3": {
-      "watch": 91.6,
-      "warning": 177.4,
-      "danger": 201.9
+      "watch": 88.1,
+      "warning": 142.7,
+      "danger": 186.6
+     }
+    },
+    "Kanyakumari upstream": {
+     "r1": {
+      "watch": 36.9,
+      "warning": 68.6,
+      "danger": 82.0
+     },
+     "r3": {
+      "watch": 89.0,
+      "warning": 145.0,
+      "danger": 195.1
      }
     },
     "Karur": {
      "r1": {
-      "watch": 35.9,
-      "warning": 62.1,
-      "danger": 71.0
+      "watch": 35.1,
+      "warning": 55.2,
+      "danger": 63.2
      },
      "r3": {
-      "watch": 78.9,
-      "warning": 119.9,
-      "danger": 137.2
+      "watch": 77.1,
+      "warning": 109.4,
+      "danger": 124.3
      }
     },
     "Krishnagiri": {
      "r1": {
-      "watch": 39.5,
-      "warning": 66.8,
-      "danger": 75.4
+      "watch": 38.3,
+      "warning": 56.6,
+      "danger": 68.8
      },
      "r3": {
-      "watch": 91.1,
-      "warning": 147.9,
-      "danger": 174.8
+      "watch": 87.6,
+      "warning": 122.3,
+      "danger": 156.7
      }
     },
     "Madurai": {
      "r1": {
-      "watch": 38.5,
-      "warning": 65.5,
-      "danger": 79.4
+      "watch": 37.2,
+      "warning": 60.8,
+      "danger": 70.3
      },
      "r3": {
-      "watch": 91.2,
-      "warning": 135.4,
-      "danger": 151.2
+      "watch": 87.6,
+      "warning": 126.7,
+      "danger": 138.8
      }
     },
     "Mayiladuthurai": {
      "r1": {
-      "watch": 36.6,
-      "warning": 91.5,
-      "danger": 126.1
+      "watch": 33.4,
+      "warning": 70.5,
+      "danger": 105.8
      },
      "r3": {
-      "watch": 89.8,
-      "warning": 194.1,
-      "danger": 292.5
+      "watch": 82.9,
+      "warning": 178.0,
+      "danger": 239.3
      }
     },
     "Nagapattinam": {
      "r1": {
-      "watch": 39.7,
-      "warning": 95.9,
-      "danger": 147.9
+      "watch": 37.4,
+      "warning": 79.6,
+      "danger": 108.1
      },
      "r3": {
-      "watch": 100.3,
-      "warning": 223.9,
-      "danger": 294.6
+      "watch": 94.1,
+      "warning": 186.3,
+      "danger": 260.6
      }
     },
     "Namakkal": {
      "r1": {
-      "watch": 33.9,
-      "warning": 61.9,
-      "danger": 75.5
+      "watch": 32.4,
+      "warning": 53.9,
+      "danger": 63.3
      },
      "r3": {
-      "watch": 76.5,
-      "warning": 120.0,
-      "danger": 134.8
+      "watch": 74.6,
+      "warning": 105.8,
+      "danger": 121.6
      }
     },
     "Nilgiris": {
      "r1": {
-      "watch": 44.7,
-      "warning": 82.9,
-      "danger": 101.9
+      "watch": 43.1,
+      "warning": 69.6,
+      "danger": 96.6
      },
      "r3": {
-      "watch": 106.8,
-      "warning": 180.2,
-      "danger": 246.1
+      "watch": 104.4,
+      "warning": 146.6,
+      "danger": 192.4
      }
     },
     "Perambalur": {
      "r1": {
-      "watch": 37.0,
-      "warning": 63.5,
-      "danger": 92.4
+      "watch": 34.9,
+      "warning": 54.6,
+      "danger": 75.0
      },
      "r3": {
-      "watch": 79.4,
-      "warning": 140.5,
-      "danger": 176.8
+      "watch": 76.9,
+      "warning": 122.2,
+      "danger": 145.7
      }
     },
     "Pudukkottai": {
      "r1": {
-      "watch": 42.7,
-      "warning": 77.2,
-      "danger": 92.0
+      "watch": 40.9,
+      "warning": 67.8,
+      "danger": 81.3
      },
      "r3": {
-      "watch": 100.1,
-      "warning": 168.3,
-      "danger": 191.6
+      "watch": 97.5,
+      "warning": 144.0,
+      "danger": 172.7
      }
     },
     "Ramanathapuram": {
      "r1": {
-      "watch": 36.5,
-      "warning": 68.6,
-      "danger": 88.4
+      "watch": 34.6,
+      "warning": 63.3,
+      "danger": 74.5
      },
      "r3": {
-      "watch": 93.5,
-      "warning": 162.4,
-      "danger": 183.2
+      "watch": 86.6,
+      "warning": 141.8,
+      "danger": 167.3
      }
     },
     "Ranipet": {
      "r1": {
-      "watch": 38.4,
-      "warning": 84.2,
-      "danger": 109.2
+      "watch": 37.2,
+      "warning": 65.9,
+      "danger": 103.4
      },
      "r3": {
-      "watch": 90.2,
-      "warning": 188.3,
-      "danger": 266.7
+      "watch": 83.8,
+      "warning": 150.2,
+      "danger": 211.0
      }
     },
     "Salem": {
      "r1": {
-      "watch": 39.4,
-      "warning": 69.3,
-      "danger": 75.0
+      "watch": 37.6,
+      "warning": 57.0,
+      "danger": 72.9
      },
      "r3": {
-      "watch": 91.1,
-      "warning": 132.1,
-      "danger": 181.6
+      "watch": 89.1,
+      "warning": 121.5,
+      "danger": 143.6
      }
     },
     "Sivaganga": {
      "r1": {
-      "watch": 38.3,
-      "warning": 67.7,
-      "danger": 75.9
+      "watch": 36.6,
+      "warning": 61.3,
+      "danger": 71.0
      },
      "r3": {
-      "watch": 91.6,
-      "warning": 150.0,
-      "danger": 158.7
+      "watch": 89.0,
+      "warning": 122.5,
+      "danger": 155.5
      }
     },
     "Tenkasi": {
      "r1": {
-      "watch": 39.9,
-      "warning": 71.2,
-      "danger": 86.0
+      "watch": 38.4,
+      "warning": 62.7,
+      "danger": 75.3
      },
      "r3": {
-      "watch": 88.9,
-      "warning": 156.9,
-      "danger": 167.5
+      "watch": 85.9,
+      "warning": 126.1,
+      "danger": 160.9
      }
     },
     "Thanjavur": {
      "r1": {
-      "watch": 42.7,
-      "warning": 89.5,
-      "danger": 127.3
+      "watch": 41.1,
+      "warning": 75.2,
+      "danger": 96.5
      },
      "r3": {
-      "watch": 105.4,
-      "warning": 212.7,
-      "danger": 245.2
+      "watch": 99.3,
+      "warning": 173.0,
+      "danger": 227.2
      }
     },
     "Theni": {
      "r1": {
-      "watch": 38.6,
-      "warning": 78.4,
-      "danger": 88.1
+      "watch": 37.1,
+      "warning": 61.3,
+      "danger": 84.0
      },
      "r3": {
-      "watch": 88.1,
-      "warning": 132.1,
-      "danger": 145.8
+      "watch": 85.1,
+      "warning": 124.1,
+      "danger": 134.4
+     }
+    },
+    "Theni upstream": {
+     "r1": {
+      "watch": 40.7,
+      "warning": 66.0,
+      "danger": 87.5
+     },
+     "r3": {
+      "watch": 93.9,
+      "warning": 141.2,
+      "danger": 165.6
      }
     },
     "Thiruvallur": {
      "r1": {
-      "watch": 43.5,
-      "warning": 112.5,
-      "danger": 130.5
+      "watch": 40.4,
+      "warning": 85.7,
+      "danger": 115.4
      },
      "r3": {
-      "watch": 108.0,
-      "warning": 243.8,
-      "danger": 335.9
+      "watch": 101.6,
+      "warning": 199.7,
+      "danger": 259.6
      }
     },
     "Thiruvarur": {
      "r1": {
-      "watch": 39.4,
-      "warning": 89.5,
-      "danger": 125.6
+      "watch": 37.5,
+      "warning": 73.6,
+      "danger": 94.1
      },
      "r3": {
-      "watch": 98.8,
-      "warning": 204.6,
-      "danger": 261.5
+      "watch": 93.9,
+      "warning": 162.3,
+      "danger": 230.8
      }
     },
     "Thoothukudi": {
      "r1": {
-      "watch": 40.9,
-      "warning": 78.9,
-      "danger": 110.0
+      "watch": 38.5,
+      "warning": 65.9,
+      "danger": 85.5
      },
      "r3": {
-      "watch": 100.2,
-      "warning": 176.0,
-      "danger": 194.6
+      "watch": 97.8,
+      "warning": 153.7,
+      "danger": 181.3
      }
     },
     "Tiruchirappalli": {
      "r1": {
-      "watch": 41.8,
-      "warning": 72.6,
-      "danger": 88.1
+      "watch": 40.7,
+      "warning": 60.2,
+      "danger": 73.6
      },
      "r3": {
-      "watch": 94.4,
-      "warning": 141.0,
-      "danger": 178.7
+      "watch": 92.3,
+      "warning": 125.9,
+      "danger": 145.8
      }
     },
     "Tirunelveli": {
      "r1": {
-      "watch": 40.7,
-      "warning": 81.4,
-      "danger": 108.3
+      "watch": 39.7,
+      "warning": 67.3,
+      "danger": 89.3
      },
      "r3": {
-      "watch": 96.4,
-      "warning": 180.3,
-      "danger": 207.1
+      "watch": 92.6,
+      "warning": 146.8,
+      "danger": 192.6
+     }
+    },
+    "Tirunelveli upstream": {
+     "r1": {
+      "watch": 39.3,
+      "warning": 66.5,
+      "danger": 78.1
+     },
+     "r3": {
+      "watch": 89.7,
+      "warning": 133.8,
+      "danger": 157.9
      }
     },
     "Tirupathur": {
      "r1": {
-      "watch": 34.0,
-      "warning": 67.7,
-      "danger": 82.9
+      "watch": 32.5,
+      "warning": 54.0,
+      "danger": 70.9
      },
      "r3": {
-      "watch": 79.0,
-      "warning": 134.7,
-      "danger": 191.4
+      "watch": 77.0,
+      "warning": 115.4,
+      "danger": 168.8
      }
     },
     "Tiruppur": {
      "r1": {
-      "watch": 45.5,
-      "warning": 71.2,
-      "danger": 77.7
+      "watch": 43.3,
+      "warning": 64.9,
+      "danger": 74.3
      },
      "r3": {
-      "watch": 98.9,
-      "warning": 158.1,
-      "danger": 185.7
+      "watch": 96.0,
+      "warning": 133.2,
+      "danger": 164.3
      }
     },
     "Tiruvannamalai": {
      "r1": {
-      "watch": 48.8,
-      "warning": 90.6,
-      "danger": 115.6
+      "watch": 46.6,
+      "warning": 76.0,
+      "danger": 100.6
      },
      "r3": {
-      "watch": 112.7,
-      "warning": 215.4,
-      "danger": 278.4
+      "watch": 107.6,
+      "warning": 171.0,
+      "danger": 226.4
      }
     },
     "Vellore": {
      "r1": {
-      "watch": 36.2,
-      "warning": 78.7,
-      "danger": 112.4
+      "watch": 34.8,
+      "warning": 64.1,
+      "danger": 80.5
      },
      "r3": {
-      "watch": 89.6,
-      "warning": 166.3,
-      "danger": 212.0
+      "watch": 86.1,
+      "warning": 152.2,
+      "danger": 179.7
      }
     },
     "Viluppuram": {
      "r1": {
-      "watch": 45.3,
-      "warning": 93.8,
-      "danger": 124.9
+      "watch": 42.2,
+      "warning": 75.5,
+      "danger": 104.9
      },
      "r3": {
-      "watch": 102.5,
-      "warning": 223.2,
-      "danger": 318.1
+      "watch": 99.9,
+      "warning": 170.3,
+      "danger": 236.7
      }
     },
     "Virudhunagar": {
      "r1": {
-      "watch": 40.8,
-      "warning": 79.4,
-      "danger": 88.4
+      "watch": 38.8,
+      "warning": 62.3,
+      "danger": 81.8
      },
      "r3": {
-      "watch": 95.2,
-      "warning": 150.0,
-      "danger": 163.7
+      "watch": 92.1,
+      "warning": 135.7,
+      "danger": 152.9
      }
     }
    },
    "imd": {
     "Ariyalur": {
      "r1": {
-      "watch": 43.8,
-      "warning": 99.8,
-      "danger": 137.8
+      "watch": 42.3,
+      "warning": 79.5,
+      "danger": 104.4
      },
      "r3": {
-      "watch": 101.7,
-      "warning": 211.3,
-      "danger": 262.8
+      "watch": 98.3,
+      "warning": 166.0,
+      "danger": 240.1
      }
     },
     "Chengalpattu": {
      "r1": {
-      "watch": 47.6,
-      "warning": 128.6,
-      "danger": 194.0
+      "watch": 42.3,
+      "warning": 98.9,
+      "danger": 150.7
      },
      "r3": {
-      "watch": 119.2,
-      "warning": 290.3,
-      "danger": 397.6
+      "watch": 110.2,
+      "warning": 230.8,
+      "danger": 311.1
      }
     },
     "Chennai": {
      "r1": {
-      "watch": 39.8,
-      "warning": 141.3,
-      "danger": 164.5
+      "watch": 38.2,
+      "warning": 92.9,
+      "danger": 152.5
      },
      "r3": {
-      "watch": 105.5,
-      "warning": 275.2,
-      "danger": 369.8
+      "watch": 99.7,
+      "warning": 232.4,
+      "danger": 310.9
      }
     },
     "Coimbatore": {
      "r1": {
-      "watch": 56.7,
-      "warning": 121.0,
-      "danger": 186.3
+      "watch": 54.8,
+      "warning": 96.1,
+      "danger": 143.4
      },
      "r3": {
-      "watch": 138.2,
-      "warning": 353.8,
-      "danger": 487.1
+      "watch": 133.1,
+      "warning": 220.1,
+      "danger": 412.7
+     }
+    },
+    "Coimbatore upstream": {
+     "r1": {
+      "watch": 31.5,
+      "warning": 62.5,
+      "danger": 93.5
+     },
+     "r3": {
+      "watch": 74.0,
+      "warning": 156.2,
+      "danger": 270.1
      }
     },
     "Cuddalore": {
      "r1": {
-      "watch": 55.1,
-      "warning": 156.3,
-      "danger": 267.2
+      "watch": 51.8,
+      "warning": 119.4,
+      "danger": 187.8
      },
      "r3": {
-      "watch": 145.2,
-      "warning": 353.2,
-      "danger": 466.7
+      "watch": 136.2,
+      "warning": 278.2,
+      "danger": 402.4
      }
     },
     "Dharmapuri": {
      "r1": {
-      "watch": 39.1,
-      "warning": 81.2,
-      "danger": 107.2
+      "watch": 37.4,
+      "warning": 62.9,
+      "danger": 83.3
      },
      "r3": {
-      "watch": 86.0,
-      "warning": 148.7,
-      "danger": 208.6
+      "watch": 83.2,
+      "warning": 130.1,
+      "danger": 162.7
      }
     },
     "Dindigul": {
      "r1": {
-      "watch": 40.4,
-      "warning": 97.4,
-      "danger": 114.7
+      "watch": 39.0,
+      "warning": 72.3,
+      "danger": 102.2
      },
      "r3": {
-      "watch": 95.7,
-      "warning": 163.8,
-      "danger": 191.0
+      "watch": 92.4,
+      "warning": 151.9,
+      "danger": 176.6
      }
     },
     "Erode": {
      "r1": {
-      "watch": 39.2,
-      "warning": 80.1,
-      "danger": 94.0
+      "watch": 37.2,
+      "warning": 67.2,
+      "danger": 82.6
      },
      "r3": {
-      "watch": 89.2,
-      "warning": 140.5,
-      "danger": 172.9
+      "watch": 85.4,
+      "warning": 125.2,
+      "danger": 147.5
      }
     },
     "Kallakurichi": {
      "r1": {
-      "watch": 38.5,
-      "warning": 118.4,
-      "danger": 155.2
+      "watch": 36.8,
+      "warning": 76.3,
+      "danger": 130.1
      },
      "r3": {
-      "watch": 97.1,
-      "warning": 198.0,
-      "danger": 238.5
+      "watch": 92.1,
+      "warning": 173.1,
+      "danger": 208.7
      }
     },
     "Kancheepuram": {
      "r1": {
-      "watch": 48.9,
-      "warning": 157.8,
-      "danger": 170.4
+      "watch": 44.9,
+      "warning": 108.5,
+      "danger": 161.1
      },
      "r3": {
-      "watch": 119.8,
-      "warning": 300.2,
-      "danger": 398.6
+      "watch": 108.9,
+      "warning": 233.4,
+      "danger": 327.5
      }
     },
     "Kanyakumari": {
      "r1": {
-      "watch": 37.5,
-      "warning": 101.8,
-      "danger": 133.2
+      "watch": 35.7,
+      "warning": 75.5,
+      "danger": 102.7
      },
      "r3": {
-      "watch": 89.6,
-      "warning": 204.2,
-      "danger": 295.0
+      "watch": 83.3,
+      "warning": 161.6,
+      "danger": 210.8
+     }
+    },
+    "Kanyakumari upstream": {
+     "r1": {
+      "watch": 31.0,
+      "warning": 71.2,
+      "danger": 102.4
+     },
+     "r3": {
+      "watch": 72.6,
+      "warning": 155.7,
+      "danger": 210.8
      }
     },
     "Karur": {
      "r1": {
-      "watch": 28.1,
-      "warning": 60.4,
-      "danger": 71.1
+      "watch": 26.2,
+      "warning": 48.8,
+      "danger": 66.7
      },
      "r3": {
-      "watch": 60.6,
-      "warning": 103.0,
-      "danger": 127.3
+      "watch": 57.7,
+      "warning": 92.1,
+      "danger": 105.2
      }
     },
     "Krishnagiri": {
      "r1": {
-      "watch": 37.1,
-      "warning": 68.9,
-      "danger": 108.0
+      "watch": 35.4,
+      "warning": 58.6,
+      "danger": 73.1
      },
      "r3": {
-      "watch": 83.8,
-      "warning": 161.1,
-      "danger": 186.9
+      "watch": 79.5,
+      "warning": 128.0,
+      "danger": 169.4
      }
     },
     "Madurai": {
      "r1": {
-      "watch": 40.3,
-      "warning": 87.2,
-      "danger": 103.6
+      "watch": 37.9,
+      "warning": 66.5,
+      "danger": 95.5
      },
      "r3": {
-      "watch": 87.3,
-      "warning": 137.1,
-      "danger": 151.7
+      "watch": 84.4,
+      "warning": 117.3,
+      "danger": 141.8
      }
     },
     "Mayiladuthurai": {
      "r1": {
-      "watch": 31.3,
-      "warning": 113.9,
-      "danger": 144.4
+      "watch": 28.5,
+      "warning": 74.4,
+      "danger": 117.6
      },
      "r3": {
-      "watch": 78.0,
-      "warning": 224.4,
-      "danger": 289.5
+      "watch": 72.8,
+      "warning": 194.4,
+      "danger": 256.0
      }
     },
     "Nagapattinam": {
      "r1": {
-      "watch": 42.3,
-      "warning": 142.2,
-      "danger": 160.3
+      "watch": 37.8,
+      "warning": 110.4,
+      "danger": 148.9
      },
      "r3": {
-      "watch": 112.4,
-      "warning": 283.2,
-      "danger": 322.4
+      "watch": 104.5,
+      "warning": 231.4,
+      "danger": 301.8
      }
     },
     "Namakkal": {
      "r1": {
-      "watch": 33.9,
-      "warning": 65.8,
-      "danger": 81.1
+      "watch": 32.1,
+      "warning": 56.9,
+      "danger": 71.3
      },
      "r3": {
-      "watch": 75.0,
-      "warning": 119.9,
-      "danger": 133.1
+      "watch": 71.8,
+      "warning": 106.8,
+      "danger": 125.0
      }
     },
     "Nilgiris": {
      "r1": {
-      "watch": 51.6,
-      "warning": 132.8,
-      "danger": 217.5
+      "watch": 49.4,
+      "warning": 100.9,
+      "danger": 159.4
      },
      "r3": {
-      "watch": 129.9,
-      "warning": 354.0,
-      "danger": 602.8
+      "watch": 126.2,
+      "warning": 254.2,
+      "danger": 479.7
      }
     },
     "Perambalur": {
      "r1": {
-      "watch": 35.6,
-      "warning": 74.0,
-      "danger": 86.5
+      "watch": 33.4,
+      "warning": 66.8,
+      "danger": 76.8
      },
      "r3": {
-      "watch": 75.5,
-      "warning": 131.0,
-      "danger": 141.6
+      "watch": 72.8,
+      "warning": 117.4,
+      "danger": 138.1
      }
     },
     "Pudukkottai": {
      "r1": {
-      "watch": 44.8,
-      "warning": 117.2,
-      "danger": 180.2
+      "watch": 41.9,
+      "warning": 85.1,
+      "danger": 141.7
      },
      "r3": {
-      "watch": 104.5,
-      "warning": 242.8,
-      "danger": 263.1
+      "watch": 99.4,
+      "warning": 192.8,
+      "danger": 247.4
      }
     },
     "Ramanathapuram": {
      "r1": {
-      "watch": 34.5,
-      "warning": 71.9,
-      "danger": 86.2
+      "watch": 33.0,
+      "warning": 59.4,
+      "danger": 80.9
      },
      "r3": {
-      "watch": 75.8,
-      "warning": 143.7,
-      "danger": 161.8
+      "watch": 73.0,
+      "warning": 127.0,
+      "danger": 146.9
      }
     },
     "Ranipet": {
      "r1": {
-      "watch": 27.9,
-      "warning": 89.7,
-      "danger": 133.9
+      "watch": 26.4,
+      "warning": 62.6,
+      "danger": 112.4
      },
      "r3": {
-      "watch": 68.1,
-      "warning": 174.3,
-      "danger": 225.7
+      "watch": 62.1,
+      "warning": 141.9,
+      "danger": 207.4
      }
     },
     "Salem": {
      "r1": {
-      "watch": 47.3,
-      "warning": 89.6,
-      "danger": 108.8
+      "watch": 44.3,
+      "warning": 74.3,
+      "danger": 92.0
      },
      "r3": {
-      "watch": 104.7,
-      "warning": 158.4,
-      "danger": 215.6
+      "watch": 100.1,
+      "warning": 140.3,
+      "danger": 172.6
      }
     },
     "Sivaganga": {
      "r1": {
-      "watch": 27.1,
-      "warning": 60.6,
-      "danger": 71.6
+      "watch": 25.9,
+      "warning": 53.7,
+      "danger": 61.5
      },
      "r3": {
-      "watch": 64.8,
-      "warning": 108.8,
-      "danger": 117.9
+      "watch": 62.9,
+      "warning": 98.7,
+      "danger": 111.9
      }
     },
     "Tenkasi": {
      "r1": {
-      "watch": 28.3,
-      "warning": 70.3,
-      "danger": 83.8
+      "watch": 27.1,
+      "warning": 56.6,
+      "danger": 75.8
      },
      "r3": {
-      "watch": 66.7,
-      "warning": 126.9,
-      "danger": 160.1
+      "watch": 62.9,
+      "warning": 104.7,
+      "danger": 139.0
      }
     },
     "Thanjavur": {
      "r1": {
-      "watch": 50.4,
-      "warning": 111.3,
-      "danger": 155.0
+      "watch": 48.1,
+      "warning": 91.2,
+      "danger": 132.2
      },
      "r3": {
-      "watch": 122.4,
-      "warning": 225.8,
-      "danger": 258.8
+      "watch": 115.0,
+      "warning": 205.3,
+      "danger": 230.8
      }
     },
     "Theni": {
      "r1": {
-      "watch": 34.2,
-      "warning": 80.8,
-      "danger": 87.8
+      "watch": 32.4,
+      "warning": 65.2,
+      "danger": 83.7
      },
      "r3": {
-      "watch": 85.5,
-      "warning": 127.6,
-      "danger": 156.7
+      "watch": 82.6,
+      "warning": 120.1,
+      "danger": 136.6
+     }
+    },
+    "Theni upstream": {
+     "r1": {
+      "watch": 31.4,
+      "warning": 62.3,
+      "danger": 86.8
+     },
+     "r3": {
+      "watch": 78.2,
+      "warning": 122.8,
+      "danger": 150.4
      }
     },
     "Thiruvallur": {
      "r1": {
-      "watch": 42.5,
-      "warning": 124.3,
-      "danger": 166.4
+      "watch": 39.0,
+      "warning": 97.2,
+      "danger": 131.7
      },
      "r3": {
-      "watch": 109.4,
-      "warning": 270.9,
-      "danger": 374.8
+      "watch": 104.3,
+      "warning": 214.2,
+      "danger": 299.0
      }
     },
     "Thiruvarur": {
      "r1": {
-      "watch": 41.8,
-      "warning": 119.4,
-      "danger": 162.5
+      "watch": 39.8,
+      "warning": 88.2,
+      "danger": 125.3
      },
      "r3": {
-      "watch": 109.6,
-      "warning": 232.1,
-      "danger": 288.9
+      "watch": 99.2,
+      "warning": 194.5,
+      "danger": 244.0
      }
     },
     "Thoothukudi": {
      "r1": {
-      "watch": 37.7,
-      "warning": 104.1,
-      "danger": 159.4
+      "watch": 35.4,
+      "warning": 79.0,
+      "danger": 114.0
      },
      "r3": {
-      "watch": 93.5,
-      "warning": 209.6,
-      "danger": 283.1
+      "watch": 90.5,
+      "warning": 182.7,
+      "danger": 218.6
      }
     },
     "Tiruchirappalli": {
      "r1": {
-      "watch": 38.8,
-      "warning": 76.9,
-      "danger": 96.0
+      "watch": 37.2,
+      "warning": 62.9,
+      "danger": 85.3
      },
      "r3": {
-      "watch": 87.2,
-      "warning": 138.5,
-      "danger": 159.0
+      "watch": 82.9,
+      "warning": 124.4,
+      "danger": 146.9
      }
     },
     "Tirunelveli": {
      "r1": {
-      "watch": 40.3,
-      "warning": 102.3,
-      "danger": 153.3
+      "watch": 38.5,
+      "warning": 79.8,
+      "danger": 120.2
      },
      "r3": {
-      "watch": 94.2,
-      "warning": 211.3,
-      "danger": 231.0
+      "watch": 90.5,
+      "warning": 182.4,
+      "danger": 213.3
+     }
+    },
+    "Tirunelveli upstream": {
+     "r1": {
+      "watch": 30.2,
+      "warning": 64.8,
+      "danger": 93.3
+     },
+     "r3": {
+      "watch": 72.2,
+      "warning": 140.1,
+      "danger": 210.3
      }
     },
     "Tirupathur": {
      "r1": {
-      "watch": 32.1,
-      "warning": 77.4,
-      "danger": 116.9
+      "watch": 29.4,
+      "warning": 61.7,
+      "danger": 89.6
      },
      "r3": {
-      "watch": 74.7,
-      "warning": 165.5,
-      "danger": 228.3
+      "watch": 70.8,
+      "warning": 122.3,
+      "danger": 188.4
      }
     },
     "Tiruppur": {
      "r1": {
-      "watch": 39.5,
-      "warning": 92.9,
-      "danger": 133.4
+      "watch": 37.7,
+      "warning": 68.6,
+      "danger": 100.1
      },
      "r3": {
-      "watch": 88.8,
-      "warning": 166.9,
-      "danger": 224.6
+      "watch": 83.9,
+      "warning": 134.4,
+      "danger": 179.9
      }
     },
     "Tiruvannamalai": {
      "r1": {
-      "watch": 50.6,
-      "warning": 123.1,
-      "danger": 193.1
+      "watch": 47.4,
+      "warning": 95.7,
+      "danger": 149.6
      },
      "r3": {
-      "watch": 123.0,
-      "warning": 254.6,
-      "danger": 299.4
+      "watch": 115.8,
+      "warning": 216.8,
+      "danger": 262.8
      }
     },
     "Vellore": {
      "r1": {
-      "watch": 38.9,
-      "warning": 83.7,
-      "danger": 122.3
+      "watch": 37.7,
+      "warning": 66.7,
+      "danger": 95.7
      },
      "r3": {
-      "watch": 88.3,
-      "warning": 151.5,
-      "danger": 205.8
+      "watch": 86.6,
+      "warning": 137.3,
+      "danger": 157.3
      }
     },
     "Viluppuram": {
      "r1": {
-      "watch": 55.2,
-      "warning": 130.7,
-      "danger": 222.7
+      "watch": 50.9,
+      "warning": 104.4,
+      "danger": 146.6
      },
      "r3": {
-      "watch": 117.6,
-      "warning": 277.3,
-      "danger": 414.0
+      "watch": 111.3,
+      "warning": 235.5,
+      "danger": 291.1
      }
     },
     "Virudhunagar": {
      "r1": {
-      "watch": 39.8,
-      "warning": 81.9,
-      "danger": 99.8
+      "watch": 36.2,
+      "warning": 67.1,
+      "danger": 87.8
      },
      "r3": {
-      "watch": 89.4,
-      "warning": 144.1,
-      "danger": 153.7
+      "watch": 86.4,
+      "warning": 123.0,
+      "danger": 146.4
      }
     }
    },
@@ -1412,49 +1508,49 @@
    },
    "river": {
     "Cauvery at Kodumudi": {
-     "watch": 1862.7,
-     "warning": 2539.4,
-     "danger": 3459.3
+     "watch": 1818.7,
+     "warning": 2312.0,
+     "danger": 2708.0
     },
     "Cauvery at Musiri": {
-     "watch": 2009.8,
-     "warning": 3113.5,
-     "danger": 4088.7
+     "watch": 1982.1,
+     "warning": 2822.2,
+     "danger": 3180.9
     },
     "Amaravathi at Karur": {
-     "watch": 294.2,
-     "warning": 393.4,
-     "danger": 424.8
+     "watch": 283.7,
+     "warning": 370.1,
+     "danger": 406.6
     },
     "Tamirabarani at Tirunelveli": {
-     "watch": 256.1,
-     "warning": 891.2,
-     "danger": 1003.6
+     "watch": 242.3,
+     "warning": 621.8,
+     "danger": 917.3
     },
     "Tamirabarani at Srivaikuntam": {
-     "watch": 599.4,
-     "warning": 1720.7,
-     "danger": 2081.8
+     "watch": 514.5,
+     "warning": 1365.6,
+     "danger": 1982.6
     },
     "Vaigai at Madurai": {
-     "watch": 34.6,
-     "warning": 167.2,
-     "danger": 195.1
+     "watch": 30.6,
+     "warning": 96.5,
+     "danger": 176.2
     },
     "Vellar at Sethiathope": {
-     "watch": 717.8,
-     "warning": 2189.6,
-     "danger": 5669.9
+     "watch": 655.4,
+     "warning": 1742.9,
+     "danger": 2645.0
     },
     "Adyar at Chennai": {
-     "watch": 125.2,
-     "warning": 300.6,
-     "danger": 381.5
+     "watch": 114.6,
+     "warning": 252.5,
+     "danger": 331.6
     },
     "Kosasthalaiyar near Ennore": {
-     "watch": 435.2,
-     "warning": 1161.5,
-     "danger": 1213.2
+     "watch": 388.3,
+     "warning": 910.8,
+     "danger": 1199.5
     }
    },
    "reservoir": {
@@ -1462,1398 +1558,1494 @@
    }
   },
   "high_sensitivity": {
-   "percentile": 0.997,
+   "percentile": 0.95,
    "mode": "max",
    "signals": [
     "forecast",
     "gauge",
-    "imd",
     "reservoir",
-    "river"
+    "river",
+    "satellite"
    ],
    "rain": {
     "_default": {
      "r1": {
-      "watch": 28.9,
-      "warning": 83.6,
-      "danger": 109.3
+      "watch": 20.0,
+      "warning": 24.3,
+      "danger": 40.6
      },
      "r3": {
-      "watch": 74.5,
-      "warning": 158.3,
-      "danger": 197.5
+      "watch": 51.4,
+      "warning": 65.1,
+      "danger": 101.5
      }
     },
     "Ariyalur": {
      "r1": {
-      "watch": 30.9,
-      "warning": 74.0,
-      "danger": 109.3
+      "watch": 20.0,
+      "warning": 26.9,
+      "danger": 44.7
      },
      "r3": {
-      "watch": 76.2,
-      "warning": 190.1,
-      "danger": 292.0
+      "watch": 55.5,
+      "warning": 66.8,
+      "danger": 98.2
      }
     },
     "Chengalpattu": {
      "r1": {
-      "watch": 35.0,
-      "warning": 109.2,
-      "danger": 133.5
+      "watch": 20.0,
+      "warning": 25.7,
+      "danger": 52.4
      },
      "r3": {
-      "watch": 99.3,
-      "warning": 198.1,
-      "danger": 210.3
+      "watch": 58.5,
+      "warning": 76.6,
+      "danger": 130.1
      }
     },
     "Chennai": {
      "r1": {
-      "watch": 30.8,
-      "warning": 105.0,
-      "danger": 155.3
+      "watch": 20.0,
+      "warning": 24.8,
+      "danger": 53.9
      },
      "r3": {
-      "watch": 101.2,
-      "warning": 176.6,
-      "danger": 266.8
+      "watch": 52.3,
+      "warning": 79.2,
+      "danger": 135.0
      }
     },
     "Coimbatore": {
      "r1": {
-      "watch": 22.3,
-      "warning": 43.8,
-      "danger": 51.4
+      "watch": 20.0,
+      "warning": 20.0,
+      "danger": 31.3
      },
      "r3": {
-      "watch": 54.1,
-      "warning": 85.1,
-      "danger": 101.9
+      "watch": 40.0,
+      "warning": 47.6,
+      "danger": 68.3
      }
     },
     "Cuddalore": {
      "r1": {
-      "watch": 33.8,
-      "warning": 94.0,
-      "danger": 168.2
+      "watch": 20.2,
+      "warning": 24.7,
+      "danger": 52.9
      },
      "r3": {
-      "watch": 90.9,
-      "warning": 235.4,
-      "danger": 325.3
+      "watch": 60.6,
+      "warning": 77.2,
+      "danger": 116.4
      }
     },
     "Dharmapuri": {
      "r1": {
       "watch": 20.0,
-      "warning": 53.8,
-      "danger": 70.0
+      "warning": 20.0,
+      "danger": 28.1
      },
      "r3": {
-      "watch": 47.7,
-      "warning": 102.7,
-      "danger": 109.2
+      "watch": 40.0,
+      "warning": 41.8,
+      "danger": 62.7
      }
     },
     "Dindigul": {
      "r1": {
-      "watch": 28.8,
-      "warning": 73.8,
-      "danger": 91.0
+      "watch": 20.0,
+      "warning": 25.3,
+      "danger": 40.6
      },
      "r3": {
-      "watch": 78.9,
-      "warning": 158.2,
-      "danger": 205.2
+      "watch": 50.9,
+      "warning": 66.2,
+      "danger": 106.1
      }
     },
     "Erode": {
      "r1": {
       "watch": 20.0,
-      "warning": 42.5,
-      "danger": 47.0
+      "warning": 20.0,
+      "danger": 25.3
      },
      "r3": {
-      "watch": 49.1,
-      "warning": 75.9,
-      "danger": 91.7
+      "watch": 40.0,
+      "warning": 43.0,
+      "danger": 58.0
      }
     },
     "Kallakurichi": {
      "r1": {
-      "watch": 30.4,
-      "warning": 87.0,
-      "danger": 144.5
+      "watch": 20.0,
+      "warning": 24.3,
+      "danger": 43.3
      },
      "r3": {
-      "watch": 81.3,
-      "warning": 204.3,
-      "danger": 327.8
+      "watch": 52.6,
+      "warning": 66.9,
+      "danger": 123.7
      }
     },
     "Kancheepuram": {
      "r1": {
-      "watch": 27.7,
-      "warning": 86.2,
-      "danger": 97.8
+      "watch": 20.0,
+      "warning": 22.4,
+      "danger": 41.3
      },
      "r3": {
-      "watch": 74.5,
-      "warning": 123.5,
-      "danger": 141.6
+      "watch": 51.4,
+      "warning": 62.4,
+      "danger": 108.9
      }
     },
     "Kanyakumari": {
      "r1": {
-      "watch": 32.9,
-      "warning": 75.2,
-      "danger": 92.2
+      "watch": 22.0,
+      "warning": 27.6,
+      "danger": 49.4
      },
      "r3": {
-      "watch": 85.3,
-      "warning": 165.5,
-      "danger": 191.7
+      "watch": 61.3,
+      "warning": 73.4,
+      "danger": 109.7
      }
     },
     "Karur": {
      "r1": {
       "watch": 20.0,
-      "warning": 56.2,
-      "danger": 71.0
+      "warning": 20.0,
+      "danger": 30.5
      },
      "r3": {
-      "watch": 56.8,
-      "warning": 114.9,
-      "danger": 137.6
+      "watch": 40.0,
+      "warning": 46.0,
+      "danger": 76.5
      }
     },
     "Krishnagiri": {
      "r1": {
       "watch": 20.0,
-      "warning": 66.6,
-      "danger": 79.4
+      "warning": 20.0,
+      "danger": 28.2
      },
      "r3": {
-      "watch": 53.1,
-      "warning": 125.9,
-      "danger": 145.2
+      "watch": 40.0,
+      "warning": 43.9,
+      "danger": 69.2
      }
     },
     "Madurai": {
      "r1": {
-      "watch": 26.7,
-      "warning": 66.8,
-      "danger": 73.9
+      "watch": 20.0,
+      "warning": 21.0,
+      "danger": 39.0
      },
      "r3": {
-      "watch": 70.8,
-      "warning": 120.1,
-      "danger": 124.6
+      "watch": 45.1,
+      "warning": 62.7,
+      "danger": 88.2
      }
     },
     "Mayiladuthurai": {
      "r1": {
-      "watch": 40.5,
-      "warning": 107.6,
-      "danger": 160.5
+      "watch": 25.0,
+      "warning": 32.9,
+      "danger": 61.6
      },
      "r3": {
-      "watch": 104.8,
-      "warning": 226.9,
-      "danger": 278.9
+      "watch": 72.3,
+      "warning": 86.7,
+      "danger": 146.1
      }
     },
     "Nagapattinam": {
      "r1": {
-      "watch": 39.8,
-      "warning": 114.9,
-      "danger": 132.5
+      "watch": 22.6,
+      "warning": 31.4,
+      "danger": 59.9
      },
      "r3": {
-      "watch": 111.2,
-      "warning": 203.4,
-      "danger": 287.8
+      "watch": 67.9,
+      "warning": 85.0,
+      "danger": 141.8
      }
     },
     "Namakkal": {
      "r1": {
       "watch": 20.0,
-      "warning": 43.5,
-      "danger": 59.1
+      "warning": 20.0,
+      "danger": 26.1
      },
      "r3": {
-      "watch": 45.4,
-      "warning": 81.4,
-      "danger": 115.9
+      "watch": 40.0,
+      "warning": 42.0,
+      "danger": 60.2
      }
     },
     "Nilgiris": {
      "r1": {
-      "watch": 27.7,
-      "warning": 57.9,
-      "danger": 73.9
+      "watch": 20.0,
+      "warning": 24.8,
+      "danger": 38.3
      },
      "r3": {
-      "watch": 70.3,
-      "warning": 116.9,
-      "danger": 140.3
+      "watch": 53.2,
+      "warning": 62.1,
+      "danger": 85.3
      }
     },
     "Perambalur": {
      "r1": {
-      "watch": 29.5,
-      "warning": 65.8,
-      "danger": 137.6
+      "watch": 20.0,
+      "warning": 25.1,
+      "danger": 40.4
      },
      "r3": {
-      "watch": 74.4,
-      "warning": 200.4,
-      "danger": 269.8
+      "watch": 52.9,
+      "warning": 64.5,
+      "danger": 90.5
      }
     },
     "Pudukkottai": {
      "r1": {
-      "watch": 27.1,
-      "warning": 92.8,
-      "danger": 162.4
+      "watch": 20.0,
+      "warning": 22.9,
+      "danger": 36.0
      },
      "r3": {
-      "watch": 73.8,
-      "warning": 215.2,
-      "danger": 368.4
+      "watch": 49.7,
+      "warning": 63.4,
+      "danger": 90.7
      }
     },
     "Ramanathapuram": {
      "r1": {
-      "watch": 29.6,
-      "warning": 83.6,
-      "danger": 109.4
+      "watch": 20.0,
+      "warning": 23.2,
+      "danger": 42.3
      },
      "r3": {
-      "watch": 78.3,
-      "warning": 161.0,
-      "danger": 238.6
+      "watch": 50.8,
+      "warning": 65.1,
+      "danger": 105.8
      }
     },
     "Ranipet": {
      "r1": {
-      "watch": 26.1,
-      "warning": 97.0,
-      "danger": 123.8
+      "watch": 20.0,
+      "warning": 20.5,
+      "danger": 36.0
      },
      "r3": {
-      "watch": 67.9,
-      "warning": 158.3,
-      "danger": 227.4
+      "watch": 44.8,
+      "warning": 56.7,
+      "danger": 111.9
      }
     },
     "Salem": {
      "r1": {
-      "watch": 21.3,
-      "warning": 57.1,
-      "danger": 78.7
+      "watch": 20.0,
+      "warning": 20.0,
+      "danger": 27.8
      },
      "r3": {
-      "watch": 53.1,
-      "warning": 117.4,
-      "danger": 159.1
+      "watch": 40.0,
+      "warning": 42.1,
+      "danger": 66.8
      }
     },
     "Sivaganga": {
      "r1": {
-      "watch": 29.4,
-      "warning": 90.5,
-      "danger": 126.3
+      "watch": 20.0,
+      "warning": 24.7,
+      "danger": 49.8
      },
      "r3": {
-      "watch": 85.2,
-      "warning": 160.9,
-      "danger": 257.6
+      "watch": 51.6,
+      "warning": 72.8,
+      "danger": 105.9
      }
     },
     "Tenkasi": {
      "r1": {
-      "watch": 30.4,
-      "warning": 54.6,
-      "danger": 63.6
+      "watch": 20.0,
+      "warning": 24.9,
+      "danger": 37.8
      },
      "r3": {
-      "watch": 74.8,
-      "warning": 117.0,
-      "danger": 131.7
+      "watch": 53.1,
+      "warning": 66.3,
+      "danger": 87.9
      }
     },
     "Thanjavur": {
      "r1": {
-      "watch": 33.2,
-      "warning": 85.6,
-      "danger": 110.7
+      "watch": 20.0,
+      "warning": 24.9,
+      "danger": 45.5
      },
      "r3": {
-      "watch": 80.7,
-      "warning": 168.7,
-      "danger": 260.3
+      "watch": 53.6,
+      "warning": 69.9,
+      "danger": 106.2
      }
     },
     "Theni": {
      "r1": {
-      "watch": 22.7,
-      "warning": 47.8,
-      "danger": 79.5
+      "watch": 20.0,
+      "warning": 20.0,
+      "danger": 33.4
      },
      "r3": {
-      "watch": 56.8,
-      "warning": 102.0,
-      "danger": 114.3
+      "watch": 40.0,
+      "warning": 48.0,
+      "danger": 68.3
      }
     },
     "Thiruvallur": {
      "r1": {
-      "watch": 28.9,
-      "warning": 87.9,
-      "danger": 127.5
+      "watch": 20.0,
+      "warning": 21.1,
+      "danger": 39.5
      },
      "r3": {
-      "watch": 88.4,
-      "warning": 144.0,
-      "danger": 189.9
+      "watch": 49.0,
+      "warning": 67.2,
+      "danger": 114.2
      }
     },
     "Thiruvarur": {
      "r1": {
-      "watch": 34.7,
-      "warning": 104.5,
-      "danger": 174.4
+      "watch": 21.2,
+      "warning": 27.8,
+      "danger": 49.5
      },
      "r3": {
-      "watch": 96.0,
-      "warning": 207.7,
-      "danger": 323.2
+      "watch": 58.4,
+      "warning": 77.4,
+      "danger": 138.5
      }
     },
     "Thoothukudi": {
      "r1": {
-      "watch": 31.0,
-      "warning": 69.0,
-      "danger": 77.8
+      "watch": 20.7,
+      "warning": 27.0,
+      "danger": 42.5
      },
      "r3": {
-      "watch": 85.4,
-      "warning": 121.2,
-      "danger": 124.1
+      "watch": 58.9,
+      "warning": 76.2,
+      "danger": 101.5
      }
     },
     "Tiruchirappalli": {
      "r1": {
-      "watch": 22.4,
-      "warning": 52.3,
-      "danger": 72.2
+      "watch": 20.0,
+      "warning": 20.0,
+      "danger": 31.3
      },
      "r3": {
-      "watch": 56.8,
-      "warning": 113.0,
-      "danger": 141.9
+      "watch": 40.0,
+      "warning": 47.1,
+      "danger": 76.6
      }
     },
     "Tirunelveli": {
      "r1": {
-      "watch": 31.1,
-      "warning": 84.1,
-      "danger": 98.2
+      "watch": 20.0,
+      "warning": 25.2,
+      "danger": 46.9
      },
      "r3": {
-      "watch": 79.6,
-      "warning": 174.7,
-      "danger": 197.5
+      "watch": 49.2,
+      "warning": 65.3,
+      "danger": 115.4
      }
     },
     "Tirupathur": {
      "r1": {
-      "watch": 22.8,
-      "warning": 86.4,
-      "danger": 127.3
+      "watch": 20.0,
+      "warning": 20.0,
+      "danger": 30.8
      },
      "r3": {
-      "watch": 57.2,
-      "warning": 171.7,
-      "danger": 218.1
+      "watch": 40.0,
+      "warning": 50.6,
+      "danger": 93.0
      }
     },
     "Tiruppur": {
      "r1": {
-      "watch": 20.2,
-      "warning": 43.6,
-      "danger": 53.0
+      "watch": 20.0,
+      "warning": 20.0,
+      "danger": 25.4
      },
      "r3": {
-      "watch": 49.2,
-      "warning": 96.0,
-      "danger": 99.6
+      "watch": 40.0,
+      "warning": 40.6,
+      "danger": 67.9
      }
     },
     "Tiruvannamalai": {
      "r1": {
-      "watch": 29.8,
-      "warning": 86.5,
-      "danger": 126.2
+      "watch": 20.0,
+      "warning": 23.5,
+      "danger": 41.7
      },
      "r3": {
-      "watch": 67.4,
-      "warning": 155.9,
-      "danger": 183.4
+      "watch": 53.1,
+      "warning": 60.6,
+      "danger": 100.0
      }
     },
     "Vellore": {
      "r1": {
-      "watch": 24.1,
-      "warning": 97.5,
-      "danger": 115.9
+      "watch": 20.0,
+      "warning": 22.0,
+      "danger": 40.0
      },
      "r3": {
-      "watch": 73.6,
-      "warning": 167.7,
-      "danger": 221.1
+      "watch": 48.4,
+      "warning": 59.9,
+      "danger": 115.8
      }
     },
     "Viluppuram": {
      "r1": {
-      "watch": 32.4,
-      "warning": 116.3,
-      "danger": 138.6
+      "watch": 20.0,
+      "warning": 26.8,
+      "danger": 45.7
      },
      "r3": {
-      "watch": 86.6,
-      "warning": 201.9,
-      "danger": 229.5
+      "watch": 56.7,
+      "warning": 70.8,
+      "danger": 137.4
      }
     },
     "Virudhunagar": {
      "r1": {
-      "watch": 28.9,
-      "warning": 55.2,
-      "danger": 60.1
+      "watch": 20.0,
+      "warning": 24.8,
+      "danger": 43.1
      },
      "r3": {
-      "watch": 74.1,
-      "warning": 111.3,
-      "danger": 123.6
+      "watch": 52.1,
+      "warning": 65.2,
+      "danger": 93.8
      }
     }
    },
    "satellite": {
     "Ariyalur": {
      "r1": {
-      "watch": 39.6,
-      "warning": 83.9,
-      "danger": 113.9
+      "watch": 22.6,
+      "warning": 32.6,
+      "danger": 54.7
      },
      "r3": {
-      "watch": 94.9,
-      "warning": 178.6,
-      "danger": 211.2
+      "watch": 57.5,
+      "warning": 76.9,
+      "danger": 127.4
      }
     },
     "Chengalpattu": {
      "r1": {
-      "watch": 46.1,
-      "warning": 104.5,
-      "danger": 140.3
+      "watch": 26.2,
+      "warning": 36.9,
+      "danger": 60.9
      },
      "r3": {
-      "watch": 110.7,
-      "warning": 239.3,
-      "danger": 454.1
+      "watch": 70.4,
+      "warning": 90.7,
+      "danger": 165.1
      }
     },
     "Chennai": {
      "r1": {
-      "watch": 30.7,
-      "warning": 110.8,
-      "danger": 135.9
+      "watch": 20.0,
+      "warning": 22.4,
+      "danger": 50.4
      },
      "r3": {
-      "watch": 83.3,
-      "warning": 224.0,
-      "danger": 327.6
+      "watch": 42.8,
+      "warning": 63.0,
+      "danger": 130.5
      }
     },
     "Coimbatore": {
      "r1": {
-      "watch": 55.7,
-      "warning": 91.0,
-      "danger": 123.8
+      "watch": 36.5,
+      "warning": 46.3,
+      "danger": 65.4
      },
      "r3": {
-      "watch": 123.3,
-      "warning": 194.1,
-      "danger": 262.9
+      "watch": 94.6,
+      "warning": 111.3,
+      "danger": 152.7
+     }
+    },
+    "Coimbatore upstream": {
+     "r1": {
+      "watch": 37.5,
+      "warning": 46.1,
+      "danger": 67.7
+     },
+     "r3": {
+      "watch": 96.0,
+      "warning": 110.3,
+      "danger": 151.9
      }
     },
     "Cuddalore": {
      "r1": {
-      "watch": 46.8,
-      "warning": 115.8,
-      "danger": 137.3
+      "watch": 28.7,
+      "warning": 38.8,
+      "danger": 61.4
      },
      "r3": {
-      "watch": 110.7,
-      "warning": 246.5,
-      "danger": 305.7
+      "watch": 74.0,
+      "warning": 90.9,
+      "danger": 148.0
      }
     },
     "Dharmapuri": {
      "r1": {
-      "watch": 37.5,
-      "warning": 65.8,
-      "danger": 80.7
+      "watch": 26.0,
+      "warning": 32.3,
+      "danger": 47.5
      },
      "r3": {
-      "watch": 87.3,
-      "warning": 131.2,
-      "danger": 181.6
+      "watch": 66.3,
+      "warning": 78.1,
+      "danger": 105.1
      }
     },
     "Dindigul": {
      "r1": {
-      "watch": 44.6,
-      "warning": 74.0,
-      "danger": 86.8
+      "watch": 30.1,
+      "warning": 38.2,
+      "danger": 56.4
      },
      "r3": {
-      "watch": 104.4,
-      "warning": 143.4,
-      "danger": 170.1
+      "watch": 80.5,
+      "warning": 93.4,
+      "danger": 120.8
      }
     },
     "Erode": {
      "r1": {
-      "watch": 41.3,
-      "warning": 71.6,
-      "danger": 79.6
+      "watch": 29.2,
+      "warning": 36.1,
+      "danger": 52.3
      },
      "r3": {
-      "watch": 92.0,
-      "warning": 136.2,
-      "danger": 158.1
+      "watch": 73.3,
+      "warning": 84.2,
+      "danger": 109.8
      }
     },
     "Kallakurichi": {
      "r1": {
-      "watch": 41.8,
-      "warning": 85.4,
-      "danger": 125.6
+      "watch": 25.6,
+      "warning": 33.5,
+      "danger": 57.8
      },
      "r3": {
-      "watch": 95.7,
-      "warning": 190.4,
-      "danger": 234.5
+      "watch": 67.6,
+      "warning": 83.0,
+      "danger": 117.8
      }
     },
     "Kancheepuram": {
      "r1": {
-      "watch": 42.6,
-      "warning": 105.2,
-      "danger": 145.8
+      "watch": 23.8,
+      "warning": 33.7,
+      "danger": 60.1
      },
      "r3": {
-      "watch": 100.1,
-      "warning": 241.2,
-      "danger": 365.5
+      "watch": 62.5,
+      "warning": 79.7,
+      "danger": 143.9
      }
     },
     "Kanyakumari": {
      "r1": {
-      "watch": 37.9,
-      "warning": 78.7,
-      "danger": 93.8
+      "watch": 24.4,
+      "warning": 32.2,
+      "danger": 54.1
      },
      "r3": {
-      "watch": 91.6,
-      "warning": 177.4,
-      "danger": 201.9
+      "watch": 66.9,
+      "warning": 80.2,
+      "danger": 114.3
+     }
+    },
+    "Kanyakumari upstream": {
+     "r1": {
+      "watch": 24.4,
+      "warning": 32.0,
+      "danger": 54.1
+     },
+     "r3": {
+      "watch": 65.8,
+      "warning": 78.7,
+      "danger": 117.4
      }
     },
     "Karur": {
      "r1": {
-      "watch": 35.9,
-      "warning": 62.1,
-      "danger": 71.0
+      "watch": 22.3,
+      "warning": 30.7,
+      "danger": 46.6
      },
      "r3": {
-      "watch": 78.9,
-      "warning": 119.9,
-      "danger": 137.2
+      "watch": 58.5,
+      "warning": 71.4,
+      "danger": 97.0
      }
     },
     "Krishnagiri": {
      "r1": {
-      "watch": 39.5,
-      "warning": 66.8,
-      "danger": 75.4
+      "watch": 26.1,
+      "warning": 32.6,
+      "danger": 49.5
      },
      "r3": {
-      "watch": 91.1,
-      "warning": 147.9,
-      "danger": 174.8
+      "watch": 70.9,
+      "warning": 81.7,
+      "danger": 110.9
      }
     },
     "Madurai": {
      "r1": {
-      "watch": 38.5,
-      "warning": 65.5,
-      "danger": 79.4
+      "watch": 26.0,
+      "warning": 32.6,
+      "danger": 52.0
      },
      "r3": {
-      "watch": 91.2,
-      "warning": 135.4,
-      "danger": 151.2
+      "watch": 66.6,
+      "warning": 80.0,
+      "danger": 110.3
      }
     },
     "Mayiladuthurai": {
      "r1": {
-      "watch": 36.6,
-      "warning": 91.5,
-      "danger": 126.1
+      "watch": 20.0,
+      "warning": 26.9,
+      "danger": 49.3
      },
      "r3": {
-      "watch": 89.8,
-      "warning": 194.1,
-      "danger": 292.5
+      "watch": 48.7,
+      "warning": 66.3,
+      "danger": 133.9
      }
     },
     "Nagapattinam": {
      "r1": {
-      "watch": 39.7,
-      "warning": 95.9,
-      "danger": 147.9
+      "watch": 22.0,
+      "warning": 30.2,
+      "danger": 54.4
      },
      "r3": {
-      "watch": 100.3,
-      "warning": 223.9,
-      "danger": 294.6
+      "watch": 58.1,
+      "warning": 76.1,
+      "danger": 140.1
      }
     },
     "Namakkal": {
      "r1": {
-      "watch": 33.9,
-      "warning": 61.9,
-      "danger": 75.5
+      "watch": 22.7,
+      "warning": 28.0,
+      "danger": 42.9
      },
      "r3": {
-      "watch": 76.5,
-      "warning": 120.0,
-      "danger": 134.8
+      "watch": 57.7,
+      "warning": 67.0,
+      "danger": 89.2
      }
     },
     "Nilgiris": {
      "r1": {
-      "watch": 44.7,
-      "warning": 82.9,
-      "danger": 101.9
+      "watch": 31.2,
+      "warning": 38.9,
+      "danger": 58.9
      },
      "r3": {
-      "watch": 106.8,
-      "warning": 180.2,
-      "danger": 246.1
+      "watch": 80.2,
+      "warning": 94.5,
+      "danger": 126.7
      }
     },
     "Perambalur": {
      "r1": {
-      "watch": 37.0,
-      "warning": 63.5,
-      "danger": 92.4
+      "watch": 21.6,
+      "warning": 30.7,
+      "danger": 48.1
      },
      "r3": {
-      "watch": 79.4,
-      "warning": 140.5,
-      "danger": 176.8
+      "watch": 55.1,
+      "warning": 68.8,
+      "danger": 104.1
      }
     },
     "Pudukkottai": {
      "r1": {
-      "watch": 42.7,
-      "warning": 77.2,
-      "danger": 92.0
+      "watch": 27.5,
+      "warning": 35.8,
+      "danger": 57.1
      },
      "r3": {
-      "watch": 100.1,
-      "warning": 168.3,
-      "danger": 191.6
+      "watch": 71.3,
+      "warning": 86.4,
+      "danger": 120.4
      }
     },
     "Ramanathapuram": {
      "r1": {
-      "watch": 36.5,
-      "warning": 68.6,
-      "danger": 88.4
+      "watch": 22.7,
+      "warning": 30.5,
+      "danger": 47.3
      },
      "r3": {
-      "watch": 93.5,
-      "warning": 162.4,
-      "danger": 183.2
+      "watch": 59.9,
+      "warning": 76.3,
+      "danger": 122.1
      }
     },
     "Ranipet": {
      "r1": {
-      "watch": 38.4,
-      "warning": 84.2,
-      "danger": 109.2
+      "watch": 21.8,
+      "warning": 28.7,
+      "danger": 51.4
      },
      "r3": {
-      "watch": 90.2,
-      "warning": 188.3,
-      "danger": 266.7
+      "watch": 57.3,
+      "warning": 73.9,
+      "danger": 125.5
      }
     },
     "Salem": {
      "r1": {
-      "watch": 39.4,
-      "warning": 69.3,
-      "danger": 75.0
+      "watch": 26.7,
+      "warning": 33.4,
+      "danger": 49.0
      },
      "r3": {
-      "watch": 91.1,
-      "warning": 132.1,
-      "danger": 181.6
+      "watch": 69.9,
+      "warning": 81.8,
+      "danger": 105.1
      }
     },
     "Sivaganga": {
      "r1": {
-      "watch": 38.3,
-      "warning": 67.7,
-      "danger": 75.9
+      "watch": 25.3,
+      "warning": 33.2,
+      "danger": 49.5
      },
      "r3": {
-      "watch": 91.6,
-      "warning": 150.0,
-      "danger": 158.7
+      "watch": 66.8,
+      "warning": 81.3,
+      "danger": 109.5
      }
     },
     "Tenkasi": {
      "r1": {
-      "watch": 39.9,
-      "warning": 71.2,
-      "danger": 86.0
+      "watch": 26.9,
+      "warning": 32.7,
+      "danger": 51.5
      },
      "r3": {
-      "watch": 88.9,
-      "warning": 156.9,
-      "danger": 167.5
+      "watch": 68.3,
+      "warning": 80.0,
+      "danger": 105.8
      }
     },
     "Thanjavur": {
      "r1": {
-      "watch": 42.7,
-      "warning": 89.5,
-      "danger": 127.3
+      "watch": 26.2,
+      "warning": 34.6,
+      "danger": 54.7
      },
      "r3": {
-      "watch": 105.4,
-      "warning": 212.7,
-      "danger": 245.2
+      "watch": 70.5,
+      "warning": 88.4,
+      "danger": 144.8
      }
     },
     "Theni": {
      "r1": {
-      "watch": 38.6,
-      "warning": 78.4,
-      "danger": 88.1
+      "watch": 25.9,
+      "warning": 32.2,
+      "danger": 49.4
      },
      "r3": {
-      "watch": 88.1,
-      "warning": 132.1,
-      "danger": 145.8
+      "watch": 67.5,
+      "warning": 78.3,
+      "danger": 107.5
+     }
+    },
+    "Theni upstream": {
+     "r1": {
+      "watch": 31.0,
+      "warning": 36.7,
+      "danger": 50.7
+     },
+     "r3": {
+      "watch": 76.5,
+      "warning": 88.4,
+      "danger": 117.2
      }
     },
     "Thiruvallur": {
      "r1": {
-      "watch": 43.5,
-      "warning": 112.5,
-      "danger": 130.5
+      "watch": 25.3,
+      "warning": 33.9,
+      "danger": 64.3
      },
      "r3": {
-      "watch": 108.0,
-      "warning": 243.8,
-      "danger": 335.9
+      "watch": 69.5,
+      "warning": 89.3,
+      "danger": 155.2
      }
     },
     "Thiruvarur": {
      "r1": {
-      "watch": 39.4,
-      "warning": 89.5,
-      "danger": 125.6
+      "watch": 22.8,
+      "warning": 30.8,
+      "danger": 56.4
      },
      "r3": {
-      "watch": 98.8,
-      "warning": 204.6,
-      "danger": 261.5
+      "watch": 61.8,
+      "warning": 81.5,
+      "danger": 138.2
      }
     },
     "Thoothukudi": {
      "r1": {
-      "watch": 40.9,
-      "warning": 78.9,
-      "danger": 110.0
+      "watch": 27.3,
+      "warning": 33.4,
+      "danger": 53.5
      },
      "r3": {
-      "watch": 100.2,
-      "warning": 176.0,
-      "danger": 194.6
+      "watch": 71.7,
+      "warning": 87.1,
+      "danger": 123.2
      }
     },
     "Tiruchirappalli": {
      "r1": {
-      "watch": 41.8,
-      "warning": 72.6,
-      "danger": 88.1
+      "watch": 27.4,
+      "warning": 36.5,
+      "danger": 50.4
      },
      "r3": {
-      "watch": 94.4,
-      "warning": 141.0,
-      "danger": 178.7
+      "watch": 72.8,
+      "warning": 84.8,
+      "danger": 111.3
      }
     },
     "Tirunelveli": {
      "r1": {
-      "watch": 40.7,
-      "warning": 81.4,
-      "danger": 108.3
+      "watch": 27.2,
+      "warning": 34.1,
+      "danger": 54.5
      },
      "r3": {
-      "watch": 96.4,
-      "warning": 180.3,
-      "danger": 207.1
+      "watch": 71.3,
+      "warning": 83.5,
+      "danger": 123.7
+     }
+    },
+    "Tirunelveli upstream": {
+     "r1": {
+      "watch": 26.5,
+      "warning": 33.7,
+      "danger": 52.2
+     },
+     "r3": {
+      "watch": 70.3,
+      "warning": 84.1,
+      "danger": 115.4
      }
     },
     "Tirupathur": {
      "r1": {
-      "watch": 34.0,
-      "warning": 67.7,
-      "danger": 82.9
+      "watch": 21.1,
+      "warning": 29.1,
+      "danger": 42.5
      },
      "r3": {
-      "watch": 79.0,
-      "warning": 134.7,
-      "danger": 191.4
+      "watch": 58.5,
+      "warning": 70.3,
+      "danger": 96.9
      }
     },
     "Tiruppur": {
      "r1": {
-      "watch": 45.5,
-      "warning": 71.2,
-      "danger": 77.7
+      "watch": 30.7,
+      "warning": 37.5,
+      "danger": 54.5
      },
      "r3": {
-      "watch": 98.9,
-      "warning": 158.1,
-      "danger": 185.7
+      "watch": 75.2,
+      "warning": 88.4,
+      "danger": 119.3
      }
     },
     "Tiruvannamalai": {
      "r1": {
-      "watch": 48.8,
-      "warning": 90.6,
-      "danger": 115.6
+      "watch": 30.8,
+      "warning": 39.3,
+      "danger": 63.0
      },
      "r3": {
-      "watch": 112.7,
-      "warning": 215.4,
-      "danger": 278.4
+      "watch": 81.4,
+      "warning": 99.9,
+      "danger": 140.6
      }
     },
     "Vellore": {
      "r1": {
-      "watch": 36.2,
-      "warning": 78.7,
-      "danger": 112.4
+      "watch": 24.2,
+      "warning": 31.1,
+      "danger": 50.4
      },
      "r3": {
-      "watch": 89.6,
-      "warning": 166.3,
-      "danger": 212.0
+      "watch": 62.8,
+      "warning": 75.1,
+      "danger": 111.8
      }
     },
     "Viluppuram": {
      "r1": {
-      "watch": 45.3,
-      "warning": 93.8,
-      "danger": 124.9
+      "watch": 26.9,
+      "warning": 34.7,
+      "danger": 62.0
      },
      "r3": {
-      "watch": 102.5,
-      "warning": 223.2,
-      "danger": 318.1
+      "watch": 70.5,
+      "warning": 89.3,
+      "danger": 147.8
      }
     },
     "Virudhunagar": {
      "r1": {
-      "watch": 40.8,
-      "warning": 79.4,
-      "danger": 88.4
+      "watch": 26.2,
+      "warning": 33.3,
+      "danger": 50.9
      },
      "r3": {
-      "watch": 95.2,
-      "warning": 150.0,
-      "danger": 163.7
+      "watch": 70.3,
+      "warning": 83.3,
+      "danger": 114.1
      }
     }
    },
    "imd": {
     "Ariyalur": {
      "r1": {
-      "watch": 43.8,
-      "warning": 99.8,
-      "danger": 137.8
+      "watch": 22.3,
+      "warning": 34.8,
+      "danger": 64.4
      },
      "r3": {
-      "watch": 101.7,
-      "warning": 211.3,
-      "danger": 262.8
+      "watch": 63.4,
+      "warning": 83.1,
+      "danger": 141.4
      }
     },
     "Chengalpattu": {
      "r1": {
-      "watch": 47.6,
-      "warning": 128.6,
-      "danger": 194.0
+      "watch": 20.9,
+      "warning": 33.1,
+      "danger": 73.6
      },
      "r3": {
-      "watch": 119.2,
-      "warning": 290.3,
-      "danger": 397.6
+      "watch": 59.5,
+      "warning": 87.6,
+      "danger": 171.8
      }
     },
     "Chennai": {
      "r1": {
-      "watch": 39.8,
-      "warning": 141.3,
-      "danger": 164.5
+      "watch": 20.0,
+      "warning": 30.4,
+      "danger": 66.6
      },
      "r3": {
-      "watch": 105.5,
-      "warning": 275.2,
-      "danger": 369.8
+      "watch": 55.4,
+      "warning": 80.2,
+      "danger": 171.6
      }
     },
     "Coimbatore": {
      "r1": {
-      "watch": 56.7,
-      "warning": 121.0,
-      "danger": 186.3
+      "watch": 36.1,
+      "warning": 47.6,
+      "danger": 80.0
      },
      "r3": {
-      "watch": 138.2,
-      "warning": 353.8,
-      "danger": 487.1
+      "watch": 94.1,
+      "warning": 114.7,
+      "danger": 187.4
+     }
+    },
+    "Coimbatore upstream": {
+     "r1": {
+      "watch": 20.4,
+      "warning": 26.7,
+      "danger": 51.9
+     },
+     "r3": {
+      "watch": 52.1,
+      "warning": 66.7,
+      "danger": 119.4
      }
     },
     "Cuddalore": {
      "r1": {
-      "watch": 55.1,
-      "warning": 156.3,
-      "danger": 267.2
+      "watch": 31.1,
+      "warning": 44.0,
+      "danger": 83.8
      },
      "r3": {
-      "watch": 145.2,
-      "warning": 353.2,
-      "danger": 466.7
+      "watch": 74.2,
+      "warning": 108.6,
+      "danger": 231.1
      }
     },
     "Dharmapuri": {
      "r1": {
-      "watch": 39.1,
-      "warning": 81.2,
-      "danger": 107.2
+      "watch": 23.6,
+      "warning": 32.0,
+      "danger": 53.5
      },
      "r3": {
-      "watch": 86.0,
-      "warning": 148.7,
-      "danger": 208.6
+      "watch": 62.7,
+      "warning": 76.2,
+      "danger": 111.8
      }
     },
     "Dindigul": {
      "r1": {
-      "watch": 40.4,
-      "warning": 97.4,
-      "danger": 114.7
+      "watch": 26.4,
+      "warning": 34.6,
+      "danger": 57.3
      },
      "r3": {
-      "watch": 95.7,
-      "warning": 163.8,
-      "danger": 191.0
+      "watch": 67.8,
+      "warning": 83.6,
+      "danger": 118.4
      }
     },
     "Erode": {
      "r1": {
-      "watch": 39.2,
-      "warning": 80.1,
-      "danger": 94.0
+      "watch": 23.2,
+      "warning": 32.2,
+      "danger": 55.2
      },
      "r3": {
-      "watch": 89.2,
-      "warning": 140.5,
-      "danger": 172.9
+      "watch": 63.2,
+      "warning": 76.8,
+      "danger": 111.6
      }
     },
     "Kallakurichi": {
      "r1": {
-      "watch": 38.5,
-      "warning": 118.4,
-      "danger": 155.2
+      "watch": 20.2,
+      "warning": 29.8,
+      "danger": 60.4
      },
      "r3": {
-      "watch": 97.1,
-      "warning": 198.0,
-      "danger": 238.5
+      "watch": 54.0,
+      "warning": 75.1,
+      "danger": 130.3
      }
     },
     "Kancheepuram": {
      "r1": {
-      "watch": 48.9,
-      "warning": 157.8,
-      "danger": 170.4
+      "watch": 23.1,
+      "warning": 35.3,
+      "danger": 73.7
      },
      "r3": {
-      "watch": 119.8,
-      "warning": 300.2,
-      "danger": 398.6
+      "watch": 67.9,
+      "warning": 93.2,
+      "danger": 195.8
      }
     },
     "Kanyakumari": {
      "r1": {
-      "watch": 37.5,
-      "warning": 101.8,
-      "danger": 133.2
+      "watch": 22.3,
+      "warning": 29.7,
+      "danger": 50.4
      },
      "r3": {
-      "watch": 89.6,
-      "warning": 204.2,
-      "danger": 295.0
+      "watch": 56.6,
+      "warning": 71.0,
+      "danger": 117.2
+     }
+    },
+    "Kanyakumari upstream": {
+     "r1": {
+      "watch": 20.0,
+      "warning": 27.3,
+      "danger": 46.7
+     },
+     "r3": {
+      "watch": 50.6,
+      "warning": 62.4,
+      "danger": 113.9
      }
     },
     "Karur": {
      "r1": {
-      "watch": 28.1,
-      "warning": 60.4,
-      "danger": 71.1
+      "watch": 20.0,
+      "warning": 22.2,
+      "danger": 38.4
      },
      "r3": {
-      "watch": 60.6,
-      "warning": 103.0,
-      "danger": 127.3
+      "watch": 41.7,
+      "warning": 53.2,
+      "danger": 74.9
      }
     },
     "Krishnagiri": {
      "r1": {
-      "watch": 37.1,
-      "warning": 68.9,
-      "danger": 108.0
+      "watch": 22.4,
+      "warning": 30.9,
+      "danger": 48.8
      },
      "r3": {
-      "watch": 83.8,
-      "warning": 161.1,
-      "danger": 186.9
+      "watch": 60.2,
+      "warning": 72.8,
+      "danger": 104.0
      }
     },
     "Madurai": {
      "r1": {
-      "watch": 40.3,
-      "warning": 87.2,
-      "danger": 103.6
+      "watch": 23.5,
+      "warning": 31.5,
+      "danger": 51.8
      },
      "r3": {
-      "watch": 87.3,
-      "warning": 137.1,
-      "danger": 151.7
+      "watch": 61.9,
+      "warning": 76.3,
+      "danger": 107.1
      }
     },
     "Mayiladuthurai": {
      "r1": {
-      "watch": 31.3,
-      "warning": 113.9,
-      "danger": 144.4
+      "watch": 20.0,
+      "warning": 20.0,
+      "danger": 49.8
      },
      "r3": {
-      "watch": 78.0,
-      "warning": 224.4,
-      "danger": 289.5
+      "watch": 40.0,
+      "warning": 55.6,
+      "danger": 138.3
      }
     },
     "Nagapattinam": {
      "r1": {
-      "watch": 42.3,
-      "warning": 142.2,
-      "danger": 160.3
+      "watch": 20.0,
+      "warning": 31.4,
+      "danger": 64.9
      },
      "r3": {
-      "watch": 112.4,
-      "warning": 283.2,
-      "danger": 322.4
+      "watch": 52.1,
+      "warning": 83.1,
+      "danger": 183.8
      }
     },
     "Namakkal": {
      "r1": {
-      "watch": 33.9,
-      "warning": 65.8,
-      "danger": 81.1
+      "watch": 20.0,
+      "warning": 28.1,
+      "danger": 44.0
      },
      "r3": {
-      "watch": 75.0,
-      "warning": 119.9,
-      "danger": 133.1
+      "watch": 50.4,
+      "warning": 62.9,
+      "danger": 96.5
      }
     },
     "Nilgiris": {
      "r1": {
-      "watch": 51.6,
-      "warning": 132.8,
-      "danger": 217.5
+      "watch": 31.2,
+      "warning": 42.2,
+      "danger": 76.6
      },
      "r3": {
-      "watch": 129.9,
-      "warning": 354.0,
-      "danger": 602.8
+      "watch": 86.9,
+      "warning": 110.2,
+      "danger": 166.3
      }
     },
     "Perambalur": {
      "r1": {
-      "watch": 35.6,
-      "warning": 74.0,
-      "danger": 86.5
+      "watch": 20.0,
+      "warning": 27.6,
+      "danger": 51.0
      },
      "r3": {
-      "watch": 75.5,
-      "warning": 131.0,
-      "danger": 141.6
+      "watch": 50.5,
+      "warning": 67.0,
+      "danger": 94.2
      }
     },
     "Pudukkottai": {
      "r1": {
-      "watch": 44.8,
-      "warning": 117.2,
-      "danger": 180.2
+      "watch": 27.3,
+      "warning": 36.0,
+      "danger": 63.4
      },
      "r3": {
-      "watch": 104.5,
-      "warning": 242.8,
-      "danger": 263.1
+      "watch": 71.6,
+      "warning": 89.6,
+      "danger": 139.6
      }
     },
     "Ramanathapuram": {
      "r1": {
-      "watch": 34.5,
-      "warning": 71.9,
-      "danger": 86.2
+      "watch": 20.0,
+      "warning": 26.8,
+      "danger": 49.0
      },
      "r3": {
-      "watch": 75.8,
-      "warning": 143.7,
-      "danger": 161.8
+      "watch": 48.3,
+      "warning": 63.4,
+      "danger": 101.5
      }
     },
     "Ranipet": {
      "r1": {
-      "watch": 27.9,
-      "warning": 89.7,
-      "danger": 133.9
+      "watch": 20.0,
+      "warning": 20.0,
+      "danger": 44.5
      },
      "r3": {
-      "watch": 68.1,
-      "warning": 174.3,
-      "danger": 225.7
+      "watch": 40.0,
+      "warning": 53.8,
+      "danger": 101.3
      }
     },
     "Salem": {
      "r1": {
-      "watch": 47.3,
-      "warning": 89.6,
-      "danger": 108.8
+      "watch": 28.3,
+      "warning": 36.9,
+      "danger": 61.7
      },
      "r3": {
-      "watch": 104.7,
-      "warning": 158.4,
-      "danger": 215.6
+      "watch": 74.7,
+      "warning": 90.5,
+      "danger": 126.4
      }
     },
     "Sivaganga": {
      "r1": {
-      "watch": 27.1,
-      "warning": 60.6,
-      "danger": 71.6
+      "watch": 20.0,
+      "warning": 22.4,
+      "danger": 42.6
      },
      "r3": {
-      "watch": 64.8,
-      "warning": 108.8,
-      "danger": 117.9
+      "watch": 43.6,
+      "warning": 55.6,
+      "danger": 85.7
      }
     },
     "Tenkasi": {
      "r1": {
-      "watch": 28.3,
-      "warning": 70.3,
-      "danger": 83.8
+      "watch": 20.0,
+      "warning": 23.2,
+      "danger": 41.1
      },
      "r3": {
-      "watch": 66.7,
-      "warning": 126.9,
-      "danger": 160.1
+      "watch": 46.1,
+      "warning": 58.4,
+      "danger": 87.8
      }
     },
     "Thanjavur": {
      "r1": {
-      "watch": 50.4,
-      "warning": 111.3,
-      "danger": 155.0
+      "watch": 28.8,
+      "warning": 39.5,
+      "danger": 73.0
      },
      "r3": {
-      "watch": 122.4,
-      "warning": 225.8,
-      "danger": 258.8
+      "watch": 72.4,
+      "warning": 97.2,
+      "danger": 167.5
      }
     },
     "Theni": {
      "r1": {
-      "watch": 34.2,
-      "warning": 80.8,
-      "danger": 87.8
+      "watch": 20.0,
+      "warning": 27.7,
+      "danger": 53.0
      },
      "r3": {
-      "watch": 85.5,
-      "warning": 127.6,
-      "danger": 156.7
+      "watch": 55.4,
+      "warning": 71.2,
+      "danger": 103.4
+     }
+    },
+    "Theni upstream": {
+     "r1": {
+      "watch": 20.0,
+      "warning": 26.3,
+      "danger": 47.3
+     },
+     "r3": {
+      "watch": 50.8,
+      "warning": 68.3,
+      "danger": 102.4
      }
     },
     "Thiruvallur": {
      "r1": {
-      "watch": 42.5,
-      "warning": 124.3,
-      "danger": 166.4
+      "watch": 21.6,
+      "warning": 33.1,
+      "danger": 68.0
      },
      "r3": {
-      "watch": 109.4,
-      "warning": 270.9,
-      "danger": 374.8
+      "watch": 61.2,
+      "warning": 90.0,
+      "danger": 153.1
      }
     },
     "Thiruvarur": {
      "r1": {
-      "watch": 41.8,
-      "warning": 119.4,
-      "danger": 162.5
+      "watch": 21.0,
+      "warning": 32.6,
+      "danger": 64.7
      },
      "r3": {
-      "watch": 109.6,
-      "warning": 232.1,
-      "danger": 288.9
+      "watch": 56.9,
+      "warning": 82.9,
+      "danger": 149.3
      }
     },
     "Thoothukudi": {
      "r1": {
-      "watch": 37.7,
-      "warning": 104.1,
-      "danger": 159.4
+      "watch": 21.2,
+      "warning": 28.9,
+      "danger": 56.1
      },
      "r3": {
-      "watch": 93.5,
-      "warning": 209.6,
-      "danger": 283.1
+      "watch": 59.1,
+      "warning": 76.3,
+      "danger": 129.9
      }
     },
     "Tiruchirappalli": {
      "r1": {
-      "watch": 38.8,
-      "warning": 76.9,
-      "danger": 96.0
+      "watch": 23.4,
+      "warning": 32.0,
+      "danger": 49.8
      },
      "r3": {
-      "watch": 87.2,
-      "warning": 138.5,
-      "danger": 159.0
+      "watch": 57.8,
+      "warning": 72.9,
+      "danger": 106.8
      }
     },
     "Tirunelveli": {
      "r1": {
-      "watch": 40.3,
-      "warning": 102.3,
-      "danger": 153.3
+      "watch": 20.4,
+      "warning": 30.1,
+      "danger": 60.8
      },
      "r3": {
-      "watch": 94.2,
-      "warning": 211.3,
-      "danger": 231.0
+      "watch": 58.4,
+      "warning": 79.7,
+      "danger": 147.8
+     }
+    },
+    "Tirunelveli upstream": {
+     "r1": {
+      "watch": 20.0,
+      "warning": 26.1,
+      "danger": 44.0
+     },
+     "r3": {
+      "watch": 47.1,
+      "warning": 59.8,
+      "danger": 104.5
      }
     },
     "Tirupathur": {
      "r1": {
-      "watch": 32.1,
-      "warning": 77.4,
-      "danger": 116.9
+      "watch": 20.0,
+      "warning": 24.6,
+      "danger": 47.9
      },
      "r3": {
-      "watch": 74.7,
-      "warning": 165.5,
-      "danger": 228.3
+      "watch": 50.3,
+      "warning": 63.7,
+      "danger": 97.3
      }
     },
     "Tiruppur": {
      "r1": {
-      "watch": 39.5,
-      "warning": 92.9,
-      "danger": 133.4
+      "watch": 22.3,
+      "warning": 31.7,
+      "danger": 55.2
      },
      "r3": {
-      "watch": 88.8,
-      "warning": 166.9,
-      "danger": 224.6
+      "watch": 62.4,
+      "warning": 77.5,
+      "danger": 114.8
      }
     },
     "Tiruvannamalai": {
      "r1": {
-      "watch": 50.6,
-      "warning": 123.1,
-      "danger": 193.1
+      "watch": 30.8,
+      "warning": 40.6,
+      "danger": 67.9
      },
      "r3": {
-      "watch": 123.0,
-      "warning": 254.6,
-      "danger": 299.4
+      "watch": 83.1,
+      "warning": 103.3,
+      "danger": 159.7
      }
     },
     "Vellore": {
      "r1": {
-      "watch": 38.9,
-      "warning": 83.7,
-      "danger": 122.3
+      "watch": 24.0,
+      "warning": 33.5,
+      "danger": 51.4
      },
      "r3": {
-      "watch": 88.3,
-      "warning": 151.5,
-      "danger": 205.8
+      "watch": 63.0,
+      "warning": 77.4,
+      "danger": 117.3
      }
     },
     "Viluppuram": {
      "r1": {
-      "watch": 55.2,
-      "warning": 130.7,
-      "danger": 222.7
+      "watch": 27.8,
+      "warning": 43.0,
+      "danger": 72.9
      },
      "r3": {
-      "watch": 117.6,
-      "warning": 277.3,
-      "danger": 414.0
+      "watch": 76.2,
+      "warning": 97.2,
+      "danger": 174.7
      }
     },
     "Virudhunagar": {
      "r1": {
-      "watch": 39.8,
-      "warning": 81.9,
-      "danger": 99.8
+      "watch": 23.5,
+      "warning": 31.7,
+      "danger": 52.4
      },
      "r3": {
-      "watch": 89.4,
-      "warning": 144.1,
-      "danger": 153.7
+      "watch": 61.4,
+      "warning": 78.5,
+      "danger": 104.4
      }
     }
    },
@@ -2864,49 +3056,49 @@
    },
    "river": {
     "Cauvery at Kodumudi": {
-     "watch": 1862.7,
-     "warning": 2539.4,
-     "danger": 3459.3
+     "watch": 1310.2,
+     "warning": 1651.0,
+     "danger": 2127.1
     },
     "Cauvery at Musiri": {
-     "watch": 2009.8,
-     "warning": 3113.5,
-     "danger": 4088.7
+     "watch": 1589.0,
+     "warning": 1852.5,
+     "danger": 2449.2
     },
     "Amaravathi at Karur": {
-     "watch": 294.2,
-     "warning": 393.4,
-     "danger": 424.8
+     "watch": 173.5,
+     "warning": 243.3,
+     "danger": 339.4
     },
     "Tamirabarani at Tirunelveli": {
-     "watch": 256.1,
-     "warning": 891.2,
-     "danger": 1003.6
+     "watch": 119.0,
+     "warning": 180.5,
+     "danger": 399.8
     },
     "Tamirabarani at Srivaikuntam": {
-     "watch": 599.4,
-     "warning": 1720.7,
-     "danger": 2081.8
+     "watch": 254.5,
+     "warning": 397.1,
+     "danger": 983.4
     },
     "Vaigai at Madurai": {
-     "watch": 34.6,
-     "warning": 167.2,
-     "danger": 195.1
+     "watch": 13.2,
+     "warning": 21.9,
+     "danger": 56.5
     },
     "Vellar at Sethiathope": {
-     "watch": 717.8,
-     "warning": 2189.6,
-     "danger": 5669.9
+     "watch": 262.0,
+     "warning": 481.4,
+     "danger": 1203.1
     },
     "Adyar at Chennai": {
-     "watch": 125.2,
-     "warning": 300.6,
-     "danger": 381.5
+     "watch": 52.3,
+     "warning": 85.1,
+     "danger": 191.1
     },
     "Kosasthalaiyar near Ennore": {
-     "watch": 435.2,
-     "warning": 1161.5,
-     "danger": 1213.2
+     "watch": 172.0,
+     "warning": 277.7,
+     "danger": 686.9
     }
    },
    "reservoir": {
@@ -2918,518 +3110,518 @@
  "rain": {
   "_default": {
    "r1": {
-    "watch": 28.9,
-    "warning": 83.6,
-    "danger": 109.3
+    "watch": 27.8,
+    "warning": 55.7,
+    "danger": 90.9
    },
    "r3": {
-    "watch": 74.5,
-    "warning": 158.3,
-    "danger": 197.5
+    "watch": 72.4,
+    "warning": 124.8,
+    "danger": 178.8
    }
   },
   "Ariyalur": {
    "r1": {
-    "watch": 30.9,
-    "warning": 74.0,
-    "danger": 109.3
+    "watch": 29.2,
+    "warning": 50.2,
+    "danger": 76.3
    },
    "r3": {
-    "watch": 76.2,
-    "warning": 190.1,
-    "danger": 292.0
+    "watch": 72.7,
+    "warning": 124.8,
+    "danger": 258.8
    }
   },
   "Chengalpattu": {
    "r1": {
-    "watch": 35.0,
-    "warning": 109.2,
-    "danger": 133.5
+    "watch": 31.2,
+    "warning": 61.4,
+    "danger": 114.5
    },
    "r3": {
-    "watch": 99.3,
-    "warning": 198.1,
-    "danger": 210.3
+    "watch": 94.8,
+    "warning": 152.7,
+    "danger": 201.3
    }
   },
   "Chennai": {
    "r1": {
-    "watch": 30.8,
-    "warning": 105.0,
-    "danger": 155.3
+    "watch": 29.8,
+    "warning": 76.7,
+    "danger": 121.6
    },
    "r3": {
-    "watch": 101.2,
-    "warning": 176.6,
-    "danger": 266.8
+    "watch": 90.0,
+    "warning": 161.9,
+    "danger": 203.4
    }
   },
   "Coimbatore": {
    "r1": {
-    "watch": 22.3,
-    "warning": 43.8,
-    "danger": 51.4
+    "watch": 21.0,
+    "warning": 38.4,
+    "danger": 45.8
    },
    "r3": {
-    "watch": 54.1,
-    "warning": 85.1,
-    "danger": 101.9
+    "watch": 52.9,
+    "warning": 75.5,
+    "danger": 87.5
    }
   },
   "Cuddalore": {
    "r1": {
-    "watch": 33.8,
-    "warning": 94.0,
-    "danger": 168.2
+    "watch": 30.7,
+    "warning": 66.6,
+    "danger": 120.6
    },
    "r3": {
-    "watch": 90.9,
-    "warning": 235.4,
-    "danger": 325.3
+    "watch": 85.6,
+    "warning": 169.9,
+    "danger": 304.9
    }
   },
   "Dharmapuri": {
    "r1": {
     "watch": 20.0,
-    "warning": 53.8,
-    "danger": 70.0
+    "warning": 33.5,
+    "danger": 65.0
    },
    "r3": {
-    "watch": 47.7,
-    "warning": 102.7,
-    "danger": 109.2
+    "watch": 46.0,
+    "warning": 83.8,
+    "danger": 103.7
    }
   },
   "Dindigul": {
    "r1": {
-    "watch": 28.8,
-    "warning": 73.8,
-    "danger": 91.0
+    "watch": 28.2,
+    "warning": 66.4,
+    "danger": 78.2
    },
    "r3": {
-    "watch": 78.9,
-    "warning": 158.2,
-    "danger": 205.2
+    "watch": 77.3,
+    "warning": 123.4,
+    "danger": 175.0
    }
   },
   "Erode": {
    "r1": {
     "watch": 20.0,
-    "warning": 42.5,
-    "danger": 47.0
+    "warning": 32.2,
+    "danger": 44.9
    },
    "r3": {
-    "watch": 49.1,
-    "warning": 75.9,
-    "danger": 91.7
+    "watch": 47.9,
+    "warning": 66.8,
+    "danger": 78.8
    }
   },
   "Kallakurichi": {
    "r1": {
-    "watch": 30.4,
-    "warning": 87.0,
-    "danger": 144.5
+    "watch": 28.9,
+    "warning": 69.4,
+    "danger": 97.7
    },
    "r3": {
-    "watch": 81.3,
-    "warning": 204.3,
-    "danger": 327.8
+    "watch": 76.9,
+    "warning": 138.9,
+    "danger": 284.3
    }
   },
   "Kancheepuram": {
    "r1": {
-    "watch": 27.7,
-    "warning": 86.2,
-    "danger": 97.8
+    "watch": 26.6,
+    "warning": 55.7,
+    "danger": 95.0
    },
    "r3": {
-    "watch": 74.5,
-    "warning": 123.5,
-    "danger": 141.6
+    "watch": 72.1,
+    "warning": 117.2,
+    "danger": 126.8
    }
   },
   "Kanyakumari": {
    "r1": {
-    "watch": 32.9,
-    "warning": 75.2,
-    "danger": 92.2
+    "watch": 31.6,
+    "warning": 56.6,
+    "danger": 81.8
    },
    "r3": {
-    "watch": 85.3,
-    "warning": 165.5,
-    "danger": 191.7
+    "watch": 82.6,
+    "warning": 139.4,
+    "danger": 179.2
    }
   },
   "Karur": {
    "r1": {
     "watch": 20.0,
-    "warning": 56.2,
-    "danger": 71.0
+    "warning": 49.2,
+    "danger": 58.0
    },
    "r3": {
-    "watch": 56.8,
-    "warning": 114.9,
-    "danger": 137.6
+    "watch": 54.0,
+    "warning": 100.2,
+    "danger": 117.4
    }
   },
   "Krishnagiri": {
    "r1": {
     "watch": 20.0,
-    "warning": 66.6,
-    "danger": 79.4
+    "warning": 45.9,
+    "danger": 68.7
    },
    "r3": {
-    "watch": 53.1,
-    "warning": 125.9,
-    "danger": 145.2
+    "watch": 51.5,
+    "warning": 99.0,
+    "danger": 138.0
    }
   },
   "Madurai": {
    "r1": {
-    "watch": 26.7,
-    "warning": 66.8,
-    "danger": 73.9
+    "watch": 23.3,
+    "warning": 53.9,
+    "danger": 70.2
    },
    "r3": {
-    "watch": 70.8,
-    "warning": 120.1,
-    "danger": 124.6
+    "watch": 68.0,
+    "warning": 111.2,
+    "danger": 121.2
    }
   },
   "Mayiladuthurai": {
    "r1": {
-    "watch": 40.5,
-    "warning": 107.6,
-    "danger": 160.5
+    "watch": 36.7,
+    "warning": 80.5,
+    "danger": 117.9
    },
    "r3": {
-    "watch": 104.8,
-    "warning": 226.9,
-    "danger": 278.9
+    "watch": 98.5,
+    "warning": 197.0,
+    "danger": 237.1
    }
   },
   "Nagapattinam": {
    "r1": {
-    "watch": 39.8,
-    "warning": 114.9,
-    "danger": 132.5
+    "watch": 36.9,
+    "warning": 75.6,
+    "danger": 118.8
    },
    "r3": {
-    "watch": 111.2,
-    "warning": 203.4,
-    "danger": 287.8
+    "watch": 105.9,
+    "warning": 185.0,
+    "danger": 219.4
    }
   },
   "Namakkal": {
    "r1": {
     "watch": 20.0,
-    "warning": 43.5,
-    "danger": 59.1
+    "warning": 37.9,
+    "danger": 51.3
    },
    "r3": {
-    "watch": 45.4,
-    "warning": 81.4,
-    "danger": 115.9
+    "watch": 44.4,
+    "warning": 72.7,
+    "danger": 104.6
    }
   },
   "Nilgiris": {
    "r1": {
-    "watch": 27.7,
-    "warning": 57.9,
-    "danger": 73.9
+    "watch": 27.2,
+    "warning": 44.3,
+    "danger": 61.6
    },
    "r3": {
-    "watch": 70.3,
-    "warning": 116.9,
-    "danger": 140.3
+    "watch": 69.1,
+    "warning": 101.9,
+    "danger": 121.7
    }
   },
   "Perambalur": {
    "r1": {
-    "watch": 29.5,
-    "warning": 65.8,
-    "danger": 137.6
+    "watch": 28.5,
+    "warning": 56.1,
+    "danger": 77.7
    },
    "r3": {
-    "watch": 74.4,
-    "warning": 200.4,
-    "danger": 269.8
+    "watch": 70.9,
+    "warning": 130.8,
+    "danger": 252.2
    }
   },
   "Pudukkottai": {
    "r1": {
-    "watch": 27.1,
-    "warning": 92.8,
-    "danger": 162.4
+    "watch": 25.3,
+    "warning": 46.0,
+    "danger": 115.9
    },
    "r3": {
-    "watch": 73.8,
-    "warning": 215.2,
-    "danger": 368.4
+    "watch": 71.1,
+    "warning": 110.4,
+    "danger": 278.2
    }
   },
   "Ramanathapuram": {
    "r1": {
-    "watch": 29.6,
-    "warning": 83.6,
-    "danger": 109.4
+    "watch": 28.2,
+    "warning": 49.3,
+    "danger": 93.4
    },
    "r3": {
-    "watch": 78.3,
-    "warning": 161.0,
-    "danger": 238.6
+    "watch": 75.0,
+    "warning": 138.3,
+    "danger": 178.8
    }
   },
   "Ranipet": {
    "r1": {
-    "watch": 26.1,
-    "warning": 97.0,
-    "danger": 123.8
+    "watch": 24.2,
+    "warning": 64.8,
+    "danger": 104.9
    },
    "r3": {
-    "watch": 67.9,
-    "warning": 158.3,
-    "danger": 227.4
+    "watch": 64.1,
+    "warning": 119.7,
+    "danger": 197.1
    }
   },
   "Salem": {
    "r1": {
-    "watch": 21.3,
-    "warning": 57.1,
-    "danger": 78.7
+    "watch": 20.1,
+    "warning": 40.4,
+    "danger": 58.1
    },
    "r3": {
-    "watch": 53.1,
-    "warning": 117.4,
-    "danger": 159.1
+    "watch": 51.1,
+    "warning": 81.1,
+    "danger": 124.6
    }
   },
   "Sivaganga": {
    "r1": {
-    "watch": 29.4,
-    "warning": 90.5,
-    "danger": 126.3
+    "watch": 27.6,
+    "warning": 56.1,
+    "danger": 102.4
    },
    "r3": {
-    "watch": 85.2,
-    "warning": 160.9,
-    "danger": 257.6
+    "watch": 80.5,
+    "warning": 135.0,
+    "danger": 184.6
    }
   },
   "Tenkasi": {
    "r1": {
-    "watch": 30.4,
-    "warning": 54.6,
-    "danger": 63.6
+    "watch": 28.8,
+    "warning": 49.1,
+    "danger": 57.1
    },
    "r3": {
-    "watch": 74.8,
-    "warning": 117.0,
-    "danger": 131.7
+    "watch": 73.9,
+    "warning": 106.0,
+    "danger": 123.1
    }
   },
   "Thanjavur": {
    "r1": {
-    "watch": 33.2,
-    "warning": 85.6,
-    "danger": 110.7
+    "watch": 29.9,
+    "warning": 56.8,
+    "danger": 94.9
    },
    "r3": {
-    "watch": 80.7,
-    "warning": 168.7,
-    "danger": 260.3
+    "watch": 77.3,
+    "warning": 136.0,
+    "danger": 187.1
    }
   },
   "Theni": {
    "r1": {
-    "watch": 22.7,
-    "warning": 47.8,
-    "danger": 79.5
+    "watch": 21.1,
+    "warning": 39.9,
+    "danger": 49.8
    },
    "r3": {
-    "watch": 56.8,
-    "warning": 102.0,
-    "danger": 114.3
+    "watch": 54.7,
+    "warning": 91.0,
+    "danger": 105.3
    }
   },
   "Thiruvallur": {
    "r1": {
-    "watch": 28.9,
-    "warning": 87.9,
-    "danger": 127.5
+    "watch": 26.9,
+    "warning": 73.7,
+    "danger": 97.4
    },
    "r3": {
-    "watch": 88.4,
-    "warning": 144.0,
-    "danger": 189.9
+    "watch": 83.8,
+    "warning": 129.6,
+    "danger": 154.0
    }
   },
   "Thiruvarur": {
    "r1": {
-    "watch": 34.7,
-    "warning": 104.5,
-    "danger": 174.4
+    "watch": 33.7,
+    "warning": 72.3,
+    "danger": 124.9
    },
    "r3": {
-    "watch": 96.0,
-    "warning": 207.7,
-    "danger": 323.2
+    "watch": 94.1,
+    "warning": 173.4,
+    "danger": 245.0
    }
   },
   "Thoothukudi": {
    "r1": {
-    "watch": 31.0,
-    "warning": 69.0,
-    "danger": 77.8
+    "watch": 30.0,
+    "warning": 60.4,
+    "danger": 70.1
    },
    "r3": {
-    "watch": 85.4,
-    "warning": 121.2,
-    "danger": 124.1
+    "watch": 83.3,
+    "warning": 110.8,
+    "danger": 122.5
    }
   },
   "Tiruchirappalli": {
    "r1": {
-    "watch": 22.4,
-    "warning": 52.3,
-    "danger": 72.2
+    "watch": 21.5,
+    "warning": 44.4,
+    "danger": 62.9
    },
    "r3": {
-    "watch": 56.8,
-    "warning": 113.0,
-    "danger": 141.9
+    "watch": 53.6,
+    "warning": 95.0,
+    "danger": 119.2
    }
   },
   "Tirunelveli": {
    "r1": {
-    "watch": 31.1,
-    "warning": 84.1,
-    "danger": 98.2
+    "watch": 29.8,
+    "warning": 67.8,
+    "danger": 90.9
    },
    "r3": {
-    "watch": 79.6,
-    "warning": 174.7,
-    "danger": 197.5
+    "watch": 74.0,
+    "warning": 157.9,
+    "danger": 182.2
    }
   },
   "Tirupathur": {
    "r1": {
-    "watch": 22.8,
-    "warning": 86.4,
-    "danger": 127.3
+    "watch": 21.1,
+    "warning": 48.3,
+    "danger": 92.7
    },
    "r3": {
-    "watch": 57.2,
-    "warning": 171.7,
-    "danger": 218.1
+    "watch": 55.2,
+    "warning": 127.7,
+    "danger": 200.1
    }
   },
   "Tiruppur": {
    "r1": {
-    "watch": 20.2,
-    "warning": 43.6,
-    "danger": 53.0
+    "watch": 20.0,
+    "warning": 36.4,
+    "danger": 49.8
    },
    "r3": {
-    "watch": 49.2,
-    "warning": 96.0,
-    "danger": 99.6
+    "watch": 45.6,
+    "warning": 82.3,
+    "danger": 99.1
    }
   },
   "Tiruvannamalai": {
    "r1": {
-    "watch": 29.8,
-    "warning": 86.5,
-    "danger": 126.2
+    "watch": 28.0,
+    "warning": 55.5,
+    "danger": 95.4
    },
    "r3": {
-    "watch": 67.4,
-    "warning": 155.9,
-    "danger": 183.4
+    "watch": 65.4,
+    "warning": 142.3,
+    "danger": 163.6
    }
   },
   "Vellore": {
    "r1": {
-    "watch": 24.1,
-    "warning": 97.5,
-    "danger": 115.9
+    "watch": 23.6,
+    "warning": 66.6,
+    "danger": 99.0
    },
    "r3": {
-    "watch": 73.6,
-    "warning": 167.7,
-    "danger": 221.1
+    "watch": 67.3,
+    "warning": 131.7,
+    "danger": 186.2
    }
   },
   "Viluppuram": {
    "r1": {
-    "watch": 32.4,
-    "warning": 116.3,
-    "danger": 138.6
+    "watch": 30.6,
+    "warning": 65.7,
+    "danger": 128.1
    },
    "r3": {
-    "watch": 86.6,
-    "warning": 201.9,
-    "danger": 229.5
+    "watch": 85.5,
+    "warning": 178.3,
+    "danger": 220.1
    }
   },
   "Virudhunagar": {
    "r1": {
-    "watch": 28.9,
-    "warning": 55.2,
-    "danger": 60.1
+    "watch": 27.8,
+    "warning": 50.4,
+    "danger": 56.2
    },
    "r3": {
-    "watch": 74.1,
-    "warning": 111.3,
-    "danger": 123.6
+    "watch": 72.4,
+    "warning": 100.1,
+    "danger": 118.7
    }
   }
  },
  "river": {
   "Cauvery at Kodumudi": {
-   "watch": 1862.7,
-   "warning": 2539.4,
-   "danger": 3459.3
+   "watch": 1818.7,
+   "warning": 2312.0,
+   "danger": 2708.0
   },
   "Cauvery at Musiri": {
-   "watch": 2009.8,
-   "warning": 3113.5,
-   "danger": 4088.7
+   "watch": 1982.1,
+   "warning": 2822.2,
+   "danger": 3180.9
   },
   "Amaravathi at Karur": {
-   "watch": 294.2,
-   "warning": 393.4,
-   "danger": 424.8
+   "watch": 283.7,
+   "warning": 370.1,
+   "danger": 406.6
   },
   "Tamirabarani at Tirunelveli": {
-   "watch": 256.1,
-   "warning": 891.2,
-   "danger": 1003.6
+   "watch": 242.3,
+   "warning": 621.8,
+   "danger": 917.3
   },
   "Tamirabarani at Srivaikuntam": {
-   "watch": 599.4,
-   "warning": 1720.7,
-   "danger": 2081.8
+   "watch": 514.5,
+   "warning": 1365.6,
+   "danger": 1982.6
   },
   "Vaigai at Madurai": {
-   "watch": 34.6,
-   "warning": 167.2,
-   "danger": 195.1
+   "watch": 30.6,
+   "warning": 96.5,
+   "danger": 176.2
   },
   "Vellar at Sethiathope": {
-   "watch": 717.8,
-   "warning": 2189.6,
-   "danger": 5669.9
+   "watch": 655.4,
+   "warning": 1742.9,
+   "danger": 2645.0
   },
   "Adyar at Chennai": {
-   "watch": 125.2,
-   "warning": 300.6,
-   "danger": 381.5
+   "watch": 114.6,
+   "warning": 252.5,
+   "danger": 331.6
   },
   "Kosasthalaiyar near Ennore": {
-   "watch": 435.2,
-   "warning": 1161.5,
-   "danger": 1213.2
+   "watch": 388.3,
+   "warning": 910.8,
+   "danger": 1199.5
   }
  }
 }

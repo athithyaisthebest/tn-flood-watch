@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-26",
+ "generated": "2026-11-27",
  "signals": [
   "forecast",
   "imd",
@@ -11,34 +11,34 @@
  "setting": "balanced",
  "summary": {
   "train": {
-   "hits": 27,
-   "pairs": 27,
-   "false_alert_days": 658,
-   "alert_days_per_district_season": 2.16,
+   "hits": 26,
+   "pairs": 32,
+   "false_alert_days": 479,
+   "alert_days_per_district_season": 1.58,
    "first_year": 2015,
    "last_year": 2022
   },
   "test": {
-   "hits": 19,
-   "pairs": 20,
-   "false_alert_days": 480,
-   "alert_days_per_district_season": 2.53,
+   "hits": 23,
+   "pairs": 24,
+   "false_alert_days": 528,
+   "alert_days_per_district_season": 2.78,
    "first_year": 2022,
    "last_year": 2026
   },
   "baseline": {
    "train": {
     "hits": 9,
-    "pairs": 27,
+    "pairs": 32,
     "false_alert_days": 27,
     "alert_days_per_district_season": 0.09,
     "first_year": 2015,
     "last_year": 2022
    },
    "test": {
-    "hits": 11,
-    "pairs": 20,
-    "false_alert_days": 25,
+    "hits": 12,
+    "pairs": 24,
+    "false_alert_days": 24,
     "alert_days_per_district_season": 0.13,
     "first_year": 2022,
     "last_year": 2026
@@ -46,69 +46,69 @@
   },
   "high_sensitivity": {
    "train": {
-    "hits": 27,
-    "pairs": 27,
-    "false_alert_days": 658,
-    "alert_days_per_district_season": 2.16,
+    "hits": 31,
+    "pairs": 32,
+    "false_alert_days": 7595,
+    "alert_days_per_district_season": 24.98,
     "first_year": 2015,
     "last_year": 2022
    },
    "test": {
-    "hits": 19,
-    "pairs": 20,
-    "false_alert_days": 480,
-    "alert_days_per_district_season": 2.53,
+    "hits": 24,
+    "pairs": 24,
+    "false_alert_days": 5283,
+    "alert_days_per_district_season": 27.81,
     "first_year": 2022,
     "last_year": 2026
    },
-   "percentile": 0.997,
+   "percentile": 0.95,
    "mode": "max"
   },
-  "mode": "max",
+  "mode": "agree",
   "by_signal_test": {
    "forecast": {
-    "hits": 15,
-    "pairs": 20,
-    "false_alert_days": 136,
-    "alert_days_per_district_season": 0.72,
+    "hits": 19,
+    "pairs": 24,
+    "false_alert_days": 268,
+    "alert_days_per_district_season": 1.41,
     "first_year": 2022,
     "last_year": 2026
    },
    "imd": {
-    "hits": 18,
-    "pairs": 20,
-    "false_alert_days": 355,
-    "alert_days_per_district_season": 1.87,
+    "hits": 23,
+    "pairs": 24,
+    "false_alert_days": 713,
+    "alert_days_per_district_season": 3.75,
     "first_year": 2022,
     "last_year": 2026
    },
    "satellite": {
-    "hits": 17,
-    "pairs": 20,
-    "false_alert_days": 510,
-    "alert_days_per_district_season": 2.68,
+    "hits": 21,
+    "pairs": 24,
+    "false_alert_days": 944,
+    "alert_days_per_district_season": 4.97,
     "first_year": 2022,
     "last_year": 2026
    },
    "gauge": {
     "hits": 0,
-    "pairs": 20,
+    "pairs": 24,
     "false_alert_days": 13,
     "alert_days_per_district_season": 0.07,
     "first_year": 2022,
     "last_year": 2026
    },
    "river": {
-    "hits": 2,
-    "pairs": 20,
-    "false_alert_days": 12,
-    "alert_days_per_district_season": 0.06,
+    "hits": 3,
+    "pairs": 24,
+    "false_alert_days": 29,
+    "alert_days_per_district_season": 0.15,
     "first_year": 2022,
     "last_year": 2026
    },
    "reservoir": {
     "hits": 0,
-    "pairs": 20,
+    "pairs": 24,
     "false_alert_days": 0,
     "alert_days_per_district_season": 0.0,
     "first_year": 2022,
@@ -135,8 +135,8 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "imd",
-    "river"
+    "river",
+    "satellite"
    ],
    "hit_high": [
     "Chennai",
@@ -163,7 +163,9 @@
    ],
    "missed": [],
    "caught_by": [
-    "imd"
+    "forecast",
+    "river",
+    "satellite"
    ],
    "hit_high": [
     "Chennai",
@@ -171,6 +173,29 @@
     "Chengalpattu",
     "Thiruvallur",
     "Cuddalore"
+   ]
+  },
+  {
+   "id": "2018-cauvery",
+   "name": "Cauvery floods from Karnataka dam releases",
+   "start": "2018-08-15",
+   "end": "2018-08-20",
+   "set": "train",
+   "source": "https://www.latestly.com/agency-news/cauvery-in-spateinundates-low-lying-areas-swamps-crops-in-tn-328664.html",
+   "hit": [],
+   "missed": [
+    "Dharmapuri",
+    "Salem",
+    "Erode",
+    "Namakkal",
+    "Tiruchirappalli"
+   ],
+   "caught_by": [],
+   "hit_high": [
+    "Salem",
+    "Erode",
+    "Namakkal",
+    "Tiruchirappalli"
    ]
   },
   {
@@ -186,7 +211,8 @@
    ],
    "missed": [],
    "caught_by": [
-    "imd"
+    "forecast",
+    "satellite"
    ],
    "hit_high": [
     "Nilgiris",
@@ -202,15 +228,16 @@
    "source": "https://en.wikipedia.org/wiki/Cyclone_Nivar",
    "hit": [
     "Chennai",
-    "Chengalpattu",
     "Kancheepuram",
     "Cuddalore",
     "Viluppuram"
    ],
-   "missed": [],
+   "missed": [
+    "Chengalpattu"
+   ],
    "caught_by": [
     "forecast",
-    "imd"
+    "satellite"
    ],
    "hit_high": [
     "Chennai",
@@ -237,7 +264,7 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "imd"
+    "satellite"
    ],
    "hit_high": [
     "Cuddalore",
@@ -264,14 +291,55 @@
    "caught_by": [
     "forecast",
     "gauge",
-    "imd",
-    "river"
+    "river",
+    "satellite"
    ],
    "hit_high": [
     "Chennai",
     "Chengalpattu",
     "Kancheepuram",
     "Thiruvallur"
+   ]
+  },
+  {
+   "id": "2022-sirkazhi-1",
+   "name": "Sirkazhi floods (first spell)",
+   "start": "2022-11-01",
+   "end": "2022-11-03",
+   "set": "test",
+   "source": "https://beta-tnsmart.rimes.int/DATA/Rainfall/daily_reports/rainfall_analysis_2022-11-03.pdf",
+   "hit": [
+    "Cuddalore"
+   ],
+   "missed": [
+    "Mayiladuthurai"
+   ],
+   "caught_by": [
+    "forecast"
+   ],
+   "hit_high": [
+    "Mayiladuthurai",
+    "Cuddalore"
+   ]
+  },
+  {
+   "id": "2022-sirkazhi-2",
+   "name": "Sirkazhi record rain",
+   "start": "2022-11-11",
+   "end": "2022-11-14",
+   "set": "test",
+   "source": "https://mausam.imd.gov.in/chennai/mcdata/ne_monsoon_2022.pdf",
+   "hit": [
+    "Mayiladuthurai",
+    "Cuddalore"
+   ],
+   "missed": [],
+   "caught_by": [
+    "satellite"
+   ],
+   "hit_high": [
+    "Mayiladuthurai",
+    "Cuddalore"
    ]
   },
   {
@@ -290,7 +358,7 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "imd"
+    "satellite"
    ],
    "hit_high": [
     "Chennai",
@@ -315,8 +383,8 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "imd",
-    "river"
+    "river",
+    "satellite"
    ],
    "hit_high": [
     "Tirunelveli",
@@ -343,7 +411,8 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "imd"
+    "river",
+    "satellite"
    ],
    "hit_high": [
     "Viluppuram",
@@ -369,7 +438,7 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "imd"
+    "satellite"
    ],
    "hit_high": [
     "Tirunelveli",
@@ -384,12 +453,16 @@
    "end": "2025-10-19",
    "set": "test",
    "source": "https://www.theweek.in/news/india/2025/10/19/tamil-nadu-rains-several-villages-in-theni-inundated-200-acres-of-harvest-ready-paddy-crops-submerged.html",
-   "hit": [],
-   "missed": [
+   "hit": [
     "Theni"
    ],
-   "caught_by": [],
-   "hit_high": []
+   "missed": [],
+   "caught_by": [
+    "satellite"
+   ],
+   "hit_high": [
+    "Theni"
+   ]
   },
   {
    "id": "2025-ditwah",
@@ -405,7 +478,7 @@
    "missed": [],
    "caught_by": [
     "forecast",
-    "imd"
+    "satellite"
    ],
    "hit_high": [
     "Nagapattinam",

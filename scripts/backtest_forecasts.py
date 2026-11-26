@@ -96,6 +96,8 @@ def main():
         "period": [first.isoformat(), last.isoformat()],
         "district_floods": pairs,
         "caught_by_lead": {str(L): caught[L] for L in LEADS},
+        "warned_at_least": {str(L): sum(1 for e in out_events for r in e["districts"]
+                                        if r["max_lead_days"] is not None and r["max_lead_days"] >= L) for L in LEADS},
         "no_flood_warning_days_per_district_season": {str(L): round(fa[L] / nseason, 2) for L in LEADS},
         "thresholds": thr.get("version"),
         "note": ("Uses the forecasts that were actually issued at the time (Open-Meteo Previous Runs archive). "

@@ -1,0 +1,111 @@
+{
+ "summary": {
+  "period": [
+   "2024-01-01",
+   "2026-11-24"
+  ],
+  "district_floods": 12,
+  "caught_by_lead": {
+   "0": 8,
+   "1": 2,
+   "2": 4,
+   "3": 1
+  },
+  "warned_at_least": {
+   "0": 10,
+   "1": 5,
+   "2": 4,
+   "3": 1
+  },
+  "no_flood_warning_days_per_district_season": {
+   "0": 0.67,
+   "1": 0.29,
+   "2": 0.17,
+   "3": 0.07
+  },
+  "thresholds": "v2 2026-11-26",
+  "note": "Uses the forecasts that were actually issued at the time (Open-Meteo Previous Runs archive). Lead 1 = the forecast made the day before. Only rainfall forecasts are tested here; rain gauges, satellite and river signals add warnings as rain starts to fall."
+ },
+ "events": [
+  {
+   "id": "2024-fengal",
+   "name": "Cyclone Fengal",
+   "start": "2024-11-30",
+   "end": "2024-12-03",
+   "districts": [
+    {
+     "district": "Viluppuram",
+     "max_lead_days": 1
+    },
+    {
+     "district": "Kallakurichi",
+     "max_lead_days": 0
+    },
+    {
+     "district": "Tiruvannamalai",
+     "max_lead_days": 2
+    },
+    {
+     "district": "Cuddalore",
+     "max_lead_days": 0
+    },
+    {
+     "district": "Krishnagiri",
+     "max_lead_days": 2
+    },
+    {
+     "district": "Dharmapuri",
+     "max_lead_days": 2
+    }
+   ]
+  },
+  {
+   "id": "2024-dec-south",
+   "name": "December 2024 Tirunelveli rains",
+   "start": "2024-12-12",
+   "end": "2024-12-14",
+   "districts": [
+    {
+     "district": "Tirunelveli",
+     "max_lead_days": 0
+    },
+    {
+     "district": "Thoothukudi",
+     "max_lead_days": null
+    },
+    {
+     "district": "Tenkasi",
+     "max_lead_days": 0
+    }
+   ]
+  },
+  {
+   "id": "2025-theni",
+   "name": "Theni flash floods (Vaigai)",
+   "start": "2025-10-17",
+   "end": "2025-10-19",
+   "districts": [
+    {
+     "district": "Theni",
+     "max_lead_days": null
+    }
+   ]
+  },
+  {
+   "id": "2025-ditwah",
+   "name": "Cyclone Ditwah rains",
+   "start": "2025-11-29",
+   "end": "2025-12-01",
+   "districts": [
+    {
+     "district": "Nagapattinam",
+     "max_lead_days": 3
+    },
+    {
+     "district": "Thiruvallur",
+     "max_lead_days": 0
+    }
+   ]
+  }
+ ]
+}
