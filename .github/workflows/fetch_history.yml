@@ -1,0 +1,39 @@
+name: Fetch history
+
+on:
+  workflow_dispatch:
+    inputs:
+      what:
+        description: "Which source: imd, imerg, tnsmart or all"
+        required: true
+        default: "all"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests numpy shapely xarray netCDF4 h5netcdf imdlib harmony-py pdfplumber
+      - name: Download
+        env:
+          EARTHDATA_USERNAME: ${{ secrets.EARTHDATA_USERNAME }}
+          EARTHDATA_PASSWORD: ${{ secrets.EARTHDATA_PASSWORD }}
+        run: |
+          mkdir -p data_hist
+          python -u scripts/fetch_history.py "${{ inputs.what }}" 2>&1 | tee "data_hist/log_${{ inputs.what }}.txt"
+      - name: Save results (even if something failed)
+        if: always()
+        run: |
+          git config user.name "flood-watch-bot"
+          git config user.email "flood-watch-bot@users.noreply.github.com"
+          git add data_hist
+          git diff --cached --quiet || git commit -m "Historical data: ${{ inputs.what }}"
+          git pull --rebase -X theirs origin main || true
+          git push
