@@ -256,6 +256,15 @@ def main():
 
     # ---------------- observed signals: rain gauges, reservoirs, satellite
     ok_obs = add_observed(out, today, thr)
+    # sources the backtest did not select can only raise Watch (shown as advisory)
+    chosen = set(thr.get("settings", {}).get(thr.get("default_setting", ""), {}).get("signals", []))
+    for d in out.values():
+        for k in list(d.get("signals", {})):
+            if chosen and k not in chosen and k != "forecast" and d["signals"][k] > 1:
+                d["signals"][k] = 1
+                d["reasons"] = [r.replace("Warning:", "Watch:").replace("Danger:", "Watch:") if k_word in r else r
+                                for r in d["reasons"] for k_word in [{"satellite": "satellites", "imd": "IMD", "gauge": "gauge",
+                                                                      "reservoir": "reservoir"}.get(k, k)]]
     for d in out.values():
         if d["level"] is not None:
             d["level"] = max([d["level"]] + list(d["signals"].values()))

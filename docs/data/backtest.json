@@ -3,6 +3,7 @@
  "signals": [
   "forecast",
   "imd",
+  "satellite",
   "gauge",
   "river",
   "reservoir"
@@ -60,8 +61,10 @@
     "first_year": 2022,
     "last_year": 2026
    },
-   "percentile": 0.997
+   "percentile": 0.997,
+   "mode": "max"
   },
+  "mode": "max",
   "by_signal_test": {
    "forecast": {
     "hits": 15,
@@ -76,6 +79,14 @@
     "pairs": 20,
     "false_alert_days": 355,
     "alert_days_per_district_season": 1.87,
+    "first_year": 2022,
+    "last_year": 2026
+   },
+   "satellite": {
+    "hits": 17,
+    "pairs": 20,
+    "false_alert_days": 510,
+    "alert_days_per_district_season": 2.68,
     "first_year": 2022,
     "last_year": 2026
    },

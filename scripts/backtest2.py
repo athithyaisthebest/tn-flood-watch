@@ -129,8 +129,30 @@ def main():
                 out = i
         return out
 
-    def levels(t, tr_, use):
-        """district -> day -> (level, set of signals at that level)"""
+    def levels(t, tr_, use, mode="max"):
+        """district -> day -> (level, set of signals at that level).
+        mode "max": highest level from any signal.  mode "agree": Warning needs two signals at
+        Warning or above (or one at Danger); a lone Warning signal shows as Watch."""
+        if mode == "agree":
+            per = {k: levels(t, tr_, {k}) for k in use}
+            out = defaultdict(dict)
+            for n in names:
+                days = set()
+                for k in per:
+                    days |= set(per[k].get(n, {}))
+                for d in days:
+                    ls = {k: per[k][n][d][0] for k in per if d in per[k].get(n, {})}
+                    strong = [k for k, l in ls.items() if l >= 2]
+                    if any(l >= 3 for l in ls.values()) and len(strong) >= 2:
+                        lv = 3
+                    elif len(strong) >= 2 or any(l >= 3 for l in ls.values()):
+                        lv = 2
+                    else:
+                        lv = 1 if ls else 0
+                    if lv:
+                        top = max(ls.values())
+                        out[n][d] = (lv, {k for k, l in ls.items() if l >= min(top, 2)})
+            return out
         L = defaultdict(dict)
 
         def put(n, d, l, why):
@@ -207,29 +229,37 @@ def main():
                 "alert_days_per_district_season": round(fa / (len(names) * nyears), 2),
                 "first_year": min(years) if years else None, "last_year": max(years) if years else None}, per
 
-    use = set(available)
+    # candidate signal sets: everything, or everything except one rain source (chosen on training years only)
+    sets = [frozenset(available)] + [frozenset(available) - {k} for k in ("satellite", "imd", "forecast") if k in available]
     results = []
-    for q in QS:
-        t, tr_ = thresholds(q)
-        r, _ = evaluate(levels(t, tr_, use), "train")
-        results.append((q, r))
-        print(f"q={q}: train {r['hits']}/{r['pairs']} caught, {r['alert_days_per_district_season']} no-flood alert days/district/season")
-    bal = max(results, key=lambda x: x[1]["hits"] / max(x[1]["pairs"], 1) - FA_WEIGHT * x[1]["alert_days_per_district_season"])[0]
+    for use in sets:
+        for mode in ["max", "agree"]:
+            for q in QS:
+                t, tr_ = thresholds(q)
+                r, _ = evaluate(levels(t, tr_, use, mode), "train")
+                results.append(((q, mode, use), r))
+            best = max((x for x in results if x[0][1:] == (mode, use)),
+                       key=lambda x: x[1]["hits"] / max(x[1]["pairs"], 1) - FA_WEIGHT * x[1]["alert_days_per_district_season"])
+            print(f"{mode:5s} without {sorted(set(available) - use) or '-'}: best q={best[0][0]} train "
+                  f"{best[1]['hits']}/{best[1]['pairs']}, {best[1]['alert_days_per_district_season']} no-flood alert days")
+    score = lambda x: x[1]["hits"] / max(x[1]["pairs"], 1) - FA_WEIGHT * x[1]["alert_days_per_district_season"]
+    bal = max(results, key=score)[0]
     best_hits = max(r["hits"] for _, r in results)
-    high = max(q for q, r in results if r["hits"] == best_hits)   # least alarming setting that still catches the most
+    high = min((x for x in results if x[1]["hits"] == best_hits),
+               key=lambda x: x[1]["alert_days_per_district_season"])[0]   # least alarming that still catches the most
 
     out_settings = {}
-    for label, q in [("balanced", bal), ("high_sensitivity", high)]:
+    for label, (q, mode, use) in [("balanced", bal), ("high_sensitivity", high)]:
         t, tr_ = thresholds(q)
-        L = levels(t, tr_, use)
+        L = levels(t, tr_, use, mode)
         train, ptr = evaluate(L, "train")
         test, pte = evaluate(L, "test")
-        out_settings[label] = {"percentile": q, "thresholds": t, "river": tr_,
+        out_settings[label] = {"percentile": q, "mode": mode, "signals": sorted(use), "thresholds": t, "river": tr_,
                                "train": train, "test": test, "per_event": {**ptr, **pte}}
-        print(f"{label} (q={q}): TRAIN {train['hits']}/{train['pairs']}  TEST {test['hits']}/{test['pairs']} "
+        print(f"{label} (q={q}, {mode}, {sorted(use)}): TRAIN {train['hits']}/{train['pairs']}  TEST {test['hits']}/{test['pairs']} "
               f"no-flood alert days {test['alert_days_per_district_season']}")
     # single-signal comparison on the test years at the balanced setting
-    t, tr_ = thresholds(bal)
+    t, tr_ = thresholds(bal[0])
     by_signal = {}
     for s in available:
         r, _ = evaluate(levels(t, tr_, {s}), "test")
@@ -246,7 +276,7 @@ def main():
     for label, s in out_settings.items():
         th = s["thresholds"]
         thr["settings"][label] = {
-            "percentile": s["percentile"],
+            "percentile": s["percentile"], "mode": s["mode"], "signals": s["signals"],
             "rain": {"_default": {k: {l: med("forecast", k, l, th) for l in ["watch", "warning", "danger"]}
                                   for k in ["r1", "r3"]}, **th.get("forecast", {})},
             "satellite": th.get("satellite", {}), "imd": th.get("imd", {}),
@@ -267,7 +297,8 @@ def main():
         "signals": available,
         "setting": default,
         "summary": {"train": s["train"], "test": s["test"], "baseline": {"train": btrain, "test": btest},
-                    "high_sensitivity": {"train": hs["train"], "test": hs["test"], "percentile": hs["percentile"]},
+                    "high_sensitivity": {"train": hs["train"], "test": hs["test"], "percentile": hs["percentile"], "mode": hs["mode"]},
+                    "mode": s["mode"],
                     "by_signal_test": by_signal},
         "events": [{**{k: e[k] for k in ["id", "name", "start", "end", "set", "source"]},
                     "hit": s["per_event"].get(e["id"], ([], [], []))[0],
