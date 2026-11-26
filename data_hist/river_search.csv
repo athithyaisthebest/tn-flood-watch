@@ -1,0 +1,21 @@
+river,old_lat,old_lon,new_lat,new_lon,mean_m3s,max_m3s,moved_deg
+Cauvery at Mettur,11.8,77.8,11.75,77.75,1598.5,3490.4,0.071
+Cauvery at Kodumudi,11.08,77.89,11.08,78.04,2314.6,4082.2,0.15
+Cauvery at Musiri,10.95,78.44,10.9,78.49,2741.2,4284.5,0.071
+Cauvery at Grand Anicut,10.83,78.82,10.88,78.97,3161.9,4580.4,0.158
+Bhavani at Savandapur,11.44,77.58,11.29,77.73,2093.1,4026.2,0.212
+Amaravathi at Karur,10.96,78.08,10.96,78.23,2683.6,4374.2,0.15
+Tamirabarani at Tirunelveli,8.73,77.7,8.63,77.85,551.4,1587.5,0.18
+Tamirabarani at Srivaikuntam,8.63,77.91,8.68,78.06,590.1,1705.1,0.158
+Vaigai at Madurai,9.93,78.12,9.83,78.27,458.6,1218.0,0.18
+Ponnaiyar at Tirukoilur,11.95,79.2,11.9,79.3,1813.2,6775.4,0.112
+Ponnaiyar at Cuddalore,11.75,79.75,11.75,79.7,1859.2,6822.4,0.05
+Palar at Vellore,12.92,79.13,12.92,79.28,1233.6,3442.5,0.15
+Vellar at Sethiathope,11.4,79.53,11.3,79.68,3482.1,4774.3,0.18
+Adyar at Chennai,13.01,80.24,13.01,80.24,134.2,409.2,0.0
+Kosasthalaiyar near Ennore,13.23,80.29,13.23,80.29,497.8,1266.7,0.0
+Gundar at Kamuthi,9.4,78.37,9.5,78.52,532.7,1474.7,0.18
+Cauvery at Hogenakkal (inflow from Karnataka),12.12,77.78,11.97,77.63,1541.7,3621.4,0.212
+Vaigai near Theni,10.01,77.5,10.06,77.6,214.9,457.1,0.112
+Tamirabarani near Papanasam,8.71,77.37,8.66,77.52,175.9,655.1,0.158
+Thenpennai near Krishnagiri,12.47,78.25,12.42,78.2,598.1,2414.5,0.071
