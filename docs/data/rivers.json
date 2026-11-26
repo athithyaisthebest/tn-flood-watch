@@ -1,0 +1,105 @@
+{
+ "Cauvery at Mettur": {
+  "lat": 11.8,
+  "lon": 77.8,
+  "district": "Salem",
+  "use": false,
+  "note": "point is not on GloFAS's main river channel; needs moving"
+ },
+ "Cauvery at Kodumudi": {
+  "lat": 11.08,
+  "lon": 77.89,
+  "district": "Erode",
+  "use": true
+ },
+ "Cauvery at Musiri": {
+  "lat": 10.95,
+  "lon": 78.44,
+  "district": "Tiruchirappalli",
+  "use": true
+ },
+ "Cauvery at Grand Anicut": {
+  "lat": 10.83,
+  "lon": 78.82,
+  "district": "Thanjavur",
+  "use": false,
+  "note": "point is not on GloFAS's main river channel; needs moving"
+ },
+ "Bhavani at Savandapur": {
+  "lat": 11.44,
+  "lon": 77.58,
+  "district": "Erode",
+  "use": false,
+  "note": "point is not on GloFAS's main river channel; needs moving"
+ },
+ "Amaravathi at Karur": {
+  "lat": 10.96,
+  "lon": 78.08,
+  "district": "Karur",
+  "use": true
+ },
+ "Tamirabarani at Tirunelveli": {
+  "lat": 8.73,
+  "lon": 77.7,
+  "district": "Tirunelveli",
+  "use": true
+ },
+ "Tamirabarani at Srivaikuntam": {
+  "lat": 8.63,
+  "lon": 77.91,
+  "district": "Thoothukudi",
+  "use": true
+ },
+ "Vaigai at Madurai": {
+  "lat": 9.93,
+  "lon": 78.12,
+  "district": "Madurai",
+  "use": true
+ },
+ "Ponnaiyar at Tirukoilur": {
+  "lat": 11.95,
+  "lon": 79.2,
+  "district": "Kallakurichi",
+  "use": false,
+  "note": "point is not on GloFAS's main river channel; needs moving"
+ },
+ "Ponnaiyar at Cuddalore": {
+  "lat": 11.75,
+  "lon": 79.75,
+  "district": "Cuddalore",
+  "use": false,
+  "note": "point is not on GloFAS's main river channel; needs moving"
+ },
+ "Palar at Vellore": {
+  "lat": 12.92,
+  "lon": 79.13,
+  "district": "Vellore",
+  "use": false,
+  "note": "point is not on GloFAS's main river channel; needs moving"
+ },
+ "Vellar at Sethiathope": {
+  "lat": 11.4,
+  "lon": 79.53,
+  "district": "Cuddalore",
+  "use": true
+ },
+ "Adyar at Chennai": {
+  "lat": 13.01,
+  "lon": 80.24,
+  "district": "Chennai",
+  "use": true
+ },
+ "Kosasthalaiyar near Ennore": {
+  "lat": 13.23,
+  "lon": 80.29,
+  "district": "Thiruvallur",
+  "use": true
+ },
+ "Gundar at Kamuthi": {
+  "lat": 9.4,
+  "lon": 78.37,
+  "district": "Ramanathapuram",
+  "use": false,
+  "note": "point is not on GloFAS's main river channel; needs moving"
+ }
+}

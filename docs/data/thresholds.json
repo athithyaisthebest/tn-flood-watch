@@ -1,0 +1,520 @@
+{
+ "version": "v1 tuned 2026-11-26: percentile 0.985 of each district's 2015-2022 history",
+ "rain": {
+  "_default": {
+   "r1": {
+    "watch": 25.5,
+    "warning": 40.6,
+    "danger": 65.0
+   },
+   "r3": {
+    "watch": 66.6,
+    "warning": 101.5,
+    "danger": 143.0
+   }
+  },
+  "Ariyalur": {
+   "r1": {
+    "watch": 27.9,
+    "warning": 44.7,
+    "danger": 64.5
+   },
+   "r3": {
+    "watch": 67.9,
+    "warning": 98.2,
+    "danger": 143.0
+   }
+  },
+  "Chengalpattu": {
+   "r1": {
+    "watch": 27.3,
+    "warning": 52.4,
+    "danger": 83.3
+   },
+   "r3": {
+    "watch": 84.0,
+    "warning": 130.1,
+    "danger": 179.7
+   }
+  },
+  "Chennai": {
+   "r1": {
+    "watch": 26.3,
+    "warning": 53.9,
+    "danger": 82.9
+   },
+   "r3": {
+    "watch": 84.1,
+    "warning": 135.0,
+    "danger": 166.3
+   }
+  },
+  "Coimbatore": {
+   "r1": {
+    "watch": 20.0,
+    "warning": 31.3,
+    "danger": 43.4
+   },
+   "r3": {
+    "watch": 48.7,
+    "warning": 68.3,
+    "danger": 83.0
+   }
+  },
+  "Cuddalore": {
+   "r1": {
+    "watch": 26.9,
+    "warning": 52.9,
+    "danger": 75.2
+   },
+   "r3": {
+    "watch": 80.9,
+    "warning": 116.4,
+    "danger": 176.5
+   }
+  },
+  "Dharmapuri": {
+   "r1": {
+    "watch": 20.0,
+    "warning": 28.1,
+    "danger": 42.5
+   },
+   "r3": {
+    "watch": 43.3,
+    "warning": 62.7,
+    "danger": 97.6
+   }
+  },
+  "Dindigul": {
+   "r1": {
+    "watch": 26.5,
+    "warning": 40.6,
+    "danger": 67.4
+   },
+   "r3": {
+    "watch": 67.6,
+    "warning": 106.1,
+    "danger": 150.3
+   }
+  },
+  "Erode": {
+   "r1": {
+    "watch": 20.0,
+    "warning": 25.3,
+    "danger": 36.8
+   },
+   "r3": {
+    "watch": 45.0,
+    "warning": 58.0,
+    "danger": 70.5
+   }
+  },
+  "Kallakurichi": {
+   "r1": {
+    "watch": 26.1,
+    "warning": 43.3,
+    "danger": 81.5
+   },
+   "r3": {
+    "watch": 69.3,
+    "warning": 123.7,
+    "danger": 149.3
+   }
+  },
+  "Kancheepuram": {
+   "r1": {
+    "watch": 24.4,
+    "warning": 41.3,
+    "danger": 78.5
+   },
+   "r3": {
+    "watch": 64.4,
+    "warning": 108.9,
+    "danger": 121.3
+   }
+  },
+  "Kanyakumari": {
+   "r1": {
+    "watch": 28.6,
+    "warning": 49.4,
+    "danger": 67.7
+   },
+   "r3": {
+    "watch": 75.9,
+    "warning": 109.7,
+    "danger": 158.2
+   }
+  },
+  "Karur": {
+   "r1": {
+    "watch": 20.0,
+    "warning": 30.5,
+    "danger": 54.1
+   },
+   "r3": {
+    "watch": 48.4,
+    "warning": 76.5,
+    "danger": 108.0
+   }
+  },
+  "Krishnagiri": {
+   "r1": {
+    "watch": 20.0,
+    "warning": 28.2,
+    "danger": 63.9
+   },
+   "r3": {
+    "watch": 45.8,
+    "warning": 69.2,
+    "danger": 118.1
+   }
+  },
+  "Madurai": {
+   "r1": {
+    "watch": 21.7,
+    "warning": 39.0,
+    "danger": 60.8
+   },
+   "r3": {
+    "watch": 66.6,
+    "warning": 88.2,
+    "danger": 116.5
+   }
+  },
+  "Mayiladuthurai": {
+   "r1": {
+    "watch": 33.7,
+    "warning": 61.6,
+    "danger": 103.1
+   },
+   "r3": {
+    "watch": 94.0,
+    "warning": 146.1,
+    "danger": 210.9
+   }
+  },
+  "Nagapattinam": {
+   "r1": {
+    "watch": 33.2,
+    "warning": 59.9,
+    "danger": 97.8
+   },
+   "r3": {
+    "watch": 90.9,
+    "warning": 141.8,
+    "danger": 189.0
+   }
+  },
+  "Namakkal": {
+   "r1": {
+    "watch": 20.0,
+    "warning": 26.1,
+    "danger": 41.8
+   },
+   "r3": {
+    "watch": 42.8,
+    "warning": 60.2,
+    "danger": 78.7
+   }
+  },
+  "Nilgiris": {
+   "r1": {
+    "watch": 25.5,
+    "warning": 38.3,
+    "danger": 52.0
+   },
+   "r3": {
+    "watch": 64.5,
+    "warning": 85.3,
+    "danger": 110.2
+   }
+  },
+  "Perambalur": {
+   "r1": {
+    "watch": 26.1,
+    "warning": 40.4,
+    "danger": 58.8
+   },
+   "r3": {
+    "watch": 65.7,
+    "warning": 90.5,
+    "danger": 153.4
+   }
+  },
+  "Pudukkottai": {
+   "r1": {
+    "watch": 24.2,
+    "warning": 36.0,
+    "danger": 53.9
+   },
+   "r3": {
+    "watch": 65.8,
+    "warning": 90.7,
+    "danger": 132.7
+   }
+  },
+  "Ramanathapuram": {
+   "r1": {
+    "watch": 23.8,
+    "warning": 42.3,
+    "danger": 73.4
+   },
+   "r3": {
+    "watch": 69.3,
+    "warning": 105.8,
+    "danger": 151.1
+   }
+  },
+  "Ranipet": {
+   "r1": {
+    "watch": 23.1,
+    "warning": 36.0,
+    "danger": 83.9
+   },
+   "r3": {
+    "watch": 58.3,
+    "warning": 111.9,
+    "danger": 129.0
+   }
+  },
+  "Salem": {
+   "r1": {
+    "watch": 20.0,
+    "warning": 27.8,
+    "danger": 50.1
+   },
+   "r3": {
+    "watch": 44.6,
+    "warning": 66.8,
+    "danger": 103.4
+   }
+  },
+  "Sivaganga": {
+   "r1": {
+    "watch": 25.9,
+    "warning": 49.8,
+    "danger": 60.7
+   },
+   "r3": {
+    "watch": 76.4,
+    "warning": 105.9,
+    "danger": 150.9
+   }
+  },
+  "Tenkasi": {
+   "r1": {
+    "watch": 26.4,
+    "warning": 37.8,
+    "danger": 51.1
+   },
+   "r3": {
+    "watch": 68.5,
+    "warning": 87.9,
+    "danger": 108.8
+   }
+  },
+  "Thanjavur": {
+   "r1": {
+    "watch": 25.7,
+    "warning": 45.5,
+    "danger": 73.9
+   },
+   "r3": {
+    "watch": 71.4,
+    "warning": 106.2,
+    "danger": 165.5
+   }
+  },
+  "Theni": {
+   "r1": {
+    "watch": 20.0,
+    "warning": 33.4,
+    "danger": 42.7
+   },
+   "r3": {
+    "watch": 50.0,
+    "warning": 68.3,
+    "danger": 98.6
+   }
+  },
+  "Thiruvallur": {
+   "r1": {
+    "watch": 23.4,
+    "warning": 39.5,
+    "danger": 78.2
+   },
+   "r3": {
+    "watch": 75.8,
+    "warning": 114.2,
+    "danger": 136.5
+   }
+  },
+  "Thiruvarur": {
+   "r1": {
+    "watch": 30.5,
+    "warning": 49.5,
+    "danger": 90.3
+   },
+   "r3": {
+    "watch": 85.8,
+    "warning": 138.5,
+    "danger": 188.4
+   }
+  },
+  "Thoothukudi": {
+   "r1": {
+    "watch": 28.0,
+    "warning": 42.5,
+    "danger": 67.9
+   },
+   "r3": {
+    "watch": 80.2,
+    "warning": 101.5,
+    "danger": 117.9
+   }
+  },
+  "Tiruchirappalli": {
+   "r1": {
+    "watch": 20.0,
+    "warning": 31.3,
+    "danger": 49.9
+   },
+   "r3": {
+    "watch": 49.1,
+    "warning": 76.6,
+    "danger": 104.9
+   }
+  },
+  "Tirunelveli": {
+   "r1": {
+    "watch": 26.7,
+    "warning": 46.9,
+    "danger": 72.1
+   },
+   "r3": {
+    "watch": 66.6,
+    "warning": 115.4,
+    "danger": 166.9
+   }
+  },
+  "Tirupathur": {
+   "r1": {
+    "watch": 20.0,
+    "warning": 30.8,
+    "danger": 58.9
+   },
+   "r3": {
+    "watch": 52.8,
+    "warning": 93.0,
+    "danger": 150.7
+   }
+  },
+  "Tiruppur": {
+   "r1": {
+    "watch": 20.0,
+    "warning": 25.4,
+    "danger": 38.9
+   },
+   "r3": {
+    "watch": 41.5,
+    "warning": 67.9,
+    "danger": 91.4
+   }
+  },
+  "Tiruvannamalai": {
+   "r1": {
+    "watch": 24.5,
+    "warning": 41.7,
+    "danger": 65.0
+   },
+   "r3": {
+    "watch": 61.7,
+    "warning": 100.0,
+    "danger": 144.5
+   }
+  },
+  "Vellore": {
+   "r1": {
+    "watch": 22.3,
+    "warning": 40.0,
+    "danger": 88.5
+   },
+   "r3": {
+    "watch": 63.4,
+    "warning": 115.8,
+    "danger": 146.3
+   }
+  },
+  "Viluppuram": {
+   "r1": {
+    "watch": 28.0,
+    "warning": 45.7,
+    "danger": 98.1
+   },
+   "r3": {
+    "watch": 79.1,
+    "warning": 137.4,
+    "danger": 189.0
+   }
+  },
+  "Virudhunagar": {
+   "r1": {
+    "watch": 25.5,
+    "warning": 43.1,
+    "danger": 52.9
+   },
+   "r3": {
+    "watch": 65.6,
+    "warning": 93.8,
+    "danger": 102.7
+   }
+  }
+ },
+ "river": {
+  "Cauvery at Kodumudi": {
+   "watch": 1724.8,
+   "warning": 2127.1,
+   "danger": 2397.5
+  },
+  "Cauvery at Musiri": {
+   "watch": 1926.4,
+   "warning": 2449.2,
+   "danger": 2952.2
+  },
+  "Amaravathi at Karur": {
+   "watch": 258.4,
+   "warning": 339.4,
+   "danger": 383.6
+  },
+  "Tamirabarani at Tirunelveli": {
+   "watch": 191.4,
+   "warning": 399.8,
+   "danger": 724.8
+  },
+  "Tamirabarani at Srivaikuntam": {
+   "watch": 435.1,
+   "warning": 983.4,
+   "danger": 1626.3
+  },
+  "Vaigai at Madurai": {
+   "watch": 24.2,
+   "warning": 56.5,
+   "danger": 123.8
+  },
+  "Vellar at Sethiathope": {
+   "watch": 535.0,
+   "warning": 1203.1,
+   "danger": 1901.3
+  },
+  "Adyar at Chennai": {
+   "watch": 91.9,
+   "warning": 191.1,
+   "danger": 287.7
+  },
+  "Kosasthalaiyar near Ennore": {
+   "watch": 310.1,
+   "warning": 686.9,
+   "danger": 1049.2
+  }
+ }
+}

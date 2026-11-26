@@ -1,0 +1,224 @@
+{
+ "generated": "2026-11-26",
+ "percentile": 0.985,
+ "summary": {
+  "train": {
+   "hits": 26,
+   "pairs": 27,
+   "false_alert_days": 1054,
+   "alert_days_per_district_season": 3.07,
+   "first_year": 2015,
+   "last_year": 2021
+  },
+  "test": {
+   "hits": 18,
+   "pairs": 20,
+   "false_alert_days": 641,
+   "alert_days_per_district_season": 2.62,
+   "first_year": 2022,
+   "last_year": 2026
+  },
+  "baseline": {
+   "train": {
+    "hits": 9,
+    "pairs": 27,
+    "false_alert_days": 27,
+    "alert_days_per_district_season": 0.08,
+    "first_year": 2015,
+    "last_year": 2021
+   },
+   "test": {
+    "hits": 11,
+    "pairs": 20,
+    "false_alert_days": 25,
+    "alert_days_per_district_season": 0.1,
+    "first_year": 2022,
+    "last_year": 2026
+   }
+  }
+ },
+ "events": [
+  {
+   "id": "2015-nov",
+   "name": "November 2015 north Tamil Nadu floods",
+   "start": "2015-11-08",
+   "end": "2015-11-24",
+   "set": "train",
+   "source": "https://www.acaps.org/sites/acaps/files/products/files/b-acaps-start-bn-india-floods-in-tamil-nadu-15-nov-2015.pdf",
+   "hit": [
+    "Chennai",
+    "Kancheepuram",
+    "Chengalpattu",
+    "Thiruvallur",
+    "Cuddalore",
+    "Viluppuram"
+   ],
+   "missed": []
+  },
+  {
+   "id": "2015-dec",
+   "name": "December 2015 Chennai floods",
+   "start": "2015-11-29",
+   "end": "2015-12-05",
+   "set": "train",
+   "source": "https://reliefweb.int/report/india/joint-detailed-need-assessment-report-district-level-shelter-food-nutrition-livelihood",
+   "hit": [
+    "Chennai",
+    "Kancheepuram",
+    "Chengalpattu",
+    "Thiruvallur",
+    "Cuddalore"
+   ],
+   "missed": []
+  },
+  {
+   "id": "2019-nilgiris",
+   "name": "Nilgiris floods and landslides",
+   "start": "2019-08-06",
+   "end": "2019-08-10",
+   "set": "train",
+   "source": "https://www.deccanherald.com/india/five-killed-in-rains-in-nilgiris-1704-rescued-753267.html",
+   "hit": [
+    "Coimbatore"
+   ],
+   "missed": [
+    "Nilgiris"
+   ]
+  },
+  {
+   "id": "2020-nivar",
+   "name": "Cyclone Nivar",
+   "start": "2020-11-24",
+   "end": "2020-11-27",
+   "set": "train",
+   "source": "https://en.wikipedia.org/wiki/Cyclone_Nivar",
+   "hit": [
+    "Chennai",
+    "Chengalpattu",
+    "Kancheepuram",
+    "Cuddalore",
+    "Viluppuram"
+   ],
+   "missed": []
+  },
+  {
+   "id": "2020-burevi",
+   "name": "Cyclone Burevi rains",
+   "start": "2020-12-02",
+   "end": "2020-12-06",
+   "set": "train",
+   "source": "https://en.wikipedia.org/wiki/Cyclone_Burevi",
+   "hit": [
+    "Cuddalore",
+    "Nagapattinam",
+    "Mayiladuthurai",
+    "Thiruvarur",
+    "Thanjavur"
+   ],
+   "missed": []
+  },
+  {
+   "id": "2021-nov",
+   "name": "November 2021 Chennai floods",
+   "start": "2021-11-06",
+   "end": "2021-11-12",
+   "set": "train",
+   "source": "https://en.wikipedia.org/wiki/2021_South_India_floods",
+   "hit": [
+    "Chennai",
+    "Chengalpattu",
+    "Kancheepuram",
+    "Thiruvallur"
+   ],
+   "missed": []
+  },
+  {
+   "id": "2023-michaung",
+   "name": "Cyclone Michaung",
+   "start": "2023-12-03",
+   "end": "2023-12-05",
+   "set": "test",
+   "source": "https://www.business-standard.com/india-news/situation-grim-in-parts-of-chennai-suburbs-after-michaung-bring-downpour-123120700364_1.html",
+   "hit": [
+    "Chennai",
+    "Thiruvallur",
+    "Kancheepuram",
+    "Chengalpattu"
+   ],
+   "missed": []
+  },
+  {
+   "id": "2023-south",
+   "name": "South Tamil Nadu floods",
+   "start": "2023-12-17",
+   "end": "2023-12-20",
+   "set": "test",
+   "source": "https://mausam.imd.gov.in/chennai/mcdata/ne_monsoon_2023.pdf",
+   "hit": [
+    "Tirunelveli",
+    "Thoothukudi",
+    "Tenkasi",
+    "Kanyakumari"
+   ],
+   "missed": []
+  },
+  {
+   "id": "2024-fengal",
+   "name": "Cyclone Fengal",
+   "start": "2024-11-30",
+   "end": "2024-12-03",
+   "set": "test",
+   "source": "https://tribuneindia.com/news/flood-fury-overwhelms-in-tamil-nadu-railway-suspends-ops-as-water-level-rises-over-danger-mark",
+   "hit": [
+    "Viluppuram",
+    "Kallakurichi",
+    "Tiruvannamalai",
+    "Cuddalore",
+    "Krishnagiri",
+    "Dharmapuri"
+   ],
+   "missed": []
+  },
+  {
+   "id": "2024-dec-south",
+   "name": "December 2024 Tirunelveli rains",
+   "start": "2024-12-12",
+   "end": "2024-12-14",
+   "set": "test",
+   "source": "https://www.deccanherald.com/amp/story/india%2Ftamil-nadu%2Fsouthern-tamil-nadu-pounded-by-heavy-rains-state-registers-32-excess-rainfall-this-monsoon-3317018",
+   "hit": [
+    "Tirunelveli",
+    "Tenkasi"
+   ],
+   "missed": [
+    "Thoothukudi"
+   ]
+  },
+  {
+   "id": "2025-theni",
+   "name": "Theni flash floods (Vaigai)",
+   "start": "2025-10-17",
+   "end": "2025-10-19",
+   "set": "test",
+   "source": "https://www.theweek.in/news/india/2025/10/19/tamil-nadu-rains-several-villages-in-theni-inundated-200-acres-of-harvest-ready-paddy-crops-submerged.html",
+   "hit": [],
+   "missed": [
+    "Theni"
+   ]
+  },
+  {
+   "id": "2025-ditwah",
+   "name": "Cyclone Ditwah rains",
+   "start": "2025-11-29",
+   "end": "2025-12-01",
+   "set": "test",
+   "source": "https://rsmcnewdelhi.imd.gov.in/uploads/archive/8/8_c866c2_heavy_rainfall29.pdf",
+   "hit": [
+    "Nagapattinam",
+    "Thiruvallur"
+   ],
+   "missed": []
+  }
+ ],
+ "note": "Backtest uses observed rainfall (ERA5 reanalysis via Open-Meteo) and GloFAS river reanalysis, as if the forecast had been perfect, so real-time skill will be lower. A district flood counts as flagged if Warning or above was reached from the day before it began to its last day. 'Days with no recorded flood' may include real floods missing from our events list. Thresholds come from reanalysis rainfall, which smooths out downpours; live forecasts can show sharper peaks, so the live site may give more warnings than the backtest suggests until it is recalibrated on archived forecasts."
+}

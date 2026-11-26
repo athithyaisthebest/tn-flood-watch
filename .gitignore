@@ -1,0 +1,5 @@
+__pycache__/
+tn_flood_history/
+tn_flood_history.zip
+.env
+raw/

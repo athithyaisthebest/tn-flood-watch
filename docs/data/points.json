@@ -1,0 +1,1154 @@
+[
+{
+"district": "Ariyalur",
+"point": 0,
+"lat": 11.011,
+"lon": 79.071
+},
+{
+"district": "Ariyalur",
+"point": 1,
+"lat": 11.261,
+"lon": 79.321
+},
+{
+"district": "Ariyalur",
+"point": 2,
+"lat": 11.153,
+"lon": 79.259
+},
+{
+"district": "Chengalpattu",
+"point": 0,
+"lat": 12.354,
+"lon": 79.765
+},
+{
+"district": "Chengalpattu",
+"point": 1,
+"lat": 12.354,
+"lon": 80.015
+},
+{
+"district": "Chengalpattu",
+"point": 2,
+"lat": 12.604,
+"lon": 80.015
+},
+{
+"district": "Chengalpattu",
+"point": 3,
+"lat": 12.637,
+"lon": 80.066
+},
+{
+"district": "Chennai",
+"point": 0,
+"lat": 13.09,
+"lon": 80.259
+},
+{
+"district": "Chennai",
+"point": 1,
+"lat": 13.1,
+"lon": 80.219
+},
+{
+"district": "Coimbatore",
+"point": 0,
+"lat": 10.345,
+"lon": 77.031
+},
+{
+"district": "Coimbatore",
+"point": 1,
+"lat": 10.595,
+"lon": 77.031
+},
+{
+"district": "Coimbatore",
+"point": 2,
+"lat": 10.845,
+"lon": 77.281
+},
+{
+"district": "Coimbatore",
+"point": 3,
+"lat": 11.095,
+"lon": 76.781
+},
+{
+"district": "Coimbatore",
+"point": 4,
+"lat": 11.345,
+"lon": 77.031
+},
+{
+"district": "Coimbatore",
+"point": 5,
+"lat": 10.813,
+"lon": 77.082
+},
+{
+"district": "Cuddalore",
+"point": 0,
+"lat": 11.276,
+"lon": 79.503
+},
+{
+"district": "Cuddalore",
+"point": 1,
+"lat": 11.526,
+"lon": 79.003
+},
+{
+"district": "Cuddalore",
+"point": 2,
+"lat": 11.526,
+"lon": 79.503
+},
+{
+"district": "Cuddalore",
+"point": 3,
+"lat": 11.526,
+"lon": 79.753
+},
+{
+"district": "Cuddalore",
+"point": 4,
+"lat": 11.776,
+"lon": 79.753
+},
+{
+"district": "Cuddalore",
+"point": 5,
+"lat": 11.52,
+"lon": 79.338
+},
+{
+"district": "Dharmapuri",
+"point": 0,
+"lat": 11.901,
+"lon": 78.549
+},
+{
+"district": "Dharmapuri",
+"point": 1,
+"lat": 12.151,
+"lon": 77.799
+},
+{
+"district": "Dharmapuri",
+"point": 2,
+"lat": 12.151,
+"lon": 78.049
+},
+{
+"district": "Dharmapuri",
+"point": 3,
+"lat": 12.151,
+"lon": 78.549
+},
+{
+"district": "Dharmapuri",
+"point": 4,
+"lat": 12.401,
+"lon": 78.049
+},
+{
+"district": "Dharmapuri",
+"point": 5,
+"lat": 12.145,
+"lon": 78.113
+},
+{
+"district": "Dindigul",
+"point": 0,
+"lat": 10.143,
+"lon": 77.892
+},
+{
+"district": "Dindigul",
+"point": 1,
+"lat": 10.393,
+"lon": 77.642
+},
+{
+"district": "Dindigul",
+"point": 2,
+"lat": 10.393,
+"lon": 77.892
+},
+{
+"district": "Dindigul",
+"point": 3,
+"lat": 10.643,
+"lon": 77.642
+},
+{
+"district": "Dindigul",
+"point": 4,
+"lat": 10.643,
+"lon": 77.892
+},
+{
+"district": "Dindigul",
+"point": 5,
+"lat": 10.427,
+"lon": 77.816
+},
+{
+"district": "Erode",
+"point": 0,
+"lat": 11.148,
+"lon": 77.705
+},
+{
+"district": "Erode",
+"point": 1,
+"lat": 11.398,
+"lon": 77.205
+},
+{
+"district": "Erode",
+"point": 2,
+"lat": 11.398,
+"lon": 77.455
+},
+{
+"district": "Erode",
+"point": 3,
+"lat": 11.648,
+"lon": 76.955
+},
+{
+"district": "Erode",
+"point": 4,
+"lat": 11.648,
+"lon": 77.205
+},
+{
+"district": "Erode",
+"point": 5,
+"lat": 11.419,
+"lon": 77.331
+},
+{
+"district": "Kallakurichi",
+"point": 0,
+"lat": 11.63,
+"lon": 79.002
+},
+{
+"district": "Kallakurichi",
+"point": 1,
+"lat": 11.88,
+"lon": 78.752
+},
+{
+"district": "Kallakurichi",
+"point": 2,
+"lat": 11.88,
+"lon": 79.002
+},
+{
+"district": "Kallakurichi",
+"point": 3,
+"lat": 11.88,
+"lon": 79.252
+},
+{
+"district": "Kallakurichi",
+"point": 4,
+"lat": 11.792,
+"lon": 79.051
+},
+{
+"district": "Kanyakumari",
+"point": 0,
+"lat": 8.203,
+"lon": 77.221
+},
+{
+"district": "Kanyakumari",
+"point": 1,
+"lat": 8.203,
+"lon": 77.471
+},
+{
+"district": "Kanyakumari",
+"point": 2,
+"lat": 8.453,
+"lon": 77.471
+},
+{
+"district": "Kanyakumari",
+"point": 3,
+"lat": 8.329,
+"lon": 77.354
+},
+{
+"district": "Karur",
+"point": 0,
+"lat": 10.672,
+"lon": 77.875
+},
+{
+"district": "Karur",
+"point": 1,
+"lat": 10.922,
+"lon": 77.875
+},
+{
+"district": "Karur",
+"point": 2,
+"lat": 10.922,
+"lon": 78.125
+},
+{
+"district": "Karur",
+"point": 3,
+"lat": 10.922,
+"lon": 78.375
+},
+{
+"district": "Karur",
+"point": 4,
+"lat": 10.822,
+"lon": 78.384
+},
+{
+"district": "Madurai",
+"point": 0,
+"lat": 9.688,
+"lon": 77.589
+},
+{
+"district": "Madurai",
+"point": 1,
+"lat": 9.688,
+"lon": 77.839
+},
+{
+"district": "Madurai",
+"point": 2,
+"lat": 9.938,
+"lon": 77.839
+},
+{
+"district": "Madurai",
+"point": 3,
+"lat": 9.938,
+"lon": 78.089
+},
+{
+"district": "Madurai",
+"point": 4,
+"lat": 10.188,
+"lon": 78.339
+},
+{
+"district": "Madurai",
+"point": 5,
+"lat": 9.936,
+"lon": 78.008
+},
+{
+"district": "Nilgiris",
+"point": 0,
+"lat": 11.313,
+"lon": 76.608
+},
+{
+"district": "Nilgiris",
+"point": 1,
+"lat": 11.313,
+"lon": 76.858
+},
+{
+"district": "Nilgiris",
+"point": 2,
+"lat": 11.563,
+"lon": 76.358
+},
+{
+"district": "Nilgiris",
+"point": 3,
+"lat": 11.563,
+"lon": 76.608
+},
+{
+"district": "Nilgiris",
+"point": 4,
+"lat": 11.446,
+"lon": 76.697
+},
+{
+"district": "Namakkal",
+"point": 0,
+"lat": 11.138,
+"lon": 78.058
+},
+{
+"district": "Namakkal",
+"point": 1,
+"lat": 11.138,
+"lon": 78.308
+},
+{
+"district": "Namakkal",
+"point": 2,
+"lat": 11.388,
+"lon": 77.808
+},
+{
+"district": "Namakkal",
+"point": 3,
+"lat": 11.388,
+"lon": 78.058
+},
+{
+"district": "Namakkal",
+"point": 4,
+"lat": 11.388,
+"lon": 78.308
+},
+{
+"district": "Namakkal",
+"point": 5,
+"lat": 11.305,
+"lon": 78.119
+},
+{
+"district": "Perambalur",
+"point": 0,
+"lat": 11.181,
+"lon": 78.759
+},
+{
+"district": "Perambalur",
+"point": 1,
+"lat": 11.181,
+"lon": 79.009
+},
+{
+"district": "Perambalur",
+"point": 2,
+"lat": 11.431,
+"lon": 78.759
+},
+{
+"district": "Perambalur",
+"point": 3,
+"lat": 11.29,
+"lon": 78.93
+},
+{
+"district": "Ramanathapuram",
+"point": 0,
+"lat": 9.211,
+"lon": 78.34
+},
+{
+"district": "Ramanathapuram",
+"point": 1,
+"lat": 9.211,
+"lon": 78.59
+},
+{
+"district": "Ramanathapuram",
+"point": 2,
+"lat": 9.461,
+"lon": 78.34
+},
+{
+"district": "Ramanathapuram",
+"point": 3,
+"lat": 9.461,
+"lon": 78.84
+},
+{
+"district": "Ramanathapuram",
+"point": 4,
+"lat": 9.711,
+"lon": 78.84
+},
+{
+"district": "Ramanathapuram",
+"point": 5,
+"lat": 9.519,
+"lon": 78.65
+},
+{
+"district": "Ranipet",
+"point": 0,
+"lat": 12.753,
+"lon": 79.303
+},
+{
+"district": "Ranipet",
+"point": 1,
+"lat": 13.003,
+"lon": 79.303
+},
+{
+"district": "Ranipet",
+"point": 2,
+"lat": 13.003,
+"lon": 79.553
+},
+{
+"district": "Ranipet",
+"point": 3,
+"lat": 12.919,
+"lon": 79.408
+},
+{
+"district": "Salem",
+"point": 0,
+"lat": 11.44,
+"lon": 78.54
+},
+{
+"district": "Salem",
+"point": 1,
+"lat": 11.69,
+"lon": 77.54
+},
+{
+"district": "Salem",
+"point": 2,
+"lat": 11.69,
+"lon": 77.79
+},
+{
+"district": "Salem",
+"point": 3,
+"lat": 11.69,
+"lon": 78.29
+},
+{
+"district": "Salem",
+"point": 4,
+"lat": 11.69,
+"lon": 78.54
+},
+{
+"district": "Salem",
+"point": 5,
+"lat": 11.647,
+"lon": 78.211
+},
+{
+"district": "Sivaganga",
+"point": 0,
+"lat": 9.645,
+"lon": 78.498
+},
+{
+"district": "Sivaganga",
+"point": 1,
+"lat": 9.645,
+"lon": 78.748
+},
+{
+"district": "Sivaganga",
+"point": 2,
+"lat": 9.895,
+"lon": 78.498
+},
+{
+"district": "Sivaganga",
+"point": 3,
+"lat": 10.145,
+"lon": 78.498
+},
+{
+"district": "Sivaganga",
+"point": 4,
+"lat": 10.145,
+"lon": 78.748
+},
+{
+"district": "Sivaganga",
+"point": 5,
+"lat": 9.965,
+"lon": 78.72
+},
+{
+"district": "Theni",
+"point": 0,
+"lat": 9.644,
+"lon": 77.291
+},
+{
+"district": "Theni",
+"point": 1,
+"lat": 9.894,
+"lon": 77.291
+},
+{
+"district": "Theni",
+"point": 2,
+"lat": 9.894,
+"lon": 77.541
+},
+{
+"district": "Theni",
+"point": 3,
+"lat": 10.144,
+"lon": 77.541
+},
+{
+"district": "Theni",
+"point": 4,
+"lat": 9.869,
+"lon": 77.422
+},
+{
+"district": "Tenkasi",
+"point": 0,
+"lat": 8.889,
+"lon": 77.272
+},
+{
+"district": "Tenkasi",
+"point": 1,
+"lat": 8.889,
+"lon": 77.522
+},
+{
+"district": "Tenkasi",
+"point": 2,
+"lat": 9.139,
+"lon": 77.272
+},
+{
+"district": "Tenkasi",
+"point": 3,
+"lat": 9.139,
+"lon": 77.522
+},
+{
+"district": "Tenkasi",
+"point": 4,
+"lat": 9.092,
+"lon": 77.476
+},
+{
+"district": "Thiruvarur",
+"point": 0,
+"lat": 10.656,
+"lon": 79.393
+},
+{
+"district": "Thiruvarur",
+"point": 1,
+"lat": 10.656,
+"lon": 79.643
+},
+{
+"district": "Thiruvarur",
+"point": 2,
+"lat": 10.906,
+"lon": 79.643
+},
+{
+"district": "Thiruvarur",
+"point": 3,
+"lat": 10.649,
+"lon": 79.5
+},
+{
+"district": "Tiruchirappalli",
+"point": 0,
+"lat": 10.669,
+"lon": 78.287
+},
+{
+"district": "Tiruchirappalli",
+"point": 1,
+"lat": 10.669,
+"lon": 78.787
+},
+{
+"district": "Tiruchirappalli",
+"point": 2,
+"lat": 10.919,
+"lon": 78.537
+},
+{
+"district": "Tiruchirappalli",
+"point": 3,
+"lat": 10.919,
+"lon": 78.787
+},
+{
+"district": "Tiruchirappalli",
+"point": 4,
+"lat": 11.169,
+"lon": 78.537
+},
+{
+"district": "Tiruchirappalli",
+"point": 5,
+"lat": 10.851,
+"lon": 78.727
+},
+{
+"district": "Tirunelveli",
+"point": 0,
+"lat": 8.267,
+"lon": 77.795
+},
+{
+"district": "Tirunelveli",
+"point": 1,
+"lat": 8.517,
+"lon": 77.545
+},
+{
+"district": "Tirunelveli",
+"point": 2,
+"lat": 8.517,
+"lon": 77.795
+},
+{
+"district": "Tirunelveli",
+"point": 3,
+"lat": 8.767,
+"lon": 77.545
+},
+{
+"district": "Tirunelveli",
+"point": 4,
+"lat": 8.767,
+"lon": 77.795
+},
+{
+"district": "Tirunelveli",
+"point": 5,
+"lat": 8.549,
+"lon": 77.58
+},
+{
+"district": "Tiruppur",
+"point": 0,
+"lat": 10.355,
+"lon": 77.167
+},
+{
+"district": "Tiruppur",
+"point": 1,
+"lat": 10.855,
+"lon": 77.417
+},
+{
+"district": "Tiruppur",
+"point": 2,
+"lat": 10.855,
+"lon": 77.667
+},
+{
+"district": "Tiruppur",
+"point": 3,
+"lat": 11.105,
+"lon": 77.417
+},
+{
+"district": "Tiruppur",
+"point": 4,
+"lat": 10.791,
+"lon": 77.535
+},
+{
+"district": "Tirupathur",
+"point": 0,
+"lat": 12.633,
+"lon": 78.532
+},
+{
+"district": "Tirupathur",
+"point": 1,
+"lat": 12.633,
+"lon": 78.782
+},
+{
+"district": "Tirupathur",
+"point": 2,
+"lat": 12.584,
+"lon": 78.625
+},
+{
+"district": "Thiruvallur",
+"point": 0,
+"lat": 13.07,
+"lon": 79.909
+},
+{
+"district": "Thiruvallur",
+"point": 1,
+"lat": 13.07,
+"lon": 80.159
+},
+{
+"district": "Thiruvallur",
+"point": 2,
+"lat": 13.32,
+"lon": 79.409
+},
+{
+"district": "Thiruvallur",
+"point": 3,
+"lat": 13.32,
+"lon": 79.909
+},
+{
+"district": "Thiruvallur",
+"point": 4,
+"lat": 13.32,
+"lon": 80.159
+},
+{
+"district": "Thiruvallur",
+"point": 5,
+"lat": 13.255,
+"lon": 80.054
+},
+{
+"district": "Tiruvannamalai",
+"point": 0,
+"lat": 12.109,
+"lon": 78.755
+},
+{
+"district": "Tiruvannamalai",
+"point": 1,
+"lat": 12.109,
+"lon": 79.255
+},
+{
+"district": "Tiruvannamalai",
+"point": 2,
+"lat": 12.359,
+"lon": 79.005
+},
+{
+"district": "Tiruvannamalai",
+"point": 3,
+"lat": 12.609,
+"lon": 79.005
+},
+{
+"district": "Tiruvannamalai",
+"point": 4,
+"lat": 12.609,
+"lon": 79.505
+},
+{
+"district": "Tiruvannamalai",
+"point": 5,
+"lat": 12.429,
+"lon": 79.0
+},
+{
+"district": "Thoothukudi",
+"point": 0,
+"lat": 8.446,
+"lon": 78.048
+},
+{
+"district": "Thoothukudi",
+"point": 1,
+"lat": 8.696,
+"lon": 78.048
+},
+{
+"district": "Thoothukudi",
+"point": 2,
+"lat": 8.946,
+"lon": 77.798
+},
+{
+"district": "Thoothukudi",
+"point": 3,
+"lat": 9.196,
+"lon": 77.798
+},
+{
+"district": "Thoothukudi",
+"point": 4,
+"lat": 9.196,
+"lon": 78.048
+},
+{
+"district": "Thoothukudi",
+"point": 5,
+"lat": 8.846,
+"lon": 77.993
+},
+{
+"district": "Vellore",
+"point": 0,
+"lat": 12.757,
+"lon": 78.884
+},
+{
+"district": "Vellore",
+"point": 1,
+"lat": 13.007,
+"lon": 78.884
+},
+{
+"district": "Vellore",
+"point": 2,
+"lat": 13.007,
+"lon": 79.134
+},
+{
+"district": "Vellore",
+"point": 3,
+"lat": 12.902,
+"lon": 79.061
+},
+{
+"district": "Viluppuram",
+"point": 0,
+"lat": 11.923,
+"lon": 79.542
+},
+{
+"district": "Viluppuram",
+"point": 1,
+"lat": 12.173,
+"lon": 79.292
+},
+{
+"district": "Viluppuram",
+"point": 2,
+"lat": 12.173,
+"lon": 79.542
+},
+{
+"district": "Viluppuram",
+"point": 3,
+"lat": 12.173,
+"lon": 79.792
+},
+{
+"district": "Viluppuram",
+"point": 4,
+"lat": 12.423,
+"lon": 79.292
+},
+{
+"district": "Viluppuram",
+"point": 5,
+"lat": 12.125,
+"lon": 79.601
+},
+{
+"district": "Virudhunagar",
+"point": 0,
+"lat": 9.325,
+"lon": 77.714
+},
+{
+"district": "Virudhunagar",
+"point": 1,
+"lat": 9.325,
+"lon": 77.964
+},
+{
+"district": "Virudhunagar",
+"point": 2,
+"lat": 9.325,
+"lon": 78.214
+},
+{
+"district": "Virudhunagar",
+"point": 3,
+"lat": 9.575,
+"lon": 77.964
+},
+{
+"district": "Virudhunagar",
+"point": 4,
+"lat": 9.575,
+"lon": 78.214
+},
+{
+"district": "Virudhunagar",
+"point": 5,
+"lat": 9.493,
+"lon": 77.864
+},
+{
+"district": "Krishnagiri",
+"point": 0,
+"lat": 12.264,
+"lon": 77.596
+},
+{
+"district": "Krishnagiri",
+"point": 1,
+"lat": 12.264,
+"lon": 78.346
+},
+{
+"district": "Krishnagiri",
+"point": 2,
+"lat": 12.514,
+"lon": 77.846
+},
+{
+"district": "Krishnagiri",
+"point": 3,
+"lat": 12.514,
+"lon": 78.096
+},
+{
+"district": "Krishnagiri",
+"point": 4,
+"lat": 12.764,
+"lon": 77.846
+},
+{
+"district": "Krishnagiri",
+"point": 5,
+"lat": 12.515,
+"lon": 78.01
+},
+{
+"district": "Nagapattinam",
+"point": 0,
+"lat": 10.397,
+"lon": 79.752
+},
+{
+"district": "Nagapattinam",
+"point": 1,
+"lat": 10.647,
+"lon": 79.752
+},
+{
+"district": "Nagapattinam",
+"point": 2,
+"lat": 10.897,
+"lon": 79.752
+},
+{
+"district": "Nagapattinam",
+"point": 3,
+"lat": 10.602,
+"lon": 79.761
+},
+{
+"district": "Mayiladuthurai",
+"point": 0,
+"lat": 11.085,
+"lon": 79.634
+},
+{
+"district": "Mayiladuthurai",
+"point": 1,
+"lat": 11.191,
+"lon": 79.696
+},
+{
+"district": "Kancheepuram",
+"point": 0,
+"lat": 12.657,
+"lon": 79.681
+},
+{
+"district": "Kancheepuram",
+"point": 1,
+"lat": 12.907,
+"lon": 79.681
+},
+{
+"district": "Kancheepuram",
+"point": 2,
+"lat": 12.907,
+"lon": 79.931
+},
+{
+"district": "Kancheepuram",
+"point": 3,
+"lat": 12.794,
+"lon": 79.774
+},
+{
+"district": "Thanjavur",
+"point": 0,
+"lat": 10.261,
+"lon": 79.151
+},
+{
+"district": "Thanjavur",
+"point": 1,
+"lat": 10.511,
+"lon": 79.151
+},
+{
+"district": "Thanjavur",
+"point": 2,
+"lat": 10.511,
+"lon": 79.401
+},
+{
+"district": "Thanjavur",
+"point": 3,
+"lat": 10.761,
+"lon": 79.151
+},
+{
+"district": "Thanjavur",
+"point": 4,
+"lat": 11.011,
+"lon": 79.401
+},
+{
+"district": "Thanjavur",
+"point": 5,
+"lat": 10.66,
+"lon": 79.198
+},
+{
+"district": "Pudukkottai",
+"point": 0,
+"lat": 9.974,
+"lon": 79.071
+},
+{
+"district": "Pudukkottai",
+"point": 1,
+"lat": 10.224,
+"lon": 78.821
+},
+{
+"district": "Pudukkottai",
+"point": 2,
+"lat": 10.224,
+"lon": 79.071
+},
+{
+"district": "Pudukkottai",
+"point": 3,
+"lat": 10.474,
+"lon": 78.821
+},
+{
+"district": "Pudukkottai",
+"point": 4,
+"lat": 10.474,
+"lon": 79.071
+},
+{
+"district": "Pudukkottai",
+"point": 5,
+"lat": 10.292,
+"lon": 78.817
+}
+]
