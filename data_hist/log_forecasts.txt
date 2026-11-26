@@ -1,0 +1,32 @@
+===== forecasts =====
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2024-01-01..2024-03-31 done
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2024-04-01..2024-06-30 done
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2024-07-01..2024-09-29 done
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2024-09-30..2024-12-29 done
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2024-12-30..2025-03-30 done
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2025-03-31..2025-06-29 done
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2025-06-30..2025-09-28 done
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2025-09-29..2025-12-28 done
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2025-12-29..2026-03-29 done
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2026-03-30..2026-06-28 done
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2026-06-29..2026-09-27 done
+network: HTTPSConnectionPool(host='previous-runs-api.open-meteo.com', port=443): Read timed out. (read timeout=300)
+forecasts 2026-09-28..2026-11-24 done
+wrote 44478 rows
