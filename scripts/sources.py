@@ -52,15 +52,31 @@ def imd_days(start, end, workdir):
         lon_name = "lon" if "lon" in da.dims else "longitude"
         da = da.sel({lat_name: slice(BBOX[1], BBOX[3]), lon_name: slice(BBOX[0], BBOX[2])})
         lats, lons = da[lat_name].values, da[lon_name].values
-        if cells is None:
-            cells = district_cells(lats, lons)
         da = da.transpose("time", lat_name, lon_name)
         arr = da.values.astype(float)
         arr[arr < 0] = np.nan  # -999 = missing
+        if cells is None:
+            cells = _with_valid_cells(district_cells(lats, lons), np.isfinite(arr).any(axis=0), lats, lons)
         for k, t in enumerate(da["time"].values):
             day = datetime.utcfromtimestamp(t.astype("datetime64[s]").astype(int)).date()
             if start <= day <= end:
                 yield day, summarise(arr[k], cells)
+
+
+def _with_valid_cells(cells, valid, lats, lons):
+    """Coastal districts (e.g. Chennai) can fall on grid squares IMD leaves blank (sea).
+    For those, use the nearest squares that do have data."""
+    from common import districts
+    shapes = districts()
+    for name, cs in cells.items():
+        if any(valid[i, j] for i, j in cs):
+            continue
+        c = shapes[name].representative_point()
+        order = sorted(((abs(lats[i] - c.y) + abs(lons[j] - c.x), i, j)
+                        for i in range(len(lats)) for j in range(len(lons)) if valid[i, j]))
+        cells[name] = [(i, j) for _, i, j in order[:2]]
+        print(f"{name}: using nearest land squares {cells[name]}")
+    return cells
 
 
 # ----------------------------------------------------------------------------- NASA IMERG
