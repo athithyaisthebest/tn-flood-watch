@@ -182,6 +182,31 @@ def add_observed(out, today, thr):
     return ok
 
 
+def notify(out, previous):
+    """Post to a Telegram channel when a district newly reaches Warning or Danger.
+    Off unless the TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID secrets are set."""
+    token, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
+    if not token or not chat:
+        return
+    ta = {"Warning": "எச்சரிக்கை", "Danger": "அபாயம்"}
+    lines = []
+    for n, d in sorted(out.items(), key=lambda x: -(x[1]["level"] or 0)):
+        lvl, before = d.get("level") or 0, previous.get(n) or 0
+        if lvl >= 2 and lvl > before:
+            lines.append(f"{LEVELS[lvl]} / {ta[LEVELS[lvl]]}: {n}\n  " + "\n  ".join(d["reasons"][:3]))
+    if not lines:
+        return
+    text = ("Tamil Nadu Flood Watch / தமிழ்நாடு வெள்ள கண்காணிப்பு\n\n" + "\n\n".join(lines) +
+            "\n\nNot an official warning. Follow TNSDMA, IMD and your District Collector. Helpline 1070 / 1077, emergency 112."
+            "\nhttps://athithyaisthebest.github.io/tn-flood-watch/")
+    try:
+        r = requests.post(f"https://api.telegram.org/bot{token}/sendMessage",
+                          json={"chat_id": chat, "text": text[:4000], "disable_web_page_preview": True}, timeout=30)
+        print("telegram:", r.status_code)
+    except Exception as e:
+        print("telegram failed:", e)
+
+
 def main():
     points = load("points.json")
     rep = {}
@@ -299,8 +324,14 @@ def main():
         "thresholds_version": thr.get("version"),
         "districts": out,
     }
+    previous = {}
+    try:
+        previous = {n: d.get("level") for n, d in load("risk.json").get("districts", {}).items()}
+    except Exception:
+        pass
     with open(os.path.join(DATA, "risk.json"), "w") as f:
         json.dump(risk, f, indent=1)
+    notify(out, previous)
 
     # ---------------- history (one row per district per run)
     hist_dir = os.path.join(DATA, "history")
