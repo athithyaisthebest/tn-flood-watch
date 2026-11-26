@@ -14,11 +14,29 @@ HIST = os.path.join(ROOT, "data_hist")
 BBOX = (76.0, 7.8, 80.6, 13.8)  # west, south, east, north around Tamil Nadu
 
 
+# Hill catchments outside a district whose rain floods it (summarised as "<District> upstream").
+# Theni: the Periyar plateau / Cardamom Hills (Kerala), whose water reaches the Vaigai via Mullaperiyar.
+UPSTREAM = {
+    "Theni": (77.0, 9.45, 77.35, 10.15),
+    "Tirunelveli": (77.15, 8.45, 77.4, 8.9),    # Western Ghats above Papanasam / Manimuthar
+    "Kanyakumari": (77.1, 8.2, 77.35, 8.55),    # hills above Pechiparai / Perunchani
+    "Coimbatore": (76.55, 10.25, 76.95, 10.6),  # Anamalai / Valparai hills draining to the Aliyar and Chalakudy
+}
+
+
+def base_district(name):
+    return name[:-len(" upstream")] if name.endswith(" upstream") else name
+
+
 def districts():
-    """name -> shapely geometry"""
+    """name -> shapely geometry (the 38 districts plus '<District> upstream' hill catchments)"""
+    from shapely.geometry import box
     with open(os.path.join(DATA, "districts.json")) as f:
         g = json.load(f)
-    return {ft["properties"]["name"]: shape(ft["geometry"]) for ft in g["features"]}
+    out = {ft["properties"]["name"]: shape(ft["geometry"]) for ft in g["features"]}
+    for n, b in UPSTREAM.items():
+        out[f"{n} upstream"] = box(*b)
+    return out
 
 
 def district_cells(lats, lons):

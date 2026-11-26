@@ -52,6 +52,18 @@ def run_imerg():
     path = os.path.join(HIST, "imerg_rain.csv")
     rows = grid_rows(sources.imerg_days(date(2015, 1, 1), date(2025, 12, 31), "final", user, pw, "/tmp/imerg"))
     done = {r[0] for r in rows}
+    # months the research-quality run hasn't covered yet: fill from the "late" run
+    gaps, d = [], date(2015, 1, 1)
+    while d <= date(2025, 12, 31):
+        if d.isoformat() not in done:
+            gaps.append(d)
+        d += timedelta(days=1)
+    if gaps:
+        print(f"{len(gaps)} days missing from the final run; filling from the late run")
+        a = gaps[0]
+        rows += [r for r in grid_rows(sources.imerg_days(a, gaps[-1], "late", user, pw, "/tmp/imerg"))
+                 if r[0] not in done]
+        done = {r[0] for r in rows}
     rows += [r for r in grid_rows(sources.imerg_days(date(2026, 1, 1), TODAY - timedelta(days=1), "early",
                                                      user, pw, "/tmp/imerg")) if r[0] not in done]
     write_rows(path, ["date", "district", "mean_mm", "max_mm"], sorted(rows))
@@ -111,9 +123,11 @@ def run_tnsmart():
 
 if __name__ == "__main__":
     what = sys.argv[1] if len(sys.argv) > 1 else "all"
-    jobs = {"imd": run_imd, "imerg": run_imerg, "tnsmart": run_tnsmart, "imerg_fill": run_imerg_fill}
+    import fetch_extra
+    jobs = {"imd": run_imd, "imerg": run_imerg, "tnsmart": run_tnsmart, "imerg_fill": run_imerg_fill,
+            "forecasts": fetch_extra.run_forecasts, "rivers": fetch_extra.run_rivers}
     for name, fn in jobs.items():
-        if what == name or (what == "all" and name != "imerg_fill"):
+        if what == name or (what == "all" and name in ("imd", "imerg", "tnsmart")):
             print(f"===== {name} =====", flush=True)
             try:
                 fn()
