@@ -1,15 +1,21 @@
 {
- "updated": "2026-11-26T20:46+05:30",
+ "updated": "2026-11-26T21:56+05:30",
  "sources_ok": {
   "rain": true,
-  "river": true
+  "river": true,
+  "gauges": true,
+  "reservoirs": true,
+  "imd": true,
+  "satellite": false
  },
- "thresholds_version": "v1 tuned 2026-11-26: percentile 0.985 of each district's 2015-2022 history",
+ "thresholds_version": "v2 2026-11-26",
  "districts": {
   "Ariyalur": {
-   "level": 0,
-   "level_name": "Low",
-   "reasons": [],
+   "level": 1,
+   "level_name": "Watch",
+   "reasons": [
+    "Watch: IMD's rain-gauge analysis shows 73 mm over 3 days to 26 Nov"
+   ],
    "rain": {
     "2026-11-26": {
      "r1": 5.8,
@@ -27,7 +33,28 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0,
+    "imd": 1
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 13.02,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Siddhamalli",
+     "storage_pct": 0.0,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 53.1,
+    "three_day_mm": 72.9,
+    "date": "2026-11-26"
+   }
   },
   "Chengalpattu": {
    "level": 0,
@@ -50,7 +77,20 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 0.0,
+    "max_mm": null
+   },
+   "imd": {
+    "last_day_mm": 0.3,
+    "three_day_mm": 43.4,
+    "date": "2026-11-26"
+   }
   },
   "Chennai": {
    "level": 0,
@@ -79,7 +119,37 @@
      "peak_7d_m3s": 25,
      "level": 0
     }
-   ]
+   ],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 7.34,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Poondi",
+     "storage_pct": 17.1464,
+     "rising": false
+    },
+    {
+     "name": "Redhills",
+     "storage_pct": 68.9091,
+     "rising": false
+    },
+    {
+     "name": "Cholavaram",
+     "storage_pct": 18.3164,
+     "rising": true
+    }
+   ],
+   "imd": {
+    "last_day_mm": 3.4,
+    "three_day_mm": 44.1,
+    "date": "2026-11-26"
+   }
   },
   "Coimbatore": {
    "level": 0,
@@ -102,7 +172,42 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 4.62,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Lower Nirar",
+     "storage_pct": 38.6182,
+     "rising": true
+    },
+    {
+     "name": "Upper Nirar",
+     "storage_pct": 0.769231,
+     "rising": false
+    },
+    {
+     "name": "Sholayar",
+     "storage_pct": 14.4075,
+     "rising": true
+    },
+    {
+     "name": "Aliyar",
+     "storage_pct": 20.1346,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 16.7,
+    "three_day_mm": 19.5,
+    "date": "2026-11-26"
+   }
   },
   "Cuddalore": {
    "level": 0,
@@ -131,7 +236,37 @@
      "peak_7d_m3s": 44,
      "level": 0
     }
-   ]
+   ],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 15.95,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Sathanur",
+     "storage_pct": 57.4102,
+     "rising": true
+    },
+    {
+     "name": "Willingdon",
+     "storage_pct": 0.0,
+     "rising": false
+    },
+    {
+     "name": "Veeranam",
+     "storage_pct": 48.6007,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 36.9,
+    "three_day_mm": 66.0,
+    "date": "2026-11-26"
+   }
   },
   "Dharmapuri": {
    "level": 0,
@@ -154,12 +289,74 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 17.49,
+    "max_mm": 68.0
+   },
+   "reservoirs": [
+    {
+     "name": "Thumbalah alli",
+     "storage_pct": 8.58779,
+     "rising": false
+    },
+    {
+     "name": "Vaaniar",
+     "storage_pct": 25.7799,
+     "rising": true
+    },
+    {
+     "name": "Varattar Vallima",
+     "storage_pct": 7.12408,
+     "rising": true
+    },
+    {
+     "name": "Kelavarapal li",
+     "storage_pct": 81.0236,
+     "rising": true
+    },
+    {
+     "name": "Krishnagiri",
+     "storage_pct": 81.798,
+     "rising": true
+    },
+    {
+     "name": "Chinnar",
+     "storage_pct": 40.948,
+     "rising": true
+    },
+    {
+     "name": "Kesarigulli",
+     "storage_pct": 57.3433,
+     "rising": true
+    },
+    {
+     "name": "Nagavathi",
+     "storage_pct": 20.2012,
+     "rising": true
+    },
+    {
+     "name": "Thoppaiyar",
+     "storage_pct": 3.04027,
+     "rising": true
+    }
+   ],
+   "imd": {
+    "last_day_mm": 31.6,
+    "three_day_mm": 62.9,
+    "date": "2026-11-26"
+   }
   },
   "Dindigul": {
-   "level": 0,
-   "level_name": "Low",
-   "reasons": [],
+   "level": 1,
+   "level_name": "Watch",
+   "reasons": [
+    "Watch: IMD's rain-gauge analysis shows 47 mm over 3 days to 26 Nov"
+   ],
    "rain": {
     "2026-11-26": {
      "r1": 13.8,
@@ -177,7 +374,63 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0,
+    "imd": 1
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 21.16,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Palar Perunthalar",
+     "storage_pct": 52.4967,
+     "rising": false
+    },
+    {
+     "name": "Parappalar",
+     "storage_pct": 16.2162,
+     "rising": true
+    },
+    {
+     "name": "Varadhama nadhi",
+     "storage_pct": 100.0,
+     "rising": false
+    },
+    {
+     "name": "Nanganjiar",
+     "storage_pct": 3.78568,
+     "rising": false
+    },
+    {
+     "name": "Kodaganar",
+     "storage_pct": 38.7568,
+     "rising": false
+    },
+    {
+     "name": "Kuthiraiyar",
+     "storage_pct": 51.8498,
+     "rising": true
+    },
+    {
+     "name": "Marudhana dhi",
+     "storage_pct": 68.8329,
+     "rising": true
+    },
+    {
+     "name": "Sirumalaiya r",
+     "storage_pct": 0.0,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 40.6,
+    "three_day_mm": 47.4,
+    "date": "2026-11-26"
+   }
   },
   "Erode": {
    "level": 0,
@@ -206,7 +459,57 @@
      "peak_7d_m3s": 299,
      "level": 0
     }
-   ]
+   ],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 9.87,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Mettur",
+     "storage_pct": 25628.0,
+     "rising": false
+    },
+    {
+     "name": "Bhavani",
+     "storage_pct": 46.4939,
+     "rising": true
+    },
+    {
+     "name": "Varattupalla m",
+     "storage_pct": 31.2822,
+     "rising": false
+    },
+    {
+     "name": "Perumpalla m",
+     "storage_pct": 28.1064,
+     "rising": false
+    },
+    {
+     "name": "Gunderipall am",
+     "storage_pct": 66.2046,
+     "rising": true
+    },
+    {
+     "name": "Noyyal Orat hupalayam",
+     "storage_pct": 1.06025,
+     "rising": true
+    },
+    {
+     "name": "Uppar",
+     "storage_pct": 0.0,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 24.2,
+    "three_day_mm": 33.2,
+    "date": "2026-11-26"
+   }
   },
   "Kallakurichi": {
    "level": 0,
@@ -229,7 +532,37 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 22.73,
+    "max_mm": 83.0
+   },
+   "reservoirs": [
+    {
+     "name": "Sathanur",
+     "storage_pct": 57.4102,
+     "rising": true
+    },
+    {
+     "name": "Gomuki",
+     "storage_pct": 73.6238,
+     "rising": true
+    },
+    {
+     "name": "Manimukth anadhi",
+     "storage_pct": 2.01765,
+     "rising": true
+    }
+   ],
+   "imd": {
+    "last_day_mm": 27.5,
+    "three_day_mm": 49.5,
+    "date": "2026-11-26"
+   }
   },
   "Kancheepuram": {
    "level": 0,
@@ -252,19 +585,39 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 1.5,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Chembara mpakkam",
+     "storage_pct": 33.5254,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 1.6,
+    "three_day_mm": 44.4,
+    "date": "2026-11-26"
+   }
   },
   "Kanyakumari": {
    "level": 1,
    "level_name": "Watch",
    "reasons": [
-    "Watch: 1-day rainfall of 32 mm expected today"
+    "Watch: IMD's rain-gauge analysis shows 48 mm over 3 days to 26 Nov"
    ],
    "rain": {
     "2026-11-26": {
      "r1": 31.6,
      "r3": 63.8,
-     "level": 1
+     "level": 0
     },
     "2026-11-27": {
      "r1": 15.8,
@@ -277,7 +630,28 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0,
+    "imd": 1
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 6.74,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Perunchani",
+     "storage_pct": 29.5156,
+     "rising": true
+    }
+   ],
+   "imd": {
+    "last_day_mm": 43.6,
+    "three_day_mm": 47.6,
+    "date": "2026-11-26"
+   }
   },
   "Karur": {
    "level": 0,
@@ -306,7 +680,42 @@
      "peak_7d_m3s": 77,
      "level": 0
     }
-   ]
+   ],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 13.76,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Mettur",
+     "storage_pct": 25628.0,
+     "rising": false
+    },
+    {
+     "name": "Amaravathi",
+     "storage_pct": 42.896,
+     "rising": true
+    },
+    {
+     "name": "Noyyal Athu palayam",
+     "storage_pct": 0.0,
+     "rising": false
+    },
+    {
+     "name": "Ponnaiyar",
+     "storage_pct": 32.3977,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 24.2,
+    "three_day_mm": 24.5,
+    "date": "2026-11-26"
+   }
   },
   "Krishnagiri": {
    "level": 0,
@@ -329,7 +738,42 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 4.94,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Kelavarapal li",
+     "storage_pct": 81.0236,
+     "rising": true
+    },
+    {
+     "name": "Krishnagiri",
+     "storage_pct": 81.798,
+     "rising": true
+    },
+    {
+     "name": "Pambar",
+     "storage_pct": 16.9643,
+     "rising": false
+    },
+    {
+     "name": "Sulagirichin nar",
+     "storage_pct": 17.2044,
+     "rising": true
+    }
+   ],
+   "imd": {
+    "last_day_mm": 35.1,
+    "three_day_mm": 56.8,
+    "date": "2026-11-26"
+   }
   },
   "Madurai": {
    "level": 1,
@@ -346,7 +790,7 @@
     "2026-11-27": {
      "r1": 4.0,
      "r3": 69.3,
-     "level": 1
+     "level": 0
     },
     "2026-11-28": {
      "r1": 17.6,
@@ -360,7 +804,32 @@
      "peak_7d_m3s": 18,
      "level": 0
     }
-   ]
+   ],
+   "signals": {
+    "forecast": 1
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 9.84,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Vaigai",
+     "storage_pct": 39.5502,
+     "rising": false
+    },
+    {
+     "name": "Sathaiyyar",
+     "storage_pct": 0.0,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 18.8,
+    "three_day_mm": 18.8,
+    "date": "2026-11-26"
+   }
   },
   "Mayiladuthurai": {
    "level": 0,
@@ -383,7 +852,20 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 22.43,
+    "max_mm": null
+   },
+   "imd": {
+    "last_day_mm": 13.9,
+    "three_day_mm": 43.9,
+    "date": "2026-11-26"
+   }
   },
   "Nagapattinam": {
    "level": 0,
@@ -406,13 +888,27 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 37.2,
+    "max_mm": 91.8
+   },
+   "imd": {
+    "last_day_mm": 36.4,
+    "three_day_mm": 67.3,
+    "date": "2026-11-26"
+   }
   },
   "Namakkal": {
    "level": 1,
    "level_name": "Watch",
    "reasons": [
-    "Watch: 3-day rainfall of 58 mm expected today"
+    "Watch: 3-day rainfall of 58 mm expected today",
+    "Watch: IMD's rain-gauge analysis shows 109 mm over 3 days to 26 Nov"
    ],
    "rain": {
     "2026-11-26": {
@@ -431,12 +927,35 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 1,
+    "imd": 1
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 10.73,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Mettur",
+     "storage_pct": 25628.0,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 52.1,
+    "three_day_mm": 109.1,
+    "date": "2026-11-26"
+   }
   },
   "Nilgiris": {
-   "level": 0,
-   "level_name": "Low",
-   "reasons": [],
+   "level": 1,
+   "level_name": "Watch",
+   "reasons": [
+    "Watch: IMD's rain-gauge analysis shows 71 mm over 3 days to 26 Nov"
+   ],
    "rain": {
     "2026-11-26": {
      "r1": 3.5,
@@ -454,7 +973,21 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0,
+    "imd": 1
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 23.5,
+    "max_mm": 83.0
+   },
+   "imd": {
+    "last_day_mm": 53.7,
+    "three_day_mm": 70.6,
+    "date": "2026-11-26"
+   }
   },
   "Perambalur": {
    "level": 0,
@@ -477,7 +1010,20 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 25.82,
+    "max_mm": 68.0
+   },
+   "imd": {
+    "last_day_mm": 24.0,
+    "three_day_mm": 28.5,
+    "date": "2026-11-26"
+   }
   },
   "Pudukkottai": {
    "level": 0,
@@ -500,12 +1046,27 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 13.17,
+    "max_mm": null
+   },
+   "imd": {
+    "last_day_mm": 27.3,
+    "three_day_mm": 35.2,
+    "date": "2026-11-26"
+   }
   },
   "Ramanathapuram": {
-   "level": 0,
-   "level_name": "Low",
-   "reasons": [],
+   "level": 1,
+   "level_name": "Watch",
+   "reasons": [
+    "Watch: IMD's rain-gauge analysis shows 48 mm over 3 days to 26 Nov"
+   ],
    "rain": {
     "2026-11-26": {
      "r1": 13.2,
@@ -523,7 +1084,28 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0,
+    "imd": 1
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 25.56,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Vaigai",
+     "storage_pct": 39.5502,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 42.5,
+    "three_day_mm": 48.2,
+    "date": "2026-11-26"
+   }
   },
   "Ranipet": {
    "level": 0,
@@ -546,7 +1128,20 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 1.8,
+    "max_mm": null
+   },
+   "imd": {
+    "last_day_mm": 0.4,
+    "three_day_mm": 3.8,
+    "date": "2026-11-26"
+   }
   },
   "Salem": {
    "level": 0,
@@ -569,7 +1164,37 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 15.16,
+    "max_mm": 83.0
+   },
+   "reservoirs": [
+    {
+     "name": "Kariakovil",
+     "storage_pct": 9.99474,
+     "rising": true
+    },
+    {
+     "name": "Anaimadav u",
+     "storage_pct": 11.1423,
+     "rising": true
+    },
+    {
+     "name": "Mettur",
+     "storage_pct": 25628.0,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 24.8,
+    "three_day_mm": 73.7,
+    "date": "2026-11-26"
+   }
   },
   "Sivaganga": {
    "level": 0,
@@ -592,7 +1217,27 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 14.31,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Vaigai",
+     "storage_pct": 39.5502,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 21.3,
+    "three_day_mm": 22.9,
+    "date": "2026-11-26"
+   }
   },
   "Tenkasi": {
    "level": 1,
@@ -617,7 +1262,47 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 1
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 19.35,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Adavinainar kovil",
+     "storage_pct": 43.0632,
+     "rising": false
+    },
+    {
+     "name": "Gundar",
+     "storage_pct": 76.6142,
+     "rising": true
+    },
+    {
+     "name": "Karuppana dhi",
+     "storage_pct": 33.0271,
+     "rising": true
+    },
+    {
+     "name": "Gatana",
+     "storage_pct": 47.2299,
+     "rising": true
+    },
+    {
+     "name": "Ramanadhi",
+     "storage_pct": 41.394,
+     "rising": true
+    }
+   ],
+   "imd": {
+    "last_day_mm": 18.6,
+    "three_day_mm": 41.5,
+    "date": "2026-11-26"
+   }
   },
   "Thanjavur": {
    "level": 0,
@@ -640,13 +1325,33 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 24.19,
+    "max_mm": 72.2
+   },
+   "reservoirs": [
+    {
+     "name": "Mettur",
+     "storage_pct": 25628.0,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 27.4,
+    "three_day_mm": 45.3,
+    "date": "2026-11-26"
+   }
   },
   "Theni": {
    "level": 1,
    "level_name": "Watch",
    "reasons": [
-    "Watch: 1-day rainfall of 20 mm expected today"
+    "Watch: 3-day rainfall of 58 mm expected today"
    ],
    "rain": {
     "2026-11-26": {
@@ -665,7 +1370,47 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 1
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 4.0,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Periyar dam",
+     "storage_pct": 31.3462,
+     "rising": false
+    },
+    {
+     "name": "Vaigai",
+     "storage_pct": 39.5502,
+     "rising": false
+    },
+    {
+     "name": "Manjalar",
+     "storage_pct": 51.2238,
+     "rising": true
+    },
+    {
+     "name": "Sothuparai",
+     "storage_pct": 100.0,
+     "rising": false
+    },
+    {
+     "name": "Pilavukkal Periyar",
+     "storage_pct": 31.8229,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 12.8,
+    "three_day_mm": 13.0,
+    "date": "2026-11-26"
+   }
   },
   "Thiruvallur": {
    "level": 0,
@@ -694,7 +1439,42 @@
      "peak_7d_m3s": 27,
      "level": 0
     }
-   ]
+   ],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 5.53,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Poondi",
+     "storage_pct": 17.1464,
+     "rising": false
+    },
+    {
+     "name": "Redhills",
+     "storage_pct": 68.9091,
+     "rising": false
+    },
+    {
+     "name": "Cholavaram",
+     "storage_pct": 18.3164,
+     "rising": true
+    },
+    {
+     "name": "Thervoy Kandigai",
+     "storage_pct": 47.6,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 5.7,
+    "three_day_mm": 61.0,
+    "date": "2026-11-26"
+   }
   },
   "Thiruvarur": {
    "level": 0,
@@ -717,19 +1497,33 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 11.57,
+    "max_mm": null
+   },
+   "imd": {
+    "last_day_mm": 21.1,
+    "three_day_mm": 35.6,
+    "date": "2026-11-26"
+   }
   },
   "Thoothukudi": {
-   "level": 1,
-   "level_name": "Watch",
+   "level": 2,
+   "level_name": "Warning",
    "reasons": [
-    "Watch: 1-day rainfall of 31 mm expected today"
+    "Watch: a rain gauge recorded 184 mm in the 24 hours to 8:30 am 26 Nov",
+    "Warning: IMD's rain-gauge analysis shows 146 mm over 3 days to 26 Nov"
    ],
    "rain": {
     "2026-11-26": {
      "r1": 30.6,
      "r3": 62.6,
-     "level": 1
+     "level": 0
     },
     "2026-11-27": {
      "r1": 7.7,
@@ -748,12 +1542,36 @@
      "peak_7d_m3s": 362,
      "level": 0
     }
-   ]
+   ],
+   "signals": {
+    "forecast": 0,
+    "gauge": 1,
+    "imd": 2
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 30.63,
+    "max_mm": 183.8
+   },
+   "reservoirs": [
+    {
+     "name": "Manimuthar",
+     "storage_pct": 30.7748,
+     "rising": true
+    }
+   ],
+   "imd": {
+    "last_day_mm": 126.7,
+    "three_day_mm": 145.9,
+    "date": "2026-11-26"
+   }
   },
   "Tiruchirappalli": {
-   "level": 0,
-   "level_name": "Low",
-   "reasons": [],
+   "level": 1,
+   "level_name": "Watch",
+   "reasons": [
+    "Watch: IMD's rain-gauge analysis shows 77 mm over 3 days to 26 Nov"
+   ],
    "rain": {
     "2026-11-26": {
      "r1": 12.4,
@@ -777,19 +1595,41 @@
      "peak_7d_m3s": 397,
      "level": 0
     }
-   ]
+   ],
+   "signals": {
+    "forecast": 0,
+    "imd": 1
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 32.78,
+    "max_mm": 82.6
+   },
+   "reservoirs": [
+    {
+     "name": "Mettur",
+     "storage_pct": 25628.0,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 45.6,
+    "three_day_mm": 77.2,
+    "date": "2026-11-26"
+   }
   },
   "Tirunelveli": {
-   "level": 2,
-   "level_name": "Warning",
+   "level": 1,
+   "level_name": "Watch",
    "reasons": [
-    "Warning: 1-day rainfall of 54 mm expected today"
+    "Watch: 1-day rainfall of 54 mm expected today",
+    "Watch: IMD's rain-gauge analysis shows 69 mm over 3 days to 26 Nov"
    ],
    "rain": {
     "2026-11-26": {
      "r1": 53.9,
      "r3": 102.3,
-     "level": 2
+     "level": 1
     },
     "2026-11-27": {
      "r1": 11.4,
@@ -806,9 +1646,50 @@
     {
      "name": "Tamirabarani at Tirunelveli",
      "peak_7d_m3s": 192,
-     "level": 1
+     "level": 0
     }
-   ]
+   ],
+   "signals": {
+    "forecast": 1,
+    "imd": 1
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 38.44,
+    "max_mm": 90.0
+   },
+   "reservoirs": [
+    {
+     "name": "Manimuthar",
+     "storage_pct": 30.7748,
+     "rising": true
+    },
+    {
+     "name": "Vadakku Pachaiyaru",
+     "storage_pct": 1.77149,
+     "rising": false
+    },
+    {
+     "name": "Vandal Odai",
+     "storage_pct": 0.0,
+     "rising": false
+    },
+    {
+     "name": "Nambiar",
+     "storage_pct": 14.1658,
+     "rising": false
+    },
+    {
+     "name": "Kodumudiy ar",
+     "storage_pct": 28.7016,
+     "rising": true
+    }
+   ],
+   "imd": {
+    "last_day_mm": 60.5,
+    "three_day_mm": 68.7,
+    "date": "2026-11-26"
+   }
   },
   "Tirupathur": {
    "level": 0,
@@ -831,7 +1712,27 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 16.53,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Andiappanu r Odai",
+     "storage_pct": 90.5526,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 26.2,
+    "three_day_mm": 51.7,
+    "date": "2026-11-26"
+   }
   },
   "Tiruppur": {
    "level": 0,
@@ -854,7 +1755,42 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 6.98,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Amaravathi",
+     "storage_pct": 42.896,
+     "rising": true
+    },
+    {
+     "name": "Nallathanga l Odai",
+     "storage_pct": 0.0,
+     "rising": false
+    },
+    {
+     "name": "Vattamalaik arai",
+     "storage_pct": 0.0931897,
+     "rising": false
+    },
+    {
+     "name": "Thirumurthi",
+     "storage_pct": 57.1101,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 12.3,
+    "three_day_mm": 22.8,
+    "date": "2026-11-26"
+   }
   },
   "Tiruvannamalai": {
    "level": 0,
@@ -877,7 +1813,42 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 15.33,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Kuppanatha m",
+     "storage_pct": 73.2471,
+     "rising": true
+    },
+    {
+     "name": "Mirugandan adhi",
+     "storage_pct": 58.8559,
+     "rising": true
+    },
+    {
+     "name": "Shenbagath ope",
+     "storage_pct": 75.3726,
+     "rising": true
+    },
+    {
+     "name": "Sathanur",
+     "storage_pct": 57.4102,
+     "rising": true
+    }
+   ],
+   "imd": {
+    "last_day_mm": 29.1,
+    "three_day_mm": 62.9,
+    "date": "2026-11-26"
+   }
   },
   "Vellore": {
    "level": 0,
@@ -900,7 +1871,32 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 17.58,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Mordhana",
+     "storage_pct": 15.5073,
+     "rising": true
+    },
+    {
+     "name": "Rajathopek anar",
+     "storage_pct": 1.80312,
+     "rising": true
+    }
+   ],
+   "imd": {
+    "last_day_mm": 27.8,
+    "three_day_mm": 88.0,
+    "date": "2026-11-26"
+   }
   },
   "Viluppuram": {
    "level": 0,
@@ -923,7 +1919,32 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 18.13,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Vidur",
+     "storage_pct": 6.16859,
+     "rising": false
+    },
+    {
+     "name": "Sathanur",
+     "storage_pct": 57.4102,
+     "rising": true
+    }
+   ],
+   "imd": {
+    "last_day_mm": 30.7,
+    "three_day_mm": 86.7,
+    "date": "2026-11-26"
+   }
   },
   "Virudhunagar": {
    "level": 0,
@@ -946,7 +1967,57 @@
      "level": 0
     }
    },
-   "rivers": []
+   "rivers": [],
+   "signals": {
+    "forecast": 0
+   },
+   "gauge": {
+    "report_date": "2026-11-26",
+    "avg_mm": 5.8,
+    "max_mm": null
+   },
+   "reservoirs": [
+    {
+     "name": "Pilavukkal Kovilar",
+     "storage_pct": 12.5188,
+     "rising": true
+    },
+    {
+     "name": "Sasthakovil",
+     "storage_pct": 65.3414,
+     "rising": false
+    },
+    {
+     "name": "Vembakotta i",
+     "storage_pct": 4.19614,
+     "rising": false
+    },
+    {
+     "name": "Anaikuttam",
+     "storage_pct": 1.26441,
+     "rising": false
+    },
+    {
+     "name": "Kullursanda i",
+     "storage_pct": 89.9905,
+     "rising": false
+    },
+    {
+     "name": "Golwarpatti",
+     "storage_pct": 6.46591,
+     "rising": false
+    },
+    {
+     "name": "Irrukkangud i",
+     "storage_pct": 9.118,
+     "rising": false
+    }
+   ],
+   "imd": {
+    "last_day_mm": 22.5,
+    "three_day_mm": 25.4,
+    "date": "2026-11-26"
+   }
   }
  }
 }
