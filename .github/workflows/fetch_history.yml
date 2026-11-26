@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       what:
-        description: "Which source: imd, imerg, tnsmart or all"
+        description: "Which source: imd, imerg, tnsmart, all, or 'imerg_fill START END'"
         required: true
         default: "all"
 
@@ -27,7 +27,7 @@ jobs:
           EARTHDATA_PASSWORD: ${{ secrets.EARTHDATA_PASSWORD }}
         run: |
           mkdir -p data_hist
-          python -u scripts/fetch_history.py "${{ inputs.what }}" 2>&1 | tee "data_hist/log_${{ inputs.what }}.txt"
+          python -u scripts/fetch_history.py ${{ inputs.what }} 2>&1 | tee "data_hist/log_$(echo '${{ inputs.what }}' | cut -d' ' -f1).txt"
       - name: Save results (even if something failed)
         if: always()
         run: |

@@ -57,6 +57,20 @@ def run_imerg():
     write_rows(path, ["date", "district", "mean_mm", "max_mm"], sorted(rows))
 
 
+def run_imerg_fill():
+    """Fill a gap in imerg_rain.csv with the 'late' run: python fetch_history.py imerg_fill 2025-10-01 2025-12-31"""
+    import csv as _csv
+    user, pw = os.environ.get("EARTHDATA_USERNAME"), os.environ.get("EARTHDATA_PASSWORD")
+    a, b = date.fromisoformat(sys.argv[2]), date.fromisoformat(sys.argv[3])
+    os.makedirs("/tmp/imerg", exist_ok=True)
+    new = grid_rows(sources.imerg_days(a, b, "late", user, pw, "/tmp/imerg"))
+    path = os.path.join(HIST, "imerg_rain.csv")
+    old = list(_csv.reader(open(path)))[1:]
+    have = {(r[0], r[1]) for r in old}
+    rows = old + [r for r in new if (r[0], r[1]) not in have]
+    write_rows(path, ["date", "district", "mean_mm", "max_mm"], sorted(rows))
+
+
 def run_tnsmart():
     days = [START + timedelta(days=k) for k in range((TODAY - START).days + 1)]
 
@@ -97,9 +111,9 @@ def run_tnsmart():
 
 if __name__ == "__main__":
     what = sys.argv[1] if len(sys.argv) > 1 else "all"
-    jobs = {"imd": run_imd, "imerg": run_imerg, "tnsmart": run_tnsmart}
+    jobs = {"imd": run_imd, "imerg": run_imerg, "tnsmart": run_tnsmart, "imerg_fill": run_imerg_fill}
     for name, fn in jobs.items():
-        if what in (name, "all"):
+        if what == name or (what == "all" and name != "imerg_fill"):
             print(f"===== {name} =====", flush=True)
             try:
                 fn()
