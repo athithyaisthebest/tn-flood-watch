@@ -33,7 +33,10 @@ jobs:
         run: |
           git config user.name "flood-watch-bot"
           git config user.email "flood-watch-bot@users.noreply.github.com"
-          git add data_hist
+          git add data_hist docs/data/rivers.json
           git diff --cached --quiet || git commit -m "Historical data: ${{ inputs.what }}"
-          git pull --rebase -X theirs origin main || true
-          git push
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            sleep $((i * 15))
+          done
+          exit 1
